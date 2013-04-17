@@ -1,0 +1,33 @@
+﻿<catel:DataWindow x:Class="Catel.Examples.WPF.ViewModelLifetime.Views.CreateTabWindow"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				  xmlns:catel="http://catel.codeplex.com">
+    
+    <!-- Resources -->
+    <catel:DataWindow.Resources>
+
+    </catel:DataWindow.Resources>
+
+    <!-- Content -->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" MaxWidth="300" />
+        </Grid.ColumnDefinitions>
+        
+        <Label Grid.Row="0">
+            <TextBlock TextWrapping="Wrap">
+                Here you can select the behavior of the new tab. The tab can either keep the view model alive when the tab is
+                unloaded from the visual tree (unchecked) or close the view model when the tab is unloaded (checked).
+                <LineBreak /><LineBreak />
+                The default behavior is that a view model is closed when a user control is unloaded.
+            </TextBlock>
+        </Label>
+
+        <CheckBox Grid.Row="1" Content="Close view model when tab is unloaded" IsChecked="{Binding CloseWhenUnloaded}" />
+    </Grid>
+</catel:DataWindow>

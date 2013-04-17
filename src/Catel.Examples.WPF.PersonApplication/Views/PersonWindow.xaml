@@ -1,0 +1,65 @@
+﻿<catel:DataWindow x:Class="Catel.Examples.WPF.PersonApplication.Views.PersonWindow"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                  xmlns:Converters="clr-namespace:Catel.Examples.WPF.PersonApplication.Converters"
+                  xmlns:Models="clr-namespace:Catel.Examples.Models;assembly=Catel.Examples.WPF.Models"
+                  xmlns:catel="http://catel.codeplex.com"
+                  xmlns:ViewModels="clr-namespace:Catel.Examples.WPF.PersonApplication.ViewModels" mc:Ignorable="d" 
+                  d:DataContext="{d:DesignInstance ViewModels:DesignPersonViewModel, IsDesignTimeCreatable=True}">
+    
+    <!-- Resources -->
+    <catel:DataWindow.Resources>
+        <!-- Converters -->
+        <Converters:GenderToIsSelectedConverter x:Key="GenderToIsSelectedConverter" />
+    </catel:DataWindow.Resources>
+    
+    <!-- Content -->
+    <catel:StackGrid>
+        <!-- Row definitions -->
+        <catel:StackGrid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </catel:StackGrid.RowDefinitions>
+        
+        <!-- Column definitions -->
+        <catel:StackGrid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" MinWidth="300" />
+        </catel:StackGrid.ColumnDefinitions>
+        
+        <!-- Gender -->
+        <Label Content="Gender" />
+        <StackPanel Orientation="Horizontal" x:Name="genderStackPanel">
+            <RadioButton Content="Male" IsChecked="{Binding Gender, Converter={StaticResource GenderToIsSelectedConverter}, ConverterParameter={x:Static Models:Gender.Male}, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" 
+                         Validation.ValidationAdornerSiteFor="{Binding ElementName=genderStackPanel}" />
+            <RadioButton Content="Female" IsChecked="{Binding Gender, Converter={StaticResource GenderToIsSelectedConverter}, ConverterParameter={x:Static Models:Gender.Female}, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" 
+                         Validation.ValidationAdornerSiteFor="{Binding ElementName=genderStackPanel}" />
+        </StackPanel>
+        
+        <!-- First name -->
+        <Label Content="First name" />
+        <TextBox Text="{Binding FirstName, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+
+        <!-- Middle name -->
+        <Label Content="Middle name" />
+        <TextBox Text="{Binding MiddleName, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+
+        <!-- Last name -->
+        <Label Content="Last name" />
+        <TextBox Text="{Binding LastName, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+
+        <!-- Custom error -->
+        <Label Content="Custom error" />
+        <TextBox Text="{Binding CustomError, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" IsReadOnly="True"  />
+
+        <!-- Custom error -->
+        <Label Content="Custom defined property" />
+        <TextBox Text="{Binding CustomDefinedProperty, Mode=OneWay}" IsReadOnly="True"  />
+    </catel:StackGrid>
+</catel:DataWindow>

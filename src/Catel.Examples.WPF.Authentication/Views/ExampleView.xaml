@@ -1,0 +1,54 @@
+﻿<catel:DataWindow x:Class="Catel.Examples.WPF.Authentication.Views.ExampleView"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				  xmlns:catel="http://catel.codeplex.com"
+                  xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity">
+
+    <!-- Resources -->
+    <catel:DataWindow.Resources>
+    </catel:DataWindow.Resources>
+
+    <!-- Content -->
+    <catel:StackGrid>
+        <catel:StackGrid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </catel:StackGrid.RowDefinitions>
+
+        <catel:StackGrid.ColumnDefinitions>
+            <ColumnDefinition Width="190" />
+            <ColumnDefinition Width="190" />
+            <ColumnDefinition Width="190" />
+        </catel:StackGrid.ColumnDefinitions>
+
+        <Label Grid.ColumnSpan="3">
+            <TextBlock TextWrapping="Wrap">
+                This example shows UI elements which are only allowed for administrators. All the elements have the Authentication behavior and
+                specify a different action which is visible above the UI element.
+            </TextBlock>
+        </Label>
+
+        <Label Content="Disable when no administrator" />
+        <Label Content="Hide when no administrator" />
+        <Label Content="Collapse when no administrator" />
+
+        <TextBox>
+            <i:Interaction.Behaviors>
+                <catel:Authentication AuthenticationTag="Administrator" Action="Disable" />
+            </i:Interaction.Behaviors>
+        </TextBox>
+
+        <TextBox>
+            <i:Interaction.Behaviors>
+                <catel:Authentication AuthenticationTag="Administrator" Action="Hide" />
+            </i:Interaction.Behaviors>
+        </TextBox>
+
+        <TextBox>
+            <i:Interaction.Behaviors>
+                <catel:Authentication AuthenticationTag="Administrator" Action="Collapse" />
+            </i:Interaction.Behaviors>
+        </TextBox>
+    </catel:StackGrid>
+</catel:DataWindow>

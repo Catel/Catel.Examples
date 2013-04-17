@@ -1,0 +1,68 @@
+﻿<catel:PhoneApplicationPage x:Class="Catel.Examples.WP7.BingMaps.Views.MainPage"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            xmlns:Maps="clr-namespace:Microsoft.Phone.Controls.Maps;assembly=Microsoft.Phone.Controls.Maps"
+                            xmlns:LocalUI="clr-namespace:Catel.Examples.WP7.BingMaps"
+                            xmlns:MSPCMCore="clr-namespace:Microsoft.Phone.Controls.Maps.Core;assembly=Microsoft.Phone.Controls.Maps"
+                            xmlns:catel="clr-namespace:Catel.Phone.Controls;assembly=Catel.MVVM" 
+                            mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+                            FontFamily="{StaticResource PhoneFontFamilyNormal}"
+                            FontSize="{StaticResource PhoneFontSizeNormal}"
+                            Foreground="{StaticResource PhoneForegroundBrush}"
+                            SupportedOrientations="Portrait" Orientation="Portrait"
+                            shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="{Binding Title}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <!--<Grid Grid.Row="1" Margin="12,0,12,0"></Grid>-->
+        <Grid Grid.Row="1" x:Name="ContentPanel">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.13*" />
+                <RowDefinition Height="0.87*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.167*" />
+                <ColumnDefinition Width="0.667*" />
+                <ColumnDefinition Width="0.167*" />
+            </Grid.ColumnDefinitions>
+
+            <Maps:Map Grid.Row="1" Grid.ColumnSpan="3" x:Name="map" CredentialsProvider="developer_api_here" 
+                      Center="{Binding MapCenter}" ZoomLevel="{Binding ZoomLevel, Mode=TwoWay}" 
+                      LocalUI:BindingHelpers.TileSource="{Binding CurrentMap}">
+                <Maps:Map.Mode>
+                    <MSPCMCore:MercatorMode />
+                </Maps:Map.Mode>
+            </Maps:Map>
+
+            <Button Content="&lt;" Command="{Binding NextMap}" />
+
+            <Button Content="&gt;" Grid.Column="2" Command="{Binding NextMap}" />
+            <TextBlock Grid.Column="1" TextWrapping="Wrap" Text="{Binding CurrentMap.Name}" Margin="0,23,0,0" HorizontalAlignment="Center"/>
+        </Grid>
+    </Grid>
+
+    <!--Sample code showing usage of the bindable ApplicationBar of the Phone7.Fx.Preview assembly-->
+        <!--<Preview:BindableApplicationBar Grid.Row="2" IsVisible="True" IsMenuEnabled="False">
+            <Preview:BindableApplicationBarIconButton Command="{Binding Home}" IconUri="/Resources/Images/home.png" Text="Home" />
+            <Preview:BindableApplicationBarIconButton Command="{Binding Add}" IconUri="/Resources/Images/add.png" Text="Add" />
+            <Preview:BindableApplicationBarIconButton Command="{Binding Edit}" IconUri="/Resources/Images/edit.png" Text="Edit" />
+            <Preview:BindableApplicationBarIconButton Command="{Binding Delete}" IconUri="/Resources/Images/delete.png" Text="Delete" />
+        </Preview:BindableApplicationBar>-->
+
+</catel:PhoneApplicationPage>

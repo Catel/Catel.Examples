@@ -1,0 +1,101 @@
+﻿<UserControl 
+    x:Class="ModularityWithCatel.Silverlight.Shell"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:ModularityWithCatel.Silverlight"
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+    mc:Ignorable="d"
+    Loaded="UserControl_Loaded"
+    Width="640" Height="600">
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>            
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2" FontSize="24" Text="Modularity with Catel QuickStart - Silverlight" Margin="5"/>
+        <Border BorderBrush="#FF99A8B6" BorderThickness="2" CornerRadius="2" HorizontalAlignment="Left" Width="230" Grid.Row="1" Grid.RowSpan="2">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="#FFD2E4F5" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <TextBlock TextWrapping="Wrap" Margin="5,10,5,5"><Run Text="This Silverlight application demonstrates the discovery and loading of independent modules using Prism with the Catel container."/><LineBreak/><Run/><LineBreak/><Run Text="In this example different modules are discovered by direct reference or XAML configuration. Hover over a module on the right to see a tooltip describing how it is initialized."/><LineBreak/><Run/><LineBreak/><Run Text="The window below shows the logging trace from the Bootstrapper class."/></TextBlock>
+        </Border>
+        <Canvas Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,0,0" Height="300">
+            <local:ModuleControl x:Name="ModuleAControl" 
+                                 DataContext="{Binding ModuleATrackingState}"
+                                 Height="100" Width="100" 
+                                 Canvas.Top="22"
+                                 VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                 Style="{StaticResource ModuleControlStyle-Simple}" 
+                                 >
+            </local:ModuleControl>
+
+            <local:ModuleControl x:Name="ModuleBControl" 
+                                 DataContext="{Binding ModuleBTrackingState}"
+                                 Height="100" Width="100" 
+                                 Canvas.Left="122" Canvas.Top="22"
+                                 VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                                 Style="{StaticResource ModuleControlStyle-Simple}"
+                                 >
+            </local:ModuleControl>
+
+            <local:ModuleControl x:Name="ModuleCControl" 
+                                 DataContext="{Binding ModuleCTrackingState}"
+                                 RequestModuleLoad="ModuleC_RequestModuleLoad" 
+                                 Height="100" Width="100" 
+                                 Canvas.Left="257" Canvas.Top="22"
+                                 VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                                 Style="{StaticResource ModuleControlStyle-Simple}" 
+                                 >
+            </local:ModuleControl>
+            <local:ModuleControl x:Name="ModuleDControl" 
+                                 DataContext="{Binding ModuleDTrackingState}"
+                                 Height="100" Width="100" 
+                                 Canvas.Top="160"
+                                 VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+                                 Style="{StaticResource ModuleControlStyle-Simple}"                                    
+                                 >
+            </local:ModuleControl>
+            <local:ModuleControl x:Name="ModuleEControl" 
+                                 DataContext="{Binding ModuleETrackingState}"
+                                 RequestModuleLoad="ModuleE_RequestModuleLoad"
+                                 Height="100" Width="100" 
+                                 Canvas.Left="122" Canvas.Top="160" 
+                                 VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                                 Style="{StaticResource ModuleControlStyle-Simple}"                                  
+                                 >
+            </local:ModuleControl>
+
+            <local:ModuleControl x:Name="ModuleFControl"
+                                 DataContext="{Binding ModuleFTrackingState}"
+                                 RequestModuleLoad="ModuleF_RequestModuleLoad"
+                                 Height="100" Width="100" 
+                                 Canvas.Left="257" Canvas.Top="160" 
+                                 VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                                 Style="{StaticResource ModuleControlStyle-Simple}"                                  
+                                 >
+            </local:ModuleControl>
+            <Path Data="M467,141 L467,197.0357" Stretch="Fill" StrokeEndLineCap="Triangle" Stroke="#FF99A8B6" StrokeThickness="20" UseLayoutRounding="False" StrokeStartLineCap="Square" Height="30" Canvas.Left="40" Canvas.Top="126" Width="20"/>
+            <Path Data="M467,141 L467,197.0357" Stretch="Fill" StrokeEndLineCap="Triangle" Stroke="#FF99A8B6" StrokeThickness="20" UseLayoutRounding="False" StrokeStartLineCap="Square" Height="30" Canvas.Left="229" Canvas.Top="194" RenderTransformOrigin="0.5,0.5" Width="20">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+        </Canvas>
+        <TextBox x:Name="TraceTextBox" Grid.ColumnSpan="2" Height="200" Margin="10,0,10,10" TextWrapping="Wrap" VerticalAlignment="Top" VerticalScrollBarVisibility="Visible" AcceptsReturn="True" Grid.Row="2" />
+    </Grid>
+</UserControl>

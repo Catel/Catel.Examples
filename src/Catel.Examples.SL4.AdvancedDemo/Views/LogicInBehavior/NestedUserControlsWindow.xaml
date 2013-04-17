@@ -1,0 +1,77 @@
+﻿<sdk:ChildWindow x:Class="Catel.Examples.AdvancedDemo.Views.LogicInBehavior.NestedUserControlsWindow"
+				 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+				 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				 xmlns:ViewModels="clr-namespace:Catel.Examples.AdvancedDemo.ViewModels"
+				 xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+				 xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+                 xmlns:Views="clr-namespace:Catel.Examples.AdvancedDemo.Views.LogicInBehavior"
+                 xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+                 xmlns:catel="http://catel.codeplex.com">
+
+    <i:Interaction.Behaviors>
+        <catel:WindowBehavior x:Name="mvvmBehavior"
+                                      ViewModelType="ViewModels:NestedUserControlsWindowViewModel"
+                                      SaveAndClose="saveAndCloseButton"
+                                      CancelAndClose="cancelAndCloseButton"/>
+    </i:Interaction.Behaviors>
+
+    <!-- Resources -->
+    <sdk:ChildWindow.Resources>
+
+    </sdk:ChildWindow.Resources>
+
+    <!-- Content -->
+    <catel:InfoBarMessageControl>
+        <Grid>
+            <catel:WarningAndErrorValidator Source="{Binding}" />
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" TextWrapping="Wrap">
+                    This example shows how to use nested user controls and let each nested user control
+                    have it's own validation but still use the InfoBarMessageControl of the window.
+                    <LineBreak /><LineBreak />
+                    Clear the name of any house or room (which is a nested user control of a house) and see how
+                    the validation of a nested user control bubbles up to the InfoBarMessageControl.
+                    <LineBreak /><LineBreak />
+                    If you want to disable the OK button when a nested view model contains any errors, either bind
+                    the save button to a command on the view model or handle it in the code-behind.
+                    <LineBreak /><LineBreak />
+                    The example controls implement IViewModelContainer. You can choose not to do this, but then
+                    it is important to disable SupportParentViewModelContainers for performance reasons (otherwise,
+                    the behavior will keep searching the visual tree for the parent view model).
+                </TextBlock>
+
+                <ScrollViewer Grid.Row="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <ItemsControl Grid.Column="1" ItemsSource="{Binding Houses}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <Views:HouseView DataContext="{Binding}" />
+                                        <Line Height="2" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </Grid>
+                </ScrollViewer>
+
+                <toolkit:WrapPanel Grid.Row="2" Style="{StaticResource RightAlignedButtonsWrapPanelStyle}">
+                    <Button x:Name="saveAndCloseButton" Content="OK" Style="{StaticResource RightAlignedFixedSizeButtonStyle}" />
+                    <Button x:Name="cancelAndCloseButton" Content="Cancel" Style="{StaticResource RightAlignedFixedSizeButtonStyle}" />
+                </toolkit:WrapPanel>
+            </Grid>
+        </Grid>
+    </catel:InfoBarMessageControl>
+</sdk:ChildWindow>

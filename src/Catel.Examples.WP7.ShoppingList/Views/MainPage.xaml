@@ -1,0 +1,58 @@
+﻿<catel:PhoneApplicationPage x:Class="Catel.Examples.WP7.ShoppingList.Views.MainPage"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            xmlns:Preview="clr-namespace:Phone7.Fx.Mango;assembly=Phone7.Fx.Mango"
+                            xmlns:catel="clr-namespace:Catel.Phone.Controls;assembly=Catel.MVVM"
+                            mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+                            FontFamily="{StaticResource PhoneFontFamilyNormal}"
+                            FontSize="{StaticResource PhoneFontSizeNormal}"
+                            Foreground="{StaticResource PhoneForegroundBrush}"
+                            SupportedOrientations="Portrait" Orientation="Portrait"
+                            shell:SystemTray.IsVisible="True">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="Shopping list" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="{Binding Title}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <ListBox Grid.Row="0" ItemsSource="{Binding ShoppingLists}" SelectedItem="{Binding SelectedShoppingList, Mode=TwoWay}" 
+                     DisplayMemberPath="Name" />
+        </Grid>
+
+        <Preview:BindableApplicationBar Grid.Row="2" IsVisible="True" IsMenuEnabled="True">
+            <Preview:BindableApplicationBarIconButton Command="{Binding ManageShoppingLists}" Text="Shopping lists"
+                                                  IconUri="/Resources/Images/shoppinglist.png" />
+            <Preview:BindableApplicationBarIconButton Command="{Binding ManageShops}" Text="Shops" 
+                                                  IconUri="/Resources/Images/shop.png" />
+
+            <Preview:BindableApplicationBar.MenuItems>
+                <Preview:BindableApplicationBarMenuItem Command="{Binding ManageShoppingLists}" Text="Shopping lists" />
+                <Preview:BindableApplicationBarMenuItem Command="{Binding ManageShops}" Text="Shops" />
+            </Preview:BindableApplicationBar.MenuItems>
+        </Preview:BindableApplicationBar>
+    </Grid>
+
+</catel:PhoneApplicationPage>

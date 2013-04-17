@@ -1,0 +1,61 @@
+﻿<catel:DataWindow x:Class="Catel.Examples.WPF.PersonApplication.Views.MainWindow"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:catel="http://catel.codeplex.com"
+                  xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+                  MinHeight="350" MinWidth="525" ShowInTaskbar="True" 
+                  SizeToContent="Manual" WindowStartupLocation="Manual" ResizeMode="CanResizeWithGrip" WindowState="Maximized"
+                  Icon="/Catel.Examples.WPF.PersonApplication;component/Resources/Images/Catel.png">
+    
+    <!-- Resources -->
+    <Window.Resources>
+    </Window.Resources>
+    
+    <!-- Content -->
+    <DockPanel LastChildFill="True">
+        <!-- Details and actions -->
+        <StackPanel DockPanel.Dock="Right" Orientation="Vertical">
+            <!-- Details -->
+            <!--<GroupBox Header="Details">
+                
+            </GroupBox>-->
+            
+            <!-- Buttons -->
+            <WrapPanel>
+                <!-- Added -->
+                <Button Command="{Binding Add}" Style="{DynamicResource ImageButtonStyle}" ToolTip="Add">
+                    <Image Source="/Catel.Examples.WPF.PersonApplication;component/Resources/Images/add.png"/>
+                </Button>
+
+                <!-- Edit -->
+                <Button Command="{Binding Edit}" Style="{DynamicResource ImageButtonStyle}" ToolTip="Edit">
+                    <Image Source="/Catel.Examples.WPF.PersonApplication;component/Resources/Images/edit.png"/>
+                </Button>
+
+                <!-- Remove -->
+                <Button Command="{Binding Remove}" Style="{DynamicResource ImageButtonStyle}" ToolTip="Remove">
+                    <Image Source="/Catel.Examples.WPF.PersonApplication;component/Resources/Images/delete.png"/>
+                </Button>
+            </WrapPanel>
+        </StackPanel>
+
+        <!-- List of persons -->
+        <ListBox DockPanel.Dock="Left" ItemsSource="{Binding PersonCollection}" SelectedItem="{Binding SelectedPerson}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseDoubleClick">
+                    <catel:EventToCommand Command="{Binding Edit}" DisableAssociatedObjectOnCannotExecute="False" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{Binding FirstName}" />
+                        <Label Content="{Binding MiddleName}" />
+                        <Label Content="{Binding LastName}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </DockPanel>
+</catel:DataWindow>

@@ -1,0 +1,13 @@
+﻿<Application x:Class="Catel.Examples.WPF.Prism.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Application.Resources>	
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- Generic Catel theme -->
+                <ResourceDictionary Source="/Catel.Extensions.Controls;component/themes/generic.xaml" />
+                <ResourceDictionary Source="/Catel.Examples.WPF.Prism;component/themes/ExampleListboxItemStyle.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+    </Application.Resources>
+</Application>

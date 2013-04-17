@@ -1,0 +1,120 @@
+﻿<catel:PhoneApplicationPage x:Class="Catel.Examples.WP7.Sensors.Views.SensorsPage"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            xmlns:Controls="clr-namespace:Catel.Windows.Controls;assembly=Catel.Extensions.Controls"
+                            xmlns:catel="clr-namespace:Catel.Phone.Controls;assembly=Catel.MVVM" 
+                            mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+                            FontFamily="{StaticResource PhoneFontFamilyNormal}"
+                            FontSize="{StaticResource PhoneFontSizeNormal}"
+                            Foreground="{StaticResource PhoneForegroundBrush}"
+                            SupportedOrientations="Portrait" Orientation="Portrait"
+                            shell:SystemTray.IsVisible="True">	
+	
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="{Binding Title}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <ScrollViewer x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <Controls:StackGrid>
+                <Controls:StackGrid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />                    
+                </Controls:StackGrid.RowDefinitions>
+
+                <Controls:StackGrid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" MinWidth="190" />
+                    <ColumnDefinition Width="*" />
+                </Controls:StackGrid.ColumnDefinitions>
+
+                <!-- Mode -->
+                <TextBlock Text="Mode" />
+                <TextBlock Text="{Binding ServicesMode}" />
+
+                <!-- Accelerator -->
+                <TextBlock Grid.ColumnSpan="2" Text="Accelerometer" Style="{StaticResource PhoneTextTitle2Style}" />
+
+                <TextBlock Text="X" />
+                <TextBlock Text="{Binding AccelerometerX}" />
+
+                <TextBlock Text="Y" />
+                <TextBlock Text="{Binding AccelerometerY}" />
+
+                <TextBlock Text="Z" />
+                <TextBlock Text="{Binding AccelerometerZ}" />
+
+                <!-- Compass -->
+                <TextBlock Grid.ColumnSpan="2" Text="Compass" Style="{StaticResource PhoneTextTitle2Style}" />
+
+                <TextBlock Text="Magnetic heading" />
+                <TextBlock Text="{Binding CompassMagneticHeading}" />
+
+                <TextBlock Text="True heading" />
+                <TextBlock Text="{Binding CompassTrueHeading}" />
+
+                <TextBlock Text="Heading accuracy" />
+                <TextBlock Text="{Binding CompassHeadingAccuracy}" />
+
+                <!-- Gyroscope -->
+                <TextBlock Grid.ColumnSpan="2" Text="Gyroscope" Style="{StaticResource PhoneTextTitle2Style}" />
+
+                <TextBlock Text="X" />
+                <TextBlock Text="{Binding GyroscopeX}" />
+
+                <TextBlock Text="Y" />
+                <TextBlock Text="{Binding GyroscopeY}" />
+
+                <TextBlock Text="Z" />
+                <TextBlock Text="{Binding GyroscopeZ}" />
+
+                <!-- Location -->
+                <TextBlock Grid.ColumnSpan="2" Text="Location" Style="{StaticResource PhoneTextTitle2Style}" />
+
+                <TextBlock Text="Latitude" />
+                <TextBlock Text="{Binding LocationLatitude}" />
+
+                <TextBlock Text="Longitude" />
+                <TextBlock Text="{Binding LocationLongitude}" />
+
+                <TextBlock Text="Altitude" />
+                <TextBlock Text="{Binding LocationAltitude}" />
+
+            </Controls:StackGrid>
+        </ScrollViewer>
+    </Grid>	
+
+</catel:PhoneApplicationPage>

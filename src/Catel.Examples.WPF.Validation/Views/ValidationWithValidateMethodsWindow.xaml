@@ -1,0 +1,38 @@
+﻿<catel:DataWindow x:Class="Catel.Examples.WPF.Validation.Views.ValidationWithValidateMethodsWindow"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				  xmlns:catel="http://catel.codeplex.com">
+    
+    <!-- Resources -->
+    <catel:DataWindow.Resources>
+
+    </catel:DataWindow.Resources>
+
+    <!-- Content -->
+    <catel:StackGrid>
+        <!-- Row definitions -->
+        <catel:StackGrid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </catel:StackGrid.RowDefinitions>
+
+        <!-- Column definitions -->
+        <catel:StackGrid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" MinWidth="300" />
+        </catel:StackGrid.ColumnDefinitions>
+
+        <!-- First name -->
+        <Label Content="First name" />
+        <TextBox Text="{Binding FirstName, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+
+        <!-- Middle name -->
+        <Label Content="Middle name" />
+        <TextBox Text="{Binding MiddleName, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+
+        <!-- Last name -->
+        <Label Content="Last name" />
+        <TextBox Text="{Binding LastName, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+    </catel:StackGrid>
+</catel:DataWindow>

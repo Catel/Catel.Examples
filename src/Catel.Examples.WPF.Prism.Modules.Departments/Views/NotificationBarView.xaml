@@ -1,0 +1,15 @@
+﻿<catel:UserControl x:Class="Catel.Examples.WPF.Prism.Modules.Departments.Views.NotificationBarView"
+			       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+			       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			       xmlns:catel="http://catel.codeplex.com">
+    
+    <!-- Resources -->
+    <UserControl.Resources>
+    </UserControl.Resources>
+
+    <!-- Content -->
+    <Grid Height="25">
+        <TextBlock Height="20" HorizontalAlignment="Left" Name="textBlock1" Text="Last Event :" VerticalAlignment="Top" Width="68" Margin="1,3,0,0" FontWeight="Bold" Foreground="#FFE56161" />
+        <TextBlock FontWeight="Bold" Height="20" HorizontalAlignment="Left" Margin="74,4,0,0" Name="textBlock2" Text="{Binding EventMessage}" VerticalAlignment="Top"  />
+    </Grid>
+</catel:UserControl>

@@ -1,0 +1,28 @@
+﻿<catel:UserControl x:Class="Catel.Examples.WPF.MasterDetail.Views.PersonMasterView"
+                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				   xmlns:catel="http://catel.codeplex.com"
+                   xmlns:Views="clr-namespace:Catel.Examples.WPF.MasterDetail.Views">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <ListBox Grid.Row="0" ItemsSource="{Binding Persons}" SelectedItem="{Binding SelectedPerson}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{Binding FirstName}" />
+                        <Label Content="{Binding MiddleName}" />
+                        <Label Content="{Binding LastName}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Views:PersonDetailView Grid.Row="1" DataContext="{Binding SelectedPerson}" />
+    </Grid>
+    
+</catel:UserControl>

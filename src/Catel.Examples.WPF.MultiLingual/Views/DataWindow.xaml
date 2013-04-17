@@ -1,0 +1,28 @@
+﻿<catel:DataWindow x:Class="Catel.Examples.WPF.MultiLingual.Views.DataWindow"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				  xmlns:catel="http://catel.codeplex.com">
+    
+    <!-- Resources -->
+    <catel:DataWindow.Resources>
+    </catel:DataWindow.Resources>
+
+    <!-- Content -->
+    <catel:StackGrid>
+        <catel:StackGrid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </catel:StackGrid.RowDefinitions>
+        
+        <catel:StackGrid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" MinWidth="400" />
+        </catel:StackGrid.ColumnDefinitions>
+        
+        <Label Content="Name" />
+        <TextBox Text="{Binding Name, NotifyOnValidationError=True, ValidatesOnDataErrors=True}" />
+        
+        <Label Content="Code" />
+        <TextBox Text="{Binding Code, NotifyOnValidationError=True, ValidatesOnDataErrors=True}" />
+    </catel:StackGrid>
+</catel:DataWindow>

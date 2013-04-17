@@ -1,0 +1,43 @@
+﻿<catel:Page x:Class="Catel.Examples.WinRT.Advanced.Views.MainPage"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:catel="using:Catel.Windows.Controls" 
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d">
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="3" TextWrapping="Wrap" FontSize="16" Margin="12">
+            This demo application shows a lot of advaned features of Catel. One of the example is the difference between
+            using MVVM providers as behavior or implementing the logic in the view base. Happy clicking around :)
+        </TextBlock>
+
+        <!-- Windows -->
+        <StackPanel Grid.Row="1" Grid.Column="0" Margin="12">
+            <TextBlock Style="{StaticResource HeaderTextStyle}" Text="Yet undetermined" />
+        </StackPanel>
+
+        <!-- User controls -->
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="12">
+            <TextBlock Style="{StaticResource HeaderTextStyle}" Text="User controls" />
+            <Button Command="{Binding ShowNestedUserControls}" Content="Nested user controls" Style="{StaticResource DefaultButtonStyle}"  />
+        </StackPanel>
+
+        <!-- Misc -->
+        <StackPanel Grid.Row="1" Grid.Column="2" Margin="12">
+            <TextBlock Style="{StaticResource HeaderTextStyle}" Text="Miscellaneous" />
+            <CheckBox Content="Is IPleaseWaitService indeterminate" IsChecked="{Binding IsPleaseWaitIndeterminate}" Margin="12" />
+            <Button Command="{Binding ShowPleaseWaitWindowViaServiceLocator}" Content="PleaseWaitWindow via ServiceLocator" Style="{StaticResource DefaultButtonStyle}"  />
+        </StackPanel>
+    </Grid>
+</catel:Page>
