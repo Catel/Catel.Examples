@@ -1,4 +1,4 @@
 Catel Examples readme
 =====================
 
-For more information, visit http://catelexamples.codeplex.com
+For more information, visit https://github.com/Catel/Catel.Examples
