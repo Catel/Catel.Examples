@@ -1,0 +1,28 @@
+﻿<catel:DataWindow x:Class="Catel.Examples.MvvmCommunicationStyles.Views.MessageMediatorWindow"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				  xmlns:catel="http://catel.codeplex.com" xmlns:views="clr-namespace:Catel.Examples.MvvmCommunicationStyles.Views">
+    
+    <!-- Resources -->
+    <catel:DataWindow.Resources>
+    </catel:DataWindow.Resources>
+
+    <!-- Content -->
+    <catel:StackGrid>
+        <catel:StackGrid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </catel:StackGrid.RowDefinitions>
+
+        <catel:StackGrid.ColumnDefinitions>
+            <ColumnDefinition Width="500" />
+            <ColumnDefinition Width="500" />
+        </catel:StackGrid.ColumnDefinitions>
+
+        <Label FontSize="16" FontWeight="Bold" Content="View A" HorizontalContentAlignment="Center" />
+        <Label FontSize="16" FontWeight="Bold" Content="View B" HorizontalContentAlignment="Center" />
+
+        <views:MessageMediatorAView />
+        <views:MessageMediatorBView />
+    </catel:StackGrid>
+</catel:DataWindow>

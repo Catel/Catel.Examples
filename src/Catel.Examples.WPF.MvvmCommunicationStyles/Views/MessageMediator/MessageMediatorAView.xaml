@@ -1,0 +1,32 @@
+﻿<catel:UserControl x:Class="Catel.Examples.MvvmCommunicationStyles.Views.MessageMediatorAView"
+                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				   xmlns:catel="http://catel.codeplex.com">
+    
+    <!-- Resources -->
+    <UserControl.Resources>
+    </UserControl.Resources>
+
+    <!-- Content -->
+    <catel:StackGrid>
+        <catel:StackGrid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="250" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="250" />
+            <RowDefinition Height="Auto" />
+        </catel:StackGrid.RowDefinitions>
+
+        <Label Content="Received property changes" />
+        <ListBox ItemsSource="{Binding ReceivedPropertyChanges}" />
+
+        <Label Content="Received commands" />
+        <ListBox ItemsSource="{Binding ReceivedCommands}" />
+
+        <StackPanel>
+            <Button Click="OnChangePropAClicked" Content="Change property 'PropA'" />
+            <Button Click="OnChangePropBClicked" Content="Change property 'PropB'" />
+            <Button Command="{Binding ExampleCommand}" Content="Execute command" />
+        </StackPanel>
+    </catel:StackGrid>
+</catel:UserControl>
