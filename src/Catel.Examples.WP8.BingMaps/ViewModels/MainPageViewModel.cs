@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="MainPageViewModel.cs" company="Catel development team">
-//   Copyright (c) 2008 - 2012 Catel development team. All rights reserved.
+//   Copyright (c) 2008 - 2013 Catel development team. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -11,6 +11,7 @@ namespace Catel.Examples.WP8.BingMaps.ViewModels
     using System.Device.Location;
     using Catel.Data;
     using Data;
+    using IoC;
     using MVVM;
     using MVVM.Services;
     using MVVM.Services.Test;

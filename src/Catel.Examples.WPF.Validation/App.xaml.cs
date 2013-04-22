@@ -8,6 +8,7 @@ namespace Catel.Examples.WPF.Validation
 {
     using System.Windows;
     using Data;
+    using IoC;
     using Logging;
     using Validation;
     using Windows;

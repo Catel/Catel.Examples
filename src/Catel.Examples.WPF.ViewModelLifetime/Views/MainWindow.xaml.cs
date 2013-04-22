@@ -8,6 +8,7 @@ namespace Catel.Examples.WPF.ViewModelLifetime.Views
 {
     using System.Windows;
     using System.Windows.Controls;
+    using IoC;
     using Services;
     using Windows;
     using Windows.Controls;

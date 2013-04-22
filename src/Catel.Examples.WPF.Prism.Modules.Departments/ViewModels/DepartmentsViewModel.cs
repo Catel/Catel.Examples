@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="DepartmentsViewModel.cs" company="Catel development team">
-//   Copyright (c) 2008 - 2012 Catel development team. All rights reserved.
+//   Copyright (c) 2008 - 2013 Catel development team. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
@@ -12,6 +12,7 @@ namespace Catel.Examples.WPF.Prism.Modules.Departments.ViewModels
     using MVVM.Services;
     using Models;
     using Services;
+    using Catel.IoC;
     using ViewModelBase = Prism.ViewModels.ViewModelBase;
 
     /// <summary>
@@ -116,7 +117,7 @@ namespace Catel.Examples.WPF.Prism.Modules.Departments.ViewModels
         /// </summary>
         public static readonly PropertyData SelectedDepartmentProperty = RegisterProperty("SelectedDepartment", typeof (IDepartment), null, (sender, e) =>
             {
-                var departmentTracker = IoC.ServiceLocator.Default.ResolveType<IDepartmentTracker>();
+                var departmentTracker = Catel.IoC.ServiceLocator.Default.ResolveType<IDepartmentTracker>();
                 departmentTracker.CurrentDepartment = e.NewValue as IDepartment;
             });
 

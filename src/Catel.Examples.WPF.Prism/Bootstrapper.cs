@@ -1,11 +1,16 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Bootstrapper.cs" company="Catel development team">
+//   Copyright (c) 2008 - 2013 Catel development team. All rights reserved.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
 namespace Catel.Examples.WPF.Prism
 {
+    using Models;
+    using Views;
+    using IoC;
     using Microsoft.Practices.Prism.Modularity;
     using Microsoft.Practices.Prism.Regions;
     using Microsoft.Practices.Unity;
-    using Models;
-    using Views;
 
     /// <summary>
     /// The bootstrapper.
@@ -37,7 +42,9 @@ namespace Catel.Examples.WPF.Prism
         /// Configures the default region adapter mappings to use in the application, in order 
         /// to adapt UI controls defined in XAML to use a region and register it automatically.
         /// </summary>
-        /// <returns>The RegionAdapterMappings instance containing all the mappings.</returns>
+        /// <returns>
+        /// The RegionAdapterMappings instance containing all the mappings.
+        /// </returns>
         protected override RegionAdapterMappings ConfigureRegionAdapterMappings()
         {
             // Call base method

@@ -7,6 +7,7 @@
 namespace Catel.Examples.WPF.Authentication
 {
     using System.Windows;
+    using IoC;
     using MVVM;
     using Windows;
 

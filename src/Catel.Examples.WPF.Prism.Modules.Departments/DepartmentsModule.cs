@@ -1,9 +1,15 @@
-﻿namespace Catel.Examples.WPF.Prism.Modules.Departments
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="DepartmentsModule.cs" company="Catel development team">
+//   Copyright (c) 2008 - 2013 Catel development team. All rights reserved.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
+namespace Catel.Examples.WPF.Prism.Modules.Departments
 {
+    using Views;
+    using Services;
+    using IoC;
     using Catel.Modules;
     using Microsoft.Practices.Prism.Regions;
-    using Services;
-    using Views;
 
     /// <summary>
     /// The departments module.
