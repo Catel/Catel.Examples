@@ -1,0 +1,43 @@
+﻿<catel:DataWindow x:Class="Catel.Examples.AdvancedDemo.Views.ThrottlingWindow"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				  xmlns:catel="http://catel.codeplex.com"
+                  MaxWidth="500">
+
+    <!-- Resources -->
+    <catel:DataWindow.Resources>
+    </catel:DataWindow.Resources>
+
+    <!-- Content -->
+    <catel:StackGrid>
+        <catel:StackGrid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </catel:StackGrid.RowDefinitions>
+
+        <catel:StackGrid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </catel:StackGrid.ColumnDefinitions>
+
+        <TextBlock catel:StackGrid.ColumnSpan="2" TextWrapping="Wrap">
+            Throttling allows the customization of the number of change notifications which are being sent to the UI. 
+            You can change the throttling rate which is the interval in which the property change notifications are being added.
+        </TextBlock>
+
+        <TextBlock Text="Throttling rate: "/>
+        <Slider Value="{Binding Throttling, Mode=TwoWay}" Minimum="0" Maximum="2500" />
+
+        <TextBlock Text="Throttling rate value: "/>
+        <TextBlock Text="{Binding Throttling}"/>
+
+        <TextBlock Text="Counter: "/>
+        <TextBlock Text="{Binding Counter}" />
+
+        <TextBlock Text="Frame rate: "/>
+        <TextBlock Text="{Binding FrameRate}" />
+    </catel:StackGrid>
+</catel:DataWindow>

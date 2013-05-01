@@ -54,7 +54,8 @@
                 <Button Command="{Binding ShowPleaseWaitWindowViaMEF}" Content="PleaseWaitWindow via MEF" Style="{StaticResource FixedSizeButtonStyle}" />
                 <Button Command="{Binding ShowPleaseWaitWindowViaUnity}" Content="PleaseWaitWindow via Unity" Style="{StaticResource FixedSizeButtonStyle}" />
 
-                <Button Command="{Binding ShowWindowWithBehaviors}" Content="Behaviors" Style="{StaticResource FixedSizeButtonStyle}" />
+                <Button Command="{Binding ShowWindowWithBehaviors}" Content="Behaviors" Style="{StaticResource FixedSizeButtonStyle}" />                
+                <Button Command="{Binding ShowThrottling}" Content="Throttling" Style="{StaticResource FixedSizeButtonStyle}" />
             </StackPanel>
         </GroupBox>
     </Grid>

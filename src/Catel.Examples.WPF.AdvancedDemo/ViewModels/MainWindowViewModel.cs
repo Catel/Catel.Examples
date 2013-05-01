@@ -1,7 +1,6 @@
 ﻿namespace Catel.Examples.AdvancedDemo.ViewModels
 {
     using System;
-    using System.Collections.ObjectModel;
     using System.ComponentModel.Composition;
     using System.Windows.Threading;
     using Data;
@@ -15,6 +14,8 @@
     /// </summary>
     public class MainWindowViewModel : ViewModelBase
     {
+        private readonly IUIVisualizerService _uiVisualizerService;
+
         #region Variables
         #endregion
 
@@ -24,6 +25,8 @@
         /// </summary>
         public MainWindowViewModel()
         {
+            _uiVisualizerService = ServiceLocator.ResolveType<IUIVisualizerService>();
+
             ShowWindowLogicInViewBase = new Command(OnShowWindowLogicInViewBaseExecute);
             ShowWindowLogicInBehavior = new Command(OnShowWindowLogicInBehaviorExecute);
 
@@ -35,6 +38,7 @@
             ShowPleaseWaitWindowViaUnity = new Command(OnShowPleaseWaitWindowViaUnityExecute);
 
             ShowWindowWithBehaviors = new Command(OnShowWindowWithBehaviorsExecute);
+            ShowThrottling = new Command(OnShowThrottlingExecute);
 
             // The external containers such as Unity and MEF are registered in App.xaml
             IoCHelper.MefContainer.SatisfyImportsOnce(this);
@@ -93,10 +97,9 @@
         /// </summary>
         private void OnShowWindowLogicInViewBaseExecute()
         {
-            var uiVisualizerService = GetService<IUIVisualizerService>();
-            uiVisualizerService.Unregister(typeof(DemoWindowViewModel));
-            uiVisualizerService.Register(typeof(DemoWindowViewModel), typeof(Views.LogicInViewBase.DemoWindow));
-            uiVisualizerService.ShowDialog(new DemoWindowViewModel());
+            _uiVisualizerService.Unregister(typeof(DemoWindowViewModel));
+            _uiVisualizerService.Register(typeof(DemoWindowViewModel), typeof(Views.LogicInViewBase.DemoWindow));
+            _uiVisualizerService.ShowDialog(new DemoWindowViewModel());
         }
 
         /// <summary>
@@ -109,10 +112,9 @@
         /// </summary>
         private void OnShowWindowLogicInBehaviorExecute()
         {
-            var uiVisualizerService = GetService<IUIVisualizerService>();
-            uiVisualizerService.Unregister(typeof(DemoWindowViewModel));
-            uiVisualizerService.Register(typeof(DemoWindowViewModel), typeof(Views.LogicInBehavior.DemoWindow));
-            uiVisualizerService.ShowDialog(new DemoWindowViewModel());
+            _uiVisualizerService.Unregister(typeof(DemoWindowViewModel));
+            _uiVisualizerService.Register(typeof(DemoWindowViewModel), typeof(Views.LogicInBehavior.DemoWindow));
+            _uiVisualizerService.ShowDialog(new DemoWindowViewModel());
         }
 
         /// <summary>
@@ -125,10 +127,9 @@
         /// </summary>
         private void OnShowNestedUserControlsLogicInViewBaseExecute()
         {
-            var uiVisualizerService = GetService<IUIVisualizerService>();
-            uiVisualizerService.Unregister(typeof(NestedUserControlsWindowViewModel));
-            uiVisualizerService.Register(typeof(NestedUserControlsWindowViewModel), typeof(Views.LogicInViewBase.NestedUserControlsWindow));
-            uiVisualizerService.ShowDialog(new NestedUserControlsWindowViewModel());
+            _uiVisualizerService.Unregister(typeof(NestedUserControlsWindowViewModel));
+            _uiVisualizerService.Register(typeof(NestedUserControlsWindowViewModel), typeof(Views.LogicInViewBase.NestedUserControlsWindow));
+            _uiVisualizerService.ShowDialog(new NestedUserControlsWindowViewModel());
         }
 
         /// <summary>
@@ -141,10 +142,9 @@
         /// </summary>
         private void OnShowNestedUserControlsLogicInBehaviorExecute()
         {
-            var uiVisualizerService = GetService<IUIVisualizerService>();
-            uiVisualizerService.Unregister(typeof(NestedUserControlsWindowViewModel));
-            uiVisualizerService.Register(typeof(NestedUserControlsWindowViewModel), typeof(Views.LogicInBehavior.NestedUserControlsWindow));
-            uiVisualizerService.ShowDialog(new NestedUserControlsWindowViewModel());
+            _uiVisualizerService.Unregister(typeof(NestedUserControlsWindowViewModel));
+            _uiVisualizerService.Register(typeof(NestedUserControlsWindowViewModel), typeof(Views.LogicInBehavior.NestedUserControlsWindow));
+            _uiVisualizerService.ShowDialog(new NestedUserControlsWindowViewModel());
         }
 
         /// <summary>
@@ -196,8 +196,20 @@
         /// </summary>
         private void OnShowWindowWithBehaviorsExecute()
         {
-            var uiVisualizerService = GetService<IUIVisualizerService>();
-            uiVisualizerService.ShowDialog(new BehaviorsWindowViewModel());
+            _uiVisualizerService.ShowDialog(new BehaviorsWindowViewModel());
+        }
+
+        /// <summary>
+        /// Gets the ShowThrottling command.
+        /// </summary>
+        public Command ShowThrottling { get; private set; }
+
+        /// <summary>
+        /// Method to invoke when the ShowThrottling command is executed.
+        /// </summary>
+        private void OnShowThrottlingExecute()
+        {
+            _uiVisualizerService.ShowDialog(new ThrottlingViewModel());
         }
         #endregion
 
