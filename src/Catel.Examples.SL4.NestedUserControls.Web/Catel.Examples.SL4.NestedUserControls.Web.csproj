@@ -27,7 +27,7 @@
     <IISExpressUseClassicPipelineMode />
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
-    <FodyPath>..\..\lib\Fody.1.13.7.0</FodyPath>
+    <FodyPath>..\..\lib\Fody.1.13.8.0</FodyPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -49,11 +49,11 @@
   <ItemGroup>
     <Reference Include="Catel.Core, Version=3.6.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Catel.Core.3.5.1305020023-beta\lib\NET40\Catel.Core.dll</HintPath>
+      <HintPath>..\..\lib\Catel.Core.3.5.1306110931-beta\lib\NET40\Catel.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Obsolete">
-      <HintPath>..\..\lib\Obsolete.Fody.1.6.1.1\lib\NET40\Obsolete.dll</HintPath>
+      <HintPath>..\..\lib\Obsolete.Fody.1.6.2.0\Lib\NET35\Obsolete.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System.Web.DynamicData" />

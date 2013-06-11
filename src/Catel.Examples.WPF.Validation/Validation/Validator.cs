@@ -1,8 +1,14 @@
-﻿namespace Catel.Examples.WPF.Validation.Validation
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Validator.cs" company="Catel development team">
+//   Copyright (c) 2008 - 2013 Catel development team. All rights reserved.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
+namespace Catel.Examples.WPF.Validation.Validation
 {
     using System.Collections.Generic;
-    using Data;
-    using ViewModels;
+
+    using Catel.Data;
+    using Catel.Examples.WPF.Validation.ViewModels;
 
     /// <summary>
     /// Default validator for this example application.
@@ -13,11 +19,19 @@
         /// Validates the fields of the specified instance. The results must be added to the list of validation
         /// results.
         /// </summary>
-        /// <param name="instance">The instance to validate.</param>
-        /// <param name="validationResults">The validation results.</param>
-        /// <exception cref="T:System.ArgumentNullException">The <paramref name="instance"/> is <c>null</c>.</exception>
-        /// <exception cref="T:System.ArgumentNullException">The <paramref name="validationResults"/> is <c>null</c>.</exception>
-        public override void ValidateFields(ValidationInIValidatorViewModel instance, List<IFieldValidationResult> validationResults)
+        /// <param name="instance">
+        /// The instance to validate.
+        /// </param>
+        /// <param name="validationResults">
+        /// The validation results.
+        /// </param>
+        /// <exception cref="T:System.ArgumentNullException">
+        /// The <paramref name="instance"/> is <c>null</c>.
+        /// </exception>
+        /// <exception cref="T:System.ArgumentNullException">
+        /// The <paramref name="validationResults"/> is <c>null</c>.
+        /// </exception>
+        protected override void ValidateFields(ValidationInIValidatorViewModel instance, List<IFieldValidationResult> validationResults)
         {
             if (string.IsNullOrEmpty(instance.FirstName))
             {
@@ -34,11 +48,19 @@
         /// Validates the business rules of the specified instance. The results must be added to the list of validation
         /// results.
         /// </summary>
-        /// <param name="instance">The instance to validate.</param>
-        /// <param name="validationResults">The validation results.</param>
-        /// <exception cref="T:System.ArgumentNullException">The <paramref name="instance"/> is <c>null</c>.</exception>
-        /// <exception cref="T:System.ArgumentNullException">The <paramref name="validationResults"/> is <c>null</c>.</exception>
-        public override void ValidateBusinessRules(ValidationInIValidatorViewModel instance, List<IBusinessRuleValidationResult> validationResults)
+        /// <param name="instance">
+        /// The instance to validate.
+        /// </param>
+        /// <param name="validationResults">
+        /// The validation results.
+        /// </param>
+        /// <exception cref="T:System.ArgumentNullException">
+        /// The <paramref name="instance"/> is <c>null</c>.
+        /// </exception>
+        /// <exception cref="T:System.ArgumentNullException">
+        /// The <paramref name="validationResults"/> is <c>null</c>.
+        /// </exception>
+        protected override void ValidateBusinessRules(ValidationInIValidatorViewModel instance, List<IBusinessRuleValidationResult> validationResults)
         {
             // No business rules (yet)
         }

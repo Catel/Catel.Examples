@@ -26,6 +26,8 @@ namespace Catel.Examples.WPF.Prism
         {
             base.ConfigureContainer();
 
+            Container.CanResolveNonAbstractTypesWithoutRegistration = true;
+
             Container.RegisterType<IDepartmentRepository, DepartmentRepository>();
             Container.RegisterType<IEmployeeRepository, EmployeeRepository>();
         }
