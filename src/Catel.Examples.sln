@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{CF5AF829-013
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{49D9F98D-2E51-4A92-896E-E24CFD25BF1E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPF", "WPF", "{0C9CBDD8-8ED0-4B16-8C1E-34C86FBECB9C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NET", "NET", "{0C9CBDD8-8ED0-4B16-8C1E-34C86FBECB9C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Silverlight", "Silverlight", "{618CE1C2-8C54-4B3A-9233-16B1BD0B8CC2}"
 EndProject
@@ -62,108 +62,103 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{962F9249-289B-4169-A135-617899AC698D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.SL.AdvancedDemo", "Catel.Examples.SL.AdvancedDemo\Catel.Examples.SL.AdvancedDemo.csproj", "{CBB43111-8BFE-48C7-94EF-0829B18D53F1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.SL.AdvancedDemo", "SL\Catel.Examples.SL.AdvancedDemo\Catel.Examples.SL.AdvancedDemo.csproj", "{CBB43111-8BFE-48C7-94EF-0829B18D53F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.SL.AdvancedDemo.Web", "Catel.Examples.SL.AdvancedDemo.Web\Catel.Examples.SL.AdvancedDemo.Web.csproj", "{6CB5C718-7DC1-482B-B6B9-8BB3565B6248}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.SL.AdvancedDemo.Web", "SL\Catel.Examples.SL.AdvancedDemo.Web\Catel.Examples.SL.AdvancedDemo.Web.csproj", "{6CB5C718-7DC1-482B-B6B9-8BB3565B6248}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.SL.NavigationApplication", "Catel.Examples.SL.NavigationApplication\Catel.Examples.SL.NavigationApplication.csproj", "{5B0F9D11-964C-4911-A5F5-771BF0245058}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.SL.NavigationApplication", "SL\Catel.Examples.SL.NavigationApplication\Catel.Examples.SL.NavigationApplication.csproj", "{5B0F9D11-964C-4911-A5F5-771BF0245058}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.SL.NavigationApplication.Web", "Catel.Examples.SL.NavigationApplication.Web\Catel.Examples.SL.NavigationApplication.Web.csproj", "{2CFA90F5-848E-4B93-88EF-CA4244D98ECF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.SL.NavigationApplication.Web", "SL\Catel.Examples.SL.NavigationApplication.Web\Catel.Examples.SL.NavigationApplication.Web.csproj", "{2CFA90F5-848E-4B93-88EF-CA4244D98ECF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.SL.NestedUserControls", "Catel.Examples.SL.NestedUserControls\Catel.Examples.SL.NestedUserControls.csproj", "{23CD0C11-9591-47F3-BFBB-2207C94FFC2A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.SL.NestedUserControls", "SL\Catel.Examples.SL.NestedUserControls\Catel.Examples.SL.NestedUserControls.csproj", "{23CD0C11-9591-47F3-BFBB-2207C94FFC2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.SL.NestedUserControls.Web", "Catel.Examples.SL.NestedUserControls.Web\Catel.Examples.SL.NestedUserControls.Web.csproj", "{B4398F3F-077C-4DB7-95FB-72B2F243EA59}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.SL.NestedUserControls.Web", "SL\Catel.Examples.SL.NestedUserControls.Web\Catel.Examples.SL.NestedUserControls.Web.csproj", "{B4398F3F-077C-4DB7-95FB-72B2F243EA59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.SL.PersonApplication", "Catel.Examples.SL.PersonApplication\Catel.Examples.SL.PersonApplication.csproj", "{CAD11A58-159C-4D45-8FE3-8F9AC754C814}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.SL.PersonApplication", "SL\Catel.Examples.SL.PersonApplication\Catel.Examples.SL.PersonApplication.csproj", "{CAD11A58-159C-4D45-8FE3-8F9AC754C814}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.SL.PersonApplication.Web", "Catel.Examples.SL.PersonApplication.Web\Catel.Examples.SL.PersonApplication.Web.csproj", "{88A8A6C1-967A-446B-89F5-EE6D7DAF73E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.SL.PersonApplication.Web", "SL\Catel.Examples.SL.PersonApplication.Web\Catel.Examples.SL.PersonApplication.Web.csproj", "{88A8A6C1-967A-446B-89F5-EE6D7DAF73E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WP7.ShoppingList", "Catel.Examples.WP7.ShoppingList\Catel.Examples.WP7.ShoppingList.csproj", "{A2A1F965-AD6A-48D4-8B9C-BA397DC3EA66}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WP7.ShoppingList", "WP7\Catel.Examples.WP7.ShoppingList\Catel.Examples.WP7.ShoppingList.csproj", "{A2A1F965-AD6A-48D4-8B9C-BA397DC3EA66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.AdvancedDemo", "Catel.Examples.WPF.AdvancedDemo\Catel.Examples.WPF.AdvancedDemo.csproj", "{C368AC39-7CB8-4EB4-8AFE-08F7753E2431}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.AdvancedDemo", "NET\Catel.Examples.WPF.AdvancedDemo\Catel.Examples.WPF.AdvancedDemo.csproj", "{C368AC39-7CB8-4EB4-8AFE-08F7753E2431}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.BrowserApplication", "Catel.Examples.WPF.BrowserApplication\Catel.Examples.WPF.BrowserApplication.csproj", "{95F7A706-FE80-4B6C-A5C5-FD80C1FD0337}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.BrowserApplication", "NET\Catel.Examples.WPF.BrowserApplication\Catel.Examples.WPF.BrowserApplication.csproj", "{95F7A706-FE80-4B6C-A5C5-FD80C1FD0337}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.Models", "Catel.Examples.WPF.Models\Catel.Examples.WPF.Models.csproj", "{D8405053-BBAE-47FF-A158-07A62F50D40D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.Models", "NET\Catel.Examples.WPF.Models\Catel.Examples.WPF.Models.csproj", "{D8405053-BBAE-47FF-A158-07A62F50D40D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.PersonApplication", "Catel.Examples.WPF.PersonApplication\Catel.Examples.WPF.PersonApplication.csproj", "{CE9B6FCE-B2A2-481F-B9D3-02A94421646D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.PersonApplication", "NET\Catel.Examples.WPF.PersonApplication\Catel.Examples.WPF.PersonApplication.csproj", "{CE9B6FCE-B2A2-481F-B9D3-02A94421646D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.MasterDetail", "Catel.Examples.WPF.MasterDetail\Catel.Examples.WPF.MasterDetail.csproj", "{523D0FA7-20DA-4C04-8AD6-C3714CD24F0B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.MasterDetail", "NET\Catel.Examples.WPF.MasterDetail\Catel.Examples.WPF.MasterDetail.csproj", "{523D0FA7-20DA-4C04-8AD6-C3714CD24F0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.Authentication", "Catel.Examples.WPF.Authentication\Catel.Examples.WPF.Authentication.csproj", "{F03BFF63-53E0-45B1-B8FE-D18548FC6DB0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.Authentication", "NET\Catel.Examples.WPF.Authentication\Catel.Examples.WPF.Authentication.csproj", "{F03BFF63-53E0-45B1-B8FE-D18548FC6DB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.ViewModelLifetime", "Catel.Examples.WPF.ViewModelLifetime\Catel.Examples.WPF.ViewModelLifetime.csproj", "{2DB74DD8-C245-43A5-9076-75665E690235}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.ViewModelLifetime", "NET\Catel.Examples.WPF.ViewModelLifetime\Catel.Examples.WPF.ViewModelLifetime.csproj", "{2DB74DD8-C245-43A5-9076-75665E690235}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.MultiLingual", "Catel.Examples.WPF.MultiLingual\Catel.Examples.WPF.MultiLingual.csproj", "{BC3F3E32-803C-4E6A-A8C5-A414456EAFA1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.MultiLingual", "NET\Catel.Examples.WPF.MultiLingual\Catel.Examples.WPF.MultiLingual.csproj", "{BC3F3E32-803C-4E6A-A8C5-A414456EAFA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.Validation", "Catel.Examples.WPF.Validation\Catel.Examples.WPF.Validation.csproj", "{19DCE8C8-68E3-4DCA-9087-33BCDECDA35B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.Validation", "NET\Catel.Examples.WPF.Validation\Catel.Examples.WPF.Validation.csproj", "{19DCE8C8-68E3-4DCA-9087-33BCDECDA35B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.Analytics", "Catel.Examples.WPF.Analytics\Catel.Examples.WPF.Analytics.csproj", "{6019B8C1-81F8-4E54-8944-E5C76996DBF6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.Analytics", "NET\Catel.Examples.WPF.Analytics\Catel.Examples.WPF.Analytics.csproj", "{6019B8C1-81F8-4E54-8944-E5C76996DBF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.Prism", "Catel.Examples.WPF.Prism\Catel.Examples.WPF.Prism.csproj", "{C498BDF6-5864-4293-8C4B-09CB50BE9DD2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.Prism", "NET\Catel.Examples.WPF.Prism\Catel.Examples.WPF.Prism.csproj", "{C498BDF6-5864-4293-8C4B-09CB50BE9DD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.Prism.Modules.Departments", "Catel.Examples.WPF.Prism.Modules.Departments\Catel.Examples.WPF.Prism.Modules.Departments.csproj", "{45CAD864-3F36-485B-8A54-DEBB8722AE3D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.Prism.Modules.Departments", "NET\Catel.Examples.WPF.Prism.Modules.Departments\Catel.Examples.WPF.Prism.Modules.Departments.csproj", "{45CAD864-3F36-485B-8A54-DEBB8722AE3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.Prism.Modules.Employees", "Catel.Examples.WPF.Prism.Modules.Employees\Catel.Examples.WPF.Prism.Modules.Employees.csproj", "{28E739EB-04D4-41A6-9700-91DA7833F168}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.Prism.Modules.Employees", "NET\Catel.Examples.WPF.Prism.Modules.Employees\Catel.Examples.WPF.Prism.Modules.Employees.csproj", "{28E739EB-04D4-41A6-9700-91DA7833F168}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.Prism.Shared", "Catel.Examples.WPF.Prism.Shared\Catel.Examples.WPF.Prism.Shared.csproj", "{79E50E95-4E0E-4C85-B9AE-E42CC380E2D3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.Prism.Shared", "NET\Catel.Examples.WPF.Prism.Shared\Catel.Examples.WPF.Prism.Shared.csproj", "{79E50E95-4E0E-4C85-B9AE-E42CC380E2D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WP7.Sensors", "Catel.Examples.WP7.Sensors\Catel.Examples.WP7.Sensors.csproj", "{445866EB-05AE-4659-AF50-3506D02D2979}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WP7.Sensors", "WP7\Catel.Examples.WP7.Sensors\Catel.Examples.WP7.Sensors.csproj", "{445866EB-05AE-4659-AF50-3506D02D2979}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WP7.BingMaps", "Catel.Examples.WP7.BingMaps\Catel.Examples.WP7.BingMaps.csproj", "{15BC4E5D-0DAD-49C1-8FD5-CDA7B119DE2A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WP7.BingMaps", "WP7\Catel.Examples.WP7.BingMaps\Catel.Examples.WP7.BingMaps.csproj", "{15BC4E5D-0DAD-49C1-8FD5-CDA7B119DE2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.AvalonDock", "Catel.Examples.WPF.AvalonDock\Catel.Examples.WPF.AvalonDock.csproj", "{CC799617-A8AA-4FBE-B09E-4449DB09D188}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.AvalonDock", "NET\Catel.Examples.WPF.AvalonDock\Catel.Examples.WPF.AvalonDock.csproj", "{CC799617-A8AA-4FBE-B09E-4449DB09D188}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleA", "Catel.Examples.WPF.ModularityWithCatel\ModuleA\ModuleA.csproj", "{CC737D36-0357-417D-81A1-14077F4B5F1C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleA", "NET\Catel.Examples.WPF.ModularityWithCatel\ModuleA\ModuleA.csproj", "{CC737D36-0357-417D-81A1-14077F4B5F1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleB", "Catel.Examples.WPF.ModularityWithCatel\ModuleB\ModuleB.csproj", "{6E63BEEA-4535-4428-AC54-01885F74C77E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleB", "NET\Catel.Examples.WPF.ModularityWithCatel\ModuleB\ModuleB.csproj", "{6E63BEEA-4535-4428-AC54-01885F74C77E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleC", "Catel.Examples.WPF.ModularityWithCatel\ModuleC\ModuleC.csproj", "{40B03952-476B-4A9A-B090-D30D6DEE3740}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleC", "NET\Catel.Examples.WPF.ModularityWithCatel\ModuleC\ModuleC.csproj", "{40B03952-476B-4A9A-B090-D30D6DEE3740}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleD", "Catel.Examples.WPF.ModularityWithCatel\ModuleD\ModuleD.csproj", "{7467C9F3-0615-41AF-B51E-D5A617CDADB2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleD", "NET\Catel.Examples.WPF.ModularityWithCatel\ModuleD\ModuleD.csproj", "{7467C9F3-0615-41AF-B51E-D5A617CDADB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleE", "Catel.Examples.WPF.ModularityWithCatel\ModuleE\ModuleE.csproj", "{65D437E8-D7B7-42FA-86D8-D907DC4C8DCB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleE", "NET\Catel.Examples.WPF.ModularityWithCatel\ModuleE\ModuleE.csproj", "{65D437E8-D7B7-42FA-86D8-D907DC4C8DCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleF", "Catel.Examples.WPF.ModularityWithCatel\ModuleF\ModuleF.csproj", "{EC8C0723-F8CF-4650-8F6C-FD67667987A0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleF", "NET\Catel.Examples.WPF.ModularityWithCatel\ModuleF\ModuleF.csproj", "{EC8C0723-F8CF-4650-8F6C-FD67667987A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleTracking", "Catel.Examples.WPF.ModularityWithCatel\ModuleTracking\ModuleTracking.csproj", "{1A98F3E7-2163-46CE-9B6A-E204FFF4F3B8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleTracking", "NET\Catel.Examples.WPF.ModularityWithCatel\ModuleTracking\ModuleTracking.csproj", "{1A98F3E7-2163-46CE-9B6A-E204FFF4F3B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularityWithCatel.Desktop", "Catel.Examples.WPF.ModularityWithCatel\ModularityWithCatel.Desktop\ModularityWithCatel.Desktop.csproj", "{1B2B220D-D3E3-4E01-AABB-E47C01664211}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularityWithCatel.Desktop", "NET\Catel.Examples.WPF.ModularityWithCatel\ModularityWithCatel.Desktop\ModularityWithCatel.Desktop.csproj", "{1B2B220D-D3E3-4E01-AABB-E47C01664211}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularityWithCatel.Silverlight", "Catel.Examples.SL.ModularityWithCatel\ModularityWithCatel.Silverlight\ModularityWithCatel.Silverlight.csproj", "{41F01C5A-A5E0-4D86-86B0-CAADA3DDCFF2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularityWithCatel.Silverlight", "SL\Catel.Examples.SL.ModularityWithCatel\ModularityWithCatel.Silverlight\ModularityWithCatel.Silverlight.csproj", "{41F01C5A-A5E0-4D86-86B0-CAADA3DDCFF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularityWithCatel.Silverlight.Web", "Catel.Examples.SL.ModularityWithCatel\ModularityWithCatel.Silverlight.Web\ModularityWithCatel.Silverlight.Web.csproj", "{88956FB4-4336-4A35-8A93-9FAC148518BB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularityWithCatel.Silverlight.Web", "SL\Catel.Examples.SL.ModularityWithCatel\ModularityWithCatel.Silverlight.Web\ModularityWithCatel.Silverlight.Web.csproj", "{88956FB4-4336-4A35-8A93-9FAC148518BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleTracking", "Catel.Examples.SL.ModularityWithCatel\ModuleTracking\ModuleTracking.csproj", "{2A9D519F-7219-46E0-9BFC-D7BCCB2BF9CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleTracking", "SL\Catel.Examples.SL.ModularityWithCatel\ModuleTracking\ModuleTracking.csproj", "{2A9D519F-7219-46E0-9BFC-D7BCCB2BF9CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleA", "Catel.Examples.SL.ModularityWithCatel\ModuleA\ModuleA.csproj", "{19AB48B0-82F2-473A-9670-6A9DCEF79D85}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleA", "SL\Catel.Examples.SL.ModularityWithCatel\ModuleA\ModuleA.csproj", "{19AB48B0-82F2-473A-9670-6A9DCEF79D85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleB", "Catel.Examples.SL.ModularityWithCatel\ModuleB\ModuleB.csproj", "{58655F1D-59BD-4E64-A0E9-B7FCF7A6BFA8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleB", "SL\Catel.Examples.SL.ModularityWithCatel\ModuleB\ModuleB.csproj", "{58655F1D-59BD-4E64-A0E9-B7FCF7A6BFA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleC", "Catel.Examples.SL.ModularityWithCatel\ModuleC\ModuleC.csproj", "{FF677971-895C-4F00-BF0A-E876928D2BCC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleC", "SL\Catel.Examples.SL.ModularityWithCatel\ModuleC\ModuleC.csproj", "{FF677971-895C-4F00-BF0A-E876928D2BCC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleD", "Catel.Examples.SL.ModularityWithCatel\ModuleD\ModuleD.csproj", "{D75BB2E9-59A6-4485-B8A4-849938BA39EE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleD", "SL\Catel.Examples.SL.ModularityWithCatel\ModuleD\ModuleD.csproj", "{D75BB2E9-59A6-4485-B8A4-849938BA39EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleE", "Catel.Examples.SL.ModularityWithCatel\ModuleE\ModuleE.csproj", "{3606F033-DE84-4990-86D7-CB61956F5952}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleE", "SL\Catel.Examples.SL.ModularityWithCatel\ModuleE\ModuleE.csproj", "{3606F033-DE84-4990-86D7-CB61956F5952}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleF", "Catel.Examples.SL.ModularityWithCatel\ModuleF\ModuleF.csproj", "{D2F314A9-E532-4D2C-9940-7E09B8EC4224}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{8F5CE4D6-1C6E-466B-BFC3-FE476607E6DC}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\packages.config = .nuget\packages.config
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleF", "SL\Catel.Examples.SL.ModularityWithCatel\ModuleF\ModuleF.csproj", "{D2F314A9-E532-4D2C-9940-7E09B8EC4224}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows Phone 8", "Windows Phone 8", "{68D3599C-7EC7-485D-859C-E48131474A96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WP8.BingMaps", "Catel.Examples.WP8.BingMaps\Catel.Examples.WP8.BingMaps.csproj", "{85C76614-0B38-492F-81CA-07797D03691D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WP8.BingMaps", "WP8\Catel.Examples.WP8.BingMaps\Catel.Examples.WP8.BingMaps.csproj", "{85C76614-0B38-492F-81CA-07797D03691D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WinRT", "WinRT", "{A0F1C11F-8AFE-4DAD-9A39-5ADA500973D3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WIN80", "WIN80", "{A0F1C11F-8AFE-4DAD-9A39-5ADA500973D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WinRT.Advanced", "Catel.Examples.WinRT.Advanced\Catel.Examples.WinRT.Advanced.csproj", "{216462CA-E557-4293-B6A5-A467EC68441A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WIN80.Advanced", "WIN80\Catel.Examples.WIN80.Advanced\Catel.Examples.WIN80.Advanced.csproj", "{216462CA-E557-4293-B6A5-A467EC68441A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.Memento", "Catel.Examples.WPF.Memento\Catel.Examples.WPF.Memento.csproj", "{D6B9C99C-6F41-49F4-8D1F-E57EC388F337}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.Memento", "NET\Catel.Examples.WPF.Memento\Catel.Examples.WPF.Memento.csproj", "{D6B9C99C-6F41-49F4-8D1F-E57EC388F337}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.MvvmCommunicationStyles", "Catel.Examples.WPF.MvvmCommunicationStyles\Catel.Examples.WPF.MvvmCommunicationStyles.csproj", "{98DFD487-37C4-4C22-8BE0-DD3F3ADB84AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.MvvmCommunicationStyles", "NET\Catel.Examples.WPF.MvvmCommunicationStyles\Catel.Examples.WPF.MvvmCommunicationStyles.csproj", "{98DFD487-37C4-4C22-8BE0-DD3F3ADB84AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
