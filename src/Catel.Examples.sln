@@ -62,21 +62,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{962F9249-289B-4169-A135-617899AC698D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.SL4.AdvancedDemo", "Catel.Examples.SL4.AdvancedDemo\Catel.Examples.SL4.AdvancedDemo.csproj", "{CBB43111-8BFE-48C7-94EF-0829B18D53F1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.SL.AdvancedDemo", "Catel.Examples.SL.AdvancedDemo\Catel.Examples.SL.AdvancedDemo.csproj", "{CBB43111-8BFE-48C7-94EF-0829B18D53F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.SL4.AdvancedDemo.Web", "Catel.Examples.SL4.AdvancedDemo.Web\Catel.Examples.SL4.AdvancedDemo.Web.csproj", "{6CB5C718-7DC1-482B-B6B9-8BB3565B6248}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.SL.AdvancedDemo.Web", "Catel.Examples.SL.AdvancedDemo.Web\Catel.Examples.SL.AdvancedDemo.Web.csproj", "{6CB5C718-7DC1-482B-B6B9-8BB3565B6248}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.SL4.NavigationApplication", "Catel.Examples.SL4.NavigationApplication\Catel.Examples.SL4.NavigationApplication.csproj", "{5B0F9D11-964C-4911-A5F5-771BF0245058}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.SL.NavigationApplication", "Catel.Examples.SL.NavigationApplication\Catel.Examples.SL.NavigationApplication.csproj", "{5B0F9D11-964C-4911-A5F5-771BF0245058}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.SL4.NavigationApplication.Web", "Catel.Examples.SL4.NavigationApplication.Web\Catel.Examples.SL4.NavigationApplication.Web.csproj", "{2CFA90F5-848E-4B93-88EF-CA4244D98ECF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.SL.NavigationApplication.Web", "Catel.Examples.SL.NavigationApplication.Web\Catel.Examples.SL.NavigationApplication.Web.csproj", "{2CFA90F5-848E-4B93-88EF-CA4244D98ECF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.SL4.NestedUserControls", "Catel.Examples.SL4.NestedUserControls\Catel.Examples.SL4.NestedUserControls.csproj", "{23CD0C11-9591-47F3-BFBB-2207C94FFC2A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.SL.NestedUserControls", "Catel.Examples.SL.NestedUserControls\Catel.Examples.SL.NestedUserControls.csproj", "{23CD0C11-9591-47F3-BFBB-2207C94FFC2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.SL4.NestedUserControls.Web", "Catel.Examples.SL4.NestedUserControls.Web\Catel.Examples.SL4.NestedUserControls.Web.csproj", "{B4398F3F-077C-4DB7-95FB-72B2F243EA59}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.SL.NestedUserControls.Web", "Catel.Examples.SL.NestedUserControls.Web\Catel.Examples.SL.NestedUserControls.Web.csproj", "{B4398F3F-077C-4DB7-95FB-72B2F243EA59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.SL4.PersonApplication", "Catel.Examples.SL4.PersonApplication\Catel.Examples.SL4.PersonApplication.csproj", "{CAD11A58-159C-4D45-8FE3-8F9AC754C814}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.SL.PersonApplication", "Catel.Examples.SL.PersonApplication\Catel.Examples.SL.PersonApplication.csproj", "{CAD11A58-159C-4D45-8FE3-8F9AC754C814}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.SL4.PersonApplication.Web", "Catel.Examples.SL4.PersonApplication.Web\Catel.Examples.SL4.PersonApplication.Web.csproj", "{88A8A6C1-967A-446B-89F5-EE6D7DAF73E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.SL.PersonApplication.Web", "Catel.Examples.SL.PersonApplication.Web\Catel.Examples.SL.PersonApplication.Web.csproj", "{88A8A6C1-967A-446B-89F5-EE6D7DAF73E9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WP7.ShoppingList", "Catel.Examples.WP7.ShoppingList\Catel.Examples.WP7.ShoppingList.csproj", "{A2A1F965-AD6A-48D4-8B9C-BA397DC3EA66}"
 EndProject
@@ -130,23 +130,23 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleTracking", "Catel.Exa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularityWithCatel.Desktop", "Catel.Examples.WPF.ModularityWithCatel\ModularityWithCatel.Desktop\ModularityWithCatel.Desktop.csproj", "{1B2B220D-D3E3-4E01-AABB-E47C01664211}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularityWithCatel.Silverlight", "Catel.Examples.SL4.ModularityWithCatel\ModularityWithCatel.Silverlight\ModularityWithCatel.Silverlight.csproj", "{41F01C5A-A5E0-4D86-86B0-CAADA3DDCFF2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularityWithCatel.Silverlight", "Catel.Examples.SL.ModularityWithCatel\ModularityWithCatel.Silverlight\ModularityWithCatel.Silverlight.csproj", "{41F01C5A-A5E0-4D86-86B0-CAADA3DDCFF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularityWithCatel.Silverlight.Web", "Catel.Examples.SL4.ModularityWithCatel\ModularityWithCatel.Silverlight.Web\ModularityWithCatel.Silverlight.Web.csproj", "{88956FB4-4336-4A35-8A93-9FAC148518BB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModularityWithCatel.Silverlight.Web", "Catel.Examples.SL.ModularityWithCatel\ModularityWithCatel.Silverlight.Web\ModularityWithCatel.Silverlight.Web.csproj", "{88956FB4-4336-4A35-8A93-9FAC148518BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleTracking", "Catel.Examples.SL4.ModularityWithCatel\ModuleTracking\ModuleTracking.csproj", "{2A9D519F-7219-46E0-9BFC-D7BCCB2BF9CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleTracking", "Catel.Examples.SL.ModularityWithCatel\ModuleTracking\ModuleTracking.csproj", "{2A9D519F-7219-46E0-9BFC-D7BCCB2BF9CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleA", "Catel.Examples.SL4.ModularityWithCatel\ModuleA\ModuleA.csproj", "{19AB48B0-82F2-473A-9670-6A9DCEF79D85}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleA", "Catel.Examples.SL.ModularityWithCatel\ModuleA\ModuleA.csproj", "{19AB48B0-82F2-473A-9670-6A9DCEF79D85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleB", "Catel.Examples.SL4.ModularityWithCatel\ModuleB\ModuleB.csproj", "{58655F1D-59BD-4E64-A0E9-B7FCF7A6BFA8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleB", "Catel.Examples.SL.ModularityWithCatel\ModuleB\ModuleB.csproj", "{58655F1D-59BD-4E64-A0E9-B7FCF7A6BFA8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleC", "Catel.Examples.SL4.ModularityWithCatel\ModuleC\ModuleC.csproj", "{FF677971-895C-4F00-BF0A-E876928D2BCC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleC", "Catel.Examples.SL.ModularityWithCatel\ModuleC\ModuleC.csproj", "{FF677971-895C-4F00-BF0A-E876928D2BCC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleD", "Catel.Examples.SL4.ModularityWithCatel\ModuleD\ModuleD.csproj", "{D75BB2E9-59A6-4485-B8A4-849938BA39EE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleD", "Catel.Examples.SL.ModularityWithCatel\ModuleD\ModuleD.csproj", "{D75BB2E9-59A6-4485-B8A4-849938BA39EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleE", "Catel.Examples.SL4.ModularityWithCatel\ModuleE\ModuleE.csproj", "{3606F033-DE84-4990-86D7-CB61956F5952}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleE", "Catel.Examples.SL.ModularityWithCatel\ModuleE\ModuleE.csproj", "{3606F033-DE84-4990-86D7-CB61956F5952}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleF", "Catel.Examples.SL4.ModularityWithCatel\ModuleF\ModuleF.csproj", "{D2F314A9-E532-4D2C-9940-7E09B8EC4224}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleF", "Catel.Examples.SL.ModularityWithCatel\ModuleF\ModuleF.csproj", "{D2F314A9-E532-4D2C-9940-7E09B8EC4224}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{8F5CE4D6-1C6E-466B-BFC3-FE476607E6DC}"
 	ProjectSection(SolutionItems) = preProject

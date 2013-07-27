@@ -1,0 +1,53 @@
+﻿<catel:UserControl x:Class="Catel.Examples.SL4.NestedUserControls.Views.MainPage"
+				   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+				   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				   xmlns:Views="clr-namespace:Catel.Examples.SL4.NestedUserControls.Views"
+                   xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+                   xmlns:catel="http://catel.codeplex.com">
+
+    <!-- Resources -->
+    <UserControl.Resources>
+    </UserControl.Resources>
+
+    <!-- Content -->
+    <ScrollViewer x:Name="LayoutRoot">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0">
+            This example shows how to use nested user controls in Silverlight.
+            </TextBlock>
+
+            <TextBlock Grid.Row="1" Text="{Binding ViewModelConstructionTime, StringFormat='ViewModel created at \{0:HH:mm:ss.fff\}'}" />
+
+            <toolkit:Expander Grid.Row="2" Header="Houses" IsExpanded="True">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <ItemsControl Grid.Column="1" ItemsSource="{Binding Houses}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <Views:HouseView DataContext="{Binding}" />
+                                    <Line Height="2" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </Grid>
+            </toolkit:Expander>
+        </Grid>
+    </ScrollViewer>
+
+</catel:UserControl>

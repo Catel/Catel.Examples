@@ -1,0 +1,52 @@
+﻿<catel:UserControl x:Class="Catel.Examples.SL4.NestedUserControls.Views.RoomView"
+                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:Views="clr-namespace:Catel.Examples.SL4.NestedUserControls.Views"
+                   xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+                   xmlns:catel="http://catel.codeplex.com">
+    
+    <!-- Resources -->
+    <UserControl.Resources>
+    </UserControl.Resources>
+
+    <!-- Content -->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Image Grid.Row="0" Grid.Column="0" Source="/Catel.Examples.SL4.NestedUserControls;component/Resources/Images/room.png"
+               Width="48" Height="48"/>
+
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Name}" />
+
+        <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding ViewModelConstructionTime, StringFormat='ViewModel created at \{0:HH:mm:ss.fff\}'}" />
+
+        <toolkit:Expander Grid.Row="2" Grid.ColumnSpan="2" Header="Tables" IsExpanded="True">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <ItemsControl Grid.Column="1" ItemsSource="{Binding Tables}">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Views:TableView DataContext="{Binding}" />
+                                <Line Height="2" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Grid>
+        </toolkit:Expander>
+    </Grid>
+</catel:UserControl>

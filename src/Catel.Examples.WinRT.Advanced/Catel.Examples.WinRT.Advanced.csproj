@@ -105,7 +105,9 @@
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <None Include="Fody.targets" />
-    <None Include="FodyWeavers.xml" />
+    <None Include="FodyWeavers.xml">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -179,20 +181,20 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Catel.Core, Version=3.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Catel.Core, Version=3.7.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Catel.Core.3.5.1306110931-beta\lib\windows8\Catel.Core.dll</HintPath>
+      <HintPath>..\..\lib\Catel.Core.3.6.1307022048-beta\lib\netcore45\Catel.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Catel.Extensions.Controls, Version=3.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Catel.Extensions.Controls, Version=3.7.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Catel.Extensions.Controls.3.5.1306110931-beta\lib\windows8\Catel.Extensions.Controls.dll</HintPath>
+      <HintPath>..\..\lib\Catel.Extensions.Controls.3.6.1307022048-beta\lib\netcore45\Catel.Extensions.Controls.dll</HintPath>
     </Reference>
-    <Reference Include="Catel.MVVM, Version=3.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Catel.MVVM, Version=3.7.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\Catel.MVVM.3.5.1306110931-beta\lib\windows8\Catel.MVVM.dll</HintPath>
+      <HintPath>..\..\lib\Catel.MVVM.3.6.1307022048-beta\lib\netcore45\Catel.MVVM.dll</HintPath>
     </Reference>
     <Reference Include="Obsolete">
-      <HintPath>..\..\lib\Obsolete.Fody.1.6.2.0\Lib\portable-net4+sl4+wp7+win8+MonoAndroid16+MonoTouch40\Obsolete.dll</HintPath>
+      <HintPath>..\..\lib\Obsolete.Fody.2.0.0\Lib\portable-net4+SL+wp7+win8+MonoAndroid16+MonoTouch40\Obsolete.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
