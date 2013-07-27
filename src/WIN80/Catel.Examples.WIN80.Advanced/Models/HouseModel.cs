@@ -1,4 +1,4 @@
-﻿namespace Catel.Examples.WinRT.Advanced.Models
+﻿namespace Catel.Examples.WIN80.Advanced.Models
 {
     using System;
     using System.Collections.Generic;

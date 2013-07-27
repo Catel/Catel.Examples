@@ -6,7 +6,7 @@
 
  // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
 
-namespace Catel.Examples.WinRT.Advanced
+namespace Catel.Examples.WIN80.Advanced
 {
     using System;
     using Views;

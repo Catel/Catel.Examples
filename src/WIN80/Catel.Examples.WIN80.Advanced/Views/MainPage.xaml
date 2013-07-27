@@ -1,4 +1,4 @@
-﻿<catel:Page x:Class="Catel.Examples.WinRT.Advanced.Views.MainPage"
+﻿<catel:Page x:Class="Catel.Examples.WIN80.Advanced.Views.MainPage"
             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
             xmlns:catel="using:Catel.Windows.Controls" 

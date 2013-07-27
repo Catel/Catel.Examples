@@ -1,4 +1,4 @@
-﻿namespace Catel.Examples.WinRT.Advanced.ViewModels
+﻿namespace Catel.Examples.WIN80.Advanced.ViewModels
 {
     using System.Collections.ObjectModel;
     using Data;

@@ -4,7 +4,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Catel.Examples.WinRT.Advanced.Views
+namespace Catel.Examples.WIN80.Advanced.Views
 {
     using Windows.Controls;
 

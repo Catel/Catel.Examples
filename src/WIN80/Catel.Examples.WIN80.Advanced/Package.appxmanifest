@@ -6,7 +6,7 @@
             Version="1.0.0.0" />
 
   <Properties>
-    <DisplayName>Catel.Examples.WinRT.Advanced</DisplayName>
+    <DisplayName>Catel.Examples.WIN80.Advanced</DisplayName>
     <PublisherDisplayName>Geert</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -23,12 +23,12 @@
   <Applications>
     <Application Id="App"
         Executable="$targetnametoken$.exe"
-        EntryPoint="Catel.Examples.WinRT.Advanced.App">
+        EntryPoint="Catel.Examples.WIN80.Advanced.App">
         <VisualElements
-            DisplayName="Catel.Examples.WinRT.Advanced"
+            DisplayName="Catel.Examples.WIN80.Advanced"
             Logo="Assets\Logo.png"
             SmallLogo="Assets\SmallLogo.png"
-            Description="Catel.Examples.WinRT.Advanced"
+            Description="Catel.Examples.WIN80.Advanced"
             ForegroundText="light"
             BackgroundColor="#464646">
             <DefaultTile ShowName="allLogos" />

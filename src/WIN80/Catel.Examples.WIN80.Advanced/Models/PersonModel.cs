@@ -4,7 +4,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Catel.Examples.WinRT.Advanced.Models
+namespace Catel.Examples.WIN80.Advanced.Models
 {
     using System.Collections.Generic;
     using Data;

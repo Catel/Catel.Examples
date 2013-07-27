@@ -41,7 +41,7 @@
     </SccProvider>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
-    <FodyPath>..\..\..\lib\Fody.1.13.8.0</FodyPath>
+    <FodyPath>..\..\..\lib\Fody.1.13.12</FodyPath>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <!-- This property group is only here to support building this project using the 
@@ -52,7 +52,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>..\..\..\output\Debug\Examples\SL\AdvancedDemo\</OutputPath>
+    <OutputPath>..\..\..\..\output\Debug\Examples\SL\AdvancedDemo\</OutputPath>
     <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -71,6 +71,15 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Catel.Core">
+      <HintPath>..\..\..\lib\Catel.Core.3.6.1307271648-beta\lib\sl50\Catel.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Catel.Extensions.Controls">
+      <HintPath>..\..\..\lib\Catel.Extensions.Controls.3.6.1307271648-beta\lib\sl50\Catel.Extensions.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Catel.MVVM">
+      <HintPath>..\..\..\lib\Catel.MVVM.3.6.1307271648-beta\lib\sl50\Catel.MVVM.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\lib\CommonServiceLocator.1.0\lib\SL30\Microsoft.Practices.ServiceLocation.dll</HintPath>
@@ -81,7 +90,7 @@
     </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="Obsolete">
-      <HintPath>..\..\..\lib\Obsolete.Fody.2.0.0\Lib\portable-net4+SL+wp7+win8+MonoAndroid16+MonoTouch40\Obsolete.dll</HintPath>
+      <HintPath>..\..\..\lib\Obsolete.Fody.2.3.0\Lib\portable-net4+sl4+wp7+win8+MonoAndroid16+MonoTouch40\Obsolete.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System.ComponentModel.Composition, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -98,50 +107,50 @@
     <Reference Include="System.Windows.Controls.Layout.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\..\lib\SL\SilverlightToolkit\System.Windows.Controls.Layout.Toolkit.dll</HintPath>
     </Reference>
-    <Reference Include="System.Windows.Controls.Toolkit, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\SilverlightToolkit-Core.4.2010.4\lib\SL\System.Windows.Controls.Toolkit.dll</HintPath>
+    <Reference Include="System.Windows.Controls.Toolkit">
+      <HintPath>..\..\..\lib\Catel.MVVM.3.6.1307271648-beta\lib\sl50\System.Windows.Controls.Toolkit.dll</HintPath>
     </Reference>
-    <Reference Include="System.Windows.Controls.Toolkit.Internals, Version=4.0.5.0, Culture=neutral, PublicKeyToken=2c5c654d367bf4a7, processorArchitecture=MSIL">
-      <HintPath>..\..\..\lib\SL\SilverlightToolkit\System.Windows.Controls.Toolkit.Internals.dll</HintPath>
+    <Reference Include="System.Windows.Interactivity, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\lib\Catel.MVVM.3.6.1307271648-beta\lib\sl50\System.Windows.Interactivity.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Windows.Browser" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\Catel.Examples.WPF.AdvancedDemo\Helpers\IoCHelper.cs">
+    <Compile Include="..\..\NET\Catel.Examples.WPF.AdvancedDemo\Helpers\IoCHelper.cs">
       <Link>Helpers\IoCHelper.cs</Link>
     </Compile>
-    <Compile Include="..\Catel.Examples.WPF.AdvancedDemo\Helpers\ModelGenerator.cs">
+    <Compile Include="..\..\NET\Catel.Examples.WPF.AdvancedDemo\Helpers\ModelGenerator.cs">
       <Link>Helpers\ModelGenerator.cs</Link>
     </Compile>
-    <Compile Include="..\Catel.Examples.WPF.AdvancedDemo\Models\HouseModel.cs">
+    <Compile Include="..\..\NET\Catel.Examples.WPF.AdvancedDemo\Models\HouseModel.cs">
       <Link>Models\HouseModel.cs</Link>
     </Compile>
-    <Compile Include="..\Catel.Examples.WPF.AdvancedDemo\Models\PersonModel.cs">
+    <Compile Include="..\..\NET\Catel.Examples.WPF.AdvancedDemo\Models\PersonModel.cs">
       <Link>Models\PersonModel.cs</Link>
     </Compile>
-    <Compile Include="..\Catel.Examples.WPF.AdvancedDemo\Models\RoomModel.cs">
+    <Compile Include="..\..\NET\Catel.Examples.WPF.AdvancedDemo\Models\RoomModel.cs">
       <Link>Models\RoomModel.cs</Link>
     </Compile>
-    <Compile Include="..\Catel.Examples.WPF.AdvancedDemo\ViewModels\BehaviorsWindowViewModel.cs">
+    <Compile Include="..\..\NET\Catel.Examples.WPF.AdvancedDemo\ViewModels\BehaviorsWindowViewModel.cs">
       <Link>ViewModels\BehaviorsWindowViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\Catel.Examples.WPF.AdvancedDemo\ViewModels\DemoWindowViewModel.cs">
+    <Compile Include="..\..\NET\Catel.Examples.WPF.AdvancedDemo\ViewModels\DemoWindowViewModel.cs">
       <Link>ViewModels\DemoWindowViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\Catel.Examples.WPF.AdvancedDemo\ViewModels\HouseViewModel.cs">
+    <Compile Include="..\..\NET\Catel.Examples.WPF.AdvancedDemo\ViewModels\HouseViewModel.cs">
       <Link>ViewModels\HouseViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\Catel.Examples.WPF.AdvancedDemo\ViewModels\MainWindowViewModel.cs">
+    <Compile Include="..\..\NET\Catel.Examples.WPF.AdvancedDemo\ViewModels\MainWindowViewModel.cs">
       <Link>ViewModels\MainWindowViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\Catel.Examples.WPF.AdvancedDemo\ViewModels\NestedUserControlsWindowViewModel.cs">
+    <Compile Include="..\..\NET\Catel.Examples.WPF.AdvancedDemo\ViewModels\NestedUserControlsWindowViewModel.cs">
       <Link>ViewModels\NestedUserControlsWindowViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\Catel.Examples.WPF.AdvancedDemo\ViewModels\RoomViewModel.cs">
+    <Compile Include="..\..\NET\Catel.Examples.WPF.AdvancedDemo\ViewModels\RoomViewModel.cs">
       <Link>ViewModels\RoomViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\Catel.Examples.WPF.AdvancedDemo\ViewModels\ThrottlingViewModel.cs">
+    <Compile Include="..\..\NET\Catel.Examples.WPF.AdvancedDemo\ViewModels\ThrottlingViewModel.cs">
       <Link>ViewModels\ThrottlingViewModel.cs</Link>
     </Compile>
     <Compile Include="App.xaml.cs">
@@ -183,7 +192,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="..\Catel.Examples.WPF.AdvancedDemo\Resources\Images\catel.png">
+    <Resource Include="..\..\NET\Catel.Examples.WPF.AdvancedDemo\Resources\Images\catel.png">
       <Link>Resources\Images\catel.png</Link>
     </Resource>
   </ItemGroup>
@@ -243,10 +252,10 @@
     <None Include="Properties\AppManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="..\Catel.Examples.WPF.AdvancedDemo\Resources\Images\house.png">
+    <Resource Include="..\..\NET\Catel.Examples.WPF.AdvancedDemo\Resources\Images\house.png">
       <Link>Resources\Images\house.png</Link>
     </Resource>
-    <Resource Include="..\Catel.Examples.WPF.AdvancedDemo\Resources\Images\room.png">
+    <Resource Include="..\..\NET\Catel.Examples.WPF.AdvancedDemo\Resources\Images\room.png">
       <Link>Resources\Images\room.png</Link>
     </Resource>
   </ItemGroup>

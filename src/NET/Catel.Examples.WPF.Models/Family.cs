@@ -1,12 +1,19 @@
-﻿namespace Catel.Examples.Models
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Family.cs" company="Catel development team">
+//   Copyright (c) 2008 - 2013 Catel development team. All rights reserved.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+namespace Catel.Examples.Models
 {
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
-    using Data;
+    using Catel.Data;
 
 #if !SILVERLIGHT
-using System;
-using System.Runtime.Serialization;
+    using System;
+    using System.Runtime.Serialization;
 #endif
 
     /// <summary>
@@ -26,7 +33,8 @@ using System.Runtime.Serialization;
         /// Initializes a new object from scratch.
         /// </summary>
         public Family()
-        { }
+        {
+        }
 
 #if !SILVERLIGHT
         /// <summary>
@@ -35,7 +43,9 @@ using System.Runtime.Serialization;
         /// <param name="info"><see cref="SerializationInfo"/> that contains the information.</param>
         /// <param name="context"><see cref="StreamingContext"/>.</param>
         protected Family(SerializationInfo info, StreamingContext context)
-            : base(info, context) { }
+            : base(info, context)
+        {
+        }
 #endif
         #endregion
 
@@ -52,7 +62,7 @@ using System.Runtime.Serialization;
         /// <summary>
         /// Register the property so it is known in the class.
         /// </summary>
-        public static readonly PropertyData FatherProperty = RegisterProperty("Father", typeof(Person), null);
+        public static readonly PropertyData FatherProperty = RegisterProperty("Father", typeof (Person), null);
 
         /// <summary>
         /// Gets or sets the mother.
@@ -66,7 +76,7 @@ using System.Runtime.Serialization;
         /// <summary>
         /// Register the property so it is known in the class.
         /// </summary>
-        public static readonly PropertyData MotherProperty = RegisterProperty("Mother", typeof(Person), null);
+        public static readonly PropertyData MotherProperty = RegisterProperty("Mother", typeof (Person), null);
 
         /// <summary>
         /// Gets or sets the children.
@@ -80,7 +90,7 @@ using System.Runtime.Serialization;
         /// <summary>
         /// Register the property so it is known in the class.
         /// </summary>
-        public static readonly PropertyData ChildrenProperty = RegisterProperty("Children", typeof(ObservableCollection<Person>), new ObservableCollection<Person>());
+        public static readonly PropertyData ChildrenProperty = RegisterProperty("Children", typeof (ObservableCollection<Person>), new ObservableCollection<Person>());
         #endregion
 
         #region Methods

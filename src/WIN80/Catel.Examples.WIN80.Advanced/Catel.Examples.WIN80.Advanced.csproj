@@ -7,22 +7,22 @@
     <ProjectGuid>{216462CA-E557-4293-B6A5-A467EC68441A}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Catel.Examples.WinRT.Advanced</RootNamespace>
-    <AssemblyName>Catel.Examples.WinRT.Advanced</AssemblyName>
+    <RootNamespace>Catel.Examples.WIN80.Advanced</RootNamespace>
+    <AssemblyName>Catel.Examples.WIN80.Advanced</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{BC8A1FFA-BEE3-4634-8014-F334798102B3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <PackageCertificateKeyFile>Catel.Examples.WinRT.Advanced_TemporaryKey.pfx</PackageCertificateKeyFile>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
-    <FodyPath>..\..\..\lib\Fody.1.13.8.0</FodyPath>
+    <FodyPath>..\..\..\lib\Fody.1.13.12</FodyPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\output\Debug\Examples\WinRT\</OutputPath>
+    <OutputPath>..\..\..\output\debug\WIN80\</OutputPath>
     <DefineConstants>DEBUG;TRACE;NETFX_CORE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -31,7 +31,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\..\output\Release\Examples\WinRT\</OutputPath>
+    <OutputPath>..\..\..\output\release\WIN80\</OutputPath>
     <DefineConstants>TRACE;NETFX_CORE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -104,6 +104,7 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <None Include="Catel.Examples.WIN80.Advanced_TemporaryKey.pfx" />
     <None Include="Fody.targets" />
     <None Include="FodyWeavers.xml">
       <SubType>Designer</SubType>
@@ -142,7 +143,6 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="Catel.Examples.WinRT.Advanced_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Logo.png" />
@@ -183,18 +183,18 @@
   <ItemGroup>
     <Reference Include="Catel.Core, Version=3.7.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\lib\Catel.Core.3.6.1307022048-beta\lib\netcore45\Catel.Core.dll</HintPath>
+      <HintPath>..\..\..\lib\Catel.Core.3.6.1307271648-beta\lib\netcore45\Catel.Core.dll</HintPath>
     </Reference>
     <Reference Include="Catel.Extensions.Controls, Version=3.7.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\lib\Catel.Extensions.Controls.3.6.1307022048-beta\lib\netcore45\Catel.Extensions.Controls.dll</HintPath>
+      <HintPath>..\..\..\lib\Catel.Extensions.Controls.3.6.1307271648-beta\lib\netcore45\Catel.Extensions.Controls.dll</HintPath>
     </Reference>
     <Reference Include="Catel.MVVM, Version=3.7.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\lib\Catel.MVVM.3.6.1307022048-beta\lib\netcore45\Catel.MVVM.dll</HintPath>
+      <HintPath>..\..\..\lib\Catel.MVVM.3.6.1307271648-beta\lib\netcore45\Catel.MVVM.dll</HintPath>
     </Reference>
     <Reference Include="Obsolete">
-      <HintPath>..\..\..\lib\Obsolete.Fody.2.0.0\Lib\portable-net4+SL+wp7+win8+MonoAndroid16+MonoTouch40\Obsolete.dll</HintPath>
+      <HintPath>..\..\..\lib\Obsolete.Fody.2.3.0\Lib\portable-net4+sl4+wp7+win8+MonoAndroid16+MonoTouch40\Obsolete.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
