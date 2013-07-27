@@ -1,4 +1,4 @@
-﻿namespace Catel.Examples.SL4.NestedUserControls.ViewModels
+﻿namespace Catel.Examples.SL.NestedUserControls.ViewModels
 {
     using Data;
     using MVVM;

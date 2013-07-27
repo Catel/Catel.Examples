@@ -1,7 +1,7 @@
-﻿<catel:UserControl x:Class="Catel.Examples.SL4.NestedUserControls.Views.HouseView"
+﻿<catel:UserControl x:Class="Catel.Examples.SL.NestedUserControls.Views.HouseView"
                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                   xmlns:Views="clr-namespace:Catel.Examples.SL4.NestedUserControls.Views"
+                   xmlns:Views="clr-namespace:Catel.Examples.SL.NestedUserControls.Views"
                    xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
                    xmlns:catel="http://catel.codeplex.com">
 
@@ -22,7 +22,7 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Image Grid.Row="0" Grid.Column="0" Source="/Catel.Examples.SL4.NestedUserControls;component/Resources/Images/house.png"
+        <Image Grid.Row="0" Grid.Column="0" Source="/Catel.Examples.SL.NestedUserControls;component/Resources/Images/house.png"
                Width="48" Height="48"/>
         
         <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Name}" />

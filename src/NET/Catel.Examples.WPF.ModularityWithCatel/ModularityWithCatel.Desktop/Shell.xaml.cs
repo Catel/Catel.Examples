@@ -90,12 +90,8 @@ namespace ModularityWithCatel.Desktop
         /// <summary>
         /// Logs the specified message.  Called by the CallbackLogger.
         /// </summary>
-        /// <param name="message">
-        /// The message.
-        /// </param>
-        /// <param name="category">
-        /// The category.
-        /// </param>
+        /// <param name="message">The message.</param>
+        /// <param name="category">The category.</param>
         public void Log(string message, Category category)
         {
             TraceTextBox.AppendText(string.Format(CultureInfo.CurrentUICulture, "[{0}] {1}\r\n", category, message));
@@ -104,12 +100,8 @@ namespace ModularityWithCatel.Desktop
         /// <summary>
         /// Handles the RequestModuleLoad event of the ModuleB control.
         /// </summary>
-        /// <param name="sender">
-        /// The source of the event.
-        /// </param>
-        /// <param name="e">
-        /// The <see cref="System.EventArgs"/> instance containing the event data.
-        /// </param>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs" /> instance containing the event data.</param>
         private void ModuleB_RequestModuleLoad(object sender, EventArgs e)
         {
             // The ModuleManager uses the Async Events Pattern.
@@ -119,12 +111,8 @@ namespace ModularityWithCatel.Desktop
         /// <summary>
         /// Handles the RequestModuleLoad event of the ModuleC control.
         /// </summary>
-        /// <param name="sender">
-        /// The source of the event.
-        /// </param>
-        /// <param name="e">
-        /// The <see cref="System.EventArgs"/> instance containing the event data.
-        /// </param>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs" /> instance containing the event data.</param>
         private void ModuleC_RequestModuleLoad(object sender, EventArgs e)
         {
             // The ModuleManager uses the Async Events Pattern.
@@ -134,12 +122,8 @@ namespace ModularityWithCatel.Desktop
         /// <summary>
         /// Handles the RequestModuleLoad event of the ModuleE control.
         /// </summary>
-        /// <param name="sender">
-        /// The source of the event.
-        /// </param>
-        /// <param name="e">
-        /// The <see cref="System.EventArgs"/> instance containing the event data.
-        /// </param>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs" /> instance containing the event data.</param>
         private void ModuleE_RequestModuleLoad(object sender, EventArgs e)
         {
             // The ModuleManager uses the Async Events Pattern.
@@ -149,12 +133,8 @@ namespace ModularityWithCatel.Desktop
         /// <summary>
         /// Handles the RequestModuleLoad event of the ModuleF control.
         /// </summary>
-        /// <param name="sender">
-        /// The source of the event.
-        /// </param>
-        /// <param name="e">
-        /// The <see cref="System.EventArgs"/> instance containing the event data.
-        /// </param>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="System.EventArgs" /> instance containing the event data.</param>
         private void ModuleF_RequestModuleLoad(object sender, EventArgs e)
         {
             // The ModuleManager uses the Async Events Pattern.
@@ -164,12 +144,8 @@ namespace ModularityWithCatel.Desktop
         /// <summary>
         /// The window_ loaded.
         /// </summary>
-        /// <param name="sender">
-        /// The sender.
-        /// </param>
-        /// <param name="e">
-        /// The e.
-        /// </param>
+        /// <param name="sender">The sender.</param>
+        /// <param name="e">The e.</param>
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             // I use the IModuleTracker as the data-context for data-binding.
@@ -189,12 +165,8 @@ namespace ModularityWithCatel.Desktop
         /// <summary>
         /// Handles the LoadModuleProgressChanged event of the ModuleManager control.
         /// </summary>
-        /// <param name="sender">
-        /// The source of the event.
-        /// </param>
-        /// <param name="e">
-        /// The <see cref="Microsoft.Practices.Composite.Modularity.LoadModuleProgressChangedEventArgs"/> instance containing the event data.
-        /// </param>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The instance containing the event data.</param>
         private void ModuleManager_ModuleDownloadProgressChanged(object sender, ModuleDownloadProgressChangedEventArgs e)
         {
             moduleTracker.RecordModuleDownloading(e.ModuleInfo.ModuleName, e.BytesReceived, e.TotalBytesToReceive);
@@ -203,12 +175,8 @@ namespace ModularityWithCatel.Desktop
         /// <summary>
         /// Handles the LoadModuleCompleted event of the ModuleManager control.
         /// </summary>
-        /// <param name="sender">
-        /// The source of the event.
-        /// </param>
-        /// <param name="e">
-        /// The <see cref="Microsoft.Practices.Composite.Modularity.LoadModuleCompletedEventArgs"/> instance containing the event data.
-        /// </param>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The  instance containing the event data.</param>
         private void ModuleManager_LoadModuleCompleted(object sender, LoadModuleCompletedEventArgs e)
         {
             moduleTracker.RecordModuleLoaded(e.ModuleInfo.ModuleName);

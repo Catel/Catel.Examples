@@ -1,4 +1,4 @@
-﻿namespace Catel.Examples.SL4.NavigationApplication.ViewModels
+﻿namespace Catel.Examples.SL.NavigationApplication.ViewModels
 {
     using System.Collections.Generic;
     using Data;

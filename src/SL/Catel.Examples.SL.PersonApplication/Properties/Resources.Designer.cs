@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Catel.Examples.SL4.PersonApplication.Properties {
+namespace Catel.Examples.SL.PersonApplication.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Catel.Examples.SL4.PersonApplication.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Catel.Examples.SL4.PersonApplication.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Catel.Examples.SL.PersonApplication.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

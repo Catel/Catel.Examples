@@ -1,4 +1,4 @@
-﻿namespace Catel.Examples.SL4.PersonApplication.Data.Converters
+﻿namespace Catel.Examples.SL.PersonApplication.Data.Converters
 {
     using System;
     using System.Windows;

@@ -4,7 +4,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Catel.Examples.SL4.NestedUserControls
+namespace Catel.Examples.SL.NestedUserControls
 {
     using System;
     using System.Windows;

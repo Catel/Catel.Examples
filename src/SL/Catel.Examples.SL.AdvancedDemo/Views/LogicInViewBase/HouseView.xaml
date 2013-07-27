@@ -23,7 +23,7 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Image Grid.Row="0" Grid.Column="0" Source="/Catel.Examples.SL4.AdvancedDemo;component/Resources/Images/house.png"
+        <Image Grid.Row="0" Grid.Column="0" Source="/Catel.Examples.SL.AdvancedDemo;component/Resources/Images/house.png"
                Width="48" Height="48"/>
 
         <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Name, Mode=TwoWay, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />

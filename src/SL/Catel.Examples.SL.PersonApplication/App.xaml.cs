@@ -1,4 +1,4 @@
-﻿namespace Catel.Examples.SL4.PersonApplication
+﻿namespace Catel.Examples.SL.PersonApplication
 {
     using System;
     using System.Windows;
@@ -37,7 +37,7 @@
         /// <param name="e">The <see cref="System.Windows.StartupEventArgs"/> instance containing the event data.</param>
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            Windows.StyleHelper.CreateStyleForwardersForDefaultStyles();
+            Catel.Windows.StyleHelper.CreateStyleForwardersForDefaultStyles();
 
             RootVisual = new MainPage();
         }

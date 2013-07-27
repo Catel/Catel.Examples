@@ -1,4 +1,4 @@
-﻿namespace Catel.Examples.SL4.NavigationApplication
+﻿namespace Catel.Examples.SL.NavigationApplication
 {
     using System.Windows;
     using System.Windows.Controls;

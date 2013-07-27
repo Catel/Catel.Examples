@@ -1,4 +1,4 @@
-﻿<catel:UserControl x:Class="Catel.Examples.SL4.PersonApplication.Views.MainPage"
+﻿<catel:UserControl x:Class="Catel.Examples.SL.PersonApplication.Views.MainPage"
                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                    xmlns:ToolkitControls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Toolkit"
@@ -22,17 +22,17 @@
             <ToolkitControls:WrapPanel>
                 <!-- Added -->
                 <Button Command="{Binding Add}" Style="{StaticResource ImageButtonStyle}">
-                    <Image Source="/Catel.Examples.SL4.PersonApplication;component/Resources/Images/add.png"/>
+                    <Image Source="/Catel.Examples.SL.PersonApplication;component/Resources/Images/add.png"/>
                 </Button>
 
                 <!-- Edit -->
                 <Button Command="{Binding Edit}" Style="{StaticResource ImageButtonStyle}">
-                    <Image Source="/Catel.Examples.SL4.PersonApplication;component/Resources/Images/edit.png"/>
+                    <Image Source="/Catel.Examples.SL.PersonApplication;component/Resources/Images/edit.png"/>
                 </Button>
 
                 <!-- Remove -->
                 <Button Command="{Binding Remove}" Style="{StaticResource ImageButtonStyle}">
-                    <Image Source="/Catel.Examples.SL4.PersonApplication;component/Resources/Images/delete.png"/>
+                    <Image Source="/Catel.Examples.SL.PersonApplication;component/Resources/Images/delete.png"/>
                 </Button>
             </ToolkitControls:WrapPanel>
         </StackPanel>

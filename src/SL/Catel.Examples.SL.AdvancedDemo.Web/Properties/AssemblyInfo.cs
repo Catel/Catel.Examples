@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Catel.Examples.SL4.AdvancedDemo.Web")]
+[assembly: AssemblyTitle("Catel.Examples.SL.AdvancedDemo.Web")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Catel.Examples.SL4.AdvancedDemo.Web")]
+[assembly: AssemblyProduct("Catel.Examples.SL.AdvancedDemo.Web")]
 [assembly: AssemblyCopyright("Copyright ©  2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

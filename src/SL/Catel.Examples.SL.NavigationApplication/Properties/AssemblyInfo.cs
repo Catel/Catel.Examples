@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Catel.Examples.SL4.NavigationApplication")]
+[assembly: AssemblyTitle("Catel.Examples.SL.NavigationApplication")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("CatenaLogic")]
-[assembly: AssemblyProduct("Catel.Examples.SL4.NavigationApplication")]
+[assembly: AssemblyProduct("Catel.Examples.SL.NavigationApplication")]
 [assembly: AssemblyCopyright("Copyright © CatenaLogic 2011")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

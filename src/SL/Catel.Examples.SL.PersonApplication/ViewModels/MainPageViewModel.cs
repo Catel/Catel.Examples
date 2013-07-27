@@ -1,4 +1,4 @@
-﻿namespace Catel.Examples.SL4.PersonApplication.ViewModels
+﻿namespace Catel.Examples.SL.PersonApplication.ViewModels
 {
     using System.Collections.ObjectModel;
     using Catel.Data;

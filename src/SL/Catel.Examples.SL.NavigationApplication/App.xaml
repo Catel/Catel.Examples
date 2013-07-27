@@ -1,5 +1,5 @@
 ﻿<Application   
-  x:Class="Catel.Examples.SL4.NavigationApplication.App"
+  x:Class="Catel.Examples.SL.NavigationApplication.App"
   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 

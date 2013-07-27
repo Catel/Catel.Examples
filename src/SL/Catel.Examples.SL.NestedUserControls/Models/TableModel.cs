@@ -1,4 +1,4 @@
-﻿namespace Catel.Examples.SL4.NestedUserControls.Models
+﻿namespace Catel.Examples.SL.NestedUserControls.Models
 {
     using Data;
 

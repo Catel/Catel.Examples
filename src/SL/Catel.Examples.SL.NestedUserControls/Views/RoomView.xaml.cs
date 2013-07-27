@@ -1,4 +1,4 @@
-﻿namespace Catel.Examples.SL4.NestedUserControls.Views
+﻿namespace Catel.Examples.SL.NestedUserControls.Views
 {
     using Windows.Controls;
 

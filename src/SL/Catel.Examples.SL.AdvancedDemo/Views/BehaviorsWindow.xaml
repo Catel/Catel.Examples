@@ -60,7 +60,7 @@
                     Double click the image below.
                 </TextBlock>
 
-                <Image Source="/Catel.Examples.SL4.AdvancedDemo;component/Resources/Images/catel.png" Width="32" Height="32"
+                <Image Source="/Catel.Examples.SL.AdvancedDemo;component/Resources/Images/catel.png" Width="32" Height="32"
                        HorizontalAlignment="Center" VerticalAlignment="Center">
                     <i:Interaction.Behaviors>
                         <catel:DoubleClickToCommand Command="{Binding DoubleClickToCommandExample}" />

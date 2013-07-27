@@ -1,11 +1,11 @@
-﻿<catel:DataWindow x:Class="Catel.Examples.SL4.PersonApplication.Views.PersonWindow"
+﻿<catel:DataWindow x:Class="Catel.Examples.SL.PersonApplication.Views.PersonWindow"
                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                  xmlns:Converters="clr-namespace:Catel.Examples.SL4.PersonApplication.Data.Converters"
+                  xmlns:Converters="clr-namespace:Catel.Examples.SL.PersonApplication.Data.Converters"
                   xmlns:catel="http://catel.codeplex.com"
-                  xmlns:ViewModels="clr-namespace:Catel.Examples.SL4.PersonApplication.ViewModels"
+                  xmlns:ViewModels="clr-namespace:Catel.Examples.SL.PersonApplication.ViewModels"
                   mc:Ignorable="d" 
                   d:DataContext="{d:DesignInstance ViewModels:DesignPersonViewModel, IsDesignTimeCreatable=True}">
 

@@ -1,4 +1,4 @@
-﻿namespace Catel.Examples.SL4.PersonApplication.Views
+﻿namespace Catel.Examples.SL.PersonApplication.Views
 {
     using ViewModels;
     using Catel.Windows;
