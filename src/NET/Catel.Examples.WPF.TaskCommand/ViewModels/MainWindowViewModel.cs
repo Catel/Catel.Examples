@@ -1,8 +1,9 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="MainWindowViewModel.cs" company="Taggersoft">
-//   Copyright (c) 2008 - 2013 Taggersoft. All rights reserved.
+// <copyright file="MainWindowViewModel.cs" company="Catel development team">
+//   Copyright (c) 2008 - 2013 Catel development team. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
+
 
 namespace Catel.Examples.WPF.TaskCommand.ViewModels
 {
@@ -10,7 +11,6 @@ namespace Catel.Examples.WPF.TaskCommand.ViewModels
     using System.Diagnostics;
     using System.Threading;
     using System.Threading.Tasks;
-
     using Catel.Data;
     using Catel.MVVM;
 
@@ -18,8 +18,11 @@ namespace Catel.Examples.WPF.TaskCommand.ViewModels
     {
         #region LoadSomething command
 
+        #region Fields
         private ProgressiveTaskCommand<PercentProgress> _loadSomethingCommand;
+        #endregion
 
+        #region Properties
         /// <summary>
         ///     Gets the LoadSomething command.
         /// </summary>
@@ -32,7 +35,9 @@ namespace Catel.Examples.WPF.TaskCommand.ViewModels
                            new ProgressiveTaskCommand<PercentProgress>(LoadSomething, reportProgress: ReportLoadSomethingProgress));
             }
         }
+        #endregion
 
+        #region Methods
         private void ReportLoadSomethingProgress(PercentProgress progress)
         {
             LoadPercents = progress.Percents;
@@ -78,20 +83,24 @@ namespace Catel.Examples.WPF.TaskCommand.ViewModels
                     new PercentProgress(
                         percents,
                         isCanceled ?
-                        string.Format("Loaded {0:D}%. Canceled after {1:F2}s.", percents, sw.Elapsed.TotalSeconds) :
-                        string.Format("Loaded {0:D}% in {1:F2}s.", percents, sw.Elapsed.TotalSeconds)));
+                            string.Format("Loaded {0:D}%. Canceled after {1:F2}s.", percents, sw.Elapsed.TotalSeconds) :
+                            string.Format("Loaded {0:D}% in {1:F2}s.", percents, sw.Elapsed.TotalSeconds)));
             }
         }
+        #endregion
 
         #endregion
 
         #region LoadPercents property
 
+        #region Constants
         /// <summary>
         ///     LoadPercents property data.
         /// </summary>
-        public static readonly PropertyData LoadPercentsProperty = RegisterProperty("LoadPercents", typeof(int));
+        public static readonly PropertyData LoadPercentsProperty = RegisterProperty("LoadPercents", typeof (int));
+        #endregion
 
+        #region Properties
         /// <summary>
         ///     Gets or sets the LoadPercents value.
         /// </summary>
@@ -100,16 +109,20 @@ namespace Catel.Examples.WPF.TaskCommand.ViewModels
             get { return GetValue<int>(LoadPercentsProperty); }
             set { SetValue(LoadPercentsProperty, value); }
         }
+        #endregion
 
         #endregion
 
         #region StatusText property
 
+        #region Constants
         /// <summary>
         ///     StatusText property data.
         /// </summary>
-        public static readonly PropertyData StatusTextProperty = RegisterProperty("StatusText", typeof(string));
+        public static readonly PropertyData StatusTextProperty = RegisterProperty("StatusText", typeof (string));
+        #endregion
 
+        #region Properties
         /// <summary>
         ///     Gets or sets the StatusText value.
         /// </summary>
@@ -118,24 +131,27 @@ namespace Catel.Examples.WPF.TaskCommand.ViewModels
             get { return GetValue<string>(StatusTextProperty); }
             set { SetValue(StatusTextProperty, value); }
         }
+        #endregion
 
         #endregion
     }
 
     public class PercentProgress : ITaskProgressReport
     {
+        #region Constructors
         public PercentProgress(int percents, string status = null)
         {
             Percents = percents;
             Status = status;
         }
+        #endregion
 
+        #region Properties
         public int Percents { get; private set; }
+        #endregion
 
         #region ITaskProgressReport Members
-
         public string Status { get; private set; }
-
         #endregion
     }
 }
