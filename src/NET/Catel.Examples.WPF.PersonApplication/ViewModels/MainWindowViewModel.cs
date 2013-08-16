@@ -12,6 +12,9 @@
     /// </summary>
     public class MainWindowViewModel : ViewModelBase
     {
+        private readonly IUIVisualizerService _uiVisualizerService;
+        private readonly IMessageService _messageService;
+
         #region Variables
         #endregion
 
@@ -19,8 +22,11 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="MainWindowViewModel"/> class.
         /// </summary>
-        public MainWindowViewModel()
+        public MainWindowViewModel(IUIVisualizerService uiVisualizerService, IMessageService messageService)
         {
+            _uiVisualizerService = uiVisualizerService;
+            _messageService = messageService;
+
             Add = new Command(OnAddExecute);
             Edit = new Command(OnEditExecute, OnEditCanExecute);
             Remove = new Command(OnRemoveExecute, OnRemoveCanExecute);
@@ -82,8 +88,7 @@
         private void OnAddExecute()
         {
             var viewModel = new PersonViewModel(new Person());
-            var uiVisualizerService = GetService<IUIVisualizerService>();
-            if (uiVisualizerService.ShowDialog(viewModel) ?? false)
+            if (_uiVisualizerService.ShowDialog(viewModel) ?? false)
             {
                 PersonCollection.Add(viewModel.Person);
             }
@@ -109,8 +114,7 @@
         private void OnEditExecute()
         {
             var viewModel = new PersonViewModel(SelectedPerson);
-            var uiVisualizerService = GetService<IUIVisualizerService>();
-            uiVisualizerService.ShowDialog(viewModel);
+            _uiVisualizerService.ShowDialog(viewModel);
         }
 
         /// <summary>
@@ -132,8 +136,7 @@
         /// </summary>
         private void OnRemoveExecute()
         {
-            var messageService = GetService<IMessageService>();
-            if (messageService.Show("Are you sure you want to remove this person?", "Are you sure?", MessageButton.YesNo) == MessageResult.Yes)
+            if (_messageService.Show("Are you sure you want to remove this person?", "Are you sure?", MessageButton.YesNo) == MessageResult.Yes)
             {
                 PersonCollection.Remove(SelectedPerson);
             }

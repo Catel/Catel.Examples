@@ -12,6 +12,9 @@
     /// </summary>
     public class MainWindowViewModel : ViewModelBase
     {
+        private readonly IUIVisualizerService _uiVisualizerService;
+        private readonly ITabService _tabService;
+
         #region Variables
         private DispatcherTimer _timer = new DispatcherTimer();
         #endregion
@@ -20,9 +23,12 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="MainWindowViewModel"/> class.
         /// </summary>
-        public MainWindowViewModel()
+        public MainWindowViewModel(IUIVisualizerService uiVisualizerService, ITabService tabService)
             : base()
         {
+            _uiVisualizerService = uiVisualizerService;
+            _tabService = tabService;
+
             _timer.Tick += OnTimerTick;
             _timer.Interval = new TimeSpan(0, 0, 0, 0, 500);
             _timer.Start();
@@ -65,11 +71,9 @@
         private void OnAddTabExecute()
         {
             var vm = new CreateTabWindowViewModel();
-            var uiVisualizerService = GetService<IUIVisualizerService>();
-            if (uiVisualizerService.ShowDialog(vm) ?? false)
+            if (_uiVisualizerService.ShowDialog(vm) ?? false)
             {
-                var tabService = GetService<ITabService>();
-                tabService.AddTab(vm.CloseWhenUnloaded);
+                _tabService.AddTab(vm.CloseWhenUnloaded);
             }
         }
         #endregion

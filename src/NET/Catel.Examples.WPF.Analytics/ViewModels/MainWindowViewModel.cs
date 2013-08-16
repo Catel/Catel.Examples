@@ -11,6 +11,10 @@
     /// </summary>
     public class MainWindowViewModel : ViewModelBase
     {
+        private readonly IPleaseWaitService _pleaseWaitService;
+        private readonly IUIVisualizerService _uiVisualizerService;
+        private readonly IMessageService _messageService;
+
         #region Variables
         #endregion
 
@@ -18,9 +22,13 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="MainWindowViewModel"/> class.
         /// </summary>
-        public MainWindowViewModel()
+        public MainWindowViewModel(IPleaseWaitService pleaseWaitService, IUIVisualizerService uiVisualizerService, IMessageService messageService)
             : base()
         {
+            _pleaseWaitService = pleaseWaitService;
+            _uiVisualizerService = uiVisualizerService;
+            _messageService = messageService;
+
             FirstCommand = new Command(OnFirstCommandExecute);
             SecondCommand = new Command(OnSecondCommandExecute);
             ShowWindow = new Command(OnShowWindowExecute);
@@ -46,8 +54,7 @@
         /// </summary>
         private void OnFirstCommandExecute()
         {
-            var pleaseWaitService = GetService<IPleaseWaitService>();
-            pleaseWaitService.Show(() => Thread.Sleep(500), "Tracking 'FirstCommand' automatically");
+            _pleaseWaitService.Show(() => Thread.Sleep(500), "Tracking 'FirstCommand' automatically");
         }
 
         /// <summary>
@@ -60,8 +67,7 @@
         /// </summary>
         private void OnSecondCommandExecute()
         {
-            var pleaseWaitService = GetService<IPleaseWaitService>();
-            pleaseWaitService.Show(() => Thread.Sleep(500), "Tracking 'SecondCommand' automatically");
+            _pleaseWaitService.Show(() => Thread.Sleep(500), "Tracking 'SecondCommand' automatically");
         }
 
         /// <summary>
@@ -96,15 +102,13 @@
         {
             var vm = new ProvideAnalyticsViewModel();
 
-            var uiVisualizerService = GetService<IUIVisualizerService>();
-            if (uiVisualizerService.ShowDialog(vm) ?? false)
+            if (_uiVisualizerService.ShowDialog(vm) ?? false)
             {
                 AuditingManager.RegisterAuditor(new GoogleAnalytics(vm.ApiKey, "Catel Analytics Example"));
             }
             else
             {
-                var messageService = GetService<IMessageService>();
-                messageService.ShowError("Cannot provide analytics when no API is provided");
+                _messageService.ShowError("Cannot provide analytics when no API is provided");
             }
         }
         #endregion

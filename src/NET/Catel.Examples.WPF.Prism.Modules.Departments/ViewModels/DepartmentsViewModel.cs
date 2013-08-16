@@ -6,6 +6,7 @@
 
 namespace Catel.Examples.WPF.Prism.Modules.Departments.ViewModels
 {
+    using Catel.Messaging;
     using Collections;
     using Data;
     using MVVM;
@@ -20,15 +21,17 @@ namespace Catel.Examples.WPF.Prism.Modules.Departments.ViewModels
     /// </summary>
     public class DepartmentsViewModel : ViewModelBase
     {
+        private readonly IUIVisualizerService _uiVisualizerService;
+
         #region Constructors
         /// <summary>
         /// Initializes a new instance of the <see cref="DepartmentsViewModel"/> class. 
         /// </summary>
-        /// <remarks>
-        /// </remarks>
-        public DepartmentsViewModel()
+        public DepartmentsViewModel(IMessageMediator messageMediator, IDepartmentRepository departmentRepository, IUIVisualizerService uiVisualizerService)
+            : base(messageMediator)
         {
-            var departmentRepository = GetService<IDepartmentRepository>();
+            _uiVisualizerService = uiVisualizerService;
+
             Departments = new FastObservableCollection<IDepartment>(departmentRepository.GetAllDepartments());
             if (Departments.Count > 0)
             {
@@ -69,23 +72,22 @@ namespace Catel.Examples.WPF.Prism.Modules.Departments.ViewModels
         /// </param>
         private void OnIsNotificationVisibleChanged(AdvancedPropertyChangedEventArgs e)
         {
-            var visualizerService = GetService<IUIVisualizerService>();
-
             if ((bool) e.NewValue)
             {
                 if (_notificationBarViewModel == null)
                 {
-                    _notificationBarViewModel = new NotificationBarViewModel();
-                    visualizerService.Activate(_notificationBarViewModel, "NotificationRegion");
+                    var typeFactory = TypeFactory.Default;
+                    _notificationBarViewModel = typeFactory.CreateInstance<NotificationBarViewModel>();
+                    _uiVisualizerService.Activate(_notificationBarViewModel, "NotificationRegion");
                 }
                 else
                 {
-                    visualizerService.Activate(_notificationBarViewModel);
+                    _uiVisualizerService.Activate(_notificationBarViewModel);
                 }
             }
             else
             {
-                visualizerService.Deactivate(_notificationBarViewModel);
+                _uiVisualizerService.Deactivate(_notificationBarViewModel);
             }
         }
 

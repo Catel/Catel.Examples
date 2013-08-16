@@ -12,6 +12,9 @@
     /// </summary>
     public class ShoppingListViewModel : ViewModelBase
     {
+        private readonly INavigationService _navigationService;
+        private readonly IMessageService _messageService;
+
         #region Variables
         private int _shoppingListIndex = -1;
         #endregion
@@ -20,8 +23,11 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="ShoppingListViewModel"/> class.
         /// </summary>
-        public ShoppingListViewModel()
+        public ShoppingListViewModel(INavigationService navigationService, IMessageService messageService)
         {
+            _navigationService = navigationService;
+            _messageService = messageService;
+
             Back = new Command<object>(OnBackExecute);
             Add = new Command<object>(OnAddExecute);
             Edit = new Command<object, object>(OnEditExecute, OnEditCanExecute);
@@ -112,9 +118,7 @@
         /// <param name="parameter">The parameter of the command.</param>
         private void OnBackExecute(object parameter)
         {
-            var navigationService = GetService<INavigationService>();
-            navigationService.Navigate<ManageShoppingListsViewModel>();
-            //navigationService.Navigate("/UI/Pages/ManageShoppingListsPage.xaml");
+            _navigationService.Navigate<ManageShoppingListsViewModel>();
         }
 
         /// <summary>
@@ -131,9 +135,7 @@
             var parameters = new Dictionary<string, object>();
             parameters.Add("ShoppingListIndex", _shoppingListIndex);
 
-            var navigationService = GetService<INavigationService>();
-            navigationService.Navigate<ShoppingListItemViewModel>(parameters);
-            //navigationService.Navigate("/UI/Pages/ShoppingListItemPage.xaml", parameters);
+            _navigationService.Navigate<ShoppingListItemViewModel>(parameters);
         }
 
         /// <summary>
@@ -160,9 +162,7 @@
             parameters.Add("ShoppingListIndex", _shoppingListIndex);
             parameters.Add("ShoppingListItemIndex", ShoppingListItems.IndexOf(SelectedShoppingListItem));
 
-            var navigationService = GetService<INavigationService>();
-            navigationService.Navigate<ShoppingListItemViewModel>(parameters);
-            //navigationService.Navigate("/UI/Pages/ShoppingListItemPage.xaml", parameters);
+            _navigationService.Navigate<ShoppingListItemViewModel>(parameters);
         }
 
         /// <summary>
@@ -185,8 +185,7 @@
         /// <param name="parameter">The parameter of the command.</param>
         private void OnDeleteExecute(object parameter)
         {
-            var messageService = GetService<IMessageService>();
-            if (messageService.Show("Are you sure that you want to remove the selected item?", "Are you sure?", MessageButton.OKCancel) == MessageResult.OK)
+            if (_messageService.Show("Are you sure that you want to remove the selected item?", "Are you sure?", MessageButton.OKCancel) == MessageResult.OK)
             {
                 ShoppingList.Items.Remove(SelectedShoppingListItem);
                 SelectedShoppingListItem = null;

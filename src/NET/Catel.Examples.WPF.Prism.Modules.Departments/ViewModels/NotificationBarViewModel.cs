@@ -1,5 +1,6 @@
 ﻿namespace Catel.Examples.WPF.Prism.Modules.Departments.ViewModels
 {
+    using Catel.Messaging;
     using Data;
     using Prism.ViewModels;
 
@@ -37,21 +38,24 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="NotificationBarViewModel"/> class.
         /// </summary>
-        public NotificationBarViewModel()
+        public NotificationBarViewModel(IMessageMediator messageMediator)
+            : base(messageMediator)
         {
             MessageMediator.Register<string>(this, data =>
+            {
+                if (ObjectHelper.IsNull(data))
                 {
-                    if (ObjectHelper.IsNull(data))
-                        return;
+                    return;
+                }
 
-                    try
-                    {
-                        EventMessage = data;
-                    }
-                    catch
-                    {
-                    }
-                }, "UpdateNotification");
+                try
+                {
+                    EventMessage = data;
+                }
+                catch
+                {
+                }
+            }, "UpdateNotification");
         }
         #endregion
     }

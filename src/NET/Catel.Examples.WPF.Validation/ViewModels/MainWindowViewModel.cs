@@ -1,7 +1,7 @@
 ﻿namespace Catel.Examples.WPF.Validation.ViewModels
 {
     using System;
-
+    using Catel.IoC;
     using Catel.MVVM;
     using Data;
     using MVVM.Services;
@@ -11,6 +11,8 @@
     /// </summary>
     public class MainWindowViewModel : ViewModelBase
     {
+        private readonly IUIVisualizerService _uiVisualizerService;
+
         #region Variables
         #endregion
 
@@ -18,13 +20,15 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="MainWindowViewModel"/> class.
         /// </summary>
-        public MainWindowViewModel()
+        public MainWindowViewModel(IUIVisualizerService uiVisualizerService)
         {
+            _uiVisualizerService = uiVisualizerService;
+
             OpenValidationViaValidateMethods = new Command(OnOpenValidationViaValidateMethodsExecute);
             OpenValidationViaDataAnnotations = new Command(OnOpenValidationViaDataAnnotationsExecute);
             OpenValidationInModel = new Command(OnOpenValidationInModelExecute);
             OpenValidationInIValidator = new Command(OnOpenValidationInIValidatorExecute);
-            OpenValidationViaFluentValidation = new Command(this.OpenValidationViaFluentValidationExecute);
+            OpenValidationViaFluentValidation = new Command(OpenValidationViaFluentValidationExecute);
         }
 
         #endregion
@@ -65,8 +69,7 @@
         /// </summary>
         private void OnOpenValidationViaValidateMethodsExecute()
         {
-            var uiVisualizerService = GetService<IUIVisualizerService>();
-            uiVisualizerService.ShowDialog(new ValidationWithValidateMethodsViewModel(null, EnableDeferValidationUntilFirstSave));
+            _uiVisualizerService.ShowDialog(new ValidationWithValidateMethodsViewModel(null, EnableDeferValidationUntilFirstSave));
         }
 
         /// <summary>
@@ -79,8 +82,7 @@
         /// </summary>
         private void OnOpenValidationViaDataAnnotationsExecute()
         {
-            var uiVisualizerService = GetService<IUIVisualizerService>();
-            uiVisualizerService.ShowDialog(new ValidationWithDataAnnotationsViewModel(null, EnableDeferValidationUntilFirstSave));
+            _uiVisualizerService.ShowDialog(new ValidationWithDataAnnotationsViewModel(null, EnableDeferValidationUntilFirstSave));
         }
 
         /// <summary>
@@ -93,8 +95,7 @@
         /// </summary>
         private void OnOpenValidationInModelExecute()
         {
-            var uiVisualizerService = GetService<IUIVisualizerService>();
-            uiVisualizerService.ShowDialog(new ValidationInModelViewModel(null, EnableDeferValidationUntilFirstSave));
+            _uiVisualizerService.ShowDialog(new ValidationInModelViewModel(null, EnableDeferValidationUntilFirstSave));
         }
 
         /// <summary>
@@ -107,8 +108,7 @@
         /// </summary>
         private void OnOpenValidationInIValidatorExecute()
         {
-            var uiVisualizerService = GetService<IUIVisualizerService>();
-            uiVisualizerService.ShowDialog(new ValidationInIValidatorViewModel(null, EnableDeferValidationUntilFirstSave));
+            _uiVisualizerService.ShowDialog(new ValidationInIValidatorViewModel(null, EnableDeferValidationUntilFirstSave));
         }
 
         public Command OpenValidationViaFluentValidation { get; private set; }
@@ -118,8 +118,8 @@
         /// </summary>
         private void OpenValidationViaFluentValidationExecute()
         {
-            var uiVisualizerService = GetService<IUIVisualizerService>();
-            uiVisualizerService.ShowDialog(new ValidationWithFluentValidationViewModel(null, EnableDeferValidationUntilFirstSave));
+            var typeFactory = TypeFactory.Default;
+            _uiVisualizerService.ShowDialog(new ValidationWithFluentValidationViewModel(null, EnableDeferValidationUntilFirstSave));
         }
 
         #endregion

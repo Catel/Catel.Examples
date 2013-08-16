@@ -11,6 +11,8 @@ namespace Catel.Examples.WP7.ShoppingList.ViewModels
     /// </summary>
     public class ShoppingListItemViewModel : ViewModelBase
     {
+        private readonly INavigationService _navigationService;
+
         #region Variables
         private int _shoppingListIndex = -1;
         private int _shoppingListItemIndex = -1;
@@ -20,8 +22,10 @@ namespace Catel.Examples.WP7.ShoppingList.ViewModels
         /// <summary>
         /// Initializes a new instance of the <see cref="ShoppingListItemViewModel"/> class.
         /// </summary>
-        public ShoppingListItemViewModel()
+        public ShoppingListItemViewModel(INavigationService navigationService)
         {
+            _navigationService = navigationService;
+
             OK = new Command<object, object>(OnOKExecute, OnOKCanExecute);
             Cancel = new Command<object>(OnCancelExecute);
         }
@@ -105,8 +109,7 @@ namespace Catel.Examples.WP7.ShoppingList.ViewModels
         /// <param name="parameter">The parameter of the command.</param>
         private void OnOKExecute(object parameter)
         {
-            var navigationService = GetService<INavigationService>();
-            navigationService.GoBack();
+            _navigationService.GoBack();
         }
 
         /// <summary>
@@ -122,8 +125,7 @@ namespace Catel.Examples.WP7.ShoppingList.ViewModels
         {
             CancelViewModel();
 
-            var navigationService = GetService<INavigationService>();
-            navigationService.GoBack();
+            _navigationService.GoBack();
         }
         #endregion
 

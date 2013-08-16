@@ -1,6 +1,5 @@
 ﻿namespace Catel.Examples.WPF.Authentication.ViewModels
 {
-    using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.ComponentModel.DataAnnotations;
     using Catel.MVVM;
@@ -12,6 +11,9 @@
     /// </summary>
     public class MainWindowViewModel : ViewModelBase
     {
+        private readonly IUIVisualizerService _uiVisualizerService;
+        private readonly IAuthenticationProvider _authenticationProvider;
+
         #region Variables
         #endregion
 
@@ -19,8 +21,11 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="MainWindowViewModel"/> class.
         /// </summary>
-        public MainWindowViewModel()
+        public MainWindowViewModel(IUIVisualizerService uiVisualizerService, IAuthenticationProvider authenticationProvider)
         {
+            _uiVisualizerService = uiVisualizerService;
+            _authenticationProvider = authenticationProvider;
+
             RoleCollection = new ObservableCollection<string>(new [] { "Read-only", "Administrator" });
 
             ShowView = new Command(OnShowViewExecute, OnShowViewCanExecute);
@@ -85,32 +90,16 @@
         /// </summary>
         private void OnShowViewExecute()
         {
-            var uiVisualizerService = GetService<IUIVisualizerService>();
-            uiVisualizerService.ShowDialog(new ExampleViewModel());
+            _uiVisualizerService.ShowDialog(new ExampleViewModel());
         }
         #endregion
 
         #region Methods
         private void OnSelectedRoleChanged()
         {
-            var authenticationProvider = GetService<IAuthenticationProvider>();
-
             // Dirty cast, normally this would be done via clean interfaces
-            ((AuthenticationProvider) authenticationProvider).Role = SelectedRole;
+            ((AuthenticationProvider)_authenticationProvider).Role = SelectedRole;
         }
-
-        ///// <summary>
-        ///// Validates the field values of this object. Override this method to enable
-        ///// validation of field values.
-        ///// </summary>
-        ///// <param name="validationResults">The validation results, add additional results to this list.</param>
-        //protected override void ValidateFields(List<FieldValidationResult> validationResults)
-        //{
-        //    if (string.IsNullOrEmpty(SelectedRole))
-        //    {
-        //        validationResults.Add(FieldValidationResult.CreateError(SelectedRoleProperty, "Select a role"));
-        //    }
-        //}
         #endregion
     }
 }

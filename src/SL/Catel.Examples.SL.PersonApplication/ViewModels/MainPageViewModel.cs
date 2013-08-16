@@ -11,6 +11,8 @@
     /// </summary>
     public class MainPageViewModel : ViewModelBase
     {
+        private readonly IUIVisualizerService _uiVisualizerService;
+
         #region Variables
         #endregion
 
@@ -18,8 +20,10 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="MainPageViewModel"/> class.
         /// </summary>
-        public MainPageViewModel()
+        public MainPageViewModel(IUIVisualizerService uiVisualizerService)
         {
+            _uiVisualizerService = uiVisualizerService;
+
             Add = new Command(OnAddExecute);
             Edit = new Command(OnEditExecute, OnEditCanExecute);
             Remove = new Command(OnRemoveExecute, OnRemoveCanExecute);
@@ -85,14 +89,13 @@
             var viewModel = new PersonViewModel(new Person());
 
             // Get UI visualizer service
-            var uiVisualizerService = GetService<IUIVisualizerService>();
-            uiVisualizerService.ShowDialog(viewModel, (sender, e) =>
-                                                    {
-                                                        if (e.Result ?? false)
-                                                        {
-                                                            PersonCollection.Add(viewModel.Person);
-                                                        }
-                                                    });
+            _uiVisualizerService.ShowDialog(viewModel, (sender, e) =>
+            {
+                if (e.Result ?? false)
+                {
+                    PersonCollection.Add(viewModel.Person);
+                }
+            });
         }
 
         /// <summary>
@@ -118,8 +121,7 @@
             var viewModel = new PersonViewModel(SelectedPerson);
 
             // Get UI visualizer service
-            var uiVisualizerService = GetService<IUIVisualizerService>();
-            uiVisualizerService.ShowDialog(viewModel);
+            _uiVisualizerService.ShowDialog(viewModel);
         }
 
         /// <summary>

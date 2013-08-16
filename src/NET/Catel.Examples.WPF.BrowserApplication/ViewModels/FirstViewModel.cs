@@ -10,12 +10,16 @@
     /// </summary>
     public class FirstViewModel : ViewModelBase
     {
+        private readonly INavigationService _navigationService;
+
         #region Constructor & destructor
         /// <summary>
         /// Initializes a new instance of the <see cref="FirstViewModel"/> class.
         /// </summary>
-        public FirstViewModel()
+        public FirstViewModel(INavigationService navigationService)
         {
+            _navigationService = navigationService;
+
             NavigateToOtherPage = new Command<object>(OnNavigateToOtherPageExecute);
         }
         #endregion
@@ -71,8 +75,7 @@
             var parameters = new Dictionary<string, object>();
             parameters.Add("Argument", ArgumentToSet);
 
-            var navigationService = GetService<INavigationService>();
-            navigationService.Navigate<SecondViewModel>(parameters);
+            _navigationService.Navigate<SecondViewModel>(parameters);
         }
         #endregion
 

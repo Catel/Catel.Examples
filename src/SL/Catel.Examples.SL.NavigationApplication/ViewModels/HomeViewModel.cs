@@ -10,12 +10,16 @@
     /// </summary>
     public class HomeViewModel : ViewModelBase
     {
+        private readonly INavigationService _navigationService;
+
         #region Constructor & destructor
         /// <summary>
         /// Initializes a new instance of the <see cref="HomeViewModel"/> class.
         /// </summary>
-        public HomeViewModel()
+        public HomeViewModel(INavigationService navigationService)
         {
+            _navigationService = navigationService;
+
             NavigateToAboutViaViewModel = new Command<object>(OnNavigateToAboutViaViewModelExecute);
         }
         #endregion
@@ -57,8 +61,7 @@
             var parameters = new Dictionary<string, object>();
             parameters.Add("Data", "navigated from home");
 
-            var navigationService = GetService<INavigationService>();
-            navigationService.Navigate<AboutViewModel>(parameters);
+            _navigationService.Navigate<AboutViewModel>(parameters);
         }
         #endregion
 

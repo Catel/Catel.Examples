@@ -6,6 +6,7 @@
 
 namespace Catel.Examples.WPF.Validation.ViewModels
 {
+    using Catel.IoC;
     using Data;
     using MVVM;
     using MVVM.Services;
@@ -16,6 +17,8 @@ namespace Catel.Examples.WPF.Validation.ViewModels
     /// </summary>
     public class ValidationWithFluentValidationViewModel : ViewModelBase
     {
+        private readonly IMessageService _messageService;
+
         #region Variables
         #endregion
 
@@ -27,6 +30,8 @@ namespace Catel.Examples.WPF.Validation.ViewModels
         /// <param name="deferValidationUntilFirstSave">if set to <c>true</c> [defer validation until first save].</param>
         public ValidationWithFluentValidationViewModel(ModelWithoutValidation person = null, bool deferValidationUntilFirstSave = true)
         {
+            _messageService = ServiceLocator.ResolveType<IMessageService>();
+
             if (person == null)
             {
                 person = new ModelWithoutValidation();
@@ -123,7 +128,7 @@ namespace Catel.Examples.WPF.Validation.ViewModels
 
         private void CheckCommandExecute()
         {
-            GetService<IMessageService>().Show("This button was enabled with the auto hook command feature");
+            _messageService.Show("This button was enabled with the auto hook command feature");
         }
         #endregion
     }

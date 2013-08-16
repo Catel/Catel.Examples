@@ -10,12 +10,16 @@
     /// </summary>
     public class DemoWindowViewModel : ViewModelBase
     {
+        private readonly IMessageService _messageService;
+
         #region Constructor & destructor
         /// <summary>
         /// Initializes a new instance of the <see cref="DemoWindowViewModel"/> class.
         /// </summary>
-        public DemoWindowViewModel()
+        public DemoWindowViewModel(IMessageService messageService)
         {
+            _messageService = messageService;
+
             Person = new PersonModel();
         }
         #endregion
@@ -98,24 +102,21 @@
         #region Methods
         protected override bool Cancel()
         {
-            var messageService = GetService<IMessageService>();
-            messageService.ShowInformation("View model canceled");
+            _messageService.ShowInformation("View model canceled");
 
             return base.Cancel();
         }
 
         protected override bool Save()
         {
-            var messageService = GetService<IMessageService>();
-            messageService.ShowInformation("View model saved");
+            _messageService.ShowInformation("View model saved");
 
             return base.Save();
         }
 
         protected override void Close()
         {
-            var messageService = GetService<IMessageService>();
-            messageService.ShowInformation("View model closed");
+            _messageService.ShowInformation("View model closed");
 
             base.Close();
         }

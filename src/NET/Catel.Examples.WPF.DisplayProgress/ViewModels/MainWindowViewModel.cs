@@ -15,6 +15,9 @@
     /// </summary>
     public class MainWindowViewModel : ViewModelBase
     {
+        private readonly IPleaseWaitService _pleaseWaitService;
+        private readonly ISplashScreenService _splashScreenService;
+
         #region Fields
         /// <summary>
         ///     The click.
@@ -26,12 +29,13 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="MainWindowViewModel" /> class.
         /// </summary>
-        /// <param name="serviceLocator">
-        /// The service locator.
-        /// </param>
-        public MainWindowViewModel(IServiceLocator serviceLocator)
-            : base(serviceLocator)
+        /// <param name="pleaseWaitService">The please wait service.</param>
+        /// <param name="splashScreenService"></param>
+        public MainWindowViewModel(IPleaseWaitService pleaseWaitService, ISplashScreenService splashScreenService)
         {
+            _pleaseWaitService = pleaseWaitService;
+            _splashScreenService = splashScreenService;
+
             IndeterminateCommand = new Command(IndeterminateCommandExecute);
             ShowProgressCommand = new Command(ShowProgressCommandExecute);
             ShowProgressWithSplashScreenCommand = new Command(ShowProgressWithSplashScreenCommandExecute);
@@ -159,14 +163,13 @@
         private void IndeterminateCommandExecute()
         {
 #if SILVERLIGHT
-            var pleaseWaitService = GetService<IPleaseWaitService>();
             var backgroundWorker = new BackgroundWorker();
             backgroundWorker.DoWork += (sender, args) => Thread.Sleep(5000);
             backgroundWorker.RunWorkerAsync();
-            backgroundWorker.RunWorkerCompleted += (sender, args) => pleaseWaitService.Hide();
-            pleaseWaitService.Show("There is a lot of work to do and don't know when will be done...");
+            backgroundWorker.RunWorkerCompleted += (sender, args) => _pleaseWaitService.Hide();
+            _pleaseWaitService.Show("There is a lot of work to do and don't know when will be done...");
 #else
-            GetService<IPleaseWaitService>().Show(() => Thread.Sleep(5000), "There is a lot of work to do and don't know when will be done...");
+            _pleaseWaitService.Show(() => Thread.Sleep(5000), "There is a lot of work to do and don't know when will be done...");
 #endif
         }
 
@@ -175,11 +178,9 @@
         /// </summary>
         private void ShowProgressCommandExecute()
         {
-            var splashScreenService = GetService<ISplashScreenService>();
+            RegisterTask(_splashScreenService);
 
-            RegisterTask(splashScreenService);
-
-            splashScreenService.CommitAsync();
+            _splashScreenService.CommitAsync();
         }
 
         /// <summary>
@@ -189,11 +190,9 @@
         {
             var progressControlViewModel = new CustomProgressControlViewModel();
 
-            var splashScreenService = GetService<ISplashScreenService>();
+            RegisterDetailedTask(_splashScreenService);
 
-            RegisterDetailedTask(splashScreenService);
-
-            splashScreenService.CommitAsyc(progressControlViewModel, this, string.Format("ProgressRegion{0}", (click++) % 2));
+            _splashScreenService.CommitAsyc(progressControlViewModel, this, string.Format("ProgressRegion{0}", (click++) % 2));
         }
 
         /// <summary>
@@ -201,11 +200,9 @@
         /// </summary>
         private void ShowProgressWithSplashScreenCommandExecute()
         {
-            var splashScreenService = GetService<ISplashScreenService>();
+            RegisterTask(_splashScreenService);
 
-            RegisterTask(splashScreenService);
-
-            splashScreenService.CommitAsync<SplashScreenWindowViewModel>();
+            _splashScreenService.CommitAsync<SplashScreenWindowViewModel>();
         }
 
         /// <summary>
@@ -213,11 +210,9 @@
         /// </summary>
         private void ShowProgressWithSplashScreenDetailedCommandExecute()
         {
-            var splashScreenService = GetService<ISplashScreenService>();
+            RegisterDetailedTask(_splashScreenService);
 
-            RegisterDetailedTask(splashScreenService);
-
-            splashScreenService.CommitAsync<SplashScreen1WindowViewModel>();
+            _splashScreenService.CommitAsync<SplashScreen1WindowViewModel>();
         }
 
         /// <summary>
@@ -225,9 +220,8 @@
         /// </summary>
         private void ShowProgressWithSplashScreenMoreDetailedCommandExecute()
         {
-            var splashScreenService = GetService<ISplashScreenService>();
-            RegisterDetailedTask(splashScreenService);
-            splashScreenService.CommitAsync<SplashScreen2WindowViewModel>();
+            RegisterDetailedTask(_splashScreenService);
+            _splashScreenService.CommitAsync<SplashScreen2WindowViewModel>();
         }
         #endregion
     }

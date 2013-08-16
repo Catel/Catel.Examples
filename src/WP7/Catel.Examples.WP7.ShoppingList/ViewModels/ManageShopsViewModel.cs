@@ -12,13 +12,19 @@ namespace Catel.Examples.WP7.ShoppingList.ViewModels
     /// </summary>
     public class ManageShopsViewModel : ViewModelBase
     {
+        private readonly INavigationService _navigationService;
+        private readonly IMessageService _messageService;
+
         #region Constructor & destructor
         /// <summary>
         /// Initializes a new instance of the <see cref="ManageShopsViewModel"/> class.
         /// </summary>
-        public ManageShopsViewModel()
+        public ManageShopsViewModel(INavigationService navigationService, IMessageService messageService)
             : base(false)
         {
+            _navigationService = navigationService;
+            _messageService = messageService;
+
             // This isn't really MVVM (normally, you would inject the data, but for the sake
             // of simplicity of this example, I will use a singleton)
             UserData = UserData.Instance;
@@ -100,9 +106,7 @@ namespace Catel.Examples.WP7.ShoppingList.ViewModels
         {
             SaveViewModel();
 
-            var navigationService = GetService<INavigationService>();
-            navigationService.Navigate<MainPageViewModel>();
-            //navigationService.Navigate("/UI/Pages/MainPage.xaml");
+            _navigationService.Navigate<MainPageViewModel>();
         }
 
         /// <summary>
@@ -116,8 +120,7 @@ namespace Catel.Examples.WP7.ShoppingList.ViewModels
         /// <param name="parameter">The parameter of the command.</param>
         private void OnAddExecute(object parameter)
         {
-            var navigationService = GetService<INavigationService>();
-            navigationService.Navigate<ShopViewModel>();
+            _navigationService.Navigate<ShopViewModel>();
             //navigationService.Navigate("/UI/Pages/ShopPage.xaml");
         }
 
@@ -144,8 +147,7 @@ namespace Catel.Examples.WP7.ShoppingList.ViewModels
             var parameters = new Dictionary<string, object>();
             parameters.Add("ShopIndex", Shops.IndexOf(SelectedShop));
 
-            var navigationService = GetService<INavigationService>();
-            navigationService.Navigate<ShopViewModel>(parameters);
+            _navigationService.Navigate<ShopViewModel>(parameters);
             //navigationService.Navigate("/UI/Pages/ShopPage.xaml", parameters);
         }
 
@@ -169,8 +171,7 @@ namespace Catel.Examples.WP7.ShoppingList.ViewModels
         /// <param name="parameter">The parameter of the command.</param>
         private void OnDeleteExecute(object parameter)
         {
-            var messageService = GetService<IMessageService>();
-            if (messageService.Show("Are you sure that you want to remove the selected shop?", "Are you sure?", MessageButton.OKCancel) == MessageResult.OK)
+            if (_messageService.Show("Are you sure that you want to remove the selected shop?", "Are you sure?", MessageButton.OKCancel) == MessageResult.OK)
             {
                 Shops.Remove(SelectedShop);
                 SelectedShop = null;

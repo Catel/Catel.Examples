@@ -21,12 +21,26 @@ namespace Catel.Examples.WPF.Prism.Modules.Employees.ViewModels
     /// </summary>
     public class EmployeesViewModel : ViewModelBase
     {
+        private readonly IUIVisualizerService _uiVisualizerService;
+        private readonly IEmployeeRepository _employeeRepository;
+        private readonly IMessageService _messageService;
+
         #region Constructors
         /// <summary>
         /// Initializes a new instance of the <see cref="EmployeesViewModel"/> class.
         /// </summary>
-        public EmployeesViewModel()
+        public EmployeesViewModel(IMessageMediator messageMediator, IUIVisualizerService uiVisualizerService, IEmployeeRepository employeeRepository,
+            IMessageService messageService)
+            : base(messageMediator)
         {
+            Argument.IsNotNull(() => uiVisualizerService);
+            Argument.IsNotNull(() => employeeRepository);
+            Argument.IsNotNull(() => messageService);
+
+            _uiVisualizerService = uiVisualizerService;
+            _employeeRepository = employeeRepository;
+            _messageService = messageService;
+
             AddEmployee = new Command(OnAddEmployeeExecute);
             EditEmployee = new Command(OnEditEmployeeExecute, OnEditEmployeeCanExecute);
             DeleteEmployee = new Command(OnDeleteEmployeeExecute, OnDeleteEmployeeCanExecute);
@@ -118,16 +132,16 @@ namespace Catel.Examples.WPF.Prism.Modules.Employees.ViewModels
         private void OnAddEmployeeExecute()
         {
             var employee = new Employee() {Department = SelectedDepartment};
-            var viewModel = new EmployeeViewModel(employee);
 
-            var uiVisualizerService = GetService<IUIVisualizerService>();
-            if (!(uiVisualizerService.ShowDialog(viewModel) ?? false))
+            var typeFactory = TypeFactory.Default;
+            var viewModel = typeFactory.CreateInstanceWithParametersAndAutoCompletion<EmployeeViewModel>(employee);
+
+            if (!(_uiVisualizerService.ShowDialog(viewModel) ?? false))
             {
                 return;
             }
 
-            var employeeRepository = GetService<IEmployeeRepository>();
-            employeeRepository.AddEmployee(employee);
+            _employeeRepository.AddEmployee(employee);
 
             if (employee.Department == SelectedDepartment)
             {
@@ -157,9 +171,10 @@ namespace Catel.Examples.WPF.Prism.Modules.Employees.ViewModels
         /// </summary>
         private void OnEditEmployeeExecute()
         {
-            var viewModel = new EmployeeViewModel(SelectedEmployee);
-            var uiVisualizerService = GetService<IUIVisualizerService>();
-            uiVisualizerService.ShowDialog(viewModel);
+            var typeFactory = TypeFactory.Default;
+            var viewModel = typeFactory.CreateInstanceWithParametersAndAutoCompletion<EmployeeViewModel>(SelectedEmployee);
+
+            _uiVisualizerService.ShowDialog(viewModel);
             if (SelectedDepartment != null)
             {
                 OnSelectedDepartmentUpdated(SelectedDepartment.Name);
@@ -186,18 +201,16 @@ namespace Catel.Examples.WPF.Prism.Modules.Employees.ViewModels
         private void OnDeleteEmployeeExecute()
         {
             if (ObjectHelper.IsNull(SelectedEmployee))
-                return;
-
-            var employee = SelectedEmployee;
-
-            var messageService = GetService<IMessageService>();
-            if (
-                messageService.Show(
-                    string.Format("Are you sure to delete {0} {1}", employee.FirstName, employee.LastName),
-                    "Are you sure?", MessageButton.YesNo) != MessageResult.Yes)
             {
                 return;
             }
+
+            var employee = SelectedEmployee;
+            if (_messageService.Show(string.Format("Are you sure to delete {0} {1}", employee.FirstName, employee.LastName), "Are you sure?", MessageButton.YesNo) != MessageResult.Yes)
+            {
+                return;
+            }
+
             Employees.Remove(employee);
             EmployeeRepository.DeleteEmployee(employee);
             SelectedEmployee = null;

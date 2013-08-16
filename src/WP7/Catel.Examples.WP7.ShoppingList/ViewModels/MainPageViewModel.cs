@@ -12,13 +12,16 @@ namespace Catel.Examples.WP7.ShoppingList.ViewModels
     /// </summary>
     public class MainPageViewModel : ViewModelBase
     {
+        private readonly INavigationService _navigationService;
+
         #region Constructor & destructor
         /// <summary>
         /// Initializes a new instance of the <see cref="MainPageViewModel"/> class.
         /// </summary>
-        public MainPageViewModel()
+        public MainPageViewModel(INavigationService navigationService)
             : base(false)
         {
+            _navigationService = navigationService;
             // This isn't really MVVM (normally, you would inject the data, but for the sake
             // of simplicity of this example, I will use a singleton)
             UserData = UserData.Instance;
@@ -112,9 +115,7 @@ namespace Catel.Examples.WP7.ShoppingList.ViewModels
         /// <param name="parameter">The parameter of the command.</param>
         private void OnManageShopsExecute(object parameter)
         {
-            var navigationService = GetService<INavigationService>();
-            navigationService.Navigate<ManageShopsViewModel>();
-            //navigationService.Navigate("/UI/Pages/ManageShopsPage.xaml");
+            _navigationService.Navigate<ManageShopsViewModel>();
         }
 
         /// <summary>
@@ -128,9 +129,7 @@ namespace Catel.Examples.WP7.ShoppingList.ViewModels
         /// <param name="parameter">The parameter of the command.</param>
         private void OnManageShoppingListsExecute(object parameter)
         {
-            var navigationService = GetService<INavigationService>();
-            navigationService.Navigate<ManageShoppingListsViewModel>();
-            //navigationService.Navigate("/UI/Pages/ManageShoppingListsPage.xaml");
+            _navigationService.Navigate<ManageShoppingListsViewModel>();
         }
         #endregion
 
@@ -154,9 +153,7 @@ namespace Catel.Examples.WP7.ShoppingList.ViewModels
                 var parameters = new Dictionary<string, object>();
                 parameters.Add("ShoppingListIndex", ShoppingLists.IndexOf(SelectedShoppingList));
 
-                var navigationService = GetService<INavigationService>();
-                navigationService.Navigate<ShoppingListViewModel>(parameters);
-                //navigationService.Navigate("/UI/Pages/ShoppingListPage.xaml", parameters);
+                _navigationService.Navigate<ShoppingListViewModel>(parameters);
             }
         }
         #endregion

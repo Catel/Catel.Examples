@@ -9,11 +9,15 @@
     /// </summary>
     public class BehaviorsWindowViewModel : ViewModelBase
     {
+        private readonly IMessageService _messageService;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="BehaviorsWindowViewModel"/> class.
         /// </summary>
-        public BehaviorsWindowViewModel()
+        public BehaviorsWindowViewModel(IMessageService messageService)
         {
+            _messageService = messageService;
+
             DoubleClickToCommandExample = new Command(OnDoubleClickToCommandExampleExecute);
             EventToCommandForLostFocus = new Command(OnEventToCommandForLostFocusExecute);
             KeyPressToCommandExample = new Command(OnKeyPressToCommandExampleExecute);
@@ -67,8 +71,7 @@
         /// </summary>
         private void OnDoubleClickToCommandExampleExecute()
         {
-            var messageService = GetService<IMessageService>();
-            messageService.Show("Received double click");
+            _messageService.Show("Received double click");
         }
 
         /// <summary>
@@ -81,8 +84,7 @@
         /// </summary>
         private void OnEventToCommandForLostFocusExecute()
         {
-            var messageService = GetService<IMessageService>();
-            messageService.Show("LostFocus event occurred");
+            _messageService.Show("LostFocus event occurred");
         }
 
         /// <summary>
@@ -95,16 +97,14 @@
         /// </summary>
         private void OnKeyPressToCommandExampleExecute()
         {
-            var messageService = GetService<IMessageService>();
-            messageService.Show("You just pressed the [Ctrl] + [Backspace] keys");
+            _messageService.Show("You just pressed the [Ctrl] + [Backspace] keys");
         }
         #endregion
 
         #region Methods
         private void OnDelayBindingUpdateValueChanged()
         {
-            var messageService = GetService<IMessageService>();
-            messageService.Show(string.Format("New value is {0}", DelayBindingUpdateValue));
+            _messageService.Show(string.Format("New value is {0}", DelayBindingUpdateValue));
         }
         #endregion
     }

@@ -21,12 +21,16 @@ namespace Catel.Examples.WP8.BingMaps.ViewModels
     /// </summary>
     public class MainPageViewModel : ViewModelBase
     {
+        private readonly ILocationService _locationService;
+
         #region Constructor & destructor
         /// <summary>
         /// Initializes a new instance of the <see cref="MainPageViewModel"/> class.
         /// </summary>
-        public MainPageViewModel()
+        public MainPageViewModel(ILocationService locationService)
         {
+            _locationService = locationService;
+
             PreviousMap = new Command<object, object>(OnPreviousMapExecute, OnPreviousMapCanExecute);
             NextMap = new Command<object, object>(OnNextMapExecute, OnNextMapCanExecute);
 
@@ -52,9 +56,8 @@ namespace Catel.Examples.WP8.BingMaps.ViewModels
             ZoomLevel = 19;
 
             // This is the actual subscription to the location service which you would regularly do in a view-model
-            var locationService = GetService<ILocationService>();
-            locationService.LocationChanged += OnCurrentLocationChanged;
-            locationService.Start();
+            _locationService.LocationChanged += OnCurrentLocationChanged;
+            _locationService.Start();
         }
         #endregion
 
@@ -191,9 +194,8 @@ namespace Catel.Examples.WP8.BingMaps.ViewModels
         /// </remarks>
         protected override void Close()
         {
-            var locationService = GetService<ILocationService>();
-            locationService.LocationChanged -= OnCurrentLocationChanged;
-            locationService.Stop();
+            _locationService.LocationChanged -= OnCurrentLocationChanged;
+            _locationService.Stop();
 
             base.Close();
         }
@@ -225,7 +227,7 @@ namespace Catel.Examples.WP8.BingMaps.ViewModels
             // of IoC in combination with the location service, we register the service here and directly retrieve
             // it to simulate a user walking through a street
             IoC.ServiceLocator.Default.RegisterType<ILocationService, MVVM.Services.Test.LocationService>();
-            var testLocationService = (MVVM.Services.Test.LocationService) GetService<ILocationService>();
+            var testLocationService = (MVVM.Services.Test.LocationService)_locationService;
 
             var timeSpan = new TimeSpan(0, 0, 0, 0, 500);
 

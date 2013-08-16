@@ -16,6 +16,9 @@
     /// </summary>
     public class MainWindowViewModel : ViewModelBase
     {
+        private readonly IUIVisualizerService _uiVisualizerService;
+        private readonly IPleaseWaitService _pleaseWaitService;
+
         #region Variables
         #endregion
 
@@ -23,9 +26,12 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="MainWindowViewModel"/> class.
         /// </summary>
-        public MainWindowViewModel()
+        public MainWindowViewModel(IUIVisualizerService uiVisualizerService, IPleaseWaitService pleaseWaitService)
             : base()
         {
+            _uiVisualizerService = uiVisualizerService;
+            _pleaseWaitService = pleaseWaitService;
+
             AvailableLanguages = new ObservableCollection<Language>();
             AvailableLanguages.Add(new Language("English", "en-US"));
             AvailableLanguages.Add(new Language("Chinese (simplified)", "zh-CHS"));
@@ -97,7 +103,7 @@
         private void OnDataWindowExecute()
         {
             var vm = new DataWindowViewModel(new Language());
-            GetService<IUIVisualizerService>().ShowDialog(vm);
+            _uiVisualizerService.ShowDialog(vm);
         }
 
         /// <summary>
@@ -110,8 +116,7 @@
         /// </summary>
         private void OnPleaseWaitWindowExecute()
         {
-            var pleaseWaitService = GetService<IPleaseWaitService>();
-            pleaseWaitService.Show(() => Thread.Sleep(3000));
+            _pleaseWaitService.Show(() => Thread.Sleep(3000));
         }
 
         /// <summary>

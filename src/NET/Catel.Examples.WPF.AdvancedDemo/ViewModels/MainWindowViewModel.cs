@@ -15,6 +15,7 @@
     public class MainWindowViewModel : ViewModelBase
     {
         private readonly IUIVisualizerService _uiVisualizerService;
+        private readonly IPleaseWaitService _pleaseWaitService;
 
         #region Variables
         #endregion
@@ -23,9 +24,10 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="MainWindowViewModel"/> class.
         /// </summary>
-        public MainWindowViewModel()
+        public MainWindowViewModel(IUIVisualizerService uiVisualizerService, IPleaseWaitService pleaseWaitService)
         {
-            _uiVisualizerService = ServiceLocator.ResolveType<IUIVisualizerService>();
+            _uiVisualizerService = uiVisualizerService;
+            _pleaseWaitService = pleaseWaitService;
 
             ShowWindowLogicInViewBase = new Command(OnShowWindowLogicInViewBaseExecute);
             ShowWindowLogicInBehavior = new Command(OnShowWindowLogicInBehaviorExecute);
@@ -56,7 +58,7 @@
         /// Gets the <see cref="IPleaseWaitService"/> via the Catel <see cref="ServiceLocator"/>.
         /// </summary>
         /// <value>The <see cref="IPleaseWaitService"/> via the Catel <see cref="ServiceLocator"/>.</value>
-        public IPleaseWaitService PleaseWaitServiceViaServiceLocator { get { return GetService<IPleaseWaitService>(); } }
+        public IPleaseWaitService PleaseWaitServiceViaServiceLocator { get { return _pleaseWaitService; } }
 
         /// <summary>
         /// Gets or sets the <see cref="IPleaseWaitService"/> via MEF.
@@ -99,7 +101,11 @@
         {
             _uiVisualizerService.Unregister(typeof(DemoWindowViewModel));
             _uiVisualizerService.Register(typeof(DemoWindowViewModel), typeof(Views.LogicInViewBase.DemoWindow));
-            _uiVisualizerService.ShowDialog(new DemoWindowViewModel());
+
+            var typeFactory = TypeFactory.Default;
+            var vm = typeFactory.CreateInstance<DemoWindowViewModel>();
+
+            _uiVisualizerService.ShowDialog(vm);
         }
 
         /// <summary>
@@ -114,7 +120,11 @@
         {
             _uiVisualizerService.Unregister(typeof(DemoWindowViewModel));
             _uiVisualizerService.Register(typeof(DemoWindowViewModel), typeof(Views.LogicInBehavior.DemoWindow));
-            _uiVisualizerService.ShowDialog(new DemoWindowViewModel());
+
+            var typeFactory = TypeFactory.Default;
+            var vm = typeFactory.CreateInstance<DemoWindowViewModel>();
+
+            _uiVisualizerService.ShowDialog(vm);
         }
 
         /// <summary>
@@ -129,7 +139,11 @@
         {
             _uiVisualizerService.Unregister(typeof(NestedUserControlsWindowViewModel));
             _uiVisualizerService.Register(typeof(NestedUserControlsWindowViewModel), typeof(Views.LogicInViewBase.NestedUserControlsWindow));
-            _uiVisualizerService.ShowDialog(new NestedUserControlsWindowViewModel());
+
+            var typeFactory = TypeFactory.Default;
+            var vm = typeFactory.CreateInstance<NestedUserControlsWindowViewModel>();
+
+            _uiVisualizerService.ShowDialog(vm);
         }
 
         /// <summary>
@@ -144,7 +158,11 @@
         {
             _uiVisualizerService.Unregister(typeof(NestedUserControlsWindowViewModel));
             _uiVisualizerService.Register(typeof(NestedUserControlsWindowViewModel), typeof(Views.LogicInBehavior.NestedUserControlsWindow));
-            _uiVisualizerService.ShowDialog(new NestedUserControlsWindowViewModel());
+
+            var typeFactory = TypeFactory.Default;
+            var vm = typeFactory.CreateInstance<NestedUserControlsWindowViewModel>();
+
+            _uiVisualizerService.ShowDialog(vm);
         }
 
         /// <summary>
@@ -196,7 +214,10 @@
         /// </summary>
         private void OnShowWindowWithBehaviorsExecute()
         {
-            _uiVisualizerService.ShowDialog(new BehaviorsWindowViewModel());
+            var typeFactory = TypeFactory.Default;
+            var viewModel = typeFactory.CreateInstance<BehaviorsWindowViewModel>();
+
+            _uiVisualizerService.ShowDialog(viewModel);
         }
 
         /// <summary>

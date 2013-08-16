@@ -1,5 +1,7 @@
 ﻿namespace Catel.Examples.WPF.Prism.ViewModels
 {
+    using Catel.Messaging;
+
     /// <summary>
     /// MainWindow view model.
     /// </summary>
@@ -12,7 +14,8 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="ShellViewModel"/> class.
         /// </summary>
-        public ShellViewModel()
+        public ShellViewModel(IMessageMediator messageMediator)
+            : base(messageMediator)
         {
         }
         #endregion

@@ -6,13 +6,17 @@
 
     public class MainPageViewModel : ViewModelBase
     {
+        private readonly INavigationService _navigationService;
+
         #region Constructor & destructor
         /// <summary>
         /// Initializes a new instance of the <see cref="MainPageViewModel"/> class.
         /// </summary>
-        public MainPageViewModel()
+        public MainPageViewModel(INavigationService navigationService)
             : base()
         {
+            _navigationService = navigationService;
+
             StartTestSensors = new Command<object>(OnStartTestSensorsExecute);
             StartRealSensors = new Command<object>(OnStartRealSensorsExecute);
         }
@@ -75,12 +79,10 @@
         /// <param name="testMode">if set to <c>true</c>, the test implementation will be started.</param>
         private void StartSensors(bool testMode)
         {
-            var navigationService = GetService<INavigationService>();
-
             var parameters = new Dictionary<string, object>();
             parameters.Add("testmode", testMode);
 
-            navigationService.Navigate(typeof (SensorsViewModel), parameters);
+            _navigationService.Navigate(typeof (SensorsViewModel), parameters);
         }
         #endregion
     }

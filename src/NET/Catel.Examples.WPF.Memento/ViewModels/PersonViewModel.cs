@@ -7,6 +7,7 @@
 namespace Catel.Examples.WPF.Memento.ViewModels
 {
     using System.Collections.Generic;
+    using Catel.IoC;
     using Catel.Memento;
     using Data;
     using MVVM;
@@ -17,6 +18,8 @@ namespace Catel.Examples.WPF.Memento.ViewModels
     /// </summary>
     public class PersonViewModel : ViewModelBase
     {
+        private readonly IMementoService _mementoService;
+
         #region Variables
         #endregion
 
@@ -25,17 +28,19 @@ namespace Catel.Examples.WPF.Memento.ViewModels
         /// Initializes a new instance of the <see cref="PersonViewModel"/> class.
         /// </summary>
         /// <param name="person">The person.</param>
-        public PersonViewModel(Person person)
+        public PersonViewModel(Person person, IMementoService mementoService)
         {
+            _mementoService = mementoService;
+
             Person = person ?? new Person();
 
-            Undo = new Command(() => MementoService.Undo(), () => MementoService.CanUndo);
-            Redo = new Command(() => MementoService.Redo(), () => MementoService.CanRedo);
+            Undo = new Command(() => _mementoService.Undo(), () => _mementoService.CanUndo);
+            Redo = new Command(() => _mementoService.Redo(), () => _mementoService.CanRedo);
 
             GenerateData = new Command<object, object>(OnGenerateDataExecute, OnGenerateDataCanExecute);
             ToggleCustomError = new Command<object>(OnToggleCustomErrorExecute);
 
-            MementoService.RegisterObject(this);
+            _mementoService.RegisterObject(this);
         }
         #endregion
 
@@ -47,14 +52,6 @@ namespace Catel.Examples.WPF.Memento.ViewModels
         public override string Title
         {
             get { return "Person"; }
-        }
-
-        /// <summary>
-        /// Gets the memento service.
-        /// </summary>
-        private IMementoService MementoService
-        {
-            get { return GetService<IMementoService>(); }
         }
 
         #region Models
@@ -85,7 +82,7 @@ namespace Catel.Examples.WPF.Memento.ViewModels
             get { return GetValue<Gender>(GenderProperty); }
             set
             {
-                MementoService.Add(new PropertyChangeUndo(this, "Gender", GetValue<string>(GenderProperty), value));
+                _mementoService.Add(new PropertyChangeUndo(this, "Gender", GetValue<string>(GenderProperty), value));
                 SetValue(GenderProperty, value);
             }
         }
@@ -272,7 +269,7 @@ namespace Catel.Examples.WPF.Memento.ViewModels
         /// <param name="result">The result to pass to the view. This will, for example, be used as <c>DialogResult</c>.</param>
         protected override void OnClosed(bool? result)
         {
-            MementoService.UnregisterObject(this);
+            _mementoService.UnregisterObject(this);
 
             base.OnClosed(result);
         }
@@ -288,7 +285,7 @@ namespace Catel.Examples.WPF.Memento.ViewModels
         /// Initializes a new instance of the <see cref="DesignPersonViewModel"/> class.
         /// </summary>
         public DesignPersonViewModel()
-            : base(new Person {FirstName = "Geert", MiddleName = "van", LastName = "Horrik", Gender = Gender.Male})
+            : base(new Person {FirstName = "Geert", MiddleName = "van", LastName = "Horrik", Gender = Gender.Male}, IoC.ServiceLocator.Default.ResolveType<IMementoService>())
         {
         }
     }

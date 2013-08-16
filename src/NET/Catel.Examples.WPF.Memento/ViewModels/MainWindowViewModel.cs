@@ -1,6 +1,7 @@
 ﻿namespace Catel.Examples.WPF.Memento.ViewModels
 {
     using System.Collections.ObjectModel;
+    using Catel.IoC;
     using MVVM;
     using Catel.Memento;
     using Data;
@@ -13,6 +14,10 @@
     /// </summary>
     public class MainWindowViewModel : ViewModelBase
     {
+        private readonly IUIVisualizerService _uiVisualizerService;
+        private readonly IMessageService _messageService;
+        private readonly IMementoService _mementoService;
+
         #region Variables
         #endregion
 
@@ -20,20 +25,22 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="MainWindowViewModel"/> class.
         /// </summary>
-        public MainWindowViewModel()
+        public MainWindowViewModel(IUIVisualizerService uiVisualizerService, IMessageService messageService, IMementoService mementoService)
         {
+            _uiVisualizerService = uiVisualizerService;
+            _messageService = messageService;
+            _mementoService = mementoService;
+
             Add = new Command(OnAddExecute);
             Edit = new Command(OnEditExecute, OnEditCanExecute);
             Remove = new Command(OnRemoveExecute, OnRemoveCanExecute);
 
-            Undo = new Command(() => MementoService.Undo(), () => MementoService.CanUndo);
-            Redo = new Command(() => MementoService.Redo(), () => MementoService.CanRedo);
-
-            
+            Undo = new Command(() => _mementoService.Undo(), () => _mementoService.CanUndo);
+            Redo = new Command(() => _mementoService.Redo(), () => _mementoService.CanRedo);
 
             PersonCollection = new ObservableCollection<Person> {new Person {Gender = Gender.Male, FirstName = "Geert", MiddleName = "van", LastName = "Horrik"}, new Person {Gender = Gender.Male, FirstName = "Fred", MiddleName = "", LastName = "Retteket"}};
 
-            MementoService.RegisterCollection(PersonCollection);
+            _mementoService.RegisterCollection(PersonCollection);
         }
         #endregion
 
@@ -46,11 +53,6 @@
         {
             get { return Resources.MainWindowTitle; }
         }
-
-        /// <summary>
-        /// Gets the memento service.
-        /// </summary>
-        private IMementoService MementoService { get { return GetService<IMementoService>(); }}
 
         /// <summary>
         /// Gets the collection of Persons.
@@ -92,9 +94,9 @@
         /// </summary>
         private void OnAddExecute()
         {
-            var viewModel = new PersonViewModel(new Person());
-            var uiVisualizerService = GetService<IUIVisualizerService>();
-            if (uiVisualizerService.ShowDialog(viewModel) ?? false)
+            var typeFactory = TypeFactory.Default;
+            var viewModel = typeFactory.CreateInstanceWithParametersAndAutoCompletion<PersonViewModel>(new Person());
+            if (_uiVisualizerService.ShowDialog(viewModel) ?? false)
             {
                 PersonCollection.Add(viewModel.Person);
             }
@@ -119,9 +121,9 @@
         /// </summary>
         private void OnEditExecute()
         {
-            var viewModel = new PersonViewModel(SelectedPerson);
-            var uiVisualizerService = GetService<IUIVisualizerService>();
-            uiVisualizerService.ShowDialog(viewModel);
+            var typeFactory = TypeFactory.Default;
+            var viewModel = typeFactory.CreateInstanceWithParametersAndAutoCompletion<PersonViewModel>(SelectedPerson);
+            _uiVisualizerService.ShowDialog(viewModel);
         }
 
         /// <summary>
@@ -143,8 +145,7 @@
         /// </summary>
         private void OnRemoveExecute()
         {
-            var messageService = GetService<IMessageService>();
-            if (messageService.Show("Are you sure you want to remove this person?", "Are you sure?", MessageButton.YesNo) == MessageResult.Yes)
+            if (_messageService.Show("Are you sure you want to remove this person?", "Are you sure?", MessageButton.YesNo) == MessageResult.Yes)
             {
                 PersonCollection.Remove(SelectedPerson);
             }
@@ -170,7 +171,7 @@
         /// <param name="result">The result to pass to the view. This will, for example, be used as <c>DialogResult</c>.</param>
         protected override void OnClosed(bool? result)
         {
-            MementoService.UnregisterCollection(PersonCollection);
+            _mementoService.UnregisterCollection(PersonCollection);
 
             base.OnClosed(result);
         }

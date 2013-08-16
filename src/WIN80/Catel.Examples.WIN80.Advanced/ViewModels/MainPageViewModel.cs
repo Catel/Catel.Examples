@@ -12,6 +12,9 @@
     /// </summary>
     public class MainPageViewModel : ViewModelBase
     {
+        private readonly IPleaseWaitService _pleaseWaitService;
+        private readonly INavigationService _navigationService;
+
         #region Variables
         #endregion
 
@@ -19,8 +22,11 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="MainPageViewModel"/> class.
         /// </summary>
-        public MainPageViewModel()
+        public MainPageViewModel(IPleaseWaitService pleaseWaitService, INavigationService navigationService)
         {
+            _pleaseWaitService = pleaseWaitService;
+            _navigationService = navigationService;
+
             ShowNestedUserControls = new Command(OnShowNestedUserControlsLogicInViewBaseExecute);
 
             ShowPleaseWaitWindowViaServiceLocator = new Command(OnShowPleaseWaitWindowViaServiceLocatorExecute);
@@ -38,7 +44,7 @@
         /// Gets the <see cref="IPleaseWaitService"/> via the Catel <see cref="ServiceLocator"/>.
         /// </summary>
         /// <value>The <see cref="IPleaseWaitService"/> via the Catel <see cref="ServiceLocator"/>.</value>
-        public IPleaseWaitService PleaseWaitServiceViaServiceLocator { get { return GetService<IPleaseWaitService>(); } }
+        public IPleaseWaitService PleaseWaitServiceViaServiceLocator { get { return _pleaseWaitService; } }
 
         /// <summary>
         /// Gets or sets whether the please wait windows is intermediate.
@@ -66,8 +72,7 @@
         /// </summary>
         private void OnShowNestedUserControlsLogicInViewBaseExecute()
         {
-            var navigationService = GetService<INavigationService>();
-            navigationService.Navigate<NestedUserControlsViewModel>();
+            _navigationService.Navigate<NestedUserControlsViewModel>();
         }
 
         /// <summary>

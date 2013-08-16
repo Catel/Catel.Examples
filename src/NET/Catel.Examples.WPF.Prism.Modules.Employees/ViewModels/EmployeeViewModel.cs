@@ -1,6 +1,7 @@
 ﻿namespace Catel.Examples.WPF.Prism.Modules.Employees.ViewModels
 {
     using System;
+    using Catel.Messaging;
     using Collections;
     using Data;
     using MVVM;
@@ -14,16 +15,22 @@
     {
         #region Constructors
         /// <summary>
-        /// Initializes a new instance of the <see cref="EmployeeViewModel"/> class.
+        /// Initializes a new instance of the <see cref="EmployeeViewModel" /> class.
         /// </summary>
-        /// <exception cref="ArgumentNullException">The <paramref name="employee"/> is <c>null</c>.</exception>
-        public EmployeeViewModel(IEmployee employee)
+        /// <param name="employee">The employee.</param>
+        /// <param name="messageMediator">The message mediator.</param>
+        /// <param name="departmentRepository">The department repository.</param>
+        /// <exception cref="ArgumentNullException">The <paramref name="employee" /> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException">The <paramref name="messageMediator" /> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException">The <paramref name="departmentRepository" /> is <c>null</c>.</exception>
+        public EmployeeViewModel(IEmployee employee, IMessageMediator messageMediator, IDepartmentRepository departmentRepository)
+            : base(messageMediator)
         {
-            Argument.IsNotNull("employee", employee);
+            Argument.IsNotNull(() => employee);
+            Argument.IsNotNull(() => messageMediator);
 
             Employee = employee;
 
-            var departmentRepository = GetService<IDepartmentRepository>();
             AvailableDepartments = new FastObservableCollection<IDepartment>(departmentRepository.GetAllDepartments());
         }
         #endregion
