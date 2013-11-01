@@ -58,6 +58,9 @@ _ReSharper*
 *.fbl7
 *.fbpInf
 
+# Ghostdoc
+*.GhostDoc.xml
+
 # Deployments
 deployment/FinalBuilder/backup
 deployment/InnoSetup/template/templates
