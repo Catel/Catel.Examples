@@ -192,7 +192,7 @@
 
             RegisterDetailedTask(_splashScreenService);
 
-            _splashScreenService.CommitAsyc(progressControlViewModel, this, string.Format("ProgressRegion{0}", (click++) % 2));
+            _splashScreenService.CommitAsync(progressControlViewModel, this, string.Format("ProgressRegion{0}", (click++) % 2));
         }
 
         /// <summary>

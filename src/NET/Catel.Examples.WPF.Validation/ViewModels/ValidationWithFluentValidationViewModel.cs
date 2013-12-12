@@ -24,13 +24,16 @@ namespace Catel.Examples.WPF.Validation.ViewModels
 
         #region Constructor & destructor
         /// <summary>
-        /// Initializes a new instance of the <see cref="ValidationInIValidatorViewModel"/> class.
+        /// Initializes a new instance of the <see cref="ValidationInIValidatorViewModel" /> class.
         /// </summary>
+        /// <param name="messageService">The message service.</param>
         /// <param name="person">The person.</param>
         /// <param name="deferValidationUntilFirstSave">if set to <c>true</c> [defer validation until first save].</param>
-        public ValidationWithFluentValidationViewModel(ModelWithoutValidation person = null, bool deferValidationUntilFirstSave = true)
+        public ValidationWithFluentValidationViewModel(ModelWithoutValidation person, bool deferValidationUntilFirstSave, IMessageService messageService)
         {
-            _messageService = ServiceLocator.ResolveType<IMessageService>();
+            Argument.IsNotNull(() => messageService);
+
+            _messageService = messageService;
 
             if (person == null)
             {

@@ -119,7 +119,9 @@
         private void OpenValidationViaFluentValidationExecute()
         {
             var typeFactory = TypeFactory.Default;
-            _uiVisualizerService.ShowDialog(new ValidationWithFluentValidationViewModel(null, EnableDeferValidationUntilFirstSave));
+            var vm = typeFactory.CreateInstanceWithParametersAndAutoCompletion<ValidationWithFluentValidationViewModel>(null, true);
+
+            _uiVisualizerService.ShowDialog(vm);
         }
 
         #endregion

@@ -34,7 +34,7 @@ namespace Catel.Examples.WP8.ShoppingList.Data
                     {
                         using (var isolatedStorageFileStream = isolatedStorageFile.OpenFile("UserData.dob", FileMode.Open, FileAccess.Read))
                         {
-                            Instance = Load(isolatedStorageFileStream);
+                            Instance = Load(isolatedStorageFileStream, SerializationMode.Xml);
                         }
                     }
                 }
