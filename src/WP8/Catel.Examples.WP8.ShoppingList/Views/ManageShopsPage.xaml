@@ -4,7 +4,6 @@
                             xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
                             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                            xmlns:Preview="clr-namespace:Phone7.Fx.Mango;assembly=Phone7.Fx.Mango"
                             xmlns:catel="clr-namespace:Catel.Phone.Controls;assembly=Catel.MVVM"
                             FontFamily="{StaticResource PhoneFontFamilyNormal}"
                             FontSize="{StaticResource PhoneFontSizeNormal}"

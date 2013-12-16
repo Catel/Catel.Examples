@@ -50,9 +50,9 @@
         /// Gets the employee.
         /// </summary>
         [Model]
-        [Expose("FirstName")]
-        [Expose("LastName")]
-        [Expose("Department")]
+        [Fody.Expose("FirstName")]
+        [Fody.Expose("LastName")]
+        [Fody.Expose("Department")]
         public IEmployee Employee
         {
             get { return GetValue<Employee>(EmployeeProperty); }

@@ -1,5 +1,6 @@
 ﻿namespace Catel.Examples.WPF.MasterDetail.ViewModels
 {
+    using Catel.Fody;
     using Data;
     using MVVM;
     using Models;
@@ -31,10 +32,10 @@
         /// Gets or sets the person.
         /// </summary>
         [Model]
-        [Expose("Gender")]
-        [Expose("FirstName")]
-        [Expose("MiddleName")]
-        [Expose("LastName")]
+        [Fody.Expose("Gender")]
+        [Fody.Expose("FirstName")]
+        [Fody.Expose("MiddleName")]
+        [Fody.Expose("LastName")]
         private Person Person
         {
             get { return GetValue<Person>(PersonProperty); }

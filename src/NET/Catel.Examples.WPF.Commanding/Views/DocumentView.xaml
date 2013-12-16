@@ -1,0 +1,16 @@
+﻿<catel:UserControl x:Class="Catel.Examples.WPF.Commanding.Views.DocumentView"
+                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+				   xmlns:catel="http://catel.codeplex.com">
+
+    <Border BorderThickness="1" BorderBrush="Gray">
+        <catel:StackGrid>
+            <catel:StackGrid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+            </catel:StackGrid.ColumnDefinitions>
+
+            <TextBlock Text="{Binding LastCommandExecutionDateTime, StringFormat='Last executed command time:  \{0:HH:mm:ss.fff\}'}" />
+        </catel:StackGrid>
+    </Border>
+
+</catel:UserControl>

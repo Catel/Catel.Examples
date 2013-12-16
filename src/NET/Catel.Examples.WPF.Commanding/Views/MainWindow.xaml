@@ -1,0 +1,51 @@
+﻿<catel:DataWindow x:Class="Catel.Examples.WPF.Commanding.Views.MainWindow"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:catel="http://catel.codeplex.com"
+                  xmlns:views="clr-namespace:Catel.Examples.WPF.Commanding.Views"
+                  ShowInTaskbar="True" ResizeMode="CanResize" SizeToContent="Manual" WindowStartupLocation="Manual" WindowState="Maximized">
+
+    <catel:StackGrid x:Name="LayoutRoot">
+
+        <catel:StackGrid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </catel:StackGrid.RowDefinitions>
+
+        <catel:StackGrid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </catel:StackGrid.ColumnDefinitions>
+
+        <Ribbon catel:StackGrid.ColumnSpan="4">
+            <RibbonTab Header="Home" KeyTip="H" >
+                <RibbonGroup Header="Composite commands">
+                    <RibbonButton Command="{catel:CommandManagerBinding Refresh}" LargeImageSource="..\Resources\Images\Refresh.png" 
+                                  Label="Refresh" KeyTip="F5" />
+                </RibbonGroup>
+            </RibbonTab>
+        </Ribbon>
+
+        <Label catel:StackGrid.ColumnSpan="4">
+            <TextBlock>
+                This example shows how commands on a ribbon can be registered in the ICommandManager of Catel. All views below of this explanation
+                can dynamically register to application-wide commands and are invoked automatically when the command is being executed.
+                <LineBreak />
+                <LineBreak />
+                The advantage of the command manager is that it is also possible to define keyboard shortcuts to the commands.
+                <LineBreak />
+                <LineBreak />
+                To run this example, click the Refresh button in the Ribbon above or hit F5.
+            </TextBlock>
+        </Label>
+
+        <views:DocumentView />
+        <views:DocumentView />
+        <views:DocumentView />
+        <views:DocumentView />
+
+    </catel:StackGrid>
+</catel:DataWindow>

@@ -32,8 +32,8 @@
         /// Gets or sets the language.
         /// </summary>
         [Model]
-        [Expose("Name")]
-        [Expose("Code")]
+        [Fody.Expose("Name")]
+        [Fody.Expose("Code")]
         private Language Language
         {
             get { return GetValue<Language>(LanguageProperty); }

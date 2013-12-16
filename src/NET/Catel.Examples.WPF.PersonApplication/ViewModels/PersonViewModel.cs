@@ -42,9 +42,9 @@
         /// Gets or sets the person model.
         /// </summary>
         [Model]
-        [Expose("FirstName")]
-        [Expose("MiddleName")]
-        [Expose("LastName")]
+        [Fody.Expose("FirstName")]
+        [Fody.Expose("MiddleName")]
+        [Fody.Expose("LastName")]
         public Person Person
         {
             get { return GetValue<Person>(PersonProperty); }
