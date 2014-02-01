@@ -34,7 +34,7 @@
 
             AvailableLanguages = new ObservableCollection<Language>();
             AvailableLanguages.Add(new Language("English", "en-US"));
-            AvailableLanguages.Add(new Language("Chinese (simplified)", "zh-CHS"));
+            AvailableLanguages.Add(new Language("Chinese (simplified)", "zh-HANS"));
             AvailableLanguages.Add(new Language("Dutch", "nl"));
             AvailableLanguages.Add(new Language("French", "fr"));
             AvailableLanguages.Add(new Language("German", "de"));
