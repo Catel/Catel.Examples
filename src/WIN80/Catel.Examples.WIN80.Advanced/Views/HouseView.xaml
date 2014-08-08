@@ -5,11 +5,12 @@
                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
                    xmlns:catel="using:Catel.Windows.Controls" 
                    xmlns:views="using:Catel.Examples.WIN80.Advanced.Views" 
-                   xmlns:catelconverters="using:Catel.Windows.Data.Converters" mc:Ignorable="d"
+                   xmlns:converters="using:Catel.MVVM.Converters"
+                   mc:Ignorable="d"
                    d:DesignHeight="300" d:DesignWidth="400">
 
     <UserControl.Resources>
-        <catelconverters:FormattingConverter x:Key="FormattingConverter" />
+        <converters:FormattingConverter x:Key="FormattingConverter" />
     </UserControl.Resources>
 
     <Grid>

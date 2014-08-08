@@ -1,19 +1,17 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Boot.cs" company="">
-//   
+// <copyright file="Boot.cs" company="Catel development team">
+//   Copyright (c) 2008 - 2014 Catel development team. All rights reserved.
 // </copyright>
-// <summary>
-//   The boot.
-// </summary>
 // --------------------------------------------------------------------------------------------------------------------
+
+
 namespace Catel.Examples.DisplayProgress
 {
-    using Catel;
-    using Catel.Examples.DisplayProgress.Views;
+    using Views;
 
 #if SILVERLIGHT
-    using Catel.IoC;
-    using Catel.Services;
+    using IoC;
+    using Services;
 #endif
 
     /// <summary>

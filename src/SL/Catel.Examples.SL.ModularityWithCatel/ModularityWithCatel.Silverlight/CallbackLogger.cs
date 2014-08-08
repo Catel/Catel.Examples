@@ -61,16 +61,6 @@ namespace ModularityWithCatel.Silverlight
         #endregion
 
         #region Methods
-
-        /// <summary>
-        /// Write a new log entry with the specified category and priority.
-        /// </summary>
-        /// <param name="message">
-        /// Message body to log.
-        /// </param>
-        /// <param name="category">
-        /// Category of the entry.
-        /// </param>
         public void Log(string message, Category category)
         {
             if (Callback != null)
@@ -83,9 +73,6 @@ namespace ModularityWithCatel.Silverlight
             }
         }
 
-        /// <summary>
-        /// Replays the saved logs if the Callback has been set.
-        /// </summary>
         public void ReplaySavedLogs()
         {
             if (Callback != null)
@@ -98,58 +85,22 @@ namespace ModularityWithCatel.Silverlight
             }
         }
 
-        /// <summary>
-        /// Called when a <see cref="F:Catel.Logging.LogEvent.Debug"/> message is written to the log.
-        /// </summary>
-        /// <param name="log">
-        /// The log.
-        /// </param>
-        /// <param name="message">
-        /// The message.
-        /// </param>
-        public override void Debug(ILog log, string message)
+        protected override void Debug(ILog log, string message, object extraData, DateTime time)
         {
             Log(message, Category.Debug);
         }
 
-        /// <summary>
-        /// Called when a <see cref="F:Catel.Logging.LogEvent.Info"/> message is written to the log.
-        /// </summary>
-        /// <param name="log">
-        /// The log.
-        /// </param>
-        /// <param name="message">
-        /// The message.
-        /// </param>
-        public override void Info(ILog log, string message)
+        protected override void Info(ILog log, string message, object extraData, DateTime time)
         {
             Log(message, Category.Info);
         }
 
-        /// <summary>
-        /// Called when a <see cref="F:Catel.Logging.LogEvent.Warning"/> message is written to the log.
-        /// </summary>
-        /// <param name="log">
-        /// The log.
-        /// </param>
-        /// <param name="message">
-        /// The message.
-        /// </param>
-        public override void Warning(ILog log, string message)
+        protected override void Warning(ILog log, string message, object extraData, DateTime time)
         {
             Log(message, Category.Warn);
         }
 
-        /// <summary>
-        /// Called when a <see cref="F:Catel.Logging.LogEvent.Error"/> message is written to the log.
-        /// </summary>
-        /// <param name="log">
-        /// The log.
-        /// </param>
-        /// <param name="message">
-        /// The message.
-        /// </param>
-        public override void Error(ILog log, string message)
+        protected override void Error(ILog log, string message, object extraData, DateTime time)
         {
             Log(message, Category.Exception);
         }

@@ -119,6 +119,6 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  <Import Project="$(ProjectPath)\..\..\..\..\..\Tools\Pepita\PepitaGet.targets" />
+  
   <Import Project="Fody.targets" />
 </Project>

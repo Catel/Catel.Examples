@@ -8,6 +8,7 @@
 namespace Catel.Examples.WP8.ShoppingList.ViewModels
 {
     using System;
+    using System.Threading.Tasks;
     using Catel.Data;
     using Catel.Examples.WP8.ShoppingList.Data;
     using Catel.MVVM;
@@ -173,16 +174,16 @@ namespace Catel.Examples.WP8.ShoppingList.ViewModels
         /// </remarks>
         protected override void OnNavigationCompleted()
         {
-            if (!NavigationContext.ContainsKey("ShoppingListIndex"))
+            if (!NavigationContext.Values.ContainsKey("ShoppingListIndex"))
             {
                 throw new Exception("ShoppingListIndex is a mandatory argument");
             }
 
-            int.TryParse(NavigationContext["ShoppingListIndex"], out _shoppingListIndex);
+            int.TryParse((string)NavigationContext.Values["ShoppingListIndex"], out _shoppingListIndex);
 
-            if (NavigationContext.ContainsKey("ShoppingListItemIndex"))
+            if (NavigationContext.Values.ContainsKey("ShoppingListItemIndex"))
             {
-                int.TryParse(NavigationContext["ShoppingListItemIndex"], out _shoppingListItemIndex);
+                int.TryParse((string)NavigationContext.Values["ShoppingListItemIndex"], out _shoppingListItemIndex);
             }
 
             ShoppingListItem = _shoppingListItemIndex != -1 ? UserData.Instance.ShoppingLists[_shoppingListIndex].Items[_shoppingListItemIndex] : new ShoppingListItem();
@@ -194,7 +195,7 @@ namespace Catel.Examples.WP8.ShoppingList.ViewModels
         /// <returns>
         /// 	<c>true</c> if successful; otherwise <c>false</c>.
         /// </returns>	
-        protected override bool Save()
+        protected override async Task<bool> Save()
         {
             if (_shoppingListItemIndex == -1)
             {

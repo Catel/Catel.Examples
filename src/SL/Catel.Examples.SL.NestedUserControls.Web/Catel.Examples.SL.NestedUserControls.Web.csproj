@@ -85,9 +85,9 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ClientBin\Catel.Examples.SL.NestedUserControls.xap" />
     <Content Include="Default.aspx" />
     <Content Include="Default.html" />
-    <Content Include="ClientBin\Catel.Examples.SL.NestedUserControls.xap" />
     <Content Include="FodyWeavers.xml" />
     <Content Include="Silverlight.js" />
     <Content Include="Web.config" />
@@ -104,6 +104,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -136,7 +137,6 @@
   </Target>
   <Target Name="AfterBuild">
   </Target>
-  <Import Project="$(ProjectPath)\..\..\..\..\Tools\Pepita\PepitaGet.targets" />
   <Import Project="..\..\..\lib\Fody.1.24.0\build\Fody.targets" Condition="Exists('..\..\..\lib\Fody.1.24.0\build\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
