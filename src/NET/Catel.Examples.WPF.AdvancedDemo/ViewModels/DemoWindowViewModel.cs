@@ -1,8 +1,9 @@
 ﻿namespace Catel.Examples.AdvancedDemo.ViewModels
 {
+    using System.Threading.Tasks;
     using Data;
     using MVVM;
-    using MVVM.Services;
+    using Services;
     using Models;
 
     /// <summary>
@@ -100,25 +101,25 @@
         #endregion
 
         #region Methods
-        protected override bool Cancel()
+        protected override async Task<bool> Cancel()
         {
-            _messageService.ShowInformation("View model canceled");
+            await _messageService.ShowInformation("View model canceled");
 
-            return base.Cancel();
+            return await base.Cancel();
         }
 
-        protected override bool Save()
+        protected override async Task<bool> Save()
         {
-            _messageService.ShowInformation("View model saved");
+            await _messageService.ShowInformation("View model saved");
 
-            return base.Save();
+            return await base.Save();
         }
 
-        protected override void Close()
+        protected override async Task Close()
         {
-            _messageService.ShowInformation("View model closed");
+            await _messageService.ShowInformation("View model closed");
 
-            base.Close();
+            await base.Close();
         }
         #endregion
     }

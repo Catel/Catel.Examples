@@ -3,7 +3,7 @@
     using System.Collections.Generic;
     using Data;
     using MVVM;
-    using MVVM.Services;
+    using Services;
 
     /// <summary>
     /// Home view model.
@@ -80,9 +80,9 @@
         protected override void OnNavigationCompleted()
         {
             NavigationData = string.Empty;
-            if (NavigationContext.ContainsKey("Data"))
+            if (NavigationContext.Values.ContainsKey("Data"))
             {
-                NavigationData = NavigationContext["Data"] as string;
+                NavigationData = NavigationContext.Values["Data"] as string;
             }
         }
         #endregion

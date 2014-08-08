@@ -4,7 +4,7 @@
     using Catel.IoC;
     using Catel.MVVM;
     using Data;
-    using MVVM.Services;
+    using Services;
 
     /// <summary>
     /// MainWindow view model.

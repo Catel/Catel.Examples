@@ -4,7 +4,7 @@
     using Data;
     using IoC;
     using MVVM;
-    using MVVM.Services;
+    using Services;
     using global::Windows.UI.Xaml;
 
     /// <summary>

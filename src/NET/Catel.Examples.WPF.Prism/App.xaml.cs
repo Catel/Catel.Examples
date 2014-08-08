@@ -6,7 +6,7 @@
 namespace Catel.Examples.WPF.Prism
 {
     using Catel.IoC;
-    using Catel.MVVM.Services;
+    using Catel.Services;
 
     /// <summary>
     /// Interaction logic for App.xaml.
@@ -25,7 +25,7 @@ namespace Catel.Examples.WPF.Prism
 
             dispatcherService.BeginInvoke(() =>
                 {
-                    Environment.RegisterDefaultViewModelServices();
+                    CatelEnvironment.RegisterDefaultViewModelServices();
 
                     var bootstrapper = new Bootstrapper();
                     bootstrapper.Run();

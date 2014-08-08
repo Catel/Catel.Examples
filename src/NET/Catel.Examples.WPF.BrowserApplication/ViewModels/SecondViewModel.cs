@@ -3,7 +3,7 @@
     using System.Collections.Generic;
     using Data;
     using MVVM;
-    using MVVM.Services;
+    using Services;
 
     /// <summary>
     /// Second view model.
@@ -93,9 +93,9 @@
         /// </remarks>
         protected override void OnNavigationCompleted()
         {
-            if (NavigationContext.ContainsKey("Argument"))
+            if (NavigationContext.Values.ContainsKey("Argument"))
             {
-                ArgumentReceived = NavigationContext["Argument"] as string;
+                ArgumentReceived = NavigationContext.Values["Argument"] as string;
             }
         }
         #endregion

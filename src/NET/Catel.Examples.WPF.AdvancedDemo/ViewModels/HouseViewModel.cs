@@ -11,11 +11,6 @@
     public class HouseViewModel : ViewModelBase
     {
         #region Constructor & destructor
-        public HouseViewModel()
-        {
-
-        }
-
         /// <summary>
         /// Initializes a new instance of the <see cref="HouseViewModel"/> class.
         /// </summary>

@@ -29,7 +29,7 @@ namespace Catel.Examples.WPF.Validation
             // TODO: Using a custom IoC container like Unity? Register it here:
             // Catel.IoC.ServiceLocator.Instance.RegisterExternalContainer(MyUnityContainer);
 
-            LogManager.RegisterDebugListener();
+            LogManager.AddDebugListener();
 
             var serviceLocator = IoC.ServiceLocator.Default;
 

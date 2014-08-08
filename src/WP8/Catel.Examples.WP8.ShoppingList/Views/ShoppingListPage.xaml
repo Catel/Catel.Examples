@@ -4,8 +4,8 @@
                             xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
                             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                            xmlns:Converters="clr-namespace:Catel.Windows.Data.Converters;assembly=Catel.MVVM"
                             xmlns:catel="clr-namespace:Catel.Phone.Controls;assembly=Catel.MVVM"
+                            xmlns:converters="clr-namespace:Catel.MVVM.Converters;assembly=Catel.MVVM"
                             FontFamily="{StaticResource PhoneFontFamilyNormal}"
                             FontSize="{StaticResource PhoneFontSizeNormal}"
                             Foreground="{StaticResource PhoneForegroundBrush}"
@@ -16,7 +16,7 @@
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.Resources>
-            <Converters:BooleanToCollapsingVisibilityConverter x:Key="BooleanToCollapsingVisibilityConverter" />
+            <converters:BooleanToCollapsingVisibilityConverter x:Key="BooleanToCollapsingVisibilityConverter" />
         </Grid.Resources>
 
         <Grid.RowDefinitions>

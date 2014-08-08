@@ -12,7 +12,7 @@ namespace Catel.Examples.WP8.ShoppingList.ViewModels
     using Catel.Data;
     using Catel.Examples.WP8.ShoppingList.Data;
     using Catel.MVVM;
-    using Catel.MVVM.Services;
+    using Catel.Services;
 
     /// <summary>
     /// ManageShopingLists view model.
@@ -195,9 +195,9 @@ namespace Catel.Examples.WP8.ShoppingList.ViewModels
         /// Method to invoke when the Delete command is executed.
         /// </summary>
         /// <param name="parameter">The parameter of the command.</param>
-        private void OnDeleteExecute(object parameter)
+        private async void OnDeleteExecute(object parameter)
         {
-            if (_messageService.Show("Are you sure that you want to remove the selected shopping list?", "Are you sure?", MessageButton.OKCancel) == MessageResult.OK)
+            if (await _messageService.Show("Are you sure that you want to remove the selected shopping list?", "Are you sure?", MessageButton.OKCancel) == MessageResult.OK)
             {
                 ShoppingLists.Remove(SelectedShoppingList);
                 SelectedShoppingList = null;

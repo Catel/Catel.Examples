@@ -12,7 +12,7 @@ namespace Catel.Examples.WP8.ShoppingList.ViewModels
     using Catel.Data;
     using Catel.Examples.WP8.ShoppingList.Data;
     using Catel.MVVM;
-    using Catel.MVVM.Services;
+    using Catel.Services;
 
     /// <summary>
     /// MainPage view model.

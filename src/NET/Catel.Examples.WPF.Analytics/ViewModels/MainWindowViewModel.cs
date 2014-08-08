@@ -4,7 +4,7 @@
     using Auditors;
     using Catel.MVVM;
     using MVVM.Auditing;
-    using MVVM.Services;
+    using Services;
 
     /// <summary>
     /// MainWindow view model.
@@ -98,17 +98,17 @@
         /// <para/>
         /// During unit tests, it is recommended to manually call this method because there is no external container calling this method.
         /// </remarks>
-        protected override void Initialize()
+        protected override async void Initialize()
         {
             var vm = new ProvideAnalyticsViewModel();
 
-            if (_uiVisualizerService.ShowDialog(vm) ?? false)
+            if (await _uiVisualizerService.ShowDialog(vm) ?? false)
             {
                 AuditingManager.RegisterAuditor(new GoogleAnalytics(vm.ApiKey, "Catel Analytics Example"));
             }
             else
             {
-                _messageService.ShowError("Cannot provide analytics when no API is provided");
+                await _messageService.ShowError("Cannot provide analytics when no API is provided");
             }
         }
         #endregion

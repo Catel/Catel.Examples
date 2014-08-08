@@ -94,22 +94,22 @@ namespace ModularityWithCatel.Desktop
             }
         }
 
-        protected override void Debug(ILog log, string message, object extraData)
+        protected override void Debug(ILog log, string message, object extraData, DateTime time)
         {
             Log(message, Category.Debug);
         }
 
-        protected override void Info(ILog log, string message, object extraData)
+        protected override void Info(ILog log, string message, object extraData, DateTime time)
         {
             Log(message, Category.Info);
         }
 
-        protected override void Warning(ILog log, string message, object extraData)
+        protected override void Warning(ILog log, string message, object extraData, DateTime time)
         {
             Log(message, Category.Warn);
         }
 
-        protected override void Error(ILog log, string message, object extraData)
+        protected override void Error(ILog log, string message, object extraData, DateTime time)
         {
             Log(message, Category.Exception);
         }

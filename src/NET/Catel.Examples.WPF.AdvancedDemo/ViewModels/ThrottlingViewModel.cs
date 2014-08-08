@@ -6,12 +6,11 @@
 namespace Catel.Examples.AdvancedDemo.ViewModels
 {
     using System;
-
+    using System.Threading.Tasks;
     using System.Windows.Media;
     using System.Windows.Threading;
-
-    using Catel.Data;
-    using Catel.MVVM;
+    using Data;
+    using MVVM;
 
     public class ThrottlingViewModel : ViewModelBase
     {
@@ -101,7 +100,7 @@ namespace Catel.Examples.AdvancedDemo.ViewModels
             Counter++;
         }
 
-        protected override void Close()
+        protected override async Task Close()
         {
             _counterTimer.Stop();
         }

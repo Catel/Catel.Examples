@@ -6,8 +6,8 @@
     using System.Linq;
     using System.Threading;
     using Catel.MVVM;
+    using Catel.Services;
     using Data;
-    using MVVM.Services;
     using Models;
     using Windows;
 
@@ -18,6 +18,7 @@
     {
         private readonly IUIVisualizerService _uiVisualizerService;
         private readonly IPleaseWaitService _pleaseWaitService;
+        private readonly ILanguageService _languageService;
 
         #region Variables
         #endregion
@@ -26,11 +27,12 @@
         /// <summary>
         /// Initializes a new instance of the <see cref="MainWindowViewModel"/> class.
         /// </summary>
-        public MainWindowViewModel(IUIVisualizerService uiVisualizerService, IPleaseWaitService pleaseWaitService)
+        public MainWindowViewModel(IUIVisualizerService uiVisualizerService, IPleaseWaitService pleaseWaitService, ILanguageService languageService)
             : base()
         {
             _uiVisualizerService = uiVisualizerService;
             _pleaseWaitService = pleaseWaitService;
+            _languageService = languageService;
 
             AvailableLanguages = new ObservableCollection<Language>();
             AvailableLanguages.Add(new Language("English", "en-US"));
@@ -161,7 +163,10 @@
         {
             if (SelectedLanguage != null)
             {
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo(SelectedLanguage.Code);
+                var newCulture = new CultureInfo(SelectedLanguage.Code);
+
+                Thread.CurrentThread.CurrentUICulture = newCulture;
+                _languageService.PreferredCulture = newCulture;
             }
         }
         #endregion

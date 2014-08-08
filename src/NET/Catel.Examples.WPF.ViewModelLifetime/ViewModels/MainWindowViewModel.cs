@@ -1,10 +1,11 @@
 ﻿namespace Catel.Examples.WPF.ViewModelLifetime.ViewModels
 {
     using System;
+    using System.Linq;
     using System.Windows.Threading;
     using Catel.MVVM;
+    using Catel.Services;
     using Data;
-    using MVVM.Services;
     using Services;
 
     /// <summary>
@@ -24,7 +25,6 @@
         /// Initializes a new instance of the <see cref="MainWindowViewModel"/> class.
         /// </summary>
         public MainWindowViewModel(IUIVisualizerService uiVisualizerService, ITabService tabService)
-            : base()
         {
             _uiVisualizerService = uiVisualizerService;
             _tabService = tabService;
@@ -68,10 +68,10 @@
         /// <summary>
         /// Method to invoke when the AddTab command is executed.
         /// </summary>
-        private void OnAddTabExecute()
+        private async void OnAddTabExecute()
         {
             var vm = new CreateTabWindowViewModel();
-            if (_uiVisualizerService.ShowDialog(vm) ?? false)
+            if (await _uiVisualizerService.ShowDialog(vm) ?? false)
             {
                 _tabService.AddTab(vm.CloseWhenUnloaded);
             }
@@ -81,7 +81,7 @@
         #region Methods
         private void OnTimerTick(object sender, EventArgs e)
         {
-            LiveViewModelCount = ViewModelManager.ViewModelCount;
+            LiveViewModelCount = ViewModelManager.ActiveViewModels.Count();
         }
         #endregion
     }

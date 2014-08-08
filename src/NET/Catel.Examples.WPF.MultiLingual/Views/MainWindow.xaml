@@ -33,15 +33,16 @@
             <ComboBox ItemsSource="{Binding AvailableLanguages}" SelectedItem="{Binding SelectedLanguage}" DisplayMemberPath="Display" />
         </StackPanel>
        
-        <!-- Windows -->
+        <!-- MVVM -->
         <GroupBox Grid.Row="2" Grid.Column="0" Header="Windows">
             <StackPanel>
                 <Button Content="DataWindow with all buttons" Command="{Binding DataWindow}" />
                 <Button Content="Please wait window" Command="{Binding PleaseWaitWindow}" />
+                <Label Content="{catel:LanguageBinding DynamicResource}" />
             </StackPanel>
         </GroupBox>
 
-        <!-- Windows toolkit -->
+        <!-- Extensions.Controls -->
         <!--<GroupBox Grid.Row="3" Grid.Column="1" Header="Windows Toolkit">
             <StackPanel>
                 <Button Content="Choice window" Command="{Binding MultipleChoiceWindow}" />

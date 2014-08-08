@@ -24,7 +24,7 @@ namespace Catel.Examples.AdvancedDemo
         /// <param name="e">A <see cref="T:System.Windows.StartupEventArgs"/> that contains the event data.</param>
         protected override void OnStartup(StartupEventArgs e)
         {
-            Logging.LogManager.RegisterDebugListener();
+            //Logging.LogManager.AddDebugListener();
 
             StyleHelper.CreateStyleForwardersForDefaultStyles();
 
@@ -43,12 +43,6 @@ namespace Catel.Examples.AdvancedDemo
             serviceLocator.RegisterType<IViewModelLocator, ViewModelLocator>();
             var viewModelLocator = serviceLocator.ResolveType<IViewModelLocator>();
             viewModelLocator.NamingConventions.Add("Catel.Examples.AdvancedDemo.ViewModels.[VW]ViewModel");
-
-            // Register several different external IoC containers for demo purposes
-            IoCHelper.MefContainer = new CompositionContainer();
-            IoCHelper.UnityContainer = new UnityContainer();
-            serviceLocator.RegisterExternalContainer(IoCHelper.MefContainer);
-            serviceLocator.RegisterExternalContainer(IoCHelper.UnityContainer);
 
             base.OnStartup(e);
         }

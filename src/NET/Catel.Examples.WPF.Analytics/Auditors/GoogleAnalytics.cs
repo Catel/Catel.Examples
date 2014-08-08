@@ -26,11 +26,13 @@
             _appTracker.TrackEvent(ApplicationTrackerCategories.Command, string.Format("{0}.{1}", viewModel.GetType().Name, commandName));
         }
 
-        public override void OnViewModelCreated(Type viewModelType)
+        public override void OnViewModelCreated(IViewModel viewModel)
         {
-            _appTracker.TrackPageView(viewModelType.Name);
+            var viewModelTypeName = viewModel.GetType().Name;
 
-            _appTracker.TrackCustomEvent("ViewModel.Created", viewModelType.Name);
+            _appTracker.TrackPageView(viewModelTypeName);
+
+            _appTracker.TrackCustomEvent("ViewModel.Created", viewModelTypeName);
         }
 
         public override void OnViewModelCanceled(IViewModel viewModel)

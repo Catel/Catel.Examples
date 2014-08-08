@@ -13,7 +13,7 @@ namespace Catel.Examples.DisplayProgress
 
 #if SILVERLIGHT
     using Catel.IoC;
-    using Catel.MVVM.Services;
+    using Catel.Services;
 #endif
 
     /// <summary>

@@ -9,10 +9,11 @@ namespace Catel.Examples.WP8.ShoppingList.ViewModels
 {
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Threading.Tasks;
     using Catel.Data;
-    using Catel.Examples.WP8.ShoppingList.Data;
-    using Catel.MVVM;
-    using Catel.MVVM.Services;
+    using Data;
+    using MVVM;
+    using Services;
 
     /// <summary>
     /// ShoppingList view model.
@@ -211,9 +212,9 @@ namespace Catel.Examples.WP8.ShoppingList.ViewModels
         /// Method to invoke when the Delete command is executed.
         /// </summary>
         /// <param name="parameter">The parameter of the command.</param>
-        private void OnDeleteExecute(object parameter)
+        private async void OnDeleteExecute(object parameter)
         {
-            if (_messageService.Show("Are you sure that you want to remove the selected item?", "Are you sure?", MessageButton.OKCancel) == MessageResult.OK)
+            if (await _messageService.Show("Are you sure that you want to remove the selected item?", "Are you sure?", MessageButton.OKCancel) == MessageResult.OK)
             {
                 ShoppingList.Items.Remove(SelectedShoppingListItem);
                 SelectedShoppingListItem = null;
@@ -237,9 +238,9 @@ namespace Catel.Examples.WP8.ShoppingList.ViewModels
         /// </remarks>
         protected override void OnNavigationCompleted()
         {
-            if (NavigationContext.ContainsKey("ShoppingListIndex"))
+            if (NavigationContext.Values.ContainsKey("ShoppingListIndex"))
             {
-                int.TryParse(NavigationContext["ShoppingListIndex"], out _shoppingListIndex);
+                int.TryParse((string)NavigationContext.Values["ShoppingListIndex"], out _shoppingListIndex);
             }
 
             if (_shoppingListIndex == -1)
@@ -260,7 +261,7 @@ namespace Catel.Examples.WP8.ShoppingList.ViewModels
         /// <returns>
         /// 	<c>true</c> if successful; otherwise <c>false</c>.
         /// </returns>	
-        protected override bool Save()
+        protected override async Task<bool> Save()
         {
             return true;
         }

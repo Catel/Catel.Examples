@@ -7,7 +7,7 @@ namespace Catel.Examples.WPF.MvvmCommunicationStyles.ViewModels
 {
     using Examples.MvvmCommunicationStyles.ViewModels;
     using MVVM;
-    using MVVM.Services;
+    using Services;
 
     /// <summary>
     /// MainWindow view model.

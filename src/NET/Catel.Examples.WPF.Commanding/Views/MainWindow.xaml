@@ -1,9 +1,11 @@
-﻿<catel:DataWindow x:Class="Catel.Examples.WPF.Commanding.Views.MainWindow"
-                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                  xmlns:catel="http://catel.codeplex.com"
-                  xmlns:views="clr-namespace:Catel.Examples.WPF.Commanding.Views"
-                  ShowInTaskbar="True" ResizeMode="CanResize" SizeToContent="Manual" WindowStartupLocation="Manual" WindowState="Maximized">
+﻿<windows:RibbonWindow x:Class="Catel.Examples.WPF.Commanding.Views.MainWindow"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:catel="http://catel.codeplex.com"
+                      xmlns:views="clr-namespace:Catel.Examples.WPF.Commanding.Views"
+                      xmlns:windows="clr-namespace:Catel.Examples.WPF.Commanding.Windows"
+                      ShowInTaskbar="True" ResizeMode="CanResize" SizeToContent="Manual" 
+                      WindowStartupLocation="Manual" WindowState="Maximized">
 
     <catel:StackGrid x:Name="LayoutRoot">
 
@@ -48,4 +50,4 @@
         <views:DocumentView />
 
     </catel:StackGrid>
-</catel:DataWindow>
+</windows:RibbonWindow>

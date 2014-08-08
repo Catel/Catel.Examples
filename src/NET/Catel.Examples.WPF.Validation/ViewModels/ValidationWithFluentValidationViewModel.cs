@@ -9,7 +9,7 @@ namespace Catel.Examples.WPF.Validation.ViewModels
     using Catel.IoC;
     using Data;
     using MVVM;
-    using MVVM.Services;
+    using Services;
     using Models;
 
     /// <summary>

@@ -5,6 +5,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 namespace Catel.Examples.MvvmCommunicationStyles.ViewModels
 {
+    using System.Threading.Tasks;
     using Messaging;
 
     public class MessageMediatorBViewModel : CommunicationViewModel
@@ -22,7 +23,7 @@ namespace Catel.Examples.MvvmCommunicationStyles.ViewModels
             _messageMediator.Register<CommandExecutedMessage>(this, OnCommandExecutedMessageReceived);
         }
 
-        protected override void Close()
+        protected override async Task Close()
         {
             _messageMediator.UnregisterRecipientAndIgnoreTags(this);
         }

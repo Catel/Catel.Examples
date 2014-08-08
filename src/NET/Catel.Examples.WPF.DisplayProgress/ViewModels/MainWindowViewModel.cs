@@ -1,14 +1,13 @@
 ﻿namespace Catel.Examples.DisplayProgress.ViewModels
 {
-    #if SILVERLIGHT
+#if SILVERLIGHT
     using System.ComponentModel;
-    #endif
-    using System.Threading;
+#endif
 
-    using Catel.IoC;
-    using Catel.MVVM;
-    using Catel.MVVM.Services;
-    using Catel.MVVM.Tasks;
+    using System.Threading;
+    using MVVM;
+    using Services;
+    using MVVM.Tasks;
 
     /// <summary>
     ///     The main window view model.

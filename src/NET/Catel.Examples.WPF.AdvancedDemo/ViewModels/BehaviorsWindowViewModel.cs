@@ -1,8 +1,8 @@
 ﻿namespace Catel.Examples.AdvancedDemo.ViewModels
 {
     using Catel.MVVM;
+    using Catel.Services;
     using Data;
-    using MVVM.Services;
 
     /// <summary>
     /// UserControl view model.

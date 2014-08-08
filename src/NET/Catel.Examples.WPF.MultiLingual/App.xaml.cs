@@ -4,6 +4,8 @@
     using System.Threading;
     using System.Windows;
     using Windows;
+    using Catel.IoC;
+    using Catel.Services;
 
     /// <summary>
     /// Interaction logic for App.xaml
@@ -23,8 +25,8 @@
         {
             StyleHelper.CreateStyleForwardersForDefaultStyles();
 
-            // TODO: Using a custom IoC container like Unity? Register it here:
-            // Catel.IoC.ServiceLocator.Instance.RegisterExternalContainer(MyUnityContainer);
+            var serviceLocator = ServiceLocator.Default;
+            serviceLocator.RegisterType<ILanguageService, Services.LanguageService>();
 
             base.OnStartup(e);
         }

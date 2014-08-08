@@ -5,7 +5,7 @@
     using Models;
     using Properties;
     using MVVM;
-    using MVVM.Services;
+    using Services;
 
     /// <summary>
     /// Main window view model.
@@ -85,10 +85,10 @@
         /// <summary>
         /// Method to invoke when the Add command is executed.
         /// </summary>
-        private void OnAddExecute()
+        private async void OnAddExecute()
         {
             var viewModel = new PersonViewModel(new Person());
-            if (_uiVisualizerService.ShowDialog(viewModel) ?? false)
+            if (await _uiVisualizerService.ShowDialog(viewModel) ?? false)
             {
                 PersonCollection.Add(viewModel.Person);
             }
@@ -111,10 +111,10 @@
         /// <summary>
         /// Method to invoke when the Edit command is executed.
         /// </summary>
-        private void OnEditExecute()
+        private async void OnEditExecute()
         {
             var viewModel = new PersonViewModel(SelectedPerson);
-            _uiVisualizerService.ShowDialog(viewModel);
+            await _uiVisualizerService.ShowDialog(viewModel);
         }
 
         /// <summary>
@@ -134,9 +134,9 @@
         /// <summary>
         /// Method to invoke when the Remove command is executed.
         /// </summary>
-        private void OnRemoveExecute()
+        private async void OnRemoveExecute()
         {
-            if (_messageService.Show("Are you sure you want to remove this person?", "Are you sure?", MessageButton.YesNo) == MessageResult.Yes)
+            if (await _messageService.Show("Are you sure you want to remove this person?", "Are you sure?", MessageButton.YesNo) == MessageResult.Yes)
             {
                 PersonCollection.Remove(SelectedPerson);
             }

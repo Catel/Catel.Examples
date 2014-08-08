@@ -7,10 +7,11 @@
 namespace Catel.Examples.WPF.Prism.Modules.Departments.ViewModels
 {
     using Catel.Messaging;
+    using Catel.Services;
     using Collections;
     using Data;
     using MVVM;
-    using MVVM.Services;
+    using Services;
     using Models;
     using Services;
     using Catel.IoC;

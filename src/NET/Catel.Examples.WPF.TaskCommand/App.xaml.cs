@@ -20,7 +20,7 @@ namespace Catel.Examples.WPF.TaskCommand
         {
             base.OnStartup(e);
 
-            LogManager.RegisterDebugListener();
+            LogManager.AddDebugListener();
         }
         #endregion
     }

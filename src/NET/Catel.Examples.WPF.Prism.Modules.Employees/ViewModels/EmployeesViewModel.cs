@@ -6,11 +6,12 @@
 
 namespace Catel.Examples.WPF.Prism.Modules.Employees.ViewModels
 {
+    using Catel.Services;
     using Collections;
     using Data;
     using IoC;
     using MVVM;
-    using MVVM.Services;
+    using Services;
     using Messaging;
     using Models;
     using Services;
@@ -129,14 +130,14 @@ namespace Catel.Examples.WPF.Prism.Modules.Employees.ViewModels
         /// <summary>
         /// Method to invoke when the AddEmployee command is executed.
         /// </summary>
-        private void OnAddEmployeeExecute()
+        private async void OnAddEmployeeExecute()
         {
             var employee = new Employee() {Department = SelectedDepartment};
 
             var typeFactory = TypeFactory.Default;
             var viewModel = typeFactory.CreateInstanceWithParametersAndAutoCompletion<EmployeeViewModel>(employee);
 
-            if (!(_uiVisualizerService.ShowDialog(viewModel) ?? false))
+            if (!(await _uiVisualizerService.ShowDialog(viewModel) ?? false))
             {
                 return;
             }
@@ -198,7 +199,7 @@ namespace Catel.Examples.WPF.Prism.Modules.Employees.ViewModels
         /// <summary>
         /// Method to invoke when the DeleteEmployee command is executed.
         /// </summary>
-        private void OnDeleteEmployeeExecute()
+        private async void OnDeleteEmployeeExecute()
         {
             if (ObjectHelper.IsNull(SelectedEmployee))
             {
@@ -206,7 +207,7 @@ namespace Catel.Examples.WPF.Prism.Modules.Employees.ViewModels
             }
 
             var employee = SelectedEmployee;
-            if (_messageService.Show(string.Format("Are you sure to delete {0} {1}", employee.FirstName, employee.LastName), "Are you sure?", MessageButton.YesNo) != MessageResult.Yes)
+            if (await _messageService.Show(string.Format("Are you sure to delete {0} {1}", employee.FirstName, employee.LastName), "Are you sure?", MessageButton.YesNo) != MessageResult.Yes)
             {
                 return;
             }

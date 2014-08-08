@@ -7,10 +7,11 @@
 
 namespace Catel.Examples.WP8.ShoppingList.ViewModels
 {
+    using System.Threading.Tasks;
     using Catel.Data;
-    using Catel.Examples.WP8.ShoppingList.Data;
-    using Catel.MVVM;
-    using Catel.MVVM.Services;
+    using Data;
+    using MVVM;
+    using Services;
 
     /// <summary>
     /// Shop view model.
@@ -156,9 +157,9 @@ namespace Catel.Examples.WP8.ShoppingList.ViewModels
         /// </remarks>
         protected override void OnNavigationCompleted()
         {
-            if (NavigationContext.ContainsKey("ShopIndex"))
+            if (NavigationContext.Values.ContainsKey("ShopIndex"))
             {
-                int.TryParse(NavigationContext["ShopIndex"], out _shopIndex);
+                int.TryParse((string)NavigationContext.Values["ShopIndex"], out _shopIndex);
             }
 
             Shop = (_shopIndex != -1) ? UserData.Instance.Shops[_shopIndex] : new Shop();
@@ -170,7 +171,7 @@ namespace Catel.Examples.WP8.ShoppingList.ViewModels
         /// <returns>
         /// 	<c>true</c> if successful; otherwise <c>false</c>.
         /// </returns>	
-        protected override bool Save()
+        protected override async Task<bool> Save()
         {
             if (_shopIndex == -1)
             {

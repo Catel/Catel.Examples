@@ -6,13 +6,13 @@
     using Data;
     using IoC;
     using MVVM;
-    using MVVM.Services;
+    using Services;
     using Microsoft.Practices.Unity;
 
     /// <summary>
     /// MainWindow view model.
     /// </summary>
-    public class MainWindowViewModel : ViewModelBase
+    public class MainViewModel : ViewModelBase
     {
         private readonly IUIVisualizerService _uiVisualizerService;
         private readonly IPleaseWaitService _pleaseWaitService;
@@ -22,9 +22,9 @@
 
         #region Constructor & destructor
         /// <summary>
-        /// Initializes a new instance of the <see cref="MainWindowViewModel"/> class.
+        /// Initializes a new instance of the <see cref="MainViewModel"/> class.
         /// </summary>
-        public MainWindowViewModel(IUIVisualizerService uiVisualizerService, IPleaseWaitService pleaseWaitService)
+        public MainViewModel(IUIVisualizerService uiVisualizerService, IPleaseWaitService pleaseWaitService)
         {
             _uiVisualizerService = uiVisualizerService;
             _pleaseWaitService = pleaseWaitService;
@@ -36,14 +36,9 @@
             ShowNestedUserControlsLogicInBehavior = new Command(OnShowNestedUserControlsLogicInBehaviorExecute);
 
             ShowPleaseWaitWindowViaServiceLocator = new Command(OnShowPleaseWaitWindowViaServiceLocatorExecute);
-            ShowPleaseWaitWindowViaMEF = new Command(OnShowPleaseWaitWindowViaMEFExecute);
-            ShowPleaseWaitWindowViaUnity = new Command(OnShowPleaseWaitWindowViaUnityExecute);
 
             ShowWindowWithBehaviors = new Command(OnShowWindowWithBehaviorsExecute);
             ShowThrottling = new Command(OnShowThrottlingExecute);
-
-            // The external containers such as Unity and MEF are registered in App.xaml
-            IoCHelper.MefContainer.SatisfyImportsOnce(this);
         }
         #endregion
 
@@ -59,19 +54,6 @@
         /// </summary>
         /// <value>The <see cref="IPleaseWaitService"/> via the Catel <see cref="ServiceLocator"/>.</value>
         public IPleaseWaitService PleaseWaitServiceViaServiceLocator { get { return _pleaseWaitService; } }
-
-        /// <summary>
-        /// Gets or sets the <see cref="IPleaseWaitService"/> via MEF.
-        /// </summary>
-        /// <value>The <see cref="IPleaseWaitService"/> via MEF.</value>
-        [Import]
-        public IPleaseWaitService PleaseWaitServiceViaMEF { get; set; }
-
-        /// <summary>
-        /// Gets or sets the <see cref="IPleaseWaitService"/> via Unity.
-        /// </summary>
-        /// <value>The <see cref="IPleaseWaitService"/> via Unity.</value>
-        public IPleaseWaitService PleaseWaitServiceViaUnity { get { return IoCHelper.UnityContainer.Resolve<IPleaseWaitService>(); } }
 
         /// <summary>
         /// Gets or sets whether the please wait windows is intermediate.
@@ -176,32 +158,6 @@
         private void OnShowPleaseWaitWindowViaServiceLocatorExecute()
         {
             ShowPleaseWaitWindow(PleaseWaitServiceViaServiceLocator, "ServiceLocator works");
-        }
-
-        /// <summary>
-        /// Gets the ShowPleaseWaitWindowViaMEF command.
-        /// </summary>
-        public Command ShowPleaseWaitWindowViaMEF { get; private set; }
-
-        /// <summary>
-        /// Method to invoke when the ShowPleaseWaitWindowViaMEF command is executed.
-        /// </summary>
-        private void OnShowPleaseWaitWindowViaMEFExecute()
-        {
-            ShowPleaseWaitWindow(PleaseWaitServiceViaMEF, "MEF works");
-        }
-
-        /// <summary>
-        /// Gets the ShowPleaseWaitWindowViaUnity command.
-        /// </summary>
-        public Command ShowPleaseWaitWindowViaUnity { get; private set; }
-
-        /// <summary>
-        /// Method to invoke when the ShowPleaseWaitWindowViaUnity command is executed.
-        /// </summary>
-        private void OnShowPleaseWaitWindowViaUnityExecute()
-        {
-            ShowPleaseWaitWindow(PleaseWaitServiceViaUnity, "Unity works");
         }
 
         /// <summary>

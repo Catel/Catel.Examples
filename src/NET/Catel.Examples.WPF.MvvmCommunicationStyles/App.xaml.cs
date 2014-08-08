@@ -24,7 +24,7 @@ namespace Catel.Examples.WPF.MvvmCommunicationStyles
         protected override void OnStartup(StartupEventArgs e)
         {
 #if DEBUG
-            //Catel.Logging.LogManager.RegisterDebugListener();
+            //Catel.Logging.LogManager.AddDebugListener();
 #endif
 
             StyleHelper.CreateStyleForwardersForDefaultStyles();

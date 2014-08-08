@@ -9,12 +9,13 @@ namespace Catel.Examples.WP8.BingMaps.ViewModels
     using System;
     using System.Collections.ObjectModel;
     using System.Device.Location;
+    using System.Threading.Tasks;
     using Catel.Data;
     using Data;
     using IoC;
     using MVVM;
-    using MVVM.Services;
-    using MVVM.Services.Test;
+    using Services;
+    using Services.Test;
 
     /// <summary>
     /// MainPage view model.
@@ -192,12 +193,10 @@ namespace Catel.Examples.WP8.BingMaps.ViewModels
         /// When implementing this method in a base class, make sure to call the base, otherwise <see cref="IsClosed"/> will
         /// not be set to true.
         /// </remarks>
-        protected override void Close()
+        protected override async Task Close()
         {
             _locationService.LocationChanged -= OnCurrentLocationChanged;
             _locationService.Stop();
-
-            base.Close();
         }
 
         /// <summary>
@@ -226,8 +225,8 @@ namespace Catel.Examples.WP8.BingMaps.ViewModels
             // only in unit tests to set the expected locations. However, since we simply want to show the power
             // of IoC in combination with the location service, we register the service here and directly retrieve
             // it to simulate a user walking through a street
-            IoC.ServiceLocator.Default.RegisterType<ILocationService, MVVM.Services.Test.LocationService>();
-            var testLocationService = (MVVM.Services.Test.LocationService)_locationService;
+            IoC.ServiceLocator.Default.RegisterType<ILocationService, Services.Test.LocationService>();
+            var testLocationService = (Services.Test.LocationService)_locationService;
 
             var timeSpan = new TimeSpan(0, 0, 0, 0, 500);
 

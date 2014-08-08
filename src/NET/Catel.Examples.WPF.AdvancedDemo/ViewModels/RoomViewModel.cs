@@ -10,11 +10,6 @@
     public class RoomViewModel : ViewModelBase
     {
         #region Constructor & destructor
-        public RoomViewModel()
-        {
-
-        }
-
         /// <summary>
         /// Initializes a new instance of the <see cref="RoomViewModel"/> class.
         /// </summary>

@@ -9,9 +9,9 @@ namespace Catel.Examples.WPF.ViewModelLifetime.Views
     using System.Windows;
     using System.Windows.Controls;
     using IoC;
+    using MVVM.Views;
     using Services;
     using Windows;
-    using Windows.Controls;
 
     /// <summary>
     /// Interaction logic for MainWindow.xaml.

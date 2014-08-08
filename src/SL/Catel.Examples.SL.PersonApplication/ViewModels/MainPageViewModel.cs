@@ -4,7 +4,7 @@
     using Catel.Data;
     using Models;
     using MVVM;
-    using MVVM.Services;
+    using Services;
 
     /// <summary>
     /// MainPage view model.

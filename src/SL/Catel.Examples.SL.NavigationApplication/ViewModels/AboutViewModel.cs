@@ -3,7 +3,7 @@
     using System.Collections.Generic;
     using Data;
     using MVVM;
-    using MVVM.Services;
+    using Services;
 
     /// <summary>
     /// About view model.

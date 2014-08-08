@@ -4,6 +4,7 @@
     using System.ComponentModel.Composition.Hosting;
     using System.Windows;
     using IoC;
+    using Logging;
     using MVVM;
     using Microsoft.Practices.Unity;
     using Views;
@@ -34,8 +35,15 @@
         {
             Catel.Windows.StyleHelper.CreateStyleForwardersForDefaultStyles();
 
+#if DEBUG
+            var debugListener = new DebugLogListener();
+            debugListener.IsDebugEnabled = false;
+
+            LogManager.AddListener(debugListener);
+#endif
+
             var serviceLocator = ServiceLocator.Default;
-            serviceLocator.RegisterType<IViewLocator, ViewLocator>();
+
             var viewLocator = serviceLocator.ResolveType<IViewLocator>();
             viewLocator.NamingConventions.Add("[UP].Views.[VM]");
             viewLocator.NamingConventions.Add("[UP].Views.LogicInBehavior.[VM]");
@@ -45,15 +53,8 @@
             viewLocator.NamingConventions.Add("[UP].Views.LogicInViewBase.[VM]View");
             viewLocator.NamingConventions.Add("[UP].Views.LogicInViewBase.[VM]Window");
 
-            serviceLocator.RegisterType<IViewModelLocator, ViewModelLocator>();
             var viewModelLocator = serviceLocator.ResolveType<IViewModelLocator>();
             viewModelLocator.NamingConventions.Add("Catel.Examples.AdvancedDemo.ViewModels.[VW]ViewModel");
-
-            // Register several different external IoC containers for demo purposes
-            IoCHelper.MefContainer = new CompositionContainer();
-            IoCHelper.UnityContainer = new UnityContainer();
-            serviceLocator.RegisterExternalContainer(IoCHelper.MefContainer);
-            serviceLocator.RegisterExternalContainer(IoCHelper.UnityContainer);
 
             RootVisual = new MainPage();
         }
