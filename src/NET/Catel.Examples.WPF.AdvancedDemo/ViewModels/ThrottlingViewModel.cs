@@ -71,7 +71,7 @@ namespace Catel.Examples.AdvancedDemo.ViewModels
             ThrottlingRate = new TimeSpan(0, 0, 0, 0, Throttling);
         }
 
-        protected override void Initialize()
+        protected override async Task Initialize()
         {
             _frameRateTimer.Interval = new TimeSpan(0, 0, 0, 1);
             _frameRateTimer.Tick += (sender, e) => OnFrameRateCounterElapsed();

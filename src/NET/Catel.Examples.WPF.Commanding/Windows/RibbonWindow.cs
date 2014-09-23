@@ -56,7 +56,7 @@ namespace Catel.Examples.WPF.Commanding.Windows
 
             Loaded += (sender, e) => _viewLoaded.SafeInvoke(this);
             Unloaded += (sender, e) => _viewUnloaded.SafeInvoke(this);
-            DataContextChanged += (sender, e) => _viewDataContextChanged.SafeInvoke(this);
+            DataContextChanged += (sender, e) => _viewDataContextChanged.SafeInvoke(this, new DataContextChangedEventArgs(e.OldValue, e.NewValue));
 
             // Because the RadWindow does not close when DialogResult is set, the following code is required
             ViewModelChanged += (sender, e) => OnViewModelChanged();
@@ -126,7 +126,7 @@ namespace Catel.Examples.WPF.Commanding.Windows
         /// <summary>
         /// Occurs when the data context has changed.
         /// </summary>
-        event EventHandler<EventArgs> IView.DataContextChanged
+        event EventHandler<DataContextChangedEventArgs> IView.DataContextChanged
         {
             add { _viewDataContextChanged += value; }
             remove { _viewDataContextChanged -= value; }
@@ -155,6 +155,6 @@ namespace Catel.Examples.WPF.Commanding.Windows
 
         private event EventHandler<EventArgs> _viewLoaded;
         private event EventHandler<EventArgs> _viewUnloaded;
-        private event EventHandler<EventArgs> _viewDataContextChanged;
+        private event EventHandler<DataContextChangedEventArgs> _viewDataContextChanged;
     }
 }

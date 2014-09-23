@@ -17,7 +17,7 @@ namespace Catel.Examples.MvvmCommunicationStyles.ViewModels
             _messageMediator = messageMediator;
         }
 
-        protected override void Initialize()
+        protected override async Task Initialize()
         {
             _messageMediator.Register<PropertyChangedMessage>(this, OnPropertyChangedMessageReceived);
             _messageMediator.Register<CommandExecutedMessage>(this, OnCommandExecutedMessageReceived);

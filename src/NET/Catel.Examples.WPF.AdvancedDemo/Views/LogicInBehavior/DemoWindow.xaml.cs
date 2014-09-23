@@ -13,7 +13,7 @@
     {
         private event EventHandler<EventArgs> _viewLoaded;
         private event EventHandler<EventArgs> _viewUnloaded;
-        private event EventHandler<EventArgs> _viewDataContextChanged;
+        private event EventHandler<DataContextChangedEventArgs> _viewDataContextChanged;
 
         public DemoWindow()
         {
@@ -28,7 +28,7 @@
 
             Loaded += (sender, e) => _viewLoaded.SafeInvoke(this, EventArgs.Empty);
             Unloaded += (sender, e) => _viewUnloaded.SafeInvoke(this, EventArgs.Empty);
-            DataContextChanged += (sender, e) => _viewDataContextChanged.SafeInvoke(this, EventArgs.Empty);
+            DataContextChanged += (sender, e) => _viewDataContextChanged.SafeInvoke(this, new DataContextChangedEventArgs(e.OldValue, e.NewValue));
         }
 
         /// <summary>
@@ -112,7 +112,7 @@
         /// <summary>
         /// Occurs when the data context has changed.
         /// </summary>
-        event EventHandler<EventArgs> IView.DataContextChanged
+        event EventHandler<DataContextChangedEventArgs> IView.DataContextChanged
         {
             add { _viewDataContextChanged += value; }
             remove { _viewDataContextChanged -= value; }

@@ -1,6 +1,7 @@
 ﻿namespace Catel.Examples.WPF.Analytics.ViewModels
 {
     using System.Threading;
+    using System.Threading.Tasks;
     using Auditors;
     using Catel.MVVM;
     using MVVM.Auditing;
@@ -98,7 +99,7 @@
         /// <para/>
         /// During unit tests, it is recommended to manually call this method because there is no external container calling this method.
         /// </remarks>
-        protected override async void Initialize()
+        protected override async Task Initialize()
         {
             var vm = new ProvideAnalyticsViewModel();
 

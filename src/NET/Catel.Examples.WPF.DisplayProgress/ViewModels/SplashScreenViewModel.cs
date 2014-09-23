@@ -1,6 +1,13 @@
-﻿namespace Catel.Examples.DisplayProgress.ViewModels
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="SplashScreenViewModel.cs" company="Catel development team">
+//   Copyright (c) 2008 - 2014 Catel development team. All rights reserved.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+namespace Catel.Examples.DisplayProgress.ViewModels
 {
-    using Catel.MVVM.ViewModels;
+    using MVVM;
 
     public class SplashScreenWindowViewModel : ProgressNotifyableViewModel
     {

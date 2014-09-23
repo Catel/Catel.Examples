@@ -24,7 +24,7 @@ namespace Catel.Examples.AdvancedDemo.Views.LogicInBehavior
     {
         private event EventHandler<EventArgs> _viewLoaded;
         private event EventHandler<EventArgs> _viewUnloaded;
-        private event EventHandler<EventArgs> _viewDataContextChanged;
+        private event EventHandler<DataContextChangedEventArgs> _viewDataContextChanged;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="NestedUserControlsWindow"/> class.
@@ -128,7 +128,7 @@ namespace Catel.Examples.AdvancedDemo.Views.LogicInBehavior
         /// <summary>
         /// Occurs when the data context has changed.
         /// </summary>
-        event EventHandler<EventArgs> IView.DataContextChanged
+        event EventHandler<DataContextChangedEventArgs> IView.DataContextChanged
         {
             add { _viewDataContextChanged += value; }
             remove { _viewDataContextChanged -= value; }
@@ -136,7 +136,7 @@ namespace Catel.Examples.AdvancedDemo.Views.LogicInBehavior
 
         private void OnDataContextChanged(object sender, DependencyPropertyValueChangedEventArgs e)
         {
-            _viewDataContextChanged.SafeInvoke(this, EventArgs.Empty);
+            _viewDataContextChanged.SafeInvoke(this, new DataContextChangedEventArgs(e.OldValue, e.NewValue));
         }
 
         /// <summary>
