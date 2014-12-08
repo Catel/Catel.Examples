@@ -227,31 +227,31 @@
   <ItemGroup>
     <ProjectReference Include="..\ModuleA\ModuleA.csproj">
       <Project>{cc737d36-0357-417d-81a1-14077f4b5f1c}</Project>
-      <Name>ModuleA %28src\WPF\ModularityWithCatel\Modules\ModuleA%29</Name>
+      <Name>ModuleA</Name>
     </ProjectReference>
     <ProjectReference Include="..\ModuleB\ModuleB.csproj">
       <Project>{6e63beea-4535-4428-ac54-01885f74c77e}</Project>
-      <Name>ModuleB %28src\WPF\ModularityWithCatel\Modules\ModuleB%29</Name>
+      <Name>ModuleB</Name>
     </ProjectReference>
     <ProjectReference Include="..\ModuleC\ModuleC.csproj">
       <Project>{40b03952-476b-4a9a-b090-d30d6dee3740}</Project>
-      <Name>ModuleC %28src\WPF\ModularityWithCatel\Modules\ModuleC%29</Name>
+      <Name>ModuleC</Name>
     </ProjectReference>
     <ProjectReference Include="..\ModuleD\ModuleD.csproj">
       <Project>{7467c9f3-0615-41af-b51e-d5a617cdadb2}</Project>
-      <Name>ModuleD %28src\WPF\ModularityWithCatel\Modules\ModuleD%29</Name>
+      <Name>ModuleD</Name>
     </ProjectReference>
     <ProjectReference Include="..\ModuleE\ModuleE.csproj">
       <Project>{65d437e8-d7b7-42fa-86d8-d907dc4c8dcb}</Project>
-      <Name>ModuleE %28src\WPF\ModularityWithCatel\Modules\ModuleE%29</Name>
+      <Name>ModuleE</Name>
     </ProjectReference>
     <ProjectReference Include="..\ModuleF\ModuleF.csproj">
       <Project>{ec8c0723-f8cf-4650-8f6c-fd67667987a0}</Project>
-      <Name>ModuleF %28src\WPF\ModularityWithCatel\Modules\ModuleF%29</Name>
+      <Name>ModuleF</Name>
     </ProjectReference>
     <ProjectReference Include="..\ModuleTracking\ModuleTracking.csproj">
       <Project>{1A98F3E7-2163-46CE-9B6A-E204FFF4F3B8}</Project>
-      <Name>ModuleTracking %28src\WPF\ModularityWithCatel\Infrastructure\ModuleTracking%29</Name>
+      <Name>ModuleTracking</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

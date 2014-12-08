@@ -94,7 +94,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ModuleTracking\ModuleTracking.csproj">
       <Project>{1A98F3E7-2163-46CE-9B6A-E204FFF4F3B8}</Project>
-      <Name>ModuleTracking %28src\WPF\ModularityWithCatel\Infrastructure\ModuleTracking%29</Name>
+      <Name>ModuleTracking</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

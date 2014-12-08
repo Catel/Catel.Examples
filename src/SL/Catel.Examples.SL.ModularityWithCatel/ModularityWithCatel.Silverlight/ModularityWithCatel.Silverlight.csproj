@@ -182,23 +182,23 @@
   <ItemGroup>
     <ProjectReference Include="..\ModuleA\ModuleA.csproj">
       <Project>{19AB48B0-82F2-473A-9670-6A9DCEF79D85}</Project>
-      <Name>ModuleA %28src\Silverlight\ModularityWithCatel\Modules\ModuleA%29</Name>
+      <Name>ModuleA</Name>
     </ProjectReference>
     <ProjectReference Include="..\ModuleC\ModuleC.csproj">
       <Project>{FF677971-895C-4F00-BF0A-E876928D2BCC}</Project>
-      <Name>ModuleC %28src\Silverlight\ModularityWithCatel\Modules\ModuleC%29</Name>
+      <Name>ModuleC</Name>
     </ProjectReference>
     <ProjectReference Include="..\ModuleE\ModuleE.csproj">
       <Project>{3606F033-DE84-4990-86D7-CB61956F5952}</Project>
-      <Name>ModuleE %28src\Silverlight\ModularityWithCatel\Modules\ModuleE%29</Name>
+      <Name>ModuleE</Name>
     </ProjectReference>
     <ProjectReference Include="..\ModuleF\ModuleF.csproj">
       <Project>{D2F314A9-E532-4D2C-9940-7E09B8EC4224}</Project>
-      <Name>ModuleF %28src\Silverlight\ModularityWithCatel\Modules\ModuleF%29</Name>
+      <Name>ModuleF</Name>
     </ProjectReference>
     <ProjectReference Include="..\ModuleTracking\ModuleTracking.csproj">
       <Project>{2A9D519F-7219-46E0-9BFC-D7BCCB2BF9CB}</Project>
-      <Name>ModuleTracking %28src\Silverlight\ModularityWithCatel\Infrastructure\ModuleTracking%29</Name>
+      <Name>ModuleTracking</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

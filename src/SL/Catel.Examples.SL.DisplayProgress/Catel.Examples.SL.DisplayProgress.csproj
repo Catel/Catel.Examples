@@ -72,16 +72,15 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\lib\Catel.Extensions.Controls.4.1.0-unstable0018\lib\sl50\Catel.Extensions.Controls.dll</HintPath>
     </Reference>
-    <Reference Include="Catel.Extensions.Prism, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Catel.Extensions.Prism, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\lib\Catel.Extensions.Prism.4.0.0-unstable0420\lib\sl50\Catel.Extensions.Prism.dll</HintPath>
+      <HintPath>..\..\..\lib\Catel.Extensions.Prism.4.1.0-unstable0018\lib\sl50\Catel.Extensions.Prism.dll</HintPath>
     </Reference>
     <Reference Include="Catel.MVVM, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\lib\Catel.MVVM.4.1.0-unstable0018\lib\sl50\Catel.MVVM.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Expression.Interactions, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\lib\Prism.4.1.0.0\lib\SL5\Microsoft.Expression.Interactions.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.Prism, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -91,6 +90,10 @@
     <Reference Include="Microsoft.Practices.Prism.Interactivity, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\lib\Prism.4.1.0.0\lib\SL5\Microsoft.Practices.Prism.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\CommonServiceLocator.1.0\lib\SL30\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Threading.Tasks">
       <HintPath>..\..\..\lib\Microsoft.Bcl.Async.1.0.168\lib\sl4\Microsoft.Threading.Tasks.dll</HintPath>
@@ -131,7 +134,7 @@
       <HintPath>..\..\..\lib\Catel.MVVM.4.1.0-unstable0018\lib\sl50\System.Windows.Controls.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows.Interactivity, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\lib\Catel.MVVM.4.1.0-unstable0018\lib\sl50\System.Windows.Interactivity.dll</HintPath>
+      <HintPath>..\..\..\lib\Prism.4.1.0.0\lib\SL5\System.Windows.Interactivity.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Windows.Browser" />
