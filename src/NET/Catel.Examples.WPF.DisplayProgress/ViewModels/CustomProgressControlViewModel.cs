@@ -9,9 +9,6 @@ namespace Catel.Examples.DisplayProgress.ViewModels
 {
     using MVVM;
 
-    /// <summary>
-    /// The custom progress control view model.
-    /// </summary>
     public class CustomProgressControlViewModel : ProgressNotifyableViewModel
     {
     }

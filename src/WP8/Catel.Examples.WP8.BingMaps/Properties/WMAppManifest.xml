@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
+<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2014/deployment" AppPlatformVersion="8.1">
   <DefaultLanguage xmlns="" code="en-US" />
   <App xmlns="" ProductID="{85c76614-0b38-492f-81ca-07797d03691d}" Title="Catel.Examples.WP8.BingMaps" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Catel.Examples.WP8.BingMaps author" Description="Sample description" Publisher="Catel.Examples.WP8.BingMaps" PublisherID="{2a4395d4-53b5-44d1-8079-1c236fa4e6c5}">
     <IconPath IsRelative="true" IsResource="false">Resources\Images\ApplicationIcon.png</IconPath>
@@ -21,20 +21,13 @@
           <Count>0</Count>
           <BackgroundImageURI IsRelative="true" IsResource="false">Resources\Images\Background.png</BackgroundImageURI>
           <Title>Catel.Examples.WP8.BingMaps</Title>
-          <BackContent>
-          </BackContent>
-          <BackTitle>
-          </BackTitle>
-          <LargeBackgroundImageURI>
-          </LargeBackgroundImageURI>
-          <LargeBackContent>
-          </LargeBackContent>
-          <LargeBackBackgroundImageURI>
-          </LargeBackBackgroundImageURI>
-          <DeviceLockImageURI>
-          </DeviceLockImageURI>
-          <HasLarge>
-          </HasLarge>
+          <BackContent></BackContent>
+          <BackTitle></BackTitle>
+          <LargeBackgroundImageURI></LargeBackgroundImageURI>
+          <LargeBackContent></LargeBackContent>
+          <LargeBackBackgroundImageURI></LargeBackBackgroundImageURI>
+          <DeviceLockImageURI></DeviceLockImageURI>
+          <HasLarge></HasLarge>
         </TemplateFlip>
       </PrimaryToken>
     </Tokens>

@@ -6,7 +6,7 @@
         <Image Name="image1" Source="./../Images/Background.png" Margin="0,0,-8,-8" Height="286" Width="440" />
         <StackPanel Margin="5,189,0,33">
             <Label Margin="5" HorizontalContentAlignment="Stretch" Content="{Binding TaskName}" Height="22" HorizontalAlignment="Left" Name="label1" VerticalAlignment="Top" FontStyle="Italic" />
-            <ProgressBar Margin="5" HorizontalAlignment="Stretch" x:Name="progressBar1" Value="{Binding Percentage}" Height="14"  />
+            <ProgressBar Margin="5" HorizontalAlignment="Stretch" x:Name="progressBar1" Value="{Binding Percentage, Mode=OneWay}" Height="14"  />
         </StackPanel>
     </Grid>
 </catel:DataWindow>

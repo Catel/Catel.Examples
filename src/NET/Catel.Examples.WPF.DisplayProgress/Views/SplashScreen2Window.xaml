@@ -6,9 +6,9 @@
         <Image Name="image1" Source="./../Images/Background.png" Margin="0,0,-8,-8" Height="286" Width="440" />
         <StackPanel Margin="10,177,10,10">
             <Label HorizontalContentAlignment="Stretch" Content="{Binding TaskName}" Height="22" HorizontalAlignment="Left" Name="label1" VerticalAlignment="Top" FontStyle="Italic" />
-            <ProgressBar HorizontalAlignment="Stretch" x:Name="progressBar1" Value="{Binding Percentage}" Height="14"  />
+            <ProgressBar HorizontalAlignment="Stretch" x:Name="progressBar1" Value="{Binding Percentage, Mode=OneWay}" Height="14"  />
             <Label HorizontalContentAlignment="Stretch" Content="{Binding TaskMessage}" Height="22" HorizontalAlignment="Left" Name="label2" VerticalAlignment="Top" FontStyle="Italic" />
-            <ProgressBar HorizontalAlignment="Stretch" x:Name="progressBar2" Value="{Binding TaskPercentage}" Height="14" IsIndeterminate="{Binding TaskIsIndeterminate}" />
+            <ProgressBar HorizontalAlignment="Stretch" x:Name="progressBar2" Value="{Binding TaskPercentage, Mode=OneWay}" Height="14" IsIndeterminate="{Binding TaskIsIndeterminate}" />
         </StackPanel>
     </Grid>
 </catel:DataWindow>

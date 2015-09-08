@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
+<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2014/deployment" AppPlatformVersion="8.1">
   <DefaultLanguage xmlns="" code="en-US" />
   <App xmlns="" ProductID="{2537e676-879c-4c33-ae3d-ef2ce0a89ba5}" Title="Catel - Shopping List" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="Geert van Horrik" Description="Catel Windows Phone example app" Publisher="Catel.Examples.WP8.BingMaps" PublisherID="{2a4395d4-53b5-44d1-8079-1c236fa4e6c5}">
     <IconPath IsRelative="true" IsResource="false">Resources\Images\ApplicationIcon.png</IconPath>

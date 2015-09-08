@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{75640269-4341-4389-B34B-7C9F46D0ABF7}"
 	ProjectSection(SolutionItems) = preProject
@@ -133,13 +133,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleE", "SL\Catel.Example
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleF", "SL\Catel.Examples.SL.ModularityWithCatel\ModuleF\ModuleF.csproj", "{D2F314A9-E532-4D2C-9940-7E09B8EC4224}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows Phone 8.0", "Windows Phone 8.0", "{68D3599C-7EC7-485D-859C-E48131474A96}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows Phone 8.1", "Windows Phone 8.1", "{68D3599C-7EC7-485D-859C-E48131474A96}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WP8.BingMaps", "WP8\Catel.Examples.WP8.BingMaps\Catel.Examples.WP8.BingMaps.csproj", "{85C76614-0B38-492F-81CA-07797D03691D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows 8.0", "Windows 8.0", "{A0F1C11F-8AFE-4DAD-9A39-5ADA500973D3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows 8.1", "Windows 8.1", "{A0F1C11F-8AFE-4DAD-9A39-5ADA500973D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WIN80.Advanced", "WIN80\Catel.Examples.WIN80.Advanced\Catel.Examples.WIN80.Advanced.csproj", "{216462CA-E557-4293-B6A5-A467EC68441A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WIN81.Advanced", "WIN81\Catel.Examples.WIN81.Advanced\Catel.Examples.WIN81.Advanced.csproj", "{216462CA-E557-4293-B6A5-A467EC68441A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.Memento", "NET\Catel.Examples.WPF.Memento\Catel.Examples.WPF.Memento.csproj", "{D6B9C99C-6F41-49F4-8D1F-E57EC388F337}"
 EndProject
