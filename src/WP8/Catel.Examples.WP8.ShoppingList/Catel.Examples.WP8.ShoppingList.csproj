@@ -35,7 +35,8 @@
     </UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
     <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
-    <NuGetPackageImportStamp>366441bf</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <DefaultLanguage>en-US</DefaultLanguage>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -99,8 +100,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Obsolete">
-      <HintPath>..\..\..\lib\Obsolete.Fody.3.1.0.0\Lib\portable-net4+sl4+wp8+win8+wpa81+MonoAndroid16+MonoTouch40\Obsolete.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\lib\Obsolete.Fody.4.0.3\lib\dotnet\Obsolete.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Windows.Interactivity">
       <HintPath>..\..\..\lib\Catel.MVVM.4.2.0\lib\wp81\System.Windows.Interactivity.dll</HintPath>
@@ -254,11 +255,13 @@
   <Target Name="AfterBuild">
   </Target>
   <ProjectExtensions />
-  <Import Project="..\..\..\lib\Fody.1.26.3-beta0001\build\Fody.targets" Condition="Exists('..\..\..\lib\Fody.1.26.3-beta0001\build\Fody.targets')" />
+  <Import Project="..\..\..\lib\Fody.1.29.3\build\dotnet\Fody.targets" Condition="Exists('..\..\..\lib\Fody.1.29.3\build\dotnet\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\..\..\lib\Fody.1.26.3-beta0001\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\lib\Fody.1.26.3-beta0001\build\Fody.targets'))" />
+    <Error Condition="!Exists('..\..\..\lib\Fody.1.29.3\build\dotnet\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\lib\Fody.1.29.3\build\dotnet\Fody.targets'))" />
+    <Error Condition="!Exists('..\..\..\lib\Obsolete.Fody.4.0.3\build\dotnet\Obsolete.Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\lib\Obsolete.Fody.4.0.3\build\dotnet\Obsolete.Fody.targets'))" />
   </Target>
+  <Import Project="..\..\..\lib\Obsolete.Fody.4.0.3\build\dotnet\Obsolete.Fody.targets" Condition="Exists('..\..\..\lib\Obsolete.Fody.4.0.3\build\dotnet\Obsolete.Fody.targets')" />
 </Project>

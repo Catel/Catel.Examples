@@ -15,7 +15,8 @@
     <PackageCertificateKeyFile>Catel.Examples.WinRT.Advanced_TemporaryKey.pfx</PackageCertificateKeyFile>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
-    <NuGetPackageImportStamp>dff3e148</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <TargetPlatformVersion>8.1</TargetPlatformVersion>
     <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
     <TargetFrameworkVersion />
@@ -200,21 +201,23 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Obsolete">
-      <HintPath>..\..\..\lib\Obsolete.Fody.3.1.0.0\Lib\portable-net4+sl4+wp8+win8+wpa81+MonoAndroid16+MonoTouch40\Obsolete.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\lib\Obsolete.Fody.4.0.3\lib\dotnet\Obsolete.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
-  <Import Project="..\..\..\lib\Fody.1.26.3-beta0001\build\Fody.targets" Condition="Exists('..\..\..\lib\Fody.1.26.3-beta0001\build\Fody.targets')" />
+  <Import Project="..\..\..\lib\Fody.1.29.3\build\dotnet\Fody.targets" Condition="Exists('..\..\..\lib\Fody.1.29.3\build\dotnet\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\..\..\lib\Fody.1.26.3-beta0001\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\lib\Fody.1.26.3-beta0001\build\Fody.targets'))" />
+    <Error Condition="!Exists('..\..\..\lib\Fody.1.29.3\build\dotnet\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\lib\Fody.1.29.3\build\dotnet\Fody.targets'))" />
+    <Error Condition="!Exists('..\..\..\lib\Obsolete.Fody.4.0.3\build\dotnet\Obsolete.Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\lib\Obsolete.Fody.4.0.3\build\dotnet\Obsolete.Fody.targets'))" />
   </Target>
+  <Import Project="..\..\..\lib\Obsolete.Fody.4.0.3\build\dotnet\Obsolete.Fody.targets" Condition="Exists('..\..\..\lib\Obsolete.Fody.4.0.3\build\dotnet\Obsolete.Fody.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
