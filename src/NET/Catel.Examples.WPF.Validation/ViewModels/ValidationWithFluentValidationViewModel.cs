@@ -6,6 +6,7 @@
 
 namespace Catel.Examples.WPF.Validation.ViewModels
 {
+    using System.Threading.Tasks;
     using Catel.IoC;
     using Data;
     using MVVM;
@@ -129,9 +130,9 @@ namespace Catel.Examples.WPF.Validation.ViewModels
         #region Commands
         public Command CheckCommand { get; private set; }
 
-        private void CheckCommandExecute()
+        private async void CheckCommandExecute()
         {
-            _messageService.Show("This button was enabled with the auto hook command feature");
+            await _messageService.ShowAsync("This button was enabled with the auto hook command feature");
         }
         #endregion
     }

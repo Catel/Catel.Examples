@@ -44,7 +44,7 @@ namespace Catel.Examples.AdvancedDemo.Views.LogicInBehavior
             Loaded += (sender, e) => _viewLoaded.SafeInvoke(this, EventArgs.Empty);
             Unloaded += (sender, e) => _viewUnloaded.SafeInvoke(this, EventArgs.Empty);
 
-            this.SubscribeToDataContextAndInheritedDataContext(OnDataContextChanged);
+            this.SubscribeToDataContext(OnDataContextChanged, true);
             this.SubscribeToAllDependencyProperties(OnDependencyPropertyChanged);
         }
 

@@ -99,17 +99,17 @@
         /// <para/>
         /// During unit tests, it is recommended to manually call this method because there is no external container calling this method.
         /// </remarks>
-        protected override async Task Initialize()
+        protected override async Task InitializeAsync()
         {
             var vm = new ProvideAnalyticsViewModel();
 
-            if (await _uiVisualizerService.ShowDialog(vm) ?? false)
+            if (await _uiVisualizerService.ShowDialogAsync(vm) ?? false)
             {
                 AuditingManager.RegisterAuditor(new GoogleAnalytics(vm.ApiKey, "Catel Analytics Example"));
             }
             else
             {
-                await _messageService.ShowError("Cannot provide analytics when no API is provided");
+                await _messageService.ShowErrorAsync("Cannot provide analytics when no API is provided");
             }
         }
         #endregion

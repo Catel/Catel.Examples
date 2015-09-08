@@ -214,7 +214,7 @@ namespace Catel.Examples.WP8.ShoppingList.ViewModels
         /// <param name="parameter">The parameter of the command.</param>
         private async void OnDeleteExecute(object parameter)
         {
-            if (await _messageService.Show("Are you sure that you want to remove the selected item?", "Are you sure?", MessageButton.OKCancel) == MessageResult.OK)
+            if (await _messageService.ShowAsync("Are you sure that you want to remove the selected item?", "Are you sure?", MessageButton.OKCancel) == MessageResult.OK)
             {
                 ShoppingList.Items.Remove(SelectedShoppingListItem);
                 SelectedShoppingListItem = null;

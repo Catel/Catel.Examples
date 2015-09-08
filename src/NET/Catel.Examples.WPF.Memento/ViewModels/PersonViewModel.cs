@@ -7,6 +7,7 @@
 namespace Catel.Examples.WPF.Memento.ViewModels
 {
     using System.Collections.Generic;
+    using System.Threading.Tasks;
     using Catel.IoC;
     using Catel.Memento;
     using Data;
@@ -264,14 +265,14 @@ namespace Catel.Examples.WPF.Memento.ViewModels
         /// <summary>
         /// Called when the view model has just been closed.
         /// <para/>
-        /// This method also raises the <see cref="E:Catel.MVVM.ViewModelBase.Closed"/> event.
+        /// This method also raises the <see cref="E:Catel.MVVM.ViewModelBase.ClosedAsync"/> event.
         /// </summary>
         /// <param name="result">The result to pass to the view. This will, for example, be used as <c>DialogResult</c>.</param>
-        protected override void OnClosed(bool? result)
+        protected override async Task OnClosedAsync(bool? result)
         {
             _mementoService.UnregisterObject(this);
 
-            base.OnClosed(result);
+            await base.OnClosedAsync(result);
         }
         #endregion
     }

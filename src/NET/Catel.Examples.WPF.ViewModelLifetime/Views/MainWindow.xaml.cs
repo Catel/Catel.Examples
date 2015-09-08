@@ -65,7 +65,7 @@ namespace Catel.Examples.WPF.ViewModelLifetime.Views
                                              var tabItemAsIUserControl = tabItem.Content as IUserControl;
                                              if ((tabItemAsIUserControl != null) && (tabItemAsIUserControl.ViewModel != null))
                                              {
-                                                 tabItemAsIUserControl.ViewModel.CloseViewModel(false);
+                                                 tabItemAsIUserControl.ViewModel.CloseViewModelAsync(false);
                                              }
 
                                              tabControl.Items.Remove(tabItem);

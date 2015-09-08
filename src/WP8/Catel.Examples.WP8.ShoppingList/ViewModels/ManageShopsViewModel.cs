@@ -145,9 +145,9 @@ namespace Catel.Examples.WP8.ShoppingList.ViewModels
         /// Method to invoke when the Home command is executed.
         /// </summary>
         /// <param name="parameter">The parameter of the command.</param>
-        private void OnHomeExecute(object parameter)
+        private async void OnHomeExecute(object parameter)
         {
-            SaveViewModel();
+            await SaveViewModelAsync();
 
             _navigationService.Navigate<MainPageViewModel>();
         }
@@ -199,7 +199,7 @@ namespace Catel.Examples.WP8.ShoppingList.ViewModels
         /// <param name="parameter">The parameter of the command.</param>
         private async void OnDeleteExecute(object parameter)
         {
-            if (await _messageService.Show("Are you sure that you want to remove the selected shop?", "Are you sure?", MessageButton.OKCancel) == MessageResult.OK)
+            if (await _messageService.ShowAsync("Are you sure that you want to remove the selected shop?", "Are you sure?", MessageButton.OKCancel) == MessageResult.OK)
             {
                 Shops.Remove(SelectedShop);
                 SelectedShop = null;

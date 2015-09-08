@@ -23,15 +23,18 @@ namespace Catel.Examples.WPF.Prism.Modules.Departments.ViewModels
     public class DepartmentsViewModel : ViewModelBase
     {
         private readonly IUIVisualizerService _uiVisualizerService;
+        private readonly IUICompositionService _uiCompositionService;
 
         #region Constructors
         /// <summary>
         /// Initializes a new instance of the <see cref="DepartmentsViewModel"/> class. 
         /// </summary>
-        public DepartmentsViewModel(IMessageMediator messageMediator, IDepartmentRepository departmentRepository, IUIVisualizerService uiVisualizerService)
+        public DepartmentsViewModel(IMessageMediator messageMediator, IDepartmentRepository departmentRepository, 
+            IUIVisualizerService uiVisualizerService, IUICompositionService uiCompositionService)
             : base(messageMediator)
         {
             _uiVisualizerService = uiVisualizerService;
+            _uiCompositionService = uiCompositionService;
 
             Departments = new FastObservableCollection<IDepartment>(departmentRepository.GetAllDepartments());
             if (Departments.Count > 0)
@@ -79,16 +82,16 @@ namespace Catel.Examples.WPF.Prism.Modules.Departments.ViewModels
                 {
                     var typeFactory = TypeFactory.Default;
                     _notificationBarViewModel = typeFactory.CreateInstance<NotificationBarViewModel>();
-                    _uiVisualizerService.Activate(_notificationBarViewModel, "NotificationRegion");
+                    _uiCompositionService.Activate(_notificationBarViewModel, "NotificationRegion");
                 }
                 else
                 {
-                    _uiVisualizerService.Activate(_notificationBarViewModel);
+                    _uiCompositionService.Activate(_notificationBarViewModel);
                 }
             }
             else
             {
-                _uiVisualizerService.Deactivate(_notificationBarViewModel);
+                _uiCompositionService.Deactivate(_notificationBarViewModel);
             }
         }
 

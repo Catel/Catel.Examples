@@ -47,17 +47,17 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Catel.Core, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\lib\Catel.Core.4.1.0-unstable0018\lib\net45\Catel.Core.dll</HintPath>
+    <Reference Include="Catel.Core">
+      <HintPath>..\..\..\lib\Catel.Core.4.2.0\lib\net45\Catel.Core.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Catel.Extensions.Controls, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\lib\Catel.Extensions.Controls.4.1.0-unstable0018\lib\net45\Catel.Extensions.Controls.dll</HintPath>
+    <Reference Include="Catel.Extensions.Controls">
+      <HintPath>..\..\..\lib\Catel.Extensions.Controls.4.2.0\lib\net45\Catel.Extensions.Controls.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Catel.MVVM, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\lib\Catel.MVVM.4.1.0-unstable0018\lib\net45\Catel.MVVM.dll</HintPath>
+    <Reference Include="Catel.MVVM">
+      <HintPath>..\..\..\lib\Catel.MVVM.4.2.0\lib\net45\Catel.MVVM.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Obsolete">
       <HintPath>..\..\..\lib\Obsolete.Fody.3.1.0.0\Lib\NET35\Obsolete.dll</HintPath>
@@ -67,7 +67,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\lib\Catel.MVVM.4.1.0-unstable0018\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <HintPath>..\..\..\lib\Catel.MVVM.4.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />

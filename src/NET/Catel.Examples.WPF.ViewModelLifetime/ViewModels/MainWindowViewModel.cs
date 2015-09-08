@@ -2,6 +2,7 @@
 {
     using System;
     using System.Linq;
+    using System.Threading.Tasks;
     using System.Windows.Threading;
     using Catel.MVVM;
     using Catel.Services;
@@ -33,7 +34,7 @@
             _timer.Interval = new TimeSpan(0, 0, 0, 0, 500);
             _timer.Start();
 
-            AddTab = new Command(OnAddTabExecute);
+            AddTab = new TaskCommand(OnAddTabExecuteAsync);
         }
         #endregion
 
@@ -63,15 +64,15 @@
         /// <summary>
         /// Gets the AddTab command.
         /// </summary>
-        public Command AddTab { get; private set; }
+        public TaskCommand AddTab { get; private set; }
 
         /// <summary>
         /// Method to invoke when the AddTab command is executed.
         /// </summary>
-        private async void OnAddTabExecute()
+        private async Task OnAddTabExecuteAsync()
         {
             var vm = new CreateTabWindowViewModel();
-            if (await _uiVisualizerService.ShowDialog(vm) ?? false)
+            if (await _uiVisualizerService.ShowDialogAsync(vm) ?? false)
             {
                 _tabService.AddTab(vm.CloseWhenUnloaded);
             }

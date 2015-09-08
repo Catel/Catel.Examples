@@ -1,6 +1,7 @@
 ﻿namespace Catel.Examples.WPF.PersonApplication.ViewModels
 {
     using System.Collections.ObjectModel;
+    using System.Threading.Tasks;
     using Catel.Data;
     using Models;
     using Properties;
@@ -27,9 +28,9 @@
             _uiVisualizerService = uiVisualizerService;
             _messageService = messageService;
 
-            Add = new Command(OnAddExecute);
-            Edit = new Command(OnEditExecute, OnEditCanExecute);
-            Remove = new Command(OnRemoveExecute, OnRemoveCanExecute);
+            Add = new TaskCommand(OnAddExecuteAsync);
+            Edit = new TaskCommand(OnEditExecuteAsync, OnEditCanExecute);
+            Remove = new TaskCommand(OnRemoveExecuteAsync, OnRemoveCanExecute);
 
             PersonCollection = new ObservableCollection<Person>();
             PersonCollection.Add(new Person { Gender = Gender.Male, FirstName = "Geert", MiddleName = "van", LastName = "Horrik" });
@@ -80,15 +81,15 @@
         /// <summary>
         /// Gets the Add command.
         /// </summary>
-        public Command Add { get; private set; }
+        public TaskCommand Add { get; private set; }
 
         /// <summary>
         /// Method to invoke when the Add command is executed.
         /// </summary>
-        private async void OnAddExecute()
+        private async Task OnAddExecuteAsync()
         {
             var viewModel = new PersonViewModel(new Person());
-            if (await _uiVisualizerService.ShowDialog(viewModel) ?? false)
+            if (await _uiVisualizerService.ShowDialogAsync(viewModel) ?? false)
             {
                 PersonCollection.Add(viewModel.Person);
             }
@@ -97,7 +98,7 @@
         /// <summary>
         /// Gets the Edit command.
         /// </summary>
-        public Command Edit { get; private set; }
+        public TaskCommand Edit { get; private set; }
 
         /// <summary>
         /// Method to check whether the Edit command can be executed.
@@ -111,16 +112,16 @@
         /// <summary>
         /// Method to invoke when the Edit command is executed.
         /// </summary>
-        private async void OnEditExecute()
+        private async Task OnEditExecuteAsync()
         {
             var viewModel = new PersonViewModel(SelectedPerson);
-            await _uiVisualizerService.ShowDialog(viewModel);
+            await _uiVisualizerService.ShowDialogAsync(viewModel);
         }
 
         /// <summary>
         /// Gets the Remove command.
         /// </summary>
-        public Command Remove { get; private set; }
+        public TaskCommand Remove { get; private set; }
 
         /// <summary>
         /// Method to check whether the Remove command can be executed.
@@ -134,9 +135,9 @@
         /// <summary>
         /// Method to invoke when the Remove command is executed.
         /// </summary>
-        private async void OnRemoveExecute()
+        private async Task OnRemoveExecuteAsync()
         {
-            if (await _messageService.Show("Are you sure you want to remove this person?", "Are you sure?", MessageButton.YesNo) == MessageResult.Yes)
+            if (await _messageService.ShowAsync("Are you sure you want to remove this person?", "Are you sure?", MessageButton.YesNo) == MessageResult.Yes)
             {
                 PersonCollection.Remove(SelectedPerson);
             }

@@ -1,6 +1,7 @@
 ﻿namespace Catel.Examples.WPF.Memento.ViewModels
 {
     using System.Collections.ObjectModel;
+    using System.Threading.Tasks;
     using Catel.IoC;
     using MVVM;
     using Catel.Memento;
@@ -31,9 +32,9 @@
             _messageService = messageService;
             _mementoService = mementoService;
 
-            Add = new Command(OnAddExecute);
-            Edit = new Command(OnEditExecute, OnEditCanExecute);
-            Remove = new Command(OnRemoveExecute, OnRemoveCanExecute);
+            Add = new TaskCommand(OnAddExecuteAsync);
+            Edit = new TaskCommand(OnEditExecuteAsync, OnEditCanExecute);
+            Remove = new TaskCommand(OnRemoveExecuteAsync, OnRemoveCanExecute);
 
             Undo = new Command(() => _mementoService.Undo(), () => _mementoService.CanUndo);
             Redo = new Command(() => _mementoService.Redo(), () => _mementoService.CanRedo);
@@ -87,16 +88,16 @@
         /// <summary>
         /// Gets the Add command.
         /// </summary>
-        public Command Add { get; private set; }
+        public TaskCommand Add { get; private set; }
 
         /// <summary>
         /// Method to invoke when the Add command is executed.
         /// </summary>
-        private async void OnAddExecute()
+        private async Task OnAddExecuteAsync()
         {
             var typeFactory = TypeFactory.Default;
             var viewModel = typeFactory.CreateInstanceWithParametersAndAutoCompletion<PersonViewModel>(new Person());
-            if (await _uiVisualizerService.ShowDialog(viewModel) ?? false)
+            if (await _uiVisualizerService.ShowDialogAsync(viewModel) ?? false)
             {
                 PersonCollection.Add(viewModel.Person);
             }
@@ -105,7 +106,7 @@
         /// <summary>
         /// Gets the Edit command.
         /// </summary>
-        public Command Edit { get; private set; }
+        public TaskCommand Edit { get; private set; }
 
         /// <summary>
         /// Method to check whether the Edit command can be executed.
@@ -119,17 +120,17 @@
         /// <summary>
         /// Method to invoke when the Edit command is executed.
         /// </summary>
-        private void OnEditExecute()
+        private async Task OnEditExecuteAsync()
         {
             var typeFactory = TypeFactory.Default;
             var viewModel = typeFactory.CreateInstanceWithParametersAndAutoCompletion<PersonViewModel>(SelectedPerson);
-            _uiVisualizerService.ShowDialog(viewModel);
+            await _uiVisualizerService.ShowDialogAsync(viewModel);
         }
 
         /// <summary>
         /// Gets the Remove command.
         /// </summary>
-        public Command Remove { get; private set; }
+        public TaskCommand Remove { get; private set; }
 
         /// <summary>
         /// Method to check whether the Remove command can be executed.
@@ -143,9 +144,9 @@
         /// <summary>
         /// Method to invoke when the Remove command is executed.
         /// </summary>
-        private async void OnRemoveExecute()
+        private async Task OnRemoveExecuteAsync()
         {
-            if (await _messageService.Show("Are you sure you want to remove this person?", "Are you sure?", MessageButton.YesNo) == MessageResult.Yes)
+            if (await _messageService.ShowAsync("Are you sure you want to remove this person?", "Are you sure?", MessageButton.YesNo) == MessageResult.Yes)
             {
                 PersonCollection.Remove(SelectedPerson);
             }
@@ -166,14 +167,14 @@
         /// <summary>
         /// Called when the view model has just been closed.
         /// <para/>
-        /// This method also raises the <see cref="E:Catel.MVVM.ViewModelBase.Closed"/> event.
+        /// This method also raises the <see cref="E:Catel.MVVM.ViewModelBase.ClosedAsync"/> event.
         /// </summary>
         /// <param name="result">The result to pass to the view. This will, for example, be used as <c>DialogResult</c>.</param>
-        protected override void OnClosed(bool? result)
+        protected override async Task OnClosedAsync(bool? result)
         {
             _mementoService.UnregisterCollection(PersonCollection);
 
-            base.OnClosed(result);
+            await base.OnClosedAsync(result);
         }
         #endregion
     }

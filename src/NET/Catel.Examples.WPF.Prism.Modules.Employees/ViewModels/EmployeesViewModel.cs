@@ -6,6 +6,7 @@
 
 namespace Catel.Examples.WPF.Prism.Modules.Employees.ViewModels
 {
+    using System.Threading.Tasks;
     using Catel.Services;
     using Collections;
     using Data;
@@ -42,9 +43,9 @@ namespace Catel.Examples.WPF.Prism.Modules.Employees.ViewModels
             _employeeRepository = employeeRepository;
             _messageService = messageService;
 
-            AddEmployee = new Command(OnAddEmployeeExecute);
-            EditEmployee = new Command(OnEditEmployeeExecute, OnEditEmployeeCanExecute);
-            DeleteEmployee = new Command(OnDeleteEmployeeExecute, OnDeleteEmployeeCanExecute);
+            AddEmployee = new TaskCommand(OnAddEmployeeExecuteAsync);
+            EditEmployee = new TaskCommand(OnEditEmployeeExecuteAsync, OnEditEmployeeCanExecute);
+            DeleteEmployee = new TaskCommand(OnDeleteEmployeeExecuteAsync, OnDeleteEmployeeCanExecute);
 
             Employees = new FastObservableCollection<IEmployee>();
             if (!ObjectHelper.IsNull(SelectedDepartment))
@@ -125,19 +126,19 @@ namespace Catel.Examples.WPF.Prism.Modules.Employees.ViewModels
         /// <summary>
         /// Gets the AddEmployee command.
         /// </summary>
-        public Command AddEmployee { get; private set; }
+        public TaskCommand AddEmployee { get; private set; }
 
         /// <summary>
         /// Method to invoke when the AddEmployee command is executed.
         /// </summary>
-        private async void OnAddEmployeeExecute()
+        private async Task OnAddEmployeeExecuteAsync()
         {
             var employee = new Employee() {Department = SelectedDepartment};
 
             var typeFactory = TypeFactory.Default;
             var viewModel = typeFactory.CreateInstanceWithParametersAndAutoCompletion<EmployeeViewModel>(employee);
 
-            if (!(await _uiVisualizerService.ShowDialog(viewModel) ?? false))
+            if (!(await _uiVisualizerService.ShowDialogAsync(viewModel) ?? false))
             {
                 return;
             }
@@ -156,7 +157,7 @@ namespace Catel.Examples.WPF.Prism.Modules.Employees.ViewModels
         /// <summary>
         /// Gets the EditEmployee command.
         /// </summary>
-        public Command EditEmployee { get; private set; }
+        public TaskCommand EditEmployee { get; private set; }
 
         /// <summary>
         /// Method to check whether the EditEmployee command can be executed.
@@ -170,12 +171,12 @@ namespace Catel.Examples.WPF.Prism.Modules.Employees.ViewModels
         /// <summary>
         /// Method to invoke when the EditEmployee command is executed.
         /// </summary>
-        private void OnEditEmployeeExecute()
+        private async Task OnEditEmployeeExecuteAsync()
         {
             var typeFactory = TypeFactory.Default;
             var viewModel = typeFactory.CreateInstanceWithParametersAndAutoCompletion<EmployeeViewModel>(SelectedEmployee);
 
-            _uiVisualizerService.ShowDialog(viewModel);
+            await _uiVisualizerService.ShowDialogAsync(viewModel);
             if (SelectedDepartment != null)
             {
                 OnSelectedDepartmentUpdated(SelectedDepartment.Name);
@@ -185,7 +186,7 @@ namespace Catel.Examples.WPF.Prism.Modules.Employees.ViewModels
         /// <summary>
         /// Gets the DeleteEmployee command.
         /// </summary>
-        public Command DeleteEmployee { get; private set; }
+        public TaskCommand DeleteEmployee { get; private set; }
 
         /// <summary>
         /// Method to check whether the DeleteEmployee command can be executed.
@@ -199,7 +200,7 @@ namespace Catel.Examples.WPF.Prism.Modules.Employees.ViewModels
         /// <summary>
         /// Method to invoke when the DeleteEmployee command is executed.
         /// </summary>
-        private async void OnDeleteEmployeeExecute()
+        private async Task OnDeleteEmployeeExecuteAsync()
         {
             if (ObjectHelper.IsNull(SelectedEmployee))
             {
@@ -207,7 +208,7 @@ namespace Catel.Examples.WPF.Prism.Modules.Employees.ViewModels
             }
 
             var employee = SelectedEmployee;
-            if (await _messageService.Show(string.Format("Are you sure to delete {0} {1}", employee.FirstName, employee.LastName), "Are you sure?", MessageButton.YesNo) != MessageResult.Yes)
+            if (await _messageService.ShowAsync(string.Format("Are you sure to delete {0} {1}", employee.FirstName, employee.LastName), "Are you sure?", MessageButton.YesNo) != MessageResult.Yes)
             {
                 return;
             }

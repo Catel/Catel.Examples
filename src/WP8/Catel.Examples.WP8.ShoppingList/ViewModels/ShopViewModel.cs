@@ -133,9 +133,9 @@ namespace Catel.Examples.WP8.ShoppingList.ViewModels
         /// Method to invoke when the Cancel command is executed.
         /// </summary>
         /// <param name="parameter">The parameter of the command.</param>
-        private void OnCancelExecute(object parameter)
+        private async void OnCancelExecute(object parameter)
         {
-            CancelViewModel();
+            await CancelViewModelAsync();
 
             _navigationService.GoBack();
         }

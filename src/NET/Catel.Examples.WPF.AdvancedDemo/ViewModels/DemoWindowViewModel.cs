@@ -101,25 +101,25 @@
         #endregion
 
         #region Methods
-        protected override async Task<bool> Cancel()
+        protected override async Task<bool> CancelAsync()
         {
-            await _messageService.ShowInformation("View model canceled");
+            await _messageService.ShowInformationAsync("View model canceled");
 
-            return await base.Cancel();
+            return await base.CancelAsync();
         }
 
-        protected override async Task<bool> Save()
+        protected override async Task<bool> SaveAsync()
         {
-            await _messageService.ShowInformation("View model saved");
+            await _messageService.ShowInformationAsync("View model saved");
 
-            return await base.Save();
+            return await base.SaveAsync();
         }
 
-        protected override async Task Close()
+        protected override async Task CloseAsync()
         {
-            await _messageService.ShowInformation("View model closed");
+            await _messageService.ShowInformationAsync("View model closed");
 
-            await base.Close();
+            await base.CloseAsync();
         }
         #endregion
     }

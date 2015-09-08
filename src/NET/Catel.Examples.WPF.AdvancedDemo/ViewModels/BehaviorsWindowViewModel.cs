@@ -1,5 +1,6 @@
 ﻿namespace Catel.Examples.AdvancedDemo.ViewModels
 {
+    using System.Threading.Tasks;
     using Catel.MVVM;
     using Catel.Services;
     using Data;
@@ -18,9 +19,9 @@
         {
             _messageService = messageService;
 
-            DoubleClickToCommandExample = new Command(OnDoubleClickToCommandExampleExecute);
-            EventToCommandForLostFocus = new Command(OnEventToCommandForLostFocusExecute);
-            KeyPressToCommandExample = new Command(OnKeyPressToCommandExampleExecute);
+            DoubleClickToCommandExample = new TaskCommand(OnDoubleClickToCommandExampleExecuteAsync);
+            EventToCommandForLostFocus = new TaskCommand(OnEventToCommandForLostFocusExecuteAsync);
+            KeyPressToCommandExample = new TaskCommand(OnKeyPressToCommandExampleExecuteAsync);
         }
 
         /// <summary>
@@ -64,47 +65,47 @@
         /// <summary>
         /// Gets the DoubleClickToCommandExample command.
         /// </summary>
-        public Command DoubleClickToCommandExample { get; private set; }
+        public TaskCommand DoubleClickToCommandExample { get; private set; }
 
         /// <summary>
         /// Method to invoke when the DoubleClickToCommandExample command is executed.
         /// </summary>
-        private void OnDoubleClickToCommandExampleExecute()
+        private async Task OnDoubleClickToCommandExampleExecuteAsync()
         {
-            _messageService.Show("Received double click");
+            await _messageService.ShowAsync("Received double click");
         }
 
         /// <summary>
         /// Gets the EventToCommandForLostFocus command.
         /// </summary>
-        public Command EventToCommandForLostFocus { get; private set; }
+        public TaskCommand EventToCommandForLostFocus { get; private set; }
 
         /// <summary>
         /// Method to invoke when the EventToCommandForLostFocus command is executed.
         /// </summary>
-        private void OnEventToCommandForLostFocusExecute()
+        private async Task OnEventToCommandForLostFocusExecuteAsync()
         {
-            _messageService.Show("LostFocus event occurred");
+            await _messageService.ShowAsync("LostFocus event occurred");
         }
 
         /// <summary>
         /// Gets the KeyPressToCommandExample command.
         /// </summary>
-        public Command KeyPressToCommandExample { get; private set; }
+        public TaskCommand KeyPressToCommandExample { get; private set; }
 
         /// <summary>
         /// Method to invoke when the KeyPressToCommandExample command is executed.
         /// </summary>
-        private void OnKeyPressToCommandExampleExecute()
+        private async Task OnKeyPressToCommandExampleExecuteAsync()
         {
-            _messageService.Show("You just pressed the [Ctrl] + [Backspace] keys");
+            await _messageService.ShowAsync("You just pressed the [Ctrl] + [Backspace] keys");
         }
         #endregion
 
         #region Methods
-        private void OnDelayBindingUpdateValueChanged()
+        private async void OnDelayBindingUpdateValueChanged()
         {
-            _messageService.Show(string.Format("New value is {0}", DelayBindingUpdateValue));
+            await _messageService.ShowAsync(string.Format("New value is {0}", DelayBindingUpdateValue));
         }
         #endregion
     }
