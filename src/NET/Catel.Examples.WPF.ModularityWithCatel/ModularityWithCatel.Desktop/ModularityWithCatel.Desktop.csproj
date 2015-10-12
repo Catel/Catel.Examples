@@ -65,7 +65,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>..\..\..\output\Debug\Examples\WPF\ModularityWithCatel.Desktop\</OutputPath>
+    <OutputPath>..\..\..\..\output\Debug\Examples\WPF\ModularityWithCatel.Desktop\DirectoryModules\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <NoWarn>0649</NoWarn>
@@ -83,7 +83,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <OutputPath>..\..\..\output\Release\Examples\WPF\ModularityWithCatel.Desktop\</OutputPath>
+    <OutputPath>..\..\..\..\output\Release\Examples\WPF\ModularityWithCatel.Desktop\DirectoryModules\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
