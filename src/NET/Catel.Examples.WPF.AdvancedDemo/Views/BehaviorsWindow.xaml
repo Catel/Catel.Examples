@@ -146,7 +146,7 @@
                     </TextBlock>
                 </Label>
 
-                <TextBox>
+                <TextBox Text="{Binding NumericValue}">
                     <i:Interaction.Behaviors>
                         <catel:NumericTextBox />
                     </i:Interaction.Behaviors>

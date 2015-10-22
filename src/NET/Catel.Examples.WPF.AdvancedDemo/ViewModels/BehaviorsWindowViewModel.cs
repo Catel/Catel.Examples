@@ -59,6 +59,20 @@
         /// Register the UpdateBindingOnTextChangedValue property so it is known in the class.
         /// </summary>
         public static readonly PropertyData UpdateBindingOnTextChangedValueProperty = RegisterProperty("UpdateBindingOnTextChangedValue", typeof(string));
+
+        /// <summary>
+        /// Gets or sets the property value.
+        /// </summary>
+        public double NumericValue
+        {
+            get { return GetValue<double>(NumericValueProperty); }
+            set { SetValue(NumericValueProperty, value); }
+        }
+
+        /// <summary>
+        /// Register the NumericValue property so it is known in the class.
+        /// </summary>
+        public static readonly PropertyData NumericValueProperty = RegisterProperty("NumericValue", typeof(double), 0d);
         #endregion
 
         #region Commands
