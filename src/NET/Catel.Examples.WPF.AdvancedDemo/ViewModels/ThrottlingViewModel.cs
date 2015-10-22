@@ -71,7 +71,7 @@ namespace Catel.Examples.AdvancedDemo.ViewModels
             ThrottlingRate = new TimeSpan(0, 0, 0, 0, Throttling);
         }
 
-        protected override async Task Initialize()
+        protected override async Task InitializeAsync()
         {
             _frameRateTimer.Interval = new TimeSpan(0, 0, 0, 1);
             _frameRateTimer.Tick += (sender, e) => OnFrameRateCounterElapsed();
@@ -100,7 +100,7 @@ namespace Catel.Examples.AdvancedDemo.ViewModels
             Counter++;
         }
 
-        protected override async Task Close()
+        protected override async Task CloseAsync()
         {
             _counterTimer.Stop();
         }

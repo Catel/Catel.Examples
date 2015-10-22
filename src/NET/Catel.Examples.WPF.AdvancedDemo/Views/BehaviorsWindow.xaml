@@ -128,7 +128,7 @@
                     <TextBlock TextWrapping="Wrap">
                     <i:Interaction.Behaviors>
                         <catel:MouseInfo x:Name="mouseInfo" />
-                    </i:Interaction.Behaviors>                    
+                    </i:Interaction.Behaviors>
                     
                     Hover this text to show the ListBox.
                     </TextBlock>
@@ -144,6 +144,10 @@
                     <TextBlock TextWrapping="Wrap">
                     This textbox only allows numeric characters. The allowed characters can be fully customized.
                     </TextBlock>
+                </Label>
+
+                <Label>
+                    <TextBlock Text="{Binding NumericValue, StringFormat=Last known value: {0}}" />
                 </Label>
 
                 <TextBox Text="{Binding NumericValue}">
