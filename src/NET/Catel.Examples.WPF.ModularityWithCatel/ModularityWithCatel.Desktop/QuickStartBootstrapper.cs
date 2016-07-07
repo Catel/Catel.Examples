@@ -69,7 +69,7 @@ namespace ModularityWithCatel.Desktop
             // Module B and Module D are copied to a directory as part of a post-build step.
             // These modules are not referenced in the project and are discovered by inspecting a directory.
             // Both projects have a post-build step to copy themselves into that directory.
-            var directoryCatalog = new DirectoryModuleCatalog {ModulePath = @".\DirectoryModules"};
+            var directoryCatalog = new DirectoryModuleCatalog { ModulePath = @".\DirectoryModules" };
             ((CompositeModuleCatalog) ModuleCatalog).Add(directoryCatalog);
 
             // Module E and Module F are defined in configuration.

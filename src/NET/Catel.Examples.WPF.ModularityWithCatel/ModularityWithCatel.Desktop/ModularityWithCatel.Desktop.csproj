@@ -65,7 +65,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
-    <OutputPath>..\..\..\..\output\Debug\Examples\WPF\ModularityWithCatel.Desktop\DirectoryModules\</OutputPath>
+    <OutputPath>..\..\..\..\output\Debug\Examples\WPF\ModularityWithCatel.Desktop\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <NoWarn>0649</NoWarn>
