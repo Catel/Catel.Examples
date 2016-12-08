@@ -20,8 +20,9 @@
         /// <param name="person">The person.</param>
         public PersonViewModel(Person person)
         {
+            if (Catel.CatelEnvironment.IsInDesignMode)
+                return; // This prevents constructor code from being executed at design-time
             Person = person ?? new Person();
-
             GenerateData = new Command<object, object>(OnGenerateDataExecute, OnGenerateDataCanExecute);
             ToggleCustomError = new Command<object>(OnToggleCustomErrorExecute);
         }
@@ -237,8 +238,12 @@
         /// Initializes a new instance of the <see cref="DesignPersonViewModel"/> class.
         /// </summary>
         public DesignPersonViewModel()
-            : base(new Person { FirstName = "Geert", MiddleName = "van", LastName = "Horrik", Gender = Gender.Male })
+            : base(null)
         {
+            SetValue("FirstName", "Geert");
+            SetValue("MiddleName", "van");
+            SetValue("LastName", "Horrik");
+            Gender = Gender.Male;
         }
     }
 }
