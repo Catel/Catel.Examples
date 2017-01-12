@@ -20,8 +20,9 @@
         /// <param name="person">The person.</param>
         public PersonViewModel(Person person)
         {
+            if (Catel.CatelEnvironment.IsInDesignMode)
+                return; // This prevents constructor code from being executed at design-time
             Person = person ?? new Person();
-
             GenerateData = new Command<object, object>(OnGenerateDataExecute, OnGenerateDataCanExecute);
             ToggleCustomError = new Command<object>(OnToggleCustomErrorExecute);
         }
@@ -44,7 +45,6 @@
         [Model]
         [Fody.Expose("FirstName")]
         [Fody.Expose("MiddleName")]
-        [Fody.Expose("LastName")]
         public Person Person
         {
             get { return GetValue<Person>(PersonProperty); }
@@ -103,20 +103,20 @@
         ///// </summary>
         //public static readonly PropertyData MiddleNameProperty = RegisterProperty("MiddleName", typeof(string));
 
-        ///// <summary>
-        ///// Gets or sets the last name.
-        ///// </summary>
-        //[ViewModelToModel("Person")]
-        //public string LastName
-        //{
-        //    get { return GetValue<string>(LastNameProperty); }
-        //    set { SetValue(LastNameProperty, value); }
-        //}
+        /// <summary>
+        /// Gets or sets the last name.
+        /// </summary>
+        [ViewModelToModel("Person")]
+        public string LastName
+        {
+            get { return GetValue<string>(LastNameProperty); }
+            set { SetValue(LastNameProperty, value); }
+        }
 
-        ///// <summary>
-        ///// Register the LastName property so it is known in the class.
-        ///// </summary>
-        //public static readonly PropertyData LastNameProperty = RegisterProperty("LastName", typeof(string));
+        /// <summary>
+        /// Register the LastName property so it is known in the class.
+        /// </summary>
+        public static readonly PropertyData LastNameProperty = RegisterProperty("LastName", typeof(string));
 
         /// <summary>
         /// Gets or sets the custom error.
@@ -165,7 +165,7 @@
                 return false;
             }
 
-            if (!string.IsNullOrEmpty(GetValue<string>("LastName")))
+            if (!string.IsNullOrEmpty(this.LastName))
             {
                 return false;
             }
@@ -181,8 +181,8 @@
         {
             Gender = Gender.Male;
             SetValue("FirstName", "John");
-            SetValue("MiddleName", "");
-            SetValue("LastName", "Doe");
+            SetValue("MiddleName", "Mathew");
+            LastName = "Smith";
         }
 
         /// <summary>
@@ -237,8 +237,15 @@
         /// Initializes a new instance of the <see cref="DesignPersonViewModel"/> class.
         /// </summary>
         public DesignPersonViewModel()
-            : base(new Person { FirstName = "Geert", MiddleName = "van", LastName = "Horrik", Gender = Gender.Male })
+            : base(null)
         {
+            // Direct manipulation on viewmodel's property bag. This a requirement if you intend to use Fody.Expose decorator
+            SetValue("FirstName", "Geert");
+            SetValue("MiddleName", "van");
+
+            // Regular sample usage
+            LastName = "Horrik";
+            Gender = Gender.Male;
         }
     }
 }
