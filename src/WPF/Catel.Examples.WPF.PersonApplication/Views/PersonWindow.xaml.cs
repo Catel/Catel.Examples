@@ -1,17 +1,18 @@
-﻿namespace Catel.Examples.WPF.PersonApplication.Views
-{
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="PersonWindow.xaml.cs" company="Catel development team">
+//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
 
-    using Catel.Windows;
+
+namespace Catel.Examples.PersonApplication.Views
+{
+    using Windows;
     using ViewModels;
 
-    /// <summary>
-    /// Interaction logic for PersonWindow.xaml
-    /// </summary>
-    public partial class PersonWindow : DataWindow
+    public partial class PersonWindow
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PersonWindow"/> class.
-        /// </summary>
+        #region Constructors
         public PersonWindow(PersonViewModel viewModel)
             : base(viewModel, DataWindowMode.OkCancel, null, DataWindowDefaultButton.OK, true, InfoBarMessageControlGenerationMode.Inline)
         {
@@ -20,5 +21,6 @@
 
             InitializeComponent();
         }
+        #endregion
     }
 }

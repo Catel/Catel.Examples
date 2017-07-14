@@ -1,41 +1,37 @@
-﻿<catel:DataWindow x:Class="Catel.Examples.WPF.PersonApplication.Views.PersonWindow"
+﻿<catel:DataWindow x:Class="Catel.Examples.PersonApplication.Views.PersonWindow"
                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                  xmlns:Converters="clr-namespace:Catel.Examples.WPF.PersonApplication.Converters"
-                  xmlns:Models="clr-namespace:Catel.Examples.Models;assembly=Catel.Examples.WPF.Models"
+                  xmlns:converters="clr-namespace:Catel.Examples.PersonApplication.Converters"
                   xmlns:catel="http://schemas.catelproject.com"
-                  xmlns:ViewModels="clr-namespace:Catel.Examples.WPF.PersonApplication.ViewModels" mc:Ignorable="d" 
-                  d:DataContext="{d:DesignInstance ViewModels:DesignPersonViewModel, IsDesignTimeCreatable=True}">
+                  xmlns:viewModels="clr-namespace:Catel.Examples.PersonApplication.ViewModels"
+                  xmlns:Models="clr-namespace:Catel.Examples.Models"
+                  mc:Ignorable="d" 
+                  d:DataContext="{d:DesignInstance viewModels:DesignPersonViewModel, IsDesignTimeCreatable=True}">
     
-    <!-- Resources -->
     <catel:DataWindow.Resources>
-        <!-- Converters -->
-        <Converters:GenderToIsSelectedConverter x:Key="GenderToIsSelectedConverter" />
+        <converters:GenderToIsSelectedConverter x:Key="GenderToIsSelectedConverter" />
     </catel:DataWindow.Resources>
     
-    <!-- Content -->
-    <catel:StackGrid>
-        <!-- Row definitions -->
-        <catel:StackGrid.RowDefinitions>
+    <Grid>
+        <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-        </catel:StackGrid.RowDefinitions>
+        </Grid.RowDefinitions>
         
-        <!-- Column definitions -->
-        <catel:StackGrid.ColumnDefinitions>
+        <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" MinWidth="300" />
-        </catel:StackGrid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>
         
         <!-- Gender -->
-        <Label Content="Gender" />
-        <StackPanel Orientation="Horizontal" x:Name="genderStackPanel">
+        <Label Grid.Row="0" Grid.Column="0" Content="Gender" />
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" x:Name="genderStackPanel">
             <RadioButton Content="Male" IsChecked="{Binding Gender, Converter={StaticResource GenderToIsSelectedConverter}, ConverterParameter={x:Static Models:Gender.Male}, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" 
                          Validation.ValidationAdornerSiteFor="{Binding ElementName=genderStackPanel}" />
             <RadioButton Content="Female" IsChecked="{Binding Gender, Converter={StaticResource GenderToIsSelectedConverter}, ConverterParameter={x:Static Models:Gender.Female}, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" 
@@ -43,23 +39,23 @@
         </StackPanel>
         
         <!-- First name -->
-        <Label Content="First name" />
-        <TextBox Text="{Binding FirstName, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+        <Label Grid.Row="1" Grid.Column="0" Content="First name" />
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding FirstName, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
 
         <!-- Middle name -->
-        <Label Content="Middle name" />
-        <TextBox Text="{Binding MiddleName, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+        <Label Grid.Row="2" Grid.Column="0" Content="Middle name" />
+        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding MiddleName, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
 
         <!-- Last name -->
-        <Label Content="Last name" />
-        <TextBox Text="{Binding LastName, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+        <Label Grid.Row="0" Grid.Column="0" Content="Last name" />
+        <TextBox Grid.Row="0" Grid.Column="0" Text="{Binding LastName, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
 
         <!-- Custom error -->
-        <Label Content="Custom error" />
-        <TextBox Text="{Binding CustomError, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" IsReadOnly="True"  />
+        <Label Grid.Row="0" Grid.Column="0" Content="Custom error" />
+        <TextBox Grid.Row="0" Grid.Column="0" Text="{Binding CustomError, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" IsReadOnly="True"  />
 
         <!-- Custom error -->
-        <Label Content="Custom defined property" />
-        <TextBox Text="{Binding CustomDefinedProperty, Mode=OneWay}" IsReadOnly="True"  />
-    </catel:StackGrid>
+        <Label Grid.Row="0" Grid.Column="0" Content="Custom defined property" />
+        <TextBox Grid.Row="0" Grid.Column="0" Text="{Binding CustomDefinedProperty, Mode=OneWay}" IsReadOnly="True"  />
+    </Grid>
 </catel:DataWindow>

@@ -1,154 +1,74 @@
-﻿namespace Catel.Examples.WPF.PersonApplication.ViewModels
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="PersonViewModel.cs" company="Catel development team">
+//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+namespace Catel.Examples.PersonApplication.ViewModels
 {
     using System.Collections.Generic;
-    using Catel.Data;
+    using Data;
     using Models;
     using MVVM;
 
-    /// <summary>
-    /// Person view model.
-    /// </summary>
     public class PersonViewModel : ViewModelBase
     {
-        #region Variables
-        #endregion
-
-        #region Constructor & destructor
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PersonViewModel"/> class.
-        /// </summary>
-        /// <param name="person">The person.</param>
+        #region Constructors
         public PersonViewModel(Person person)
         {
             if (Catel.CatelEnvironment.IsInDesignMode)
+            {
                 return; // This prevents constructor code from being executed at design-time
-            Person = person ?? new Person();
+            }
+
+            Person = person;
             GenerateData = new Command<object, object>(OnGenerateDataExecute, OnGenerateDataCanExecute);
             ToggleCustomError = new Command<object>(OnToggleCustomErrorExecute);
+
+            Title = "Person";
         }
         #endregion
 
-        #region Properties
-        /// <summary>
-        /// Gets the title of the view model.
-        /// </summary>
-        /// <value>The title.</value>
-        public override string Title
+        #region Methods
+        protected override void ValidateFields(List<IFieldValidationResult> validationResults)
         {
-            get { return "Person"; }
+            if (!string.IsNullOrEmpty(CustomError))
+            {
+                validationResults.Add(FieldValidationResult.CreateError(nameof(CustomError), CustomError));
+            }
         }
+        #endregion
+
+        #region Variables
+        #endregion
 
         #region Models
-        /// <summary>
-        /// Gets or sets the person model.
-        /// </summary>
         [Model]
         [Fody.Expose("FirstName")]
         [Fody.Expose("MiddleName")]
-        public Person Person
-        {
-            get { return GetValue<Person>(PersonProperty); }
-            private set { SetValue(PersonProperty, value); }
-        }
+        public Person Person { get; private set; }
 
-        /// <summary>
-        /// Register the Person property so it is known in the class.
-        /// </summary>
-        public static readonly PropertyData PersonProperty = RegisterProperty("Person", typeof(Person));
-        #endregion
-
-        #region View model
-        /// <summary>
-        /// Gets or sets the gender.
-        /// </summary>
         [ViewModelToModel("Person")]
-        public Gender Gender
-        {
-            get { return GetValue<Gender>(GenderProperty); }
-            set { SetValue(GenderProperty, value); }
-        }
+        public Gender Gender { get; set; }
 
-        /// <summary>
-        /// Register the Gender property so it is known in the class.
-        /// </summary>
-        public static readonly PropertyData GenderProperty = RegisterProperty("Gender", typeof(Gender));
-
-        ///// <summary>
-        ///// Gets or sets the first name.
-        ///// </summary>
-        //[ViewModelToModel("Person")]
-        //public string FirstName
-        //{
-        //    get { return GetValue<string>(FirstNameProperty); }
-        //    set { SetValue(FirstNameProperty, value); }
-        //}
-
-        ///// <summary>
-        ///// Register the FirstName property so it is known in the class.
-        ///// </summary>
-        //public static readonly PropertyData FirstNameProperty = RegisterProperty("FirstName", typeof(string));
-
-        ///// <summary>
-        ///// Gets or sets the middle name.
-        ///// </summary>
-        //[ViewModelToModel("Person")]
-        //public string MiddleName
-        //{
-        //    get { return GetValue<string>(MiddleNameProperty); }
-        //    set { SetValue(MiddleNameProperty, value); }
-        //}
-
-        ///// <summary>
-        ///// Register the MiddleName property so it is known in the class.
-        ///// </summary>
-        //public static readonly PropertyData MiddleNameProperty = RegisterProperty("MiddleName", typeof(string));
-
-        /// <summary>
-        /// Gets or sets the last name.
-        /// </summary>
         [ViewModelToModel("Person")]
-        public string LastName
-        {
-            get { return GetValue<string>(LastNameProperty); }
-            set { SetValue(LastNameProperty, value); }
-        }
-
-        /// <summary>
-        /// Register the LastName property so it is known in the class.
-        /// </summary>
-        public static readonly PropertyData LastNameProperty = RegisterProperty("LastName", typeof(string));
+        public string LastName { get; set; }
 
         /// <summary>
         /// Gets or sets the custom error.
         /// </summary>
-        public string CustomError
+        public string CustomError { get; set; }
+
+        public string CustomDefinedProperty
         {
-            get { return GetValue<string>(CustomErrorProperty); }
-            set { SetValue(CustomErrorProperty, value); }
+            get { return "My Custom Defined Property"; }
         }
-
-        /// <summary>
-        /// Register the CustomError property so it is known in the class.
-        /// </summary>
-        public static readonly PropertyData CustomErrorProperty = RegisterProperty("CustomError", typeof(string));
-
-        /// <summary>
-        /// Gets the custom defined property to test whether the ICustomTypeDescriptor for WPF works.
-        /// </summary>
-        public string CustomDefinedProperty { get { return "My Custom Defined Property"; } }
         #endregion
 
         #region Commands
-
-        /// <summary>
-        /// Gets the GenerateData command.
-        /// </summary>
         public Command<object, object> GenerateData { get; private set; }
 
-        /// <summary>
-        /// Method to check whether the GenerateData command can be executed.
-        /// </summary>
-        /// <param name="parameter">The parameter of the command.</param>
         private bool OnGenerateDataCanExecute(object parameter)
         {
             // Note: normally you wouldn't use the ExposeAttribute if you need to access
@@ -173,10 +93,6 @@
             return true;
         }
 
-        /// <summary>
-        /// Method to invoke when the GenerateData command is executed.
-        /// </summary>
-        /// <param name="parameter">The parameter of the command.</param>
         private void OnGenerateDataExecute(object parameter)
         {
             Gender = Gender.Male;
@@ -185,15 +101,8 @@
             LastName = "Smith";
         }
 
-        /// <summary>
-        /// Gets the ToggleCustomError command.
-        /// </summary>
         public Command<object> ToggleCustomError { get; private set; }
 
-        /// <summary>
-        /// Method to invoke when the ToggleCustomError command is executed.
-        /// </summary>
-        /// <param name="parameter">The parameter of the command.</param>
         private void OnToggleCustomErrorExecute(object parameter)
         {
             if (string.IsNullOrEmpty(CustomError))
@@ -210,32 +119,11 @@
             }
         }
         #endregion
-        #endregion
-
-        #region Methods
-        /// <summary>
-        /// Validates the field values of this object. Override this method to enable
-        /// validation of field values.
-        /// </summary>
-        /// <param name="validationResults">The validation results, add additional results to this list.</param>
-        protected override void ValidateFields(List<IFieldValidationResult> validationResults)
-        {
-            if (!string.IsNullOrEmpty(CustomError))
-            {
-                validationResults.Add(FieldValidationResult.CreateError(CustomErrorProperty, CustomError));
-            }
-        }
-        #endregion
     }
 
-    /// <summary>
-    /// Design time version of the <see cref="PersonViewModel"/>.
-    /// </summary>
     public class DesignPersonViewModel : PersonViewModel
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DesignPersonViewModel"/> class.
-        /// </summary>
+        #region Constructors
         public DesignPersonViewModel()
             : base(null)
         {
@@ -247,5 +135,6 @@
             LastName = "Horrik";
             Gender = Gender.Male;
         }
+        #endregion
     }
 }

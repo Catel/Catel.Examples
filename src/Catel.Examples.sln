@@ -65,6 +65,7 @@ EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Shared\Catel.Examples.Models.Shared\Catel.Examples.Models.Shared.projitems*{523d0fa7-20da-4c04-8ad6-c3714cd24f0b}*SharedItemsImports = 4
+		Shared\Catel.Examples.Models.Shared\Catel.Examples.Models.Shared.projitems*{ce9b6fce-b2a2-481f-b9d3-02a94421646d}*SharedItemsImports = 4
 		Shared\Catel.Examples.Models.Shared\Catel.Examples.Models.Shared.projitems*{f696be83-7638-4775-99aa-c6ab488b692c}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

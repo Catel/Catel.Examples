@@ -1,21 +1,13 @@
-﻿namespace Catel.Examples.WPF.PersonApplication
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="App.xaml.cs" company="Catel development team">
+//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+namespace Catel.Examples.PersonApplication
 {
-    using System.Windows;
-
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
-    public partial class App : Application
+    public partial class App 
     {
-		/// <summary>
-		/// Raises the <see cref="E:System.Windows.Application.Startup"/> event.
-		/// </summary>
-		/// <param name="e">A <see cref="T:System.Windows.StartupEventArgs"/> that contains the event data.</param>
-		protected override void OnStartup(StartupEventArgs e)
-		{
-			Catel.Windows.StyleHelper.CreateStyleForwardersForDefaultStyles();
-
-			base.OnStartup(e);
-		}
     }
 }
