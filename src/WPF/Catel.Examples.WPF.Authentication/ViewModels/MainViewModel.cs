@@ -40,7 +40,7 @@ namespace Catel.Examples.Authentication.ViewModels
         #endregion
 
         #region Properties
-        public ObservableCollection<string> RoleCollection { get; set; }
+        public ObservableCollection<string> RoleCollection { get; private set; }
 
         [Required]
         public string SelectedRole { get; set; }

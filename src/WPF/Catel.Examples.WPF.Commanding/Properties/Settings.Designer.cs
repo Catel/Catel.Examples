@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Catel.Examples.WPF.Commanding.Properties {
+namespace Catel.Examples.Commanding.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

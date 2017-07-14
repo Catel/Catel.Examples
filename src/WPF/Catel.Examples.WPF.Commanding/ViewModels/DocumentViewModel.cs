@@ -5,7 +5,7 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 
-namespace Catel.Examples.WPF.Commanding.ViewModels
+namespace Catel.Examples.Commanding.ViewModels
 {
     using System;
     using Catel.Data;
@@ -15,36 +15,22 @@ namespace Catel.Examples.WPF.Commanding.ViewModels
     {
         public DocumentViewModel(ICommandManager commandManager)
         {
+            Argument.IsNotNull(() => commandManager);
+
             ExampleCommand = new Command(OnExampleCommandExecute);
 
+            // This will register the VM command with the global command. As soon as the view model gets unloaded,
+            // it will also unsubscribe itself from the global command
             commandManager.RegisterCommand(Commands.Refresh, ExampleCommand, this);
         }
 
-        /// <summary>
-        /// Gets the ExampleCommand command.
-        /// </summary>
+        public DateTime LastCommandExecutionDateTime { get; set; }
+
         public Command ExampleCommand { get; private set; }
 
-        /// <summary>
-        /// Method to invoke when the ExampleCommand command is executed.
-        /// </summary>
         private void OnExampleCommandExecute()
         {
             LastCommandExecutionDateTime = DateTime.Now;
         }
-
-        /// <summary>
-        /// Gets the last command execution date time.
-        /// </summary>
-        public DateTime LastCommandExecutionDateTime
-        {
-            get { return GetValue<DateTime>(LastCommandExecutionDateTimeProperty); }
-            set { SetValue(LastCommandExecutionDateTimeProperty, value); }
-        }
-
-        /// <summary>
-        /// Register the name property so it is known in the class.
-        /// </summary>
-        public static readonly PropertyData LastCommandExecutionDateTimeProperty = RegisterProperty("LastCommandExecutionDateTime", typeof(DateTime), null);
     }
 }

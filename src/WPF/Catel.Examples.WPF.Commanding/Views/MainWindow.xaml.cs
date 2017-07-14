@@ -5,17 +5,11 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 
-namespace Catel.Examples.WPF.Commanding.Views
+namespace Catel.Examples.Commanding.Views
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml.
-    /// </summary>
     public partial class MainWindow
     {
         #region Constructors
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MainWindow"/> class.
-        /// </summary>
         public MainWindow()
         {
             InitializeComponent();

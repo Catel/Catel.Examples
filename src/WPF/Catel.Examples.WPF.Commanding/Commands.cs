@@ -5,12 +5,16 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 
-namespace Catel.Examples.WPF.Commanding
+namespace Catel.Examples.Commanding
 {
+    using System.Windows.Input;
+    using InputGesture = Windows.Input.InputGesture;
+
     public static class Commands
     {
-        #region Constants
         public const string Refresh = "Refresh";
-        #endregion
+
+        public const string GlobalAction = "GlobalAction";
+        public static readonly InputGesture GlobalActionInputGesture = new InputGesture(Key.G, ModifierKeys.Control);
     }
 }

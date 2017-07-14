@@ -1,38 +1,32 @@
-﻿<windows:RibbonWindow x:Class="Catel.Examples.WPF.Commanding.Views.MainWindow"
-                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                      xmlns:catel="http://schemas.catelproject.com"
-                      xmlns:views="clr-namespace:Catel.Examples.WPF.Commanding.Views"
-                      xmlns:windows="clr-namespace:Catel.Examples.WPF.Commanding.Windows"
-                      ShowInTaskbar="True" ResizeMode="CanResize" SizeToContent="Manual" 
-                      WindowStartupLocation="Manual" WindowState="Maximized">
+﻿<catel:Window x:Class="Catel.Examples.Commanding.Views.MainWindow"
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              xmlns:catel="http://schemas.catelproject.com"
+              xmlns:views="clr-namespace:Catel.Examples.Commanding.Views"
+              ShowInTaskbar="True" ResizeMode="CanResize" SizeToContent="Manual" 
+              WindowStartupLocation="Manual" WindowState="Maximized">
 
-    <catel:StackGrid x:Name="LayoutRoot">
-
-        <catel:StackGrid.RowDefinitions>
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
-        </catel:StackGrid.RowDefinitions>
+        </Grid.RowDefinitions>
 
-        <catel:StackGrid.ColumnDefinitions>
+        <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
-        </catel:StackGrid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>
 
-        <Ribbon catel:StackGrid.ColumnSpan="4">
-            <RibbonTab Header="Home" KeyTip="H" >
-                <RibbonGroup Header="Composite commands">
-                    <RibbonButton Command="{catel:CommandManagerBinding Refresh}" LargeImageSource="..\Resources\Images\Refresh.png" 
-                                  Label="Refresh" KeyTip="F5" />
-                </RibbonGroup>
-            </RibbonTab>
-        </Ribbon>
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="4">
+            <Button Command="{catel:CommandManagerBinding Refresh}" Content="Refresh (VM command) (F5)" />
+            <Button Command="{catel:CommandManagerBinding GlobalAction}" Content="Global action (command container) (CTRL + G)" />
+        </StackPanel>
 
-        <Label catel:StackGrid.ColumnSpan="4">
-            <TextBlock>
+        <Label Grid.Row="1" Grid.ColumnSpan="4">
+            <TextBlock TextWrapping="Wrap">
                 This example shows how commands on a ribbon can be registered in the ICommandManager of Catel. All views below of this explanation
                 can dynamically register to application-wide commands and are invoked automatically when the command is being executed.
                 <LineBreak />
@@ -44,10 +38,10 @@
             </TextBlock>
         </Label>
 
-        <views:DocumentView />
-        <views:DocumentView />
-        <views:DocumentView />
-        <views:DocumentView />
-
-    </catel:StackGrid>
-</windows:RibbonWindow>
+        <views:DocumentView Grid.Row="2" Grid.Column="0" />
+        <views:DocumentView Grid.Row="2" Grid.Column="1" />
+        <views:DocumentView Grid.Row="2" Grid.Column="2" />
+        <views:DocumentView Grid.Row="2" Grid.Column="3" />
+    </Grid>
+    
+</catel:Window>
