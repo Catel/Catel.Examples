@@ -1,24 +1,20 @@
-﻿namespace Catel.Examples.WPF.Validation.ViewModels
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ValidationWithDataAnnotationsViewModel.cs" company="Catel development team">
+//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+namespace Catel.Examples.Validation.ViewModels
 {
     using System.ComponentModel.DataAnnotations;
     using Data;
-    using MVVM;
     using Models;
+    using MVVM;
 
-    /// <summary>
-    /// ValidationWithDataAnnotations view model.
-    /// </summary>
     public class ValidationWithDataAnnotationsViewModel : ViewModelBase
     {
-        #region Variables
-        #endregion
-
-        #region Constructor & destructor
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ValidationWithDataAnnotationsViewModel"/> class.
-        /// </summary>
-        /// <param name="person">The person.</param>
-        /// <param name="deferValidationUntilFirstSave">if set to <c>true</c> [defer validation until first save].</param>
+        #region Constructors
         public ValidationWithDataAnnotationsViewModel(ModelWithoutValidation person = null, bool deferValidationUntilFirstSave = true)
         {
             if (person == null)
@@ -28,83 +24,25 @@
 
             Person = person;
             DeferValidationUntilFirstSaveCall = deferValidationUntilFirstSave;
+
+            Title = "Validation with data annotations";
         }
         #endregion
 
         #region Properties
-        /// <summary>
-        /// Gets the title of the view model.
-        /// </summary>
-        /// <value>The title.</value>
-        public override string Title { get { return "Validation with data annotations"; } }
-
-        /// <summary>
-        /// Gets the person model.
-        /// </summary>
         [Model]
-        public ModelWithoutValidation Person
-        {
-            get { return GetValue<ModelWithoutValidation>(PersonProperty); }
-            private set { SetValue(PersonProperty, value); }
-        }
+        public ModelWithoutValidation Person { get; private set; }
 
-        /// <summary>
-        /// Register the Person property so it is known in the class.
-        /// </summary>
-        public static readonly PropertyData PersonProperty = RegisterProperty("Person", typeof(ModelWithoutValidation));
-
-        /// <summary>
-        /// Gets or sets the first name.
-        /// </summary>
         [Required(ErrorMessage = "First name cannot be empty")]
         [ViewModelToModel("Person")]
-        public string FirstName
-        {
-            get { return GetValue<string>(FirstNameProperty); }
-            set { SetValue(FirstNameProperty, value); }
-        }
+        public string FirstName { get; set; }
 
-        /// <summary>
-        /// Register the FirstName property so it is known in the class.
-        /// </summary>
-        public static readonly PropertyData FirstNameProperty = RegisterProperty("FirstName", typeof(string));
-
-        /// <summary>
-        /// Gets or sets the middle name.
-        /// </summary>
         [ViewModelToModel("Person")]
-        public string MiddleName
-        {
-            get { return GetValue<string>(MiddleNameProperty); }
-            set { SetValue(MiddleNameProperty, value); }
-        }
-
-        /// <summary>
-        /// Register the MiddleName property so it is known in the class.
-        /// </summary>
-        public static readonly PropertyData MiddleNameProperty = RegisterProperty("MiddleName", typeof(string));
-
-        /// <summary>
-        /// Gets or sets the last name.
-        /// </summary>
+        public string MiddleName { get; set; }
+        
         [Required(ErrorMessage = "Last name cannot be empty")]
         [ViewModelToModel("Person")]
-        public string LastName
-        {
-            get { return GetValue<string>(LastNameProperty); }
-            set { SetValue(LastNameProperty, value); }
-        }
-
-        /// <summary>
-        /// Register the LastName property so it is known in the class.
-        /// </summary>
-        public static readonly PropertyData LastNameProperty = RegisterProperty("LastName", typeof(string));
-        #endregion
-
-        #region Commands
-        #endregion
-
-        #region Methods
+        public string LastName { get; set; }
         #endregion
     }
 }

@@ -1,98 +1,50 @@
-﻿namespace Catel.Examples.WPF.Validation.Models
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ModelWithValidation.cs" company="Catel development team">
+//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+namespace Catel.Examples.Validation.Models
 {
+    using System;
     using System.Collections.Generic;
     using System.Runtime.Serialization;
     using Data;
-    using System;
 
-    /// <summary>
-    /// ModelWithValidation Data object class which fully supports serialization, property changed notifications,
-    /// backwards compatibility and error checking.
-    /// </summary>
-#if !SILVERLIGHT
     [Serializable]
-#endif
-    public class ModelWithValidation : ModelBase
+    public class ModelWithValidation : ValidatableModelBase
     {
-        #region Variables
-        #endregion
+        #region Constructors
+        public ModelWithValidation()
+        {
+        }
 
-        #region Constructor & destructor
-        /// <summary>
-        /// Initializes a new object from scratch.
-        /// </summary>
-        public ModelWithValidation() { }
-
-#if !SILVERLIGHT
-        /// <summary>
-        /// Initializes a new object based on <see cref="SerializationInfo"/>.
-        /// </summary>
-        /// <param name="info"><see cref="SerializationInfo"/> that contains the information.</param>
-        /// <param name="context"><see cref="StreamingContext"/>.</param>
         protected ModelWithValidation(SerializationInfo info, StreamingContext context)
-            : base(info, context) { }
-#endif
+            : base(info, context)
+        {
+        }
         #endregion
 
         #region Properties
-        /// <summary>
-        /// Gets or sets the first name.
-        /// </summary>
-        public string FirstName
-        {
-            get { return GetValue<string>(FirstNameProperty); }
-            set { SetValue(FirstNameProperty, value); }
-        }
+        public string FirstName { get; set; }
 
-        /// <summary>
-        /// Register the FirstName property so it is known in the class.
-        /// </summary>
-        public static readonly PropertyData FirstNameProperty = RegisterProperty("FirstName", typeof(string), string.Empty);
+        public string MiddleName { get; set; }
 
-        /// <summary>
-        /// Gets or sets the middle name.
-        /// </summary>
-        public string MiddleName
-        {
-            get { return GetValue<string>(MiddleNameProperty); }
-            set { SetValue(MiddleNameProperty, value); }
-        }
-
-        /// <summary>
-        /// Register the MiddleName property so it is known in the class.
-        /// </summary>
-        public static readonly PropertyData MiddleNameProperty = RegisterProperty("MiddleName", typeof(string), string.Empty);
-
-        /// <summary>
-        /// Gets or sets the last name.
-        /// </summary>
-        public string LastName
-        {
-            get { return GetValue<string>(LastNameProperty); }
-            set { SetValue(LastNameProperty, value); }
-        }
-
-        /// <summary>
-        /// Register the LastName property so it is known in the class.
-        /// </summary>
-        public static readonly PropertyData LastNameProperty = RegisterProperty("LastName", typeof(string), string.Empty);
+        public string LastName { get; set; }
         #endregion
 
         #region Methods
-        /// <summary>
-        /// Validates the fields.
-        /// </summary>
-        /// <param name="validationResults">The validation results, add additional results to this list.</param>
         protected override void ValidateFields(List<IFieldValidationResult> validationResults)
         {
             if (string.IsNullOrEmpty(FirstName))
             {
-                validationResults.Add(FieldValidationResult.CreateError(FirstNameProperty, "First name cannot be empty"));
+                validationResults.Add(FieldValidationResult.CreateError(nameof(FirstName), "First name cannot be empty"));
             }
 
             if (string.IsNullOrEmpty(LastName))
             {
-                validationResults.Add(FieldValidationResult.CreateError(LastNameProperty, "Last name cannot be empty"));
+                validationResults.Add(FieldValidationResult.CreateError(nameof(LastName), "Last name cannot be empty"));
             }
         }
         #endregion

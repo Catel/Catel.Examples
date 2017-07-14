@@ -8,8 +8,8 @@
     <ProjectGuid>{19DCE8C8-68E3-4DCA-9087-33BCDECDA35B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Catel.Examples.WPF.Validation</RootNamespace>
-    <AssemblyName>Catel.Examples.WPF.Validation</AssemblyName>
+    <RootNamespace>Catel.Examples.Validation</RootNamespace>
+    <AssemblyName>Catel.Examples.Validation</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -45,7 +45,7 @@
     <ApplicationIcon>Resources\Icons\Catel.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Catel.Examples.WPF.Validation.App</StartupObject>
+    <StartupObject>Catel.Examples.Validation.App</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Catel.Core, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -93,8 +93,6 @@
       <Link>Properties\SolutionAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="ModuleInitializer.cs" />
-    <Compile Include="Validation\FluentValidators.cs" />
-    <Compile Include="ViewModels\ValidationWithFluentValidationViewModel.cs" />
     <Compile Include="Views\ValidationInIValidatorWindow.xaml.cs">
       <DependentUpon>ValidationInIValidatorWindow.xaml</DependentUpon>
     </Compile>
@@ -103,9 +101,6 @@
     </Compile>
     <Compile Include="Views\ValidationWithDataAnnotationsWindow.xaml.cs">
       <DependentUpon>ValidationWithDataAnnotationsWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ValidationWithFluentValidationWindow.xaml.cs">
-      <DependentUpon>ValidationWithFluentValidationWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ValidationWithValidateMethodsWindow.xaml.cs">
       <DependentUpon>ValidationWithValidateMethodsWindow.xaml</DependentUpon>
@@ -122,7 +117,7 @@
     <Compile Include="Models\ModelWithValidation.cs" />
     <Compile Include="Validation\Validator.cs" />
     <Compile Include="Validation\ValidatorProvider.cs" />
-    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\ValidationInIValidatorViewModel.cs" />
     <Compile Include="ViewModels\ValidationInModelViewModel.cs" />
     <Compile Include="ViewModels\ValidationWithDataAnnotationsViewModel.cs" />
@@ -142,10 +137,6 @@
     <Page Include="Views\ValidationWithDataAnnotationsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\ValidationWithFluentValidationWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\ValidationWithValidateMethodsWindow.xaml">
       <SubType>Designer</SubType>

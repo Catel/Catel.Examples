@@ -1,18 +1,19 @@
-﻿namespace Catel.Examples.WPF.Validation.Views
-{
-    using Catel.Windows;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ValidationInIValidatorWindow.xaml.cs" company="Catel development team">
+//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
 
-    /// <summary>
-    /// Interaction logic for ValidationInIValidatorWindow.xaml.
-    /// </summary>
-    public partial class ValidationInIValidatorWindow : DataWindow
+
+namespace Catel.Examples.Validation.Views
+{
+    public partial class ValidationInIValidatorWindow
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ValidationInIValidatorWindow"/> class.
-        /// </summary>
+        #region Constructors
         public ValidationInIValidatorWindow()
         {
             InitializeComponent();
         }
+        #endregion
     }
 }
