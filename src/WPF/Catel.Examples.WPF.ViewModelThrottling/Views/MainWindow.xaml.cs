@@ -1,25 +1,16 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ThrottlingWindow.xaml.cs" company="Catel development team">
+// <copyright file="MainWindow.xaml.cs" company="Catel development team">
 //   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
 
-namespace Catel.Examples.Behaviors.Views
+namespace Catel.Examples.Views.ViewModelThrottling
 {
-    using Windows;
-    using ViewModels;
-
-    public partial class ThrottlingWindow
+    public partial class MainWindow
     {
         #region Constructors
-        public ThrottlingWindow()
-            : this(null)
-        {
-        }
-
-        public ThrottlingWindow(ThrottlingViewModel viewModel)
-            : base(viewModel)
+        public MainWindow()
         {
             InitializeComponent();
         }

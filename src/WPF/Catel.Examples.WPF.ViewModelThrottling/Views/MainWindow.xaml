@@ -1,14 +1,9 @@
-﻿<catel:DataWindow x:Class="Catel.Examples.Behaviors.Views.ThrottlingWindow"
-                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-				  xmlns:catel="http://schemas.catelproject.com"
-                  MaxWidth="500">
+﻿<catel:Window x:Class="Catel.Examples.Views.ViewModelThrottling.MainWindow"
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              xmlns:catel="http://schemas.catelproject.com"
+              MaxWidth="500">
 
-    <!-- Resources -->
-    <catel:DataWindow.Resources>
-    </catel:DataWindow.Resources>
-
-    <!-- Content -->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -40,4 +35,5 @@
         <TextBlock Grid.Row="4" Grid.Column="0" Text="Frame rate: "/>
         <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding FrameRate}" />
     </Grid>
-</catel:DataWindow>
+    
+</catel:Window>

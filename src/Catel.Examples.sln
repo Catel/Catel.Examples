@@ -62,6 +62,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.Behavior
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.NestedUserControls", "WPF\Catel.Examples.WPF.NestedUserControls\Catel.Examples.WPF.NestedUserControls.csproj", "{8F539DE5-D52E-46CB-9C00-81842EB88B70}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.ViewModelThrottling", "WPF\Catel.Examples.WPF.ViewModelThrottling\Catel.Examples.WPF.ViewModelThrottling.csproj", "{7D429438-B3C9-49BE-BC12-810CEB2156FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -216,6 +218,22 @@ Global
 		{8F539DE5-D52E-46CB-9C00-81842EB88B70}.Release|x64.Build.0 = Release|Any CPU
 		{8F539DE5-D52E-46CB-9C00-81842EB88B70}.Release|x86.ActiveCfg = Release|Any CPU
 		{8F539DE5-D52E-46CB-9C00-81842EB88B70}.Release|x86.Build.0 = Release|Any CPU
+		{7D429438-B3C9-49BE-BC12-810CEB2156FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D429438-B3C9-49BE-BC12-810CEB2156FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D429438-B3C9-49BE-BC12-810CEB2156FA}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{7D429438-B3C9-49BE-BC12-810CEB2156FA}.Debug|ARM.Build.0 = Debug|Any CPU
+		{7D429438-B3C9-49BE-BC12-810CEB2156FA}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7D429438-B3C9-49BE-BC12-810CEB2156FA}.Debug|x64.Build.0 = Debug|Any CPU
+		{7D429438-B3C9-49BE-BC12-810CEB2156FA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7D429438-B3C9-49BE-BC12-810CEB2156FA}.Debug|x86.Build.0 = Debug|Any CPU
+		{7D429438-B3C9-49BE-BC12-810CEB2156FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D429438-B3C9-49BE-BC12-810CEB2156FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D429438-B3C9-49BE-BC12-810CEB2156FA}.Release|ARM.ActiveCfg = Release|Any CPU
+		{7D429438-B3C9-49BE-BC12-810CEB2156FA}.Release|ARM.Build.0 = Release|Any CPU
+		{7D429438-B3C9-49BE-BC12-810CEB2156FA}.Release|x64.ActiveCfg = Release|Any CPU
+		{7D429438-B3C9-49BE-BC12-810CEB2156FA}.Release|x64.Build.0 = Release|Any CPU
+		{7D429438-B3C9-49BE-BC12-810CEB2156FA}.Release|x86.ActiveCfg = Release|Any CPU
+		{7D429438-B3C9-49BE-BC12-810CEB2156FA}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -240,6 +258,7 @@ Global
 		{E78BD5DD-CFB2-4BD5-8AAA-D41921D6D3BF} = {49D9F98D-2E51-4A92-896E-E24CFD25BF1E}
 		{C368AC39-7CB8-4EB4-8AFE-08F7753E2431} = {0C9CBDD8-8ED0-4B16-8C1E-34C86FBECB9C}
 		{8F539DE5-D52E-46CB-9C00-81842EB88B70} = {0C9CBDD8-8ED0-4B16-8C1E-34C86FBECB9C}
+		{7D429438-B3C9-49BE-BC12-810CEB2156FA} = {0C9CBDD8-8ED0-4B16-8C1E-34C86FBECB9C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35;..\lib\Unity.2.1.505.0\lib\NET35;..\lib\Unity.2.1.505.2\lib\NET35
