@@ -1,18 +1,19 @@
-﻿namespace Catel.Examples.AdvancedDemo.Views.LogicInViewBase
-{
-    using Windows.Controls;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="HouseView.xaml.cs" company="Catel development team">
+//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
 
-    /// <summary>
-    /// Interaction logic for HouseView.xaml.
-    /// </summary>
-    public partial class HouseView : UserControl
+
+namespace Catel.Examples.NestedUserControls.Views
+{
+    public partial class HouseView
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="HouseView"/> class.
-        /// </summary>
+        #region Constructors
         public HouseView()
         {
             InitializeComponent();
         }
+        #endregion
     }
 }

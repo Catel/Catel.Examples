@@ -1,27 +1,27 @@
-﻿<catel:DataWindow x:Class="Catel.Examples.AdvancedDemo.Views.LogicInViewBase.DemoWindow"
+﻿<catel:DataWindow x:Class="Catel.Examples.NestedUserControls.Views.DemoWindow"
                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                   xmlns:catel="http://schemas.catelproject.com">
     
-    <catel:StackGrid>
-        <catel:StackGrid.RowDefinitions>
+    <Grid>
+        <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-        </catel:StackGrid.RowDefinitions>
+        </Grid.RowDefinitions>
 
-        <catel:StackGrid.ColumnDefinitions>
+        <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />
             <ColumnDefinition Width="*" MinWidth="300" />
-        </catel:StackGrid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>
 
-        <Label Content="First name" />
-        <TextBox Text="{Binding FirstName, NotifyOnValidationError=True, ValidatesOnDataErrors=True}" />
+        <Label Grid.Row="0" Grid.Column="0" Content="First name" />
+        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding FirstName, NotifyOnValidationError=True, ValidatesOnDataErrors=True}" />
 
-        <Label Content="Middle name" />
-        <TextBox Text="{Binding MiddleName, NotifyOnValidationError=True, ValidatesOnDataErrors=True}" />
+        <Label Grid.Row="1" Grid.Column="0" Content="Middle name" />
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding MiddleName, NotifyOnValidationError=True, ValidatesOnDataErrors=True}" />
 
-        <Label Content="Last name" />
-        <TextBox Text="{Binding LastName, NotifyOnValidationError=True, ValidatesOnDataErrors=True}" />
-    </catel:StackGrid>
+        <Label Grid.Row="2" Grid.Column="0" Content="Last name" />
+        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding LastName, NotifyOnValidationError=True, ValidatesOnDataErrors=True}" />
+    </Grid>
 </catel:DataWindow>

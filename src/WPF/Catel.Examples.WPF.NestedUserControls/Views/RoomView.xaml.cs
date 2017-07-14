@@ -1,18 +1,19 @@
-﻿namespace Catel.Examples.AdvancedDemo.Views.LogicInViewBase
-{
-    using Windows.Controls;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="RoomView.xaml.cs" company="Catel development team">
+//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
 
-    /// <summary>
-    /// Interaction logic for RoomView.xaml.
-    /// </summary>
-    public partial class RoomView : UserControl
+
+namespace Catel.Examples.NestedUserControls.Views
+{
+    public partial class RoomView 
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RoomView"/> class.
-        /// </summary>
+        #region Constructors
         public RoomView()
         {
             InitializeComponent();
         }
+        #endregion
     }
 }

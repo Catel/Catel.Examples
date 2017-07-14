@@ -1,103 +1,49 @@
-﻿namespace Catel.Examples.AdvancedDemo.ViewModels
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="DemoWindowViewModel.cs" company="Catel development team">
+//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+namespace Catel.Examples.NestedUserControls.ViewModels
 {
     using System.Threading.Tasks;
     using Data;
+    using Models;
     using MVVM;
     using Services;
-    using Models;
 
-    /// <summary>
-    /// Window view model.
-    /// </summary>
     public class DemoWindowViewModel : ViewModelBase
     {
+        #region Fields
         private readonly IMessageService _messageService;
+        #endregion
 
-        #region Constructor & destructor
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DemoWindowViewModel"/> class.
-        /// </summary>
+        #region Constructors
         public DemoWindowViewModel(IMessageService messageService)
         {
+            Argument.IsNotNull(() => messageService);
+
             _messageService = messageService;
 
             Person = new PersonModel();
+
+            Title = "Person demo";
         }
         #endregion
 
         #region Properties
-        /// <summary>
-        /// Gets the title of the view model.
-        /// </summary>
-        /// <value>The title.</value>
-        public override string Title { get { return "Person demo window"; } }
-
-        #region Models
-        /// <summary>
-        /// Gets the person.
-        /// </summary>
         [Model]
-        public PersonModel Person
-        {
-            get { return GetValue<PersonModel>(PersonProperty); }
-            private set { SetValue(PersonProperty, value); }
-        }
+        public PersonModel Person { get; private set; }
 
-        /// <summary>
-        /// Register the Person property so it is known in the class.
-        /// </summary>
-        public static readonly PropertyData PersonProperty = RegisterProperty("Person", typeof(PersonModel));
-        #endregion
-
-        #region View model
-        /// <summary>
-        /// Gets or sets the first name.
-        /// </summary>
         [ViewModelToModel("Person")]
-        public string FirstName
-        {
-            get { return GetValue<string>(FirstNameProperty); }
-            set { SetValue(FirstNameProperty, value); }
-        }
+        public string FirstName { get; set; }
 
-        /// <summary>
-        /// Register the FirstName property so it is known in the class.
-        /// </summary>
-        public static readonly PropertyData FirstNameProperty = RegisterProperty("FirstName", typeof(string));
-
-        /// <summary>
-        /// Gets or sets the middle name.
-        /// </summary>
         [ViewModelToModel("Person")]
-        public string MiddleName
-        {
-            get { return GetValue<string>(MiddleNameProperty); }
-            set { SetValue(MiddleNameProperty, value); }
-        }
+        public string MiddleName { get; set; }
 
-        /// <summary>
-        /// Register the MiddleName property so it is known in the class.
-        /// </summary>
-        public static readonly PropertyData MiddleNameProperty = RegisterProperty("MiddleName", typeof(string));
-
-        /// <summary>
-        /// Gets or sets the last name.
-        /// </summary>
         [ViewModelToModel("Person")]
-        public string LastName
-        {
-            get { return GetValue<string>(LastNameProperty); }
-            set { SetValue(LastNameProperty, value); }
-        }
-
-        /// <summary>
-        /// Register the LastName property so it is known in the class.
-        /// </summary>
-        public static readonly PropertyData LastNameProperty = RegisterProperty("LastName", typeof(string));
-        #endregion
-        #endregion
-
-        #region Commands
+        public string LastName { get; set; }
         #endregion
 
         #region Methods

@@ -1,18 +1,19 @@
-﻿namespace Catel.Examples.AdvancedDemo.Views.LogicInViewBase
-{
-    using Windows;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="DemoWindow.xaml.cs" company="Catel development team">
+//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
 
-    /// <summary>
-    /// Interaction logic for DemoWindow.xaml.
-    /// </summary>
-    public partial class DemoWindow : DataWindow
+
+namespace Catel.Examples.NestedUserControls.Views
+{
+    public partial class DemoWindow
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DemoWindow"/> class.
-        /// </summary>
+        #region Constructors
         public DemoWindow()
         {
             InitializeComponent();
         }
+        #endregion
     }
 }

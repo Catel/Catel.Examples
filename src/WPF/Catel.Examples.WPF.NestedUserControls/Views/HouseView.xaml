@@ -1,14 +1,9 @@
-﻿<catel:UserControl x:Class="Catel.Examples.AdvancedDemo.Views.LogicInViewBase.HouseView"
+﻿<catel:UserControl x:Class="Catel.Examples.NestedUserControls.Views.HouseView"
                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                   xmlns:Views="clr-namespace:Catel.Examples.AdvancedDemo.Views.LogicInViewBase"
-                   xmlns:catel="http://schemas.catelproject.com">
+                   xmlns:catel="http://schemas.catelproject.com"
+                   xmlns:views="clr-namespace:Catel.Examples.NestedUserControls.Views">
 
-    <!-- Resources -->
-    <UserControl.Resources>
-    </UserControl.Resources>
-
-    <!-- Content -->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -39,7 +34,7 @@
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>
-                                <Views:RoomView DataContext="{Binding}" />
+                                <views:RoomView DataContext="{Binding}" />
                                 <Line Height="2" />
                             </StackPanel>
                         </DataTemplate>
@@ -48,4 +43,5 @@
             </Grid>
         </Expander>
     </Grid>
+    
 </catel:UserControl>
