@@ -58,6 +58,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UWP", "UWP", "{C449C35E-1F9
 		UWP\todo.txt = UWP\todo.txt
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{E78BD5DD-CFB2-4BD5-8AAA-D41921D6D3BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -223,6 +225,7 @@ Global
 		{A5CBF3B2-E50C-4B33-B6ED-B3D7260D2A06} = {49D9F98D-2E51-4A92-896E-E24CFD25BF1E}
 		{36622229-D415-4CFC-BE66-D647FEB03E8E} = {49D9F98D-2E51-4A92-896E-E24CFD25BF1E}
 		{C449C35E-1F93-4146-A64C-56B477341FE8} = {49D9F98D-2E51-4A92-896E-E24CFD25BF1E}
+		{E78BD5DD-CFB2-4BD5-8AAA-D41921D6D3BF} = {49D9F98D-2E51-4A92-896E-E24CFD25BF1E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35;..\lib\Unity.2.1.505.0\lib\NET35;..\lib\Unity.2.1.505.2\lib\NET35
