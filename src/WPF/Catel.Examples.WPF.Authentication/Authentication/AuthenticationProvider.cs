@@ -1,4 +1,11 @@
-﻿namespace Catel.Examples.WPF.Authentication
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="AuthenticationProvider.cs" company="Catel development team">
+//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+namespace Catel.Examples.Authentication
 {
     using System.Windows;
     using MVVM;
@@ -10,12 +17,11 @@
     /// </summary>
     public class AuthenticationProvider : IAuthenticationProvider
     {
-        /// <summary>
-        /// Gets or sets the role the user is currently in.
-        /// </summary>
-        /// <value>The role.</value>
+        #region Properties
         public string Role { get; set; }
+        #endregion
 
+        #region IAuthenticationProvider Members
         public bool CanCommandBeExecuted(ICatelCommand command, object commandParameter)
         {
             return true;
@@ -26,7 +32,7 @@
             var authenticationTagAsString = authenticationTag as string;
             if (authenticationTagAsString != null)
             {
-                if (string.Compare(authenticationTagAsString, Role, true) == 0)
+                if (authenticationTagAsString.EqualsIgnoreCase(Role))
                 {
                     return true;
                 }
@@ -34,5 +40,6 @@
 
             return false;
         }
+        #endregion
     }
 }

@@ -1,19 +1,22 @@
-﻿namespace Catel.Examples.WPF.Authentication.Views
-{
-    using Catel.Windows;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ExampleView.xaml.cs" company="Catel development team">
+//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
 
-    /// <summary>
-    /// Interaction logic for ExampleView.xaml.
-    /// </summary>
-    public partial class ExampleView : DataWindow
+
+namespace Catel.Examples.Authentication.Views
+{
+    using Windows;
+
+    public partial class ExampleView
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ExampleView"/> class.
-        /// </summary>
+        #region Constructors
         public ExampleView()
             : base(DataWindowMode.Close)
         {
             InitializeComponent();
         }
+        #endregion
     }
 }

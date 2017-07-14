@@ -45,7 +45,7 @@
     <ApplicationIcon>Resources\Icons\catel.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Catel.Examples.WPF.Authentication.App</StartupObject>
+    <StartupObject>Catel.Examples.Authentication.App</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Catel.Core, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -107,7 +107,7 @@
     <Compile Include="Authentication\AuthenticationProvider.cs" />
     <Compile Include="ModuleInitializer.cs" />
     <Compile Include="ViewModels\ExampleViewModel.cs" />
-    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Views\ExampleView.xaml.cs">
       <DependentUpon>ExampleView.xaml</DependentUpon>
     </Compile>
@@ -142,9 +142,7 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Resources\Icons\catel.ico" />
   </ItemGroup>

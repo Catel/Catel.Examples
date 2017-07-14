@@ -1,27 +1,22 @@
-﻿<catel:DataWindow x:Class="Catel.Examples.WPF.Authentication.Views.MainWindow"
-                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-				  xmlns:catel="http://schemas.catelproject.com"
-                  ShowInTaskbar="True" ResizeMode="CanResize">
-    
-    <!-- Resources -->
-    <catel:DataWindow.Resources>
-    </catel:DataWindow.Resources>
-    
-    <!-- Content -->
-    <catel:StackGrid>
-        <catel:StackGrid.ColumnDefinitions>
+﻿<catel:Window x:Class="Catel.Examples.Authentication.Views.MainWindow"
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              xmlns:catel="http://schemas.catelproject.com"
+              ShowInTaskbar="True" ResizeMode="CanResize">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
             <ColumnDefinition Width="75" />
             <ColumnDefinition Width="300" />
-        </catel:StackGrid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>
         
-        <catel:StackGrid.RowDefinitions>
+        <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-        </catel:StackGrid.RowDefinitions>
+        </Grid.RowDefinitions>
         
-        <Label Grid.ColumnSpan="2">
+        <Label Grid.Row="0" Grid.ColumnSpan="2">
             <TextBlock TextWrapping="Wrap">
                 Please select a role and click the 'Show View' button. Then the example view will be loaded for the specified role.
                 <LineBreak />
@@ -29,9 +24,10 @@
             </TextBlock>
         </Label>
         
-        <Label Content="Role" />
-        <ComboBox ItemsSource="{Binding RoleCollection}" SelectedItem="{Binding SelectedRole, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+        <Label Grid.Row="1" Grid.Column="0" Content="Role" />
+        <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding RoleCollection}" SelectedItem="{Binding SelectedRole, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
         
-        <Button Grid.ColumnSpan="2" Content="Show View" Command="{Binding ShowView}" />
-    </catel:StackGrid>
-</catel:DataWindow>
+        <Button Grid.Row="2" Grid.ColumnSpan="2" Content="Show View" Command="{Binding ShowView}" />
+    </Grid>
+    
+</catel:Window>
