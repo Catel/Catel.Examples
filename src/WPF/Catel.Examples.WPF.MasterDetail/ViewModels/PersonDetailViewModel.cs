@@ -1,50 +1,36 @@
-﻿namespace Catel.Examples.WPF.MasterDetail.ViewModels
-{
-    using Catel.Fody;
-    using Data;
-    using MVVM;
-    using Models;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="PersonDetailViewModel.cs" company="Catel development team">
+//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
 
-    /// <summary>
-    ///   PersonDetail view model.
-    /// </summary>
+
+namespace Catel.Examples.MasterDetail.ViewModels
+{
+    using Data;
+    using Models;
+    using MVVM;
+
     public class PersonDetailViewModel : ViewModelBase
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PersonDetailViewModel"/> class.
-        /// </summary>
-        /// <param name="person">The person.</param>
+        #region Constructors
         public PersonDetailViewModel(Person person)
         {
+            Argument.IsNotNull(() => person);
+
             Person = person;
-        }
 
-        /// <summary>
-        ///   Gets the title of the view model.
-        /// </summary>
-        /// <value>The title.</value>
-        public override string Title
-        {
-            get { return "Person"; }
+            Title = "Person";
         }
+        #endregion
 
-        /// <summary>
-        /// Gets or sets the person.
-        /// </summary>
+        #region Properties
         [Model]
         [Fody.Expose("Gender")]
         [Fody.Expose("FirstName")]
         [Fody.Expose("MiddleName")]
         [Fody.Expose("LastName")]
-        private Person Person
-        {
-            get { return GetValue<Person>(PersonProperty); }
-            set { SetValue(PersonProperty, value); }
-        }
-
-        /// <summary>
-        /// Register the Person property so it is known in the class.
-        /// </summary>
-        public static readonly PropertyData PersonProperty = RegisterProperty("Person", typeof(Person));
+        private Person Person { get; set; }
+        #endregion
     }
 }

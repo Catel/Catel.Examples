@@ -1,8 +1,8 @@
-﻿<catel:UserControl x:Class="Catel.Examples.WPF.MasterDetail.Views.PersonMasterView"
+﻿<catel:UserControl x:Class="Catel.Examples.MasterDetail.Views.PersonMasterView"
                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 				   xmlns:catel="http://schemas.catelproject.com"
-                   xmlns:Views="clr-namespace:Catel.Examples.WPF.MasterDetail.Views">
+                   xmlns:Views="clr-namespace:Catel.Examples.MasterDetail.Views">
     
     <Grid>
         <Grid.RowDefinitions>

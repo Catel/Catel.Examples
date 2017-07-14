@@ -1,68 +1,48 @@
-﻿namespace Catel.Examples.WPF.MasterDetail.ViewModels
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="PersonMasterViewModel.cs" company="Catel development team">
+//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+namespace Catel.Examples.MasterDetail.ViewModels
 {
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Threading.Tasks;
     using Collections;
     using Data;
-    using MVVM;
     using Models;
+    using MVVM;
 
-    /// <summary>
-    /// PersonMaster view model.
-    /// </summary>
     public class PersonMasterViewModel : ViewModelBase
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PersonMasterViewModel"/> class.
-        /// </summary>
+        #region Constructors
         public PersonMasterViewModel()
         {
+            Title = "Persons";
+        }
+        #endregion
+
+        #region Properties
+        public ObservableCollection<Person> Persons { get; private set; }
+
+        public Person SelectedPerson { get; set; }
+        #endregion
+
+        #region Methods
+        protected override async Task InitializeAsync()
+        {
+            await base.InitializeAsync();
+
             LoadPersons();
         }
-
-        /// <summary>
-        /// Gets the title of the view model.
-        /// </summary>
-        /// <value>The title.</value>
-        public override string Title { get { return "Persons"; } }
-
-        /// <summary>
-        /// Gets the list of persons.
-        /// </summary>
-        public ObservableCollection<Person> Persons
-        {
-            get { return GetValue<ObservableCollection<Person>>(PersonsProperty); }
-            private set { SetValue(PersonsProperty, value); }
-        }
-
-        /// <summary>
-        /// Register the Persons property so it is known in the class.
-        /// </summary>
-        public static readonly PropertyData PersonsProperty = RegisterProperty("Persons", typeof(ObservableCollection<Person>));
-
-        /// <summary>
-        /// Gets or sets the selected person.
-        /// </summary>
-        public Person SelectedPerson
-        {
-            get { return GetValue<Person>(SelectedPersonProperty); }
-            set { SetValue(SelectedPersonProperty, value); }
-        }
-
-        /// <summary>
-        /// Register the SelectedPerson property so it is known in the class.
-        /// </summary>
-        public static readonly PropertyData SelectedPersonProperty = RegisterProperty("SelectedPerson", typeof(Person), null, 
-            (sender, e) => ((PersonMasterViewModel)sender).OnSelectedPersonChanged());
 
         private void OnSelectedPersonChanged()
         {
             int i = 0;
         }
 
-        /// <summary>
-        /// Loads the persons.
-        /// </summary>
         private void LoadPersons()
         {
             if (Persons == null)
@@ -72,8 +52,8 @@
 
             // Note: normally, you would load from a service, but here we will just fill the collection manually
             var newPersons = new List<Person>();
-            newPersons.Add(new Person() { FirstName = "John", LastName = "Doe", Gender = Gender.Male });
-            newPersons.Add(new Person() { FirstName = "Geert", MiddleName="van", LastName = "Horrik", Gender = Gender.Male });
+            newPersons.Add(new Person() {FirstName = "John", LastName = "Doe", Gender = Gender.Male});
+            newPersons.Add(new Person() {FirstName = "Geert", MiddleName = "van", LastName = "Horrik", Gender = Gender.Male});
 
             Persons.ReplaceRange(newPersons);
 
@@ -82,5 +62,6 @@
                 SelectedPerson = Persons[0];
             }
         }
+        #endregion
     }
 }

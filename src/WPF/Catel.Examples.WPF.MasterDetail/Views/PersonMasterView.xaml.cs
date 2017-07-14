@@ -1,18 +1,19 @@
-﻿namespace Catel.Examples.WPF.MasterDetail.Views
-{
-    using Catel.Windows.Controls;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="PersonMasterView.xaml.cs" company="Catel development team">
+//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
 
-    /// <summary>
-    /// Interaction logic for PersonMasterView.xaml.
-    /// </summary>
-    public partial class PersonMasterView : UserControl
+
+namespace Catel.Examples.MasterDetail.Views
+{
+    public partial class PersonMasterView
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PersonMasterView"/> class.
-        /// </summary>
+        #region Constructors
         public PersonMasterView()
         {
             InitializeComponent();
         }
+        #endregion
     }
 }

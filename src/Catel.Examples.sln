@@ -14,8 +14,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{725160C0-B
 		SolutionAssemblyInfo.cs = SolutionAssemblyInfo.cs
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.Models", "WPF\Catel.Examples.WPF.Models\Catel.Examples.WPF.Models.csproj", "{D8405053-BBAE-47FF-A158-07A62F50D40D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.PersonApplication", "WPF\Catel.Examples.WPF.PersonApplication\Catel.Examples.WPF.PersonApplication.csproj", "{CE9B6FCE-B2A2-481F-B9D3-02A94421646D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.MasterDetail", "WPF\Catel.Examples.WPF.MasterDetail\Catel.Examples.WPF.MasterDetail.csproj", "{523D0FA7-20DA-4C04-8AD6-C3714CD24F0B}"
@@ -64,7 +62,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.NestedUs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.ViewModelThrottling", "WPF\Catel.Examples.WPF.ViewModelThrottling\Catel.Examples.WPF.ViewModelThrottling.csproj", "{7D429438-B3C9-49BE-BC12-810CEB2156FA}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Catel.Examples.Models.Shared", "Shared\Catel.Examples.Models.Shared\Catel.Examples.Models.Shared.shproj", "{F696BE83-7638-4775-99AA-C6AB488B692C}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Shared\Catel.Examples.Models.Shared\Catel.Examples.Models.Shared.projitems*{523d0fa7-20da-4c04-8ad6-c3714cd24f0b}*SharedItemsImports = 4
+		Shared\Catel.Examples.Models.Shared\Catel.Examples.Models.Shared.projitems*{f696be83-7638-4775-99aa-c6ab488b692c}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|ARM = Debug|ARM
@@ -76,16 +80,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D8405053-BBAE-47FF-A158-07A62F50D40D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D8405053-BBAE-47FF-A158-07A62F50D40D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D8405053-BBAE-47FF-A158-07A62F50D40D}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{D8405053-BBAE-47FF-A158-07A62F50D40D}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{D8405053-BBAE-47FF-A158-07A62F50D40D}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{D8405053-BBAE-47FF-A158-07A62F50D40D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D8405053-BBAE-47FF-A158-07A62F50D40D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D8405053-BBAE-47FF-A158-07A62F50D40D}.Release|ARM.ActiveCfg = Release|Any CPU
-		{D8405053-BBAE-47FF-A158-07A62F50D40D}.Release|x64.ActiveCfg = Release|Any CPU
-		{D8405053-BBAE-47FF-A158-07A62F50D40D}.Release|x86.ActiveCfg = Release|Any CPU
 		{CE9B6FCE-B2A2-481F-B9D3-02A94421646D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CE9B6FCE-B2A2-481F-B9D3-02A94421646D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE9B6FCE-B2A2-481F-B9D3-02A94421646D}.Debug|ARM.ActiveCfg = Debug|Any CPU
@@ -240,7 +234,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0C9CBDD8-8ED0-4B16-8C1E-34C86FBECB9C} = {49D9F98D-2E51-4A92-896E-E24CFD25BF1E}
-		{D8405053-BBAE-47FF-A158-07A62F50D40D} = {0C9CBDD8-8ED0-4B16-8C1E-34C86FBECB9C}
 		{CE9B6FCE-B2A2-481F-B9D3-02A94421646D} = {0C9CBDD8-8ED0-4B16-8C1E-34C86FBECB9C}
 		{523D0FA7-20DA-4C04-8AD6-C3714CD24F0B} = {0C9CBDD8-8ED0-4B16-8C1E-34C86FBECB9C}
 		{F03BFF63-53E0-45B1-B8FE-D18548FC6DB0} = {0C9CBDD8-8ED0-4B16-8C1E-34C86FBECB9C}
@@ -259,6 +252,7 @@ Global
 		{C368AC39-7CB8-4EB4-8AFE-08F7753E2431} = {0C9CBDD8-8ED0-4B16-8C1E-34C86FBECB9C}
 		{8F539DE5-D52E-46CB-9C00-81842EB88B70} = {0C9CBDD8-8ED0-4B16-8C1E-34C86FBECB9C}
 		{7D429438-B3C9-49BE-BC12-810CEB2156FA} = {0C9CBDD8-8ED0-4B16-8C1E-34C86FBECB9C}
+		{F696BE83-7638-4775-99AA-C6AB488B692C} = {E78BD5DD-CFB2-4BD5-8AAA-D41921D6D3BF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35;..\lib\Unity.2.1.505.0\lib\NET35;..\lib\Unity.2.1.505.2\lib\NET35
