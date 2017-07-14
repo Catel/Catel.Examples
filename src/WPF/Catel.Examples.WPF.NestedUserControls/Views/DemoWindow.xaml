@@ -1,0 +1,27 @@
+﻿<catel:DataWindow x:Class="Catel.Examples.AdvancedDemo.Views.LogicInViewBase.DemoWindow"
+                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                  xmlns:catel="http://schemas.catelproject.com">
+    
+    <catel:StackGrid>
+        <catel:StackGrid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </catel:StackGrid.RowDefinitions>
+
+        <catel:StackGrid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" MinWidth="300" />
+        </catel:StackGrid.ColumnDefinitions>
+
+        <Label Content="First name" />
+        <TextBox Text="{Binding FirstName, NotifyOnValidationError=True, ValidatesOnDataErrors=True}" />
+
+        <Label Content="Middle name" />
+        <TextBox Text="{Binding MiddleName, NotifyOnValidationError=True, ValidatesOnDataErrors=True}" />
+
+        <Label Content="Last name" />
+        <TextBox Text="{Binding LastName, NotifyOnValidationError=True, ValidatesOnDataErrors=True}" />
+    </catel:StackGrid>
+</catel:DataWindow>

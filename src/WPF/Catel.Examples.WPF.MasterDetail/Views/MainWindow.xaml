@@ -1,7 +1,7 @@
 ﻿<catel:DataWindow x:Class="Catel.Examples.WPF.MasterDetail.Views.MainWindow"
                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-				  xmlns:catel="http://catel.codeplex.com"
+				  xmlns:catel="http://schemas.catelproject.com"
                   xmlns:Views="clr-namespace:Catel.Examples.WPF.MasterDetail.Views"
                   ShowInTaskbar="True" ResizeMode="CanResize">
 

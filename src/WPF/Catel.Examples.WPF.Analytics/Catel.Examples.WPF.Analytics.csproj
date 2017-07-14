@@ -86,6 +86,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ModuleInitializer.cs" />
+    <Compile Include="Properties\GlobalSuppressions.cs" />
+    <Compile Include="Properties\SolutionAssemblyInfo.cs" />
     <Compile Include="Views\ProvideAnalyticsView.xaml.cs">
       <DependentUpon>ProvideAnalyticsView.xaml</DependentUpon>
     </Compile>

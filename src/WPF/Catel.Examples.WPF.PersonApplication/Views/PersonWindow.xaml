@@ -5,7 +5,7 @@
                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                   xmlns:Converters="clr-namespace:Catel.Examples.WPF.PersonApplication.Converters"
                   xmlns:Models="clr-namespace:Catel.Examples.Models;assembly=Catel.Examples.WPF.Models"
-                  xmlns:catel="http://catel.codeplex.com"
+                  xmlns:catel="http://schemas.catelproject.com"
                   xmlns:ViewModels="clr-namespace:Catel.Examples.WPF.PersonApplication.ViewModels" mc:Ignorable="d" 
                   d:DataContext="{d:DesignInstance ViewModels:DesignPersonViewModel, IsDesignTimeCreatable=True}">
     
