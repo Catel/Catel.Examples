@@ -5,18 +5,12 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 
-namespace Catel.Examples.WPF.TaskCommand.Views
+namespace Catel.Examples.TaskCommand.Views
 {
-    using Catel.Windows;
-
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow
     {
         #region Constructors
         public MainWindow()
-            : base(DataWindowMode.Custom, null, DataWindowDefaultButton.None, true, InfoBarMessageControlGenerationMode.Inline)
         {
             InitializeComponent();
         }
