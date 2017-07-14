@@ -1,18 +1,19 @@
-﻿namespace Catel.Examples.WPF.Analytics.Views
-{
-    using Catel.Windows;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ProvideAnalyticsView.xaml.cs" company="Catel development team">
+//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
 
-    /// <summary>
-    /// Interaction logic for ProvideAnalyticsView.xaml.
-    /// </summary>
-    public partial class ProvideAnalyticsView : DataWindow
+
+namespace Catel.Examples.Analytics.Views
+{
+    public partial class ProvideAnalyticsView
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ProvideAnalyticsView"/> class.
-        /// </summary>
+        #region Constructors
         public ProvideAnalyticsView()
         {
             InitializeComponent();
         }
+        #endregion
     }
 }
