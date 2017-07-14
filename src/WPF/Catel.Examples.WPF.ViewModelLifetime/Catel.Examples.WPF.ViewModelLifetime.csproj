@@ -8,8 +8,8 @@
     <ProjectGuid>{2DB74DD8-C245-43A5-9076-75665E690235}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Catel.Examples.WPF.ViewModelLifetime</RootNamespace>
-    <AssemblyName>Catel.Examples.WPF.ViewModelLifetime</AssemblyName>
+    <RootNamespace>Catel.Examples.ViewModelLifetime</RootNamespace>
+    <AssemblyName>Catel.Examples.ViewModelLifetime</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -42,7 +42,7 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Catel.Examples.WPF.ViewModelLifetime.App</StartupObject>
+    <StartupObject>Catel.Examples.ViewModelLifetime.App</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Resources\Icons\catel.ico</ApplicationIcon>
@@ -111,7 +111,7 @@
     <Compile Include="Services\Interfaces\ITabService.cs" />
     <Compile Include="ViewModels\ControlViewModel.cs" />
     <Compile Include="ViewModels\CreateTabWindowViewModel.cs" />
-    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Views\ControlView.xaml.cs">
       <DependentUpon>ControlView.xaml</DependentUpon>
     </Compile>
@@ -149,9 +149,7 @@
     </None>
     <AppDesigner Include="Properties\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Resources\Icons\catel.ico" />
   </ItemGroup>

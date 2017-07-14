@@ -1,31 +1,26 @@
-﻿<catel:UserControl x:Class="Catel.Examples.WPF.ViewModelLifetime.Views.ControlView"
+﻿<catel:UserControl x:Class="Catel.Examples.ViewModelLifetime.Views.ControlView"
                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 				   xmlns:catel="http://schemas.catelproject.com">
-    
-    <!-- Resources -->
-    <UserControl.Resources>
 
-    </UserControl.Resources>
-
-    <!-- Content -->
     <Grid>
-        <catel:StackGrid HorizontalAlignment="Center" VerticalAlignment="Center">
-            <catel:StackGrid.RowDefinitions>
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
-            </catel:StackGrid.RowDefinitions>
+            </Grid.RowDefinitions>
             
-            <catel:StackGrid.ColumnDefinitions>
+            <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
-            </catel:StackGrid.ColumnDefinitions>
+            </Grid.ColumnDefinitions>
 
-            <Label Content="This is a tab control item. Close the view model when unloaded: " />
-            <Label Content="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Path=CloseViewModelOnUnloaded}" />
+            <Label Grid.Row="0" Grid.Column="0" Content="This is a tab control item. Close the view model when unloaded: " />
+            <Label Grid.Row="0" Grid.Column="1" Content="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}}, Path=CloseViewModelOnUnloaded}" />
 
-            <Label Content="View model construction time:" />
-            <Label Content="{Binding ViewModelConstructionTime}" ContentStringFormat="At {0:HH:mm:ss.fff}" />
-        </catel:StackGrid>
+            <Label Grid.Row="1" Grid.Column="0" Content="View model construction time:" />
+            <Label Grid.Row="1" Grid.Column="1" Content="{Binding ViewModelConstructionTime}" ContentStringFormat="At {0:HH:mm:ss.fff}" />
+        </Grid>
     </Grid>
+    
 </catel:UserControl>

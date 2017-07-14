@@ -1,34 +1,30 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="MainWindow.xaml.cs" company="Catel development team">
-//   Copyright (c) 2008 - 2013 Catel development team. All rights reserved.
+//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Catel.Examples.WPF.ViewModelLifetime.Views
+
+namespace Catel.Examples.ViewModelLifetime.Views
 {
     using System.Windows;
     using System.Windows.Controls;
-    using IoC;
+    using Windows;
     using MVVM.Views;
     using Services;
-    using Windows;
 
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml.
-    /// </summary>
-    public partial class MainWindow : DataWindow, ITabService
+    public partial class MainWindow : ITabService
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MainWindow"/> class.
-        /// </summary>
+        #region Constructors
         public MainWindow()
-            : base(DataWindowMode.Custom)
         {
-            IoC.ServiceLocator.Default.RegisterInstance<ITabService>(this);
+            IoC.ServiceLocator.Default.RegisterInstance(typeof(ITabService), this);
 
             InitializeComponent();
         }
+        #endregion
 
+        #region Methods
         public void AddTab(bool closeViewModelOnUnload)
         {
             var controlView = new ControlView();
@@ -39,7 +35,6 @@ namespace Catel.Examples.WPF.ViewModelLifetime.Views
             tabItem.Content = controlView;
 
             tabControl.Items.Add(tabItem);
-
             tabControl.SelectedItem = tabItem;
         }
 
@@ -58,22 +53,23 @@ namespace Catel.Examples.WPF.ViewModelLifetime.Views
             closeButton.Content = "X";
             closeButton.ToolTip = "Close";
             closeButton.Click += (sender, e) =>
-                                     {
-                                         var tabControl = tabItem.FindLogicalAncestorByType<System.Windows.Controls.TabControl>();
-                                         if (tabControl != null)
-                                         {
-                                             var tabItemAsIUserControl = tabItem.Content as IUserControl;
-                                             if ((tabItemAsIUserControl != null) && (tabItemAsIUserControl.ViewModel != null))
-                                             {
-                                                 tabItemAsIUserControl.ViewModel.CloseViewModelAsync(false);
-                                             }
+            {
+                var tabControl = tabItem.FindLogicalAncestorByType<System.Windows.Controls.TabControl>();
+                if (tabControl != null)
+                {
+                    var tabItemAsIUserControl = tabItem.Content as IUserControl;
+                    if ((tabItemAsIUserControl != null) && (tabItemAsIUserControl.ViewModel != null))
+                    {
+                        tabItemAsIUserControl.ViewModel.CloseViewModelAsync(false);
+                    }
 
-                                             tabControl.Items.Remove(tabItem);
-                                         }
-                                     };
+                    tabControl.Items.Remove(tabItem);
+                }
+            };
             stackPanel.Children.Add(closeButton);
 
             return stackPanel;
         }
+        #endregion
     }
 }

@@ -1,18 +1,19 @@
-﻿namespace Catel.Examples.WPF.ViewModelLifetime.Views
-{
-    using Catel.Windows.Controls;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ControlView.xaml.cs" company="Catel development team">
+//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
 
-    /// <summary>
-    /// Interaction logic for ControlView.xaml.
-    /// </summary>
-    public partial class ControlView : UserControl
+
+namespace Catel.Examples.ViewModelLifetime.Views
+{
+    public partial class ControlView
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ControlView"/> class.
-        /// </summary>
+        #region Constructors
         public ControlView()
         {
             InitializeComponent();
         }
+        #endregion
     }
 }

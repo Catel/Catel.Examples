@@ -1,38 +1,25 @@
-﻿namespace Catel.Examples.WPF.ViewModelLifetime.ViewModels
-{
-    using Catel.MVVM;
-    using Data;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="CreateTabWindowViewModel.cs" company="Catel development team">
+//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
 
-    /// <summary>
-    /// UserControl view model.
-    /// </summary>
+
+namespace Catel.Examples.ViewModelLifetime.ViewModels
+{
+    using MVVM;
+
     public class CreateTabWindowViewModel : ViewModelBase
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CreateTabWindowViewModel"/> class.
-        /// </summary>
+        #region Constructors
         public CreateTabWindowViewModel()
         {
+            Title = "Create new tab";
         }
+        #endregion
 
-        /// <summary>
-        /// Gets the title of the view model.
-        /// </summary>
-        /// <value>The title.</value>
-        public override string Title { get { return "Create new tab"; } }
-
-        /// <summary>
-        /// Gets or sets whether the new tab should close the view model when unloaded.
-        /// </summary>
-        public bool CloseWhenUnloaded
-        {
-            get { return GetValue<bool>(CloseWhenUnloadedProperty); }
-            set { SetValue(CloseWhenUnloadedProperty, value); }
-        }
-
-        /// <summary>
-        /// Register the CloseWhenUnloaded property so it is known in the class.
-        /// </summary>
-        public static readonly PropertyData CloseWhenUnloadedProperty = RegisterProperty("CloseWhenUnloaded", typeof(bool), true);
+        #region Properties
+        public bool CloseWhenUnloaded { get; set; }
+        #endregion
     }
 }

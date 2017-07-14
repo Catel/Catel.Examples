@@ -1,25 +1,20 @@
-﻿<catel:DataWindow x:Class="Catel.Examples.WPF.ViewModelLifetime.Views.MainWindow"
-                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-				  xmlns:catel="http://schemas.catelproject.com" ShowInTaskbar="True">
-    
-    <!-- Resources -->
-    <catel:DataWindow.Resources>
-    </catel:DataWindow.Resources>
-    
-    <!-- Content -->
+﻿<catel:Window x:Class="Catel.Examples.ViewModelLifetime.Views.MainWindow"
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              xmlns:catel="http://schemas.catelproject.com" ShowInTaskbar="True">
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" MinHeight="200" />
         </Grid.RowDefinitions>
-        
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" MaxWidth="400" />
             <ColumnDefinition Width="Auto" MinWidth="200" />
         </Grid.ColumnDefinitions>
-        
+
         <Label Grid.Row="0" Grid.Column="0">
             <TextBlock TextWrapping="Wrap">
                 This example shows how to manually control the lifetime of view models. Normally, a view model is closed and disposed
@@ -34,28 +29,28 @@
         </Label>
 
         <GroupBox Grid.Row="0" Grid.Column="1" Header="Technical info">
-            <catel:StackGrid >
-                <catel:StackGrid.RowDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
-                </catel:StackGrid.RowDefinitions>
+                </Grid.RowDefinitions>
 
-                <catel:StackGrid.ColumnDefinitions>
+                <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="Auto" />
-                </catel:StackGrid.ColumnDefinitions>
+                </Grid.ColumnDefinitions>
 
-                <Label Content="Current number of view models alive:" />
-                <Label Content="{Binding LiveViewModelCount}" />
-            </catel:StackGrid>
+                <Label Grid.Row="0" Grid.Column="0" Content="Current number of view models alive:" />
+                <Label Grid.Row="0" Grid.Column="1" Content="{Binding LiveViewModelCount}" />
+            </Grid>
         </GroupBox>
 
         <WrapPanel Grid.Row="1" Grid.ColumnSpan="2">
             <Button Content="Create new tab" Command="{Binding AddTab}" />
         </WrapPanel>
-        
+
         <TabControl x:Name="tabControl" Grid.Row="2" Grid.ColumnSpan="2">
         </TabControl>
     </Grid>
-</catel:DataWindow>
+</catel:Window>

@@ -1,27 +1,21 @@
-﻿namespace Catel.Examples.WPF.ViewModelLifetime.ViewModels
-{
-    using Catel.MVVM;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="ControlViewModel.cs" company="Catel development team">
+//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
 
-    /// <summary>
-    /// UserControl view model.
-    /// </summary>
+
+namespace Catel.Examples.ViewModelLifetime.ViewModels
+{
+    using MVVM;
+
     public class ControlViewModel : ViewModelBase
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ControlViewModel"/> class.
-        /// </summary>
+        #region Constructors
         public ControlViewModel()
         {
+            Title = "Tab control";
         }
-
-        /// <summary>
-        /// Gets the title of the view model.
-        /// </summary>
-        /// <value>The title.</value>
-        public override string Title { get { return "Tab control"; } }
-
-        // TODO: Register models with the vmpropmodel codesnippet
-        // TODO: Register view model properties with the vmprop or vmpropviewmodeltomodel codesnippets
-        // TODO: Register commands with the vmcommand or vmcommandwithcanexecute codesnippets
+        #endregion
     }
 }

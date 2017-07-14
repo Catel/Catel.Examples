@@ -1,14 +1,8 @@
-﻿<catel:DataWindow x:Class="Catel.Examples.WPF.ViewModelLifetime.Views.CreateTabWindow"
+﻿<catel:DataWindow x:Class="Catel.Examples.ViewModelLifetime.Views.CreateTabWindow"
                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 				  xmlns:catel="http://schemas.catelproject.com">
-    
-    <!-- Resources -->
-    <catel:DataWindow.Resources>
 
-    </catel:DataWindow.Resources>
-
-    <!-- Content -->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
