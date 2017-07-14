@@ -1,48 +1,33 @@
-﻿namespace Catel.Examples.WPF.MultiLingual.ViewModels
-{
-    using System;
-    using Catel.MVVM;
-    using Data;
-    using Models;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="DataWindowViewModel.cs" company="Catel development team">
+//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
 
-    /// <summary>
-    /// UserControl view model.
-    /// </summary>
+
+namespace Catel.Examples.MultiLingual.ViewModels
+{
+    using Models;
+    using MVVM;
+
     public class DataWindowViewModel : ViewModelBase
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DataWindowViewModel"/> class.
-        /// </summary>
-        /// <param name="language">The language.</param>
-        /// <exception cref="ArgumentNullException">The <paramref name="language"/> is <c>null</c>.</exception>
+        #region Constructors
         public DataWindowViewModel(Language language)
         {
             Argument.IsNotNull("language", language);
 
             Language = language;
+
+            Title = "MultiLingual example";
         }
+        #endregion
 
-        /// <summary>
-        /// Gets the title of the view model.
-        /// </summary>
-        /// <value>The title.</value>
-        public override string Title { get { return "Data Window Demo"; } }
-
-        /// <summary>
-        /// Gets or sets the language.
-        /// </summary>
+        #region Properties
         [Model]
         [Fody.Expose("Name")]
         [Fody.Expose("Code")]
-        private Language Language
-        {
-            get { return GetValue<Language>(LanguageProperty); }
-            set { SetValue(LanguageProperty, value); }
-        }
-
-        /// <summary>
-        /// Register the Language property so it is known in the class.
-        /// </summary>
-        public static readonly PropertyData LanguageProperty = RegisterProperty("Language", typeof(Language));
+        private Language Language { get; set; }
+        #endregion
     }
 }

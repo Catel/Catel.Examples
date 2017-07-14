@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Catel.Examples.WPF.MultiLingual.Properties {
+namespace Catel.Examples.MultiLingual.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

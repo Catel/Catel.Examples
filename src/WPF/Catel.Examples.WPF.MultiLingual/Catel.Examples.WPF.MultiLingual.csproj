@@ -8,8 +8,8 @@
     <ProjectGuid>{BC3F3E32-803C-4E6A-A8C5-A414456EAFA1}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Catel.Examples.WPF.MultiLingual</RootNamespace>
-    <AssemblyName>Catel.Examples.WPF.MultiLingual</AssemblyName>
+    <RootNamespace>Catel.Examples.MultiLingual</RootNamespace>
+    <AssemblyName>Catel.Examples.MultiLingual</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -101,7 +101,7 @@
     <Compile Include="ModuleInitializer.cs" />
     <Compile Include="Services\LanguageService.cs" />
     <Compile Include="ViewModels\DataWindowViewModel.cs" />
-    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Views\DataWindow.xaml.cs">
       <DependentUpon>DataWindow.xaml</DependentUpon>
     </Compile>

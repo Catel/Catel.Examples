@@ -1,19 +1,22 @@
-﻿namespace Catel.Examples.WPF.MultiLingual.Views
-{
-    using Catel.Windows;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="DataWindow.xaml.cs" company="Catel development team">
+//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
 
-    /// <summary>
-    /// Interaction logic for DataWindow.xaml.
-    /// </summary>
-    public partial class DataWindow : Catel.Windows.DataWindow
+
+namespace Catel.Examples.MultiLingual.Views
+{
+    using Windows;
+
+    public partial class DataWindow
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DataWindow"/> class.
-        /// </summary>
+        #region Constructors
         public DataWindow()
             : base(DataWindowMode.OkCancelApply)
         {
             InitializeComponent();
         }
+        #endregion
     }
 }
