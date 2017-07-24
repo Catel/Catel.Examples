@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.15
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{49D9F98D-2E51-4A92-896E-E24CFD25BF1E}"
 EndProject
@@ -61,6 +61,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.WPF.ViewModelThrottling", "WPF\Catel.Examples.WPF.ViewModelThrottling\Catel.Examples.WPF.ViewModelThrottling.csproj", "{7D429438-B3C9-49BE-BC12-810CEB2156FA}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Catel.Examples.Models.Shared", "Shared\Catel.Examples.Models.Shared\Catel.Examples.Models.Shared.shproj", "{F696BE83-7638-4775-99AA-C6AB488B692C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.UWP.Behaviors", "UWP\Catel.Examples.UWP.Behaviors\Catel.Examples.UWP.Behaviors.csproj", "{57AA50E2-F6DA-4ABE-9413-1413603521E9}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -217,6 +219,28 @@ Global
 		{7D429438-B3C9-49BE-BC12-810CEB2156FA}.Release|x64.Build.0 = Release|Any CPU
 		{7D429438-B3C9-49BE-BC12-810CEB2156FA}.Release|x86.ActiveCfg = Release|Any CPU
 		{7D429438-B3C9-49BE-BC12-810CEB2156FA}.Release|x86.Build.0 = Release|Any CPU
+		{57AA50E2-F6DA-4ABE-9413-1413603521E9}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{57AA50E2-F6DA-4ABE-9413-1413603521E9}.Debug|Any CPU.Build.0 = Debug|x86
+		{57AA50E2-F6DA-4ABE-9413-1413603521E9}.Debug|Any CPU.Deploy.0 = Debug|x86
+		{57AA50E2-F6DA-4ABE-9413-1413603521E9}.Debug|ARM.ActiveCfg = Debug|ARM
+		{57AA50E2-F6DA-4ABE-9413-1413603521E9}.Debug|ARM.Build.0 = Debug|ARM
+		{57AA50E2-F6DA-4ABE-9413-1413603521E9}.Debug|ARM.Deploy.0 = Debug|ARM
+		{57AA50E2-F6DA-4ABE-9413-1413603521E9}.Debug|x64.ActiveCfg = Debug|x64
+		{57AA50E2-F6DA-4ABE-9413-1413603521E9}.Debug|x64.Build.0 = Debug|x64
+		{57AA50E2-F6DA-4ABE-9413-1413603521E9}.Debug|x64.Deploy.0 = Debug|x64
+		{57AA50E2-F6DA-4ABE-9413-1413603521E9}.Debug|x86.ActiveCfg = Debug|x86
+		{57AA50E2-F6DA-4ABE-9413-1413603521E9}.Debug|x86.Build.0 = Debug|x86
+		{57AA50E2-F6DA-4ABE-9413-1413603521E9}.Debug|x86.Deploy.0 = Debug|x86
+		{57AA50E2-F6DA-4ABE-9413-1413603521E9}.Release|Any CPU.ActiveCfg = Release|x86
+		{57AA50E2-F6DA-4ABE-9413-1413603521E9}.Release|ARM.ActiveCfg = Release|ARM
+		{57AA50E2-F6DA-4ABE-9413-1413603521E9}.Release|ARM.Build.0 = Release|ARM
+		{57AA50E2-F6DA-4ABE-9413-1413603521E9}.Release|ARM.Deploy.0 = Release|ARM
+		{57AA50E2-F6DA-4ABE-9413-1413603521E9}.Release|x64.ActiveCfg = Release|x64
+		{57AA50E2-F6DA-4ABE-9413-1413603521E9}.Release|x64.Build.0 = Release|x64
+		{57AA50E2-F6DA-4ABE-9413-1413603521E9}.Release|x64.Deploy.0 = Release|x64
+		{57AA50E2-F6DA-4ABE-9413-1413603521E9}.Release|x86.ActiveCfg = Release|x86
+		{57AA50E2-F6DA-4ABE-9413-1413603521E9}.Release|x86.Build.0 = Release|x86
+		{57AA50E2-F6DA-4ABE-9413-1413603521E9}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -241,6 +265,7 @@ Global
 		{8F539DE5-D52E-46CB-9C00-81842EB88B70} = {0C9CBDD8-8ED0-4B16-8C1E-34C86FBECB9C}
 		{7D429438-B3C9-49BE-BC12-810CEB2156FA} = {0C9CBDD8-8ED0-4B16-8C1E-34C86FBECB9C}
 		{F696BE83-7638-4775-99AA-C6AB488B692C} = {E78BD5DD-CFB2-4BD5-8AAA-D41921D6D3BF}
+		{57AA50E2-F6DA-4ABE-9413-1413603521E9} = {C449C35E-1F93-4146-A64C-56B477341FE8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35;..\lib\Unity.2.1.505.0\lib\NET35;..\lib\Unity.2.1.505.2\lib\NET35

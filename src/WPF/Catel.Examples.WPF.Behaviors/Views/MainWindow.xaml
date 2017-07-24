@@ -37,9 +37,9 @@
                     </TextBlock>
                 </Label>
 
-                <ListBox ItemsSource="1234" SelectedItem="{Binding DelayBindingUpdateValue}">
+                <ListBox  ItemsSource="1234" SelectedItem="{Binding DelayBindingUpdateValue}">
                     <i:Interaction.Behaviors>
-                        <catel:DelayBindingUpdate PropertyName="SelectedItem" UpdateDelay="1000" />
+                        <catel:DelayBindingUpdate DependencyPropertyName="SelectedItem" UpdateDelay="1000" />
                     </i:Interaction.Behaviors>
                 </ListBox>
             </StackPanel>
@@ -193,6 +193,5 @@
                 <TextBlock Text="{Binding UpdateBindingOnTextChangedValue}" />
             </StackPanel>
         </GroupBox>
-
     </Grid>
 </catel:DataWindow>
