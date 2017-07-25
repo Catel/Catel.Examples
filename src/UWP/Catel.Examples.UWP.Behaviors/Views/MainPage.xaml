@@ -36,7 +36,8 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <uwpcontrols:Expander Grid.Row="0" Grid.Column="0" Header="DelayBindingUpdate" IsExpanded="True">
+            <uwpcontrols:Expander Grid.Row="0" Grid.Column="0" Header="DelayBindingUpdate" 
+                                  IsExpanded="True" HorizontalContentAlignment="Stretch">
                 <StackPanel Orientation="Vertical">
                     <TextBlock TextWrapping="Wrap">
                             Change a value and the value will update one second later.
@@ -50,7 +51,8 @@
                 </StackPanel>
             </uwpcontrols:Expander>
 
-            <uwpcontrols:Expander Grid.Row="0" Grid.Column="1" Header="Focus" IsExpanded="True">
+            <uwpcontrols:Expander Grid.Row="0" Grid.Column="1" Header="Focus" 
+                                  IsExpanded="True" HorizontalContentAlignment="Stretch">
                 <StackPanel Orientation="Vertical">
                     <TextBlock TextWrapping="Wrap">
                             Note that when the window is loaded, the TextBox below has the focus
@@ -76,7 +78,8 @@
                 </StackPanel>
             </uwpcontrols:Expander>
 
-            <uwpcontrols:Expander Grid.Row="1" Grid.Column="0" Header="KeyPressToCommand" IsExpanded="True">
+            <uwpcontrols:Expander Grid.Row="1" Grid.Column="0" Header="KeyPressToCommand" 
+                                  IsExpanded="True" HorizontalContentAlignment="Stretch">
                 <StackPanel Orientation="Vertical">
                     <TextBlock TextWrapping="Wrap">
                             The 'KeyPressToCommandExample' command will be executed when the [Ctrl] + [Backspace] keys are pressed on the ListBox.
@@ -90,7 +93,8 @@
                 </StackPanel>
             </uwpcontrols:Expander>
 
-            <uwpcontrols:Expander Grid.Row="1" Grid.Column="1" Header="PointerInfo" IsExpanded="True">
+            <uwpcontrols:Expander Grid.Row="1" Grid.Column="1" Header="PointerInfo" 
+                                  IsExpanded="True" HorizontalContentAlignment="Stretch">
                 <StackPanel Orientation="Vertical">
                     <TextBlock TextWrapping="Wrap">
                             <interactivity:Interaction.Behaviors>
@@ -123,7 +127,8 @@
                 </StackPanel>
             </uwpcontrols:Expander>-->
 
-            <uwpcontrols:Expander Grid.Row="2" Grid.Column="0" Header="SelectTextOnFocus" IsExpanded="True">
+            <uwpcontrols:Expander Grid.Row="2" Grid.Column="0" Header="SelectTextOnFocus" 
+                                  IsExpanded="True" HorizontalContentAlignment="Stretch">
                 <StackPanel Orientation="Vertical">
                     <TextBlock TextWrapping="Wrap">
                             When the TextBox receives the focus, all text is selected.
@@ -137,7 +142,8 @@
                 </StackPanel>
             </uwpcontrols:Expander>
 
-            <uwpcontrols:Expander Grid.Row="2" Grid.Column="1" Header="UpdateBindingOnTextChanged" IsExpanded="True">
+            <uwpcontrols:Expander Grid.Row="2" Grid.Column="1" Header="UpdateBindingOnTextChanged" 
+                                  IsExpanded="True" HorizontalContentAlignment="Stretch">
                 <StackPanel Orientation="Vertical">
                     <TextBlock TextWrapping="Wrap">
                             Type the textbox and see the binding update happening after 500 ms when the user stops typing.
