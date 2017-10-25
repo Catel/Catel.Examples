@@ -48,8 +48,16 @@
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Catel.Core">
+      <HintPath>..\..\..\..\lib\Catel.Core.5.3.0-unstable0032\lib\MonoAndroid\Catel.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Catel.Fody.Attributes, Version=2.17.1.0, Culture=neutral, PublicKeyToken=1c8163524cbe02e6, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Catel.Fody.2.17.1\lib\portable-net4+sl4+wp7+win8+wpa81+MonoAndroid14+MonoTouch40\Catel.Fody.Attributes.dll</HintPath>
+    </Reference>
+    <Reference Include="Catel.MVVM">
+      <HintPath>..\..\..\..\lib\Catel.MVVM.5.3.0-unstable0032\lib\MonoAndroid\Catel.MVVM.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="FormsViewGroup">
       <HintPath>..\..\..\..\lib\Xamarin.Forms.2.4.0.18342\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>

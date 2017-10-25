@@ -134,11 +134,14 @@
     </SDKReference>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Catel.MVVM">
+      <Version>5.3.0-unstable0032</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>5.2.2</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms">
-      <Version>2.3.4.224</Version>
+      <Version>2.4.0.18342</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="..\Catel.Examples.XF.MasterDetail\Catel.Examples.XF.MasterDetail.projitems" Label="Shared" />
