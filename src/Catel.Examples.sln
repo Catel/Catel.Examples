@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2002
+VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{49D9F98D-2E51-4A92-896E-E24CFD25BF1E}"
 EndProject
@@ -66,22 +66,22 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.UWP.Behavior
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MasterDetail", "MasterDetail", "{722368EC-34C0-4009-89AC-D9843466AFAC}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Catel.Examples.Xamarin.Forms.MasterDetail", "Xamarin.Forms\MasterDetail\Catel.Examples.Xamarin.Forms.MasterDetail\Catel.Examples.Xamarin.Forms.MasterDetail.shproj", "{E5332DB2-3522-4EE0-BE1C-9F94E396DC75}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Catel.Examples.XF.MasterDetail", "Xamarin.Forms\MasterDetail\Catel.Examples.XF.MasterDetail\Catel.Examples.XF.MasterDetail.shproj", "{E5332DB2-3522-4EE0-BE1C-9F94E396DC75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.Xamarin.Forms.MasterDetail.Android", "Xamarin.Forms\MasterDetail\Catel.Examples.Xamarin.Forms.MasterDetail.Android\Catel.Examples.Xamarin.Forms.MasterDetail.Android.csproj", "{CD31A0A3-2DCC-46AD-AC75-F6F8773D85FC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.XF.MasterDetail.Android", "Xamarin.Forms\MasterDetail\Catel.Examples.XF.MasterDetail.Android\Catel.Examples.XF.MasterDetail.Android.csproj", "{CD31A0A3-2DCC-46AD-AC75-F6F8773D85FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.Xamarin.Forms.MasterDetail.iOS", "Xamarin.Forms\MasterDetail\Catel.Examples.Xamarin.Forms.MasterDetail.iOS\Catel.Examples.Xamarin.Forms.MasterDetail.iOS.csproj", "{DF979DCD-FC21-4CE1-8621-49F15C107DDC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.XF.MasterDetail.iOS", "Xamarin.Forms\MasterDetail\Catel.Examples.XF.MasterDetail.iOS\Catel.Examples.XF.MasterDetail.iOS.csproj", "{DF979DCD-FC21-4CE1-8621-49F15C107DDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.Xamarin.Forms.MasterDetail.UWP", "Xamarin.Forms\MasterDetail\Catel.Examples.Xamarin.Forms.MasterDetail.UWP\Catel.Examples.Xamarin.Forms.MasterDetail.UWP.csproj", "{829FD97E-89B8-4076-8122-05C963DE1A5F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Catel.Examples.XF.MasterDetail.UWP", "Xamarin.Forms\MasterDetail\Catel.Examples.XF.MasterDetail.UWP\Catel.Examples.XF.MasterDetail.UWP.csproj", "{829FD97E-89B8-4076-8122-05C963DE1A5F}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Shared\Catel.Examples.Models.Shared\Catel.Examples.Models.Shared.projitems*{523d0fa7-20da-4c04-8ad6-c3714cd24f0b}*SharedItemsImports = 4
-		Xamarin.Forms\MasterDetail\Catel.Examples.Xamarin.Forms.MasterDetail\Catel.Examples.Xamarin.Forms.MasterDetail.projitems*{829fd97e-89b8-4076-8122-05c963de1a5f}*SharedItemsImports = 4
-		Xamarin.Forms\MasterDetail\Catel.Examples.Xamarin.Forms.MasterDetail\Catel.Examples.Xamarin.Forms.MasterDetail.projitems*{cd31a0a3-2dcc-46ad-ac75-f6f8773d85fc}*SharedItemsImports = 4
+		Xamarin.Forms\MasterDetail\Catel.Examples.XF.MasterDetail\Catel.Examples.XF.MasterDetail.projitems*{829fd97e-89b8-4076-8122-05c963de1a5f}*SharedItemsImports = 4
+		Xamarin.Forms\MasterDetail\Catel.Examples.XF.MasterDetail\Catel.Examples.XF.MasterDetail.projitems*{cd31a0a3-2dcc-46ad-ac75-f6f8773d85fc}*SharedItemsImports = 4
 		Shared\Catel.Examples.Models.Shared\Catel.Examples.Models.Shared.projitems*{ce9b6fce-b2a2-481f-b9d3-02a94421646d}*SharedItemsImports = 4
-		Xamarin.Forms\MasterDetail\Catel.Examples.Xamarin.Forms.MasterDetail\Catel.Examples.Xamarin.Forms.MasterDetail.projitems*{df979dcd-fc21-4ce1-8621-49f15c107ddc}*SharedItemsImports = 4
-		Xamarin.Forms\MasterDetail\Catel.Examples.Xamarin.Forms.MasterDetail\Catel.Examples.Xamarin.Forms.MasterDetail.projitems*{e5332db2-3522-4ee0-be1c-9f94e396dc75}*SharedItemsImports = 13
+		Xamarin.Forms\MasterDetail\Catel.Examples.XF.MasterDetail\Catel.Examples.XF.MasterDetail.projitems*{df979dcd-fc21-4ce1-8621-49f15c107ddc}*SharedItemsImports = 4
+		Xamarin.Forms\MasterDetail\Catel.Examples.XF.MasterDetail\Catel.Examples.XF.MasterDetail.projitems*{e5332db2-3522-4ee0-be1c-9f94e396dc75}*SharedItemsImports = 13
 		Shared\Catel.Examples.Models.Shared\Catel.Examples.Models.Shared.projitems*{f696be83-7638-4775-99aa-c6ab488b692c}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -467,7 +467,7 @@ Global
 		{829FD97E-89B8-4076-8122-05C963DE1A5F} = {722368EC-34C0-4009-89AC-D9843466AFAC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35;..\lib\Unity.2.1.505.0\lib\NET35;..\lib\Unity.2.1.505.2\lib\NET35
 		SolutionGuid = {C1E475A3-BD72-4942-B0D8-AF1E1C23728E}
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35;..\lib\Unity.2.1.505.0\lib\NET35;..\lib\Unity.2.1.505.2\lib\NET35
 	EndGlobalSection
 EndGlobal
