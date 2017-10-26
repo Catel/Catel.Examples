@@ -1,9 +1,9 @@
 ﻿namespace Catel.Examples.Xamarin.Forms.MasterDetail.Droid
 {
-    using System;
     using Android.App;
     using Android.Content.PM;
     using Android.OS;
+
     using global::Xamarin.Forms;
     using global::Xamarin.Forms.Platform.Android;
 
