@@ -134,8 +134,11 @@
     </SDKReference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Catel.MVVM">
-      <Version>5.3.0-unstable0032</Version>
+    <PackageReference Include="Catel.Core">
+      <Version>5.3.0-unstable0036</Version>
+    </PackageReference>  
+    <PackageReference Include="Catel.MVVM.Xamarin.Forms">
+      <Version>5.3.0-unstable0036</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>5.2.2</Version>
