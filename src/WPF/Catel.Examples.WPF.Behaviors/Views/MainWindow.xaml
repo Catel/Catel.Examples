@@ -1,8 +1,8 @@
-﻿<catel:DataWindow x:Class="Catel.Examples.Behaviors.Views.MainWindow"
-                  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-				  xmlns:catel="http://schemas.catelproject.com"
-                  xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity">
+﻿<catel:Window x:Class="Catel.Examples.Behaviors.Views.MainWindow"
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              xmlns:catel="http://schemas.catelproject.com"
+              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity">
 
     <catel:DataWindow.Resources>
         <catel:BooleanToCollapsingVisibilityConverter x:Key="BooleanToCollapsingVisibilityConverter" />
@@ -37,7 +37,7 @@
                     </TextBlock>
                 </Label>
 
-                <ListBox  ItemsSource="1234" SelectedItem="{Binding DelayBindingUpdateValue}">
+                <ListBox ItemsSource="1234" SelectedItem="{Binding DelayBindingUpdateValue}">
                     <i:Interaction.Behaviors>
                         <catel:DelayBindingUpdate DependencyPropertyName="SelectedItem" UpdateDelay="1000" />
                     </i:Interaction.Behaviors>
@@ -194,4 +194,4 @@
             </StackPanel>
         </GroupBox>
     </Grid>
-</catel:DataWindow>
+</catel:Window>
