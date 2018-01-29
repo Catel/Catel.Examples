@@ -85,6 +85,7 @@
       <Link>Properties\SolutionAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="Converters\GenderToIsSelectedConverter.cs" />
+    <Compile Include="ModuleInitializer.cs" />
     <Compile Include="ViewModels\PersonMasterViewModel.cs" />
     <Compile Include="Views\PersonDetailView.xaml.cs">
       <DependentUpon>PersonDetailView.xaml</DependentUpon>

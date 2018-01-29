@@ -97,6 +97,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Language.cs" />
+    <Compile Include="ModuleInitializer.cs" />
     <Compile Include="Services\LanguageService.cs" />
     <Compile Include="ViewModels\DataWindowViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />

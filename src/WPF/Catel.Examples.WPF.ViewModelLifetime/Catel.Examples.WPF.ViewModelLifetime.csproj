@@ -106,6 +106,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ModuleInitializer.cs" />
     <Compile Include="Services\Interfaces\ITabService.cs" />
     <Compile Include="ViewModels\ControlViewModel.cs" />
     <Compile Include="ViewModels\CreateTabWindowViewModel.cs" />

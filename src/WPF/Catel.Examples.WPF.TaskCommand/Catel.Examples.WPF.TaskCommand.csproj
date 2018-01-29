@@ -79,6 +79,7 @@
     <Compile Include="..\..\SolutionAssemblyInfo.cs">
       <Link>Properties\SolutionAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="ModuleInitializer.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Models\PercentProgress.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">

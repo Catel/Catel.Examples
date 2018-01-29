@@ -6,7 +6,7 @@
 
     <catel:DataWindow.Resources>
         <catel:BooleanToCollapsingVisibilityConverter x:Key="BooleanToCollapsingVisibilityConverter" />
-        
+
         <Style TargetType="GroupBox">
             <Setter Property="Margin" Value="6" />
         </Style>

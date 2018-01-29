@@ -91,6 +91,7 @@
     <Compile Include="..\..\SolutionAssemblyInfo.cs">
       <Link>Properties\SolutionAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="ModuleInitializer.cs" />
     <Compile Include="Views\ValidationInIValidatorWindow.xaml.cs">
       <DependentUpon>ValidationInIValidatorWindow.xaml</DependentUpon>
     </Compile>

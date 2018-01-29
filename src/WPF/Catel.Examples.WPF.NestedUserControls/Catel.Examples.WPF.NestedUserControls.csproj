@@ -78,6 +78,7 @@
     <Compile Include="..\..\SolutionAssemblyInfo.cs">
       <Link>Properties\SolutionAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="ModuleInitializer.cs" />
     <Compile Include="ViewModels\DemoWindowViewModel.cs" />
     <Compile Include="ViewModels\HouseViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />

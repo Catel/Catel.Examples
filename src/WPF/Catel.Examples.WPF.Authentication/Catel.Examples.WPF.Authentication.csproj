@@ -104,6 +104,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Authentication\AuthenticationProvider.cs" />
+    <Compile Include="ModuleInitializer.cs" />
     <Compile Include="ViewModels\ExampleViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="Views\ExampleView.xaml.cs">
