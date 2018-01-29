@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="Catel.MVVM.Xamarin.Forms.MasterDetail.DemoApp" android:versionCode="1" android:versionName="1.0" android:installLocation="auto">
-	<uses-sdk android:minSdkVersion="15" />
-	<application android:label="Catel.MVVM.Xamarin.Forms.MasterDetail.DemoApp" android:icon="@drawable/Catel_logo_transparent"></application>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="Catel.MVVM.Xamarin.Forms.MasterDetail.DemoApp" android:installLocation="auto" android:versionCode="1" android:versionName="1.0">
+	<uses-sdk android:minSdkVersion="18" />
+	<application android:label="Catel.MVVM.Xamarin.Forms.MasterDetail.DemoApp"></application>
 </manifest>
