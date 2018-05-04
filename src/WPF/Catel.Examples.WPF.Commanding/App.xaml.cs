@@ -32,6 +32,8 @@ namespace Catel.Examples.Commanding
 
             // Registered in command container
             commandManager.CreateCommandWithGesture(typeof(Commands), "GlobalAction");
+            commandManager.CreateCommandWithGesture(typeof(Commands), "Test1");
+            commandManager.CreateCommandWithGesture(typeof(Commands), "Test2");
         }
         #endregion
     }
