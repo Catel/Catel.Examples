@@ -23,10 +23,12 @@ namespace Catel.Examples.Models
             Children = new FastObservableCollection<Person>();
         }
 
+#if !NETFX_CORE
         protected Family(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
         }
+#endif
         #endregion
 
         #region Properties

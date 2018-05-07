@@ -20,10 +20,12 @@ namespace Catel.Examples.Models
         {
         }
 
+#if !NETFX_CORE
         protected Person(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
         }
+#endif
         #endregion
 
         #region Properties

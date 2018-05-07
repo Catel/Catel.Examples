@@ -8,7 +8,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <StartupObject />
+    <StartupObject>Catel.Examples.Commanding.App</StartupObject>
     <NoWarn>$(NoWarn);SA1652</NoWarn>
   </PropertyGroup>
 
