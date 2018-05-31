@@ -1,20 +1,30 @@
-﻿using Xamarin.Forms.Xaml;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="App.xaml.cs" company="Catel development team">
+//   Copyright (c) 2008 - 2018 Catel development team. All rights reserved.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 
 namespace Catel.Examples.Xamarin.Forms.MasterDetail
 {
-    using Catel.Examples.Xamarin.Forms.MasterDetail.Views;
     using global::Xamarin.Forms;
+    using Views;
 
     public partial class App
     {
+        #region Constructors
         public App()
         {
             InitializeComponent();
             SetMainPage();
         }
+        #endregion
 
+        #region Methods
         private static void SetMainPage()
         {
             Current.MainPage = new TabbedPage
@@ -24,15 +34,16 @@ namespace Catel.Examples.Xamarin.Forms.MasterDetail
                     new NavigationPage(new ItemsPage())
                     {
                         Title = "Browse",
-                        Icon = Device.OnPlatform("tab_feed.png", null, null)
+                        Icon = "tab_feed.png"
                     },
                     new NavigationPage(new AboutPage())
                     {
                         Title = "About",
-                        Icon = Device.OnPlatform("tab_about.png", null, null)
+                        Icon = "tab_about.png"
                     }
                 },
             };
         }
+        #endregion
     }
 }

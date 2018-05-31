@@ -1,4 +1,11 @@
-﻿namespace Catel.Examples.Xamarin.Forms.MasterDetail.Droid
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="MainActivity.cs" company="Catel development team">
+//   Copyright (c) 2008 - 2018 Catel development team. All rights reserved.
+// </copyright>
+// --------------------------------------------------------------------------------------------------------------------
+
+
+namespace Catel.Examples.Xamarin.Forms.MasterDetail.Droid
 {
     using global::Android.App;
     using global::Android.Content.PM;
@@ -10,6 +17,7 @@
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : FormsAppCompatActivity
     {
+        #region Methods
         protected override void OnCreate(Bundle bundle)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
@@ -21,5 +29,6 @@
 
             LoadApplication(new App());
         }
+        #endregion
     }
 }
