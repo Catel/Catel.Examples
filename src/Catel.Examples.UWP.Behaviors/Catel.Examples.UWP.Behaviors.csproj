@@ -19,7 +19,7 @@
 
   <ItemGroup>
     <PackageReference Include="MSBuild.Sdk.Extras" Version="1.2.2" PrivateAssets="All" />
-    <PackageReference Include="Catel.Core" Version="5.4.0" />
+    <PackageReference Include="Catel.Core" Version="5.9.0-beta0000" />
     <PackageReference Include="Catel.MVVM" Version="5.4.0" />
     <PackageReference Include="Catel.Fody" Version="3.3.0" PrivateAssets="all" />
     <PackageReference Include="Fody" Version="3.3.3" PrivateAssets="all" />
