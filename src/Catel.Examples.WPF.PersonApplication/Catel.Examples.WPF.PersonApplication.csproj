@@ -13,7 +13,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MSBuild.Sdk.Extras" Version="1.2.2" PrivateAssets="All" />
+    <PackageReference Include="MSBuild.Sdk.Extras" Version="1.6.65" PrivateAssets="All" />
     <PackageReference Include="Catel.Core" Version="5.9.0-beta0000" />
     <PackageReference Include="Catel.MVVM" Version="5.8.0" />
     <PackageReference Include="Catel.Fody" Version="3.6.0" PrivateAssets="all" />
