@@ -6,6 +6,12 @@
 *.user
 *.sln.docstates
 
+.nuget/
+tools/FAKE/
+build-log.xml
+Nuget.key
+TestResult.xml
+
 # Build results
 [Bb]in/
 [Cc]lientbin/
@@ -15,12 +21,15 @@
 [Pp]ackages*/
 bin
 obj
-[Ll]ib/
+[Ll]ib/*
+![Ll]ib/repositories.config
+*.ide/
 *_i.c
 *_p.c
 *.ilk
 *.meta
 *.obj
+*.orig
 *.pch
 *.pdb
 *.pgc
@@ -50,12 +59,16 @@ ipch/
 _ReSharper*
 *.resharper.user
 
+# Catel
+CatelLogging.txt
+
 # Dotcover
 *.dotCover
 *.dotsettings.user
 
 # Finalbuilder
 *.fbl7
+*.fb7lck
 *.fbpInf
 
 # Ghostdoc
@@ -67,7 +80,6 @@ deployment/InnoSetup/template/templates
 deployment/InnoSetup/template/snippets
 deployment/InnoSetup/template/libraries
 deployment/InnoSetup/template/doc
-deployment/NuGet
 
 # Installshield output folder 
 [Ee]xpress
@@ -109,6 +121,17 @@ Thumbs.db
 # Folder config file
 Desktop.ini
 
+# Cake - Uncomment if you are using it
+tools/**
+!tools/packages.config
+build.cakeoverrides
+
 # mstest test results
 TestResults
-src/.vs/
+.vs/
+.sonarqube/
+.github/
+BundleArtifacts/
+
+.vscode
+FodyWeavers.xsd
