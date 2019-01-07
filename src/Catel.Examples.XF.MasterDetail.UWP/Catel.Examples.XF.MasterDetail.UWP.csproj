@@ -135,16 +135,16 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Catel.Core">
-      <Version>5.3.0-unstable0115</Version>
+      <Version>5.9.0-beta0000</Version>
     </PackageReference>
     <PackageReference Include="Catel.MVVM.Xamarin.Forms">
-      <Version>5.3.0-unstable0115</Version>
+      <Version>5.9.0-beta0000</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.0.6</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms">
-      <Version>2.5.0.122203</Version>
+      <Version>3.4.0.1009999</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="..\Catel.Examples.XF.MasterDetail\Catel.Examples.XF.MasterDetail.projitems" Label="Shared" />
