@@ -141,7 +141,7 @@
       <Version>5.9.0-beta0000</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>6.0.6</Version>
+      <Version>6.1.9</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms">
       <Version>3.4.0.1009999</Version>
