@@ -18,7 +18,7 @@ namespace Catel.Examples.Behaviors
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
-    internal sealed partial class App
+    sealed partial class App
     {
         #region Constructors
         /// <summary>
@@ -80,7 +80,7 @@ namespace Catel.Examples.Behaviors
         /// </summary>
         /// <param name="sender">The Frame which failed navigation</param>
         /// <param name="e">Details about the navigation failure</param>
-        private void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
+        void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
         {
             throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
         }

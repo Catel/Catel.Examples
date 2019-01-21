@@ -1,4 +1,4 @@
-﻿<Project Sdk="MSBuild.Sdk.Extras">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>net462</TargetFrameworks>
     <AssemblyName>Catel.Examples.WPF.ViewModelThrottling</AssemblyName>
@@ -10,10 +10,10 @@
     <OutputType>WinExe</OutputType>
     <StartupObject />
     <NoWarn>$(NoWarn);SA1652</NoWarn>
-    <UseWpf>true</UseWpf>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MSBuild.Sdk.Extras" Version="1.6.65" PrivateAssets="All" />
     <PackageReference Include="Catel.Core" Version="5.9.0-beta0007" />
     <PackageReference Include="Catel.MVVM" Version="5.9.0-beta0007" />
     <PackageReference Include="Catel.Fody" Version="3.8.0" PrivateAssets="all" />
@@ -45,5 +45,6 @@
     </EmbeddedResource>
   </ItemGroup>
   
+  <Import Project="$(MSBuildSDKExtrasTargets)" Condition="Exists('$(MSBuildSDKExtrasTargets)')" />
   <Import Project="$(MSBuildProjectDirectory)\..\Directory.build.shared.explicit.props" Condition="Exists('$(MSBuildProjectDirectory)\..\Directory.build.shared.explicit.props')" />
 </Project>
