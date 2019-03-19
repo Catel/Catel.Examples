@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\lib\Catel.Fody.3.9.0\build\Catel.Fody.props" Condition="Exists('..\..\lib\Catel.Fody.3.9.0\build\Catel.Fody.props')" />
   <Import Project="..\..\lib\Xamarin.Forms.2.5.0.122203\build\netstandard1.0\Xamarin.Forms.props" Condition="Exists('..\..\lib\Xamarin.Forms.2.5.0.122203\build\netstandard1.0\Xamarin.Forms.props')" />
   <Import Project="..\..\lib\Xamarin.Forms.2.4.0.282\build\netstandard1.0\Xamarin.Forms.props" Condition="Exists('..\..\lib\Xamarin.Forms.2.4.0.282\build\netstandard1.0\Xamarin.Forms.props')" />
   <PropertyGroup>
@@ -10,14 +11,13 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Catel.Examples.Xamarin.Forms.MasterDetail.Droid</RootNamespace>
     <AssemblyName>Catel.Examples.Xamarin.Forms.MasterDetail.Android</AssemblyName>
-    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <AndroidTlsProvider>
@@ -54,8 +54,9 @@
     <Reference Include="Catel.Core, Version=5.3.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\lib\Catel.Core.5.3.0-unstable0117\lib\MonoAndroid\Catel.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Catel.Fody.Attributes, Version=2.19.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\lib\Catel.Fody.2.19.0\lib\netstandard1.0\Catel.Fody.Attributes.dll</HintPath>
+    <Reference Include="Catel.Fody.Attributes, Version=3.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\Catel.Fody.3.9.0\lib\netstandard1.0\Catel.Fody.Attributes.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Catel.MVVM, Version=5.3.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\lib\Catel.MVVM.Xamarin.Forms.5.3.0-unstable0117\lib\netstandard2.0\Catel.MVVM.dll</HintPath>
@@ -256,6 +257,8 @@
     <Error Condition="!Exists('..\..\lib\Xamarin.Android.Support.v7.CardView.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.v7.CardView.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\lib\Xamarin.Android.Support.v7.CardView.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.v7.CardView.targets'))" />
     <Error Condition="!Exists('..\..\lib\Xamarin.Android.Support.v4.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.v4.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\lib\Xamarin.Android.Support.v4.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.v4.targets'))" />
     <Error Condition="!Exists('..\..\lib\Xamarin.Forms.2.5.0.122203\build\netstandard1.0\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\lib\Xamarin.Forms.2.5.0.122203\build\netstandard1.0\Xamarin.Forms.targets'))" />
+    <Error Condition="!Exists('..\..\lib\Fody.4.0.0\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\lib\Fody.4.0.0\build\Fody.targets'))" />
+    <Error Condition="!Exists('..\..\lib\Catel.Fody.3.9.0\build\Catel.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\lib\Catel.Fody.3.9.0\build\Catel.Fody.props'))" />
   </Target>
   <Import Project="..\..\lib\Fody.2.3.23\build\Fody.targets" Condition="Exists('..\..\lib\Fody.2.3.23\build\Fody.targets')" />
   <Import Project="..\..\lib\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\..\lib\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" />
@@ -279,4 +282,5 @@
   <Import Project="..\..\lib\Xamarin.Android.Support.v7.CardView.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.v7.CardView.targets" Condition="Exists('..\..\lib\Xamarin.Android.Support.v7.CardView.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.v7.CardView.targets')" />
   <Import Project="..\..\lib\Xamarin.Android.Support.v4.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.v4.targets" Condition="Exists('..\..\lib\Xamarin.Android.Support.v4.26.1.0.1\build\MonoAndroid80\Xamarin.Android.Support.v4.targets')" />
   <Import Project="..\..\lib\Xamarin.Forms.2.5.0.122203\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\..\lib\Xamarin.Forms.2.5.0.122203\build\netstandard1.0\Xamarin.Forms.targets')" />
+  <Import Project="..\..\lib\Fody.4.0.0\build\Fody.targets" Condition="Exists('..\..\lib\Fody.4.0.0\build\Fody.targets')" />
 </Project>
