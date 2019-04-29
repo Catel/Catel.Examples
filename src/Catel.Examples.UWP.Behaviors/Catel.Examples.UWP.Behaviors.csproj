@@ -21,7 +21,7 @@
     <PackageReference Include="Catel.Core" Version="5.9.0" />
     <PackageReference Include="Catel.MVVM" Version="5.9.0" />
     <PackageReference Include="Catel.Fody" Version="4.0.0" PrivateAssets="all" />
-    <PackageReference Include="Fody" Version="4.0.2" PrivateAssets="all" />
+    <PackageReference Include="Fody" Version="5.0.1" PrivateAssets="all" />
     <PackageReference Include="LoadAssembliesOnStartup.Fody" Version="3.0.8" PrivateAssets="all" />
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.8" />
     <PackageReference Include="Microsoft.Toolkit.Uwp.UI.Controls" Version="5.1.1" />
