@@ -144,7 +144,7 @@
       <Version>6.2.9</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms">
-      <Version>4.3.0.947036</Version>
+      <Version>4.3.0.991211</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="..\Catel.Examples.XF.MasterDetail\Catel.Examples.XF.MasterDetail.projitems" Label="Shared" />
