@@ -23,7 +23,7 @@
     <PackageReference Include="Catel.Core" Version="5.12.2" />
     <PackageReference Include="Catel.MVVM" Version="5.12.2" />
     <PackageReference Include="Catel.Fody" Version="4.3.0" PrivateAssets="all" />
-    <PackageReference Include="Fody" Version="6.0.8" PrivateAssets="all" />
+    <PackageReference Include="Fody" Version="6.1.0" PrivateAssets="all" />
     <PackageReference Include="LoadAssembliesOnStartup.Fody" Version="4.3.0" PrivateAssets="all" />
     <PackageReference Include="ModuleInit.Fody" Version="2.1.0" PrivateAssets="all" />
     <PackageReference Include="Obsolete.Fody" Version="5.2.0" PrivateAssets="all" />
