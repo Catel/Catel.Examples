@@ -1,12 +1,14 @@
 ﻿namespace Catel.Examples.Xamarin.Forms.MasterDetail.UWP
 {
+    using global::Xamarin.Forms;
+
     public sealed partial class MainPage
     {
         public MainPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
 
-            LoadApplication(new App3.App());
+            LoadApplication(new global::Catel.Examples.Xamarin.Forms.MasterDetail.App());
         }
     }
 }
