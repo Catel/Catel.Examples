@@ -13,8 +13,7 @@ namespace Catel.Examples.Xamarin.Forms.MasterDetail.Droid
     using global::Xamarin.Forms;
     using global::Xamarin.Forms.Platform.Android;
 
-    [Activity(Label = "Catel.Examples.Xamarin.Forms.MasterDetail.Droid", Theme = "@style/MyTheme", MainLauncher = true,
-        ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "Catel.Examples.Xamarin.Forms.MasterDetail.Droid", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : FormsAppCompatActivity
     {
         #region Methods

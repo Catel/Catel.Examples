@@ -34,12 +34,12 @@ namespace Catel.Examples.Xamarin.Forms.MasterDetail
                     new NavigationPage(new ItemsPage())
                     {
                         Title = "Browse",
-                        Icon = "tab_feed.png"
+                        IconImageSource = "tab_feed.png"
                     },
                     new NavigationPage(new AboutPage())
                     {
                         Title = "About",
-                        Icon = "tab_about.png"
+                        IconImageSource = "tab_about.png"
                     }
                 },
             };
