@@ -25,8 +25,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{E78BD5
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Catel.Examples.Models.Shared", "Catel.Examples.Models.Shared\Catel.Examples.Models.Shared.shproj", "{F696BE83-7638-4775-99AA-C6AB488B692C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catel.Examples.WPF.Analytics", "Catel.Examples.WPF.Analytics\Catel.Examples.WPF.Analytics.csproj", "{50B0924C-C5F1-477C-80D2-8DBBF6379E03}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catel.Examples.WPF.Authentication", "Catel.Examples.WPF.Authentication\Catel.Examples.WPF.Authentication.csproj", "{B283F898-7FEB-4EB9-A1D2-E84FA0230262}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catel.Examples.WPF.Behaviors", "Catel.Examples.WPF.Behaviors\Catel.Examples.WPF.Behaviors.csproj", "{5C22A0B0-BDB2-40D9-AC08-48DCE04353CC}"
@@ -65,30 +63,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{50B0924C-C5F1-477C-80D2-8DBBF6379E03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{50B0924C-C5F1-477C-80D2-8DBBF6379E03}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{50B0924C-C5F1-477C-80D2-8DBBF6379E03}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{50B0924C-C5F1-477C-80D2-8DBBF6379E03}.Debug|ARM.Build.0 = Debug|Any CPU
-		{50B0924C-C5F1-477C-80D2-8DBBF6379E03}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{50B0924C-C5F1-477C-80D2-8DBBF6379E03}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{50B0924C-C5F1-477C-80D2-8DBBF6379E03}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{50B0924C-C5F1-477C-80D2-8DBBF6379E03}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{50B0924C-C5F1-477C-80D2-8DBBF6379E03}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{50B0924C-C5F1-477C-80D2-8DBBF6379E03}.Debug|x64.Build.0 = Debug|Any CPU
-		{50B0924C-C5F1-477C-80D2-8DBBF6379E03}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{50B0924C-C5F1-477C-80D2-8DBBF6379E03}.Debug|x86.Build.0 = Debug|Any CPU
-		{50B0924C-C5F1-477C-80D2-8DBBF6379E03}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{50B0924C-C5F1-477C-80D2-8DBBF6379E03}.Release|Any CPU.Build.0 = Release|Any CPU
-		{50B0924C-C5F1-477C-80D2-8DBBF6379E03}.Release|ARM.ActiveCfg = Release|Any CPU
-		{50B0924C-C5F1-477C-80D2-8DBBF6379E03}.Release|ARM.Build.0 = Release|Any CPU
-		{50B0924C-C5F1-477C-80D2-8DBBF6379E03}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{50B0924C-C5F1-477C-80D2-8DBBF6379E03}.Release|iPhone.Build.0 = Release|Any CPU
-		{50B0924C-C5F1-477C-80D2-8DBBF6379E03}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{50B0924C-C5F1-477C-80D2-8DBBF6379E03}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{50B0924C-C5F1-477C-80D2-8DBBF6379E03}.Release|x64.ActiveCfg = Release|Any CPU
-		{50B0924C-C5F1-477C-80D2-8DBBF6379E03}.Release|x64.Build.0 = Release|Any CPU
-		{50B0924C-C5F1-477C-80D2-8DBBF6379E03}.Release|x86.ActiveCfg = Release|Any CPU
-		{50B0924C-C5F1-477C-80D2-8DBBF6379E03}.Release|x86.Build.0 = Release|Any CPU
 		{B283F898-7FEB-4EB9-A1D2-E84FA0230262}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B283F898-7FEB-4EB9-A1D2-E84FA0230262}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B283F898-7FEB-4EB9-A1D2-E84FA0230262}.Debug|ARM.ActiveCfg = Debug|Any CPU
@@ -361,7 +335,6 @@ Global
 		{0C9CBDD8-8ED0-4B16-8C1E-34C86FBECB9C} = {49D9F98D-2E51-4A92-896E-E24CFD25BF1E}
 		{E78BD5DD-CFB2-4BD5-8AAA-D41921D6D3BF} = {49D9F98D-2E51-4A92-896E-E24CFD25BF1E}
 		{F696BE83-7638-4775-99AA-C6AB488B692C} = {E78BD5DD-CFB2-4BD5-8AAA-D41921D6D3BF}
-		{50B0924C-C5F1-477C-80D2-8DBBF6379E03} = {0C9CBDD8-8ED0-4B16-8C1E-34C86FBECB9C}
 		{B283F898-7FEB-4EB9-A1D2-E84FA0230262} = {0C9CBDD8-8ED0-4B16-8C1E-34C86FBECB9C}
 		{5C22A0B0-BDB2-40D9-AC08-48DCE04353CC} = {0C9CBDD8-8ED0-4B16-8C1E-34C86FBECB9C}
 		{63CA694E-2CD1-45C9-861A-4EACC4ED89B2} = {0C9CBDD8-8ED0-4B16-8C1E-34C86FBECB9C}
@@ -381,7 +354,6 @@ Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Catel.Examples.Models.Shared\Catel.Examples.Models.Shared.projitems*{04b03b0b-085a-4e67-9650-390c01bb7bd9}*SharedItemsImports = 5
 		Catel.Examples.Models.Shared\Catel.Examples.Models.Shared.projitems*{213e5782-0652-4513-96a3-fed24e2350e2}*SharedItemsImports = 5
-		Catel.Examples.Models.Shared\Catel.Examples.Models.Shared.projitems*{50b0924c-c5f1-477c-80d2-8dbbf6379e03}*SharedItemsImports = 5
 		Catel.Examples.Models.Shared\Catel.Examples.Models.Shared.projitems*{55aefd24-323f-4068-a139-bb9a41ef5c4c}*SharedItemsImports = 5
 		Catel.Examples.Models.Shared\Catel.Examples.Models.Shared.projitems*{5c22a0b0-bdb2-40d9-ac08-48dce04353cc}*SharedItemsImports = 5
 		Catel.Examples.Models.Shared\Catel.Examples.Models.Shared.projitems*{5c836be8-fd5a-4395-89c7-56aec4b42672}*SharedItemsImports = 5
