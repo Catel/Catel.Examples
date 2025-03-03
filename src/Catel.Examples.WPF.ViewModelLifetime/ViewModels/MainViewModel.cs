@@ -5,7 +5,6 @@
     using System.Threading.Tasks;
     using System.Windows.Threading;
     using Catel.Services;
-    using Data;
     using MVVM;
     using Services;
 
@@ -60,7 +59,9 @@
         private async Task OnAddTabExecuteAsync()
         {
             var vm = new CreateTabWindowViewModel();
-            if (await _uiVisualizerService.ShowDialogAsync(vm) ?? false)
+            var result = await _uiVisualizerService.ShowDialogAsync(vm);
+
+            if (result.DialogResult ?? false)
             {
                 _tabService.AddTab(vm.CloseWhenUnloaded);
             }

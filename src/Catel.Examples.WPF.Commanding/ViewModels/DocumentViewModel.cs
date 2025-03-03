@@ -1,7 +1,6 @@
 ﻿namespace Catel.Examples.Commanding.ViewModels
 {
     using System;
-    using Catel.Data;
     using Catel.MVVM;
 
     public class DocumentViewModel : ViewModelBase

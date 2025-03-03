@@ -1,6 +1,5 @@
 ﻿namespace Catel.Examples.Validation.ViewModels
 {
-    using Data;
     using Models;
     using MVVM;
 

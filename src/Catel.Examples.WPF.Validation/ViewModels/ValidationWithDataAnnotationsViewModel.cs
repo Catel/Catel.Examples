@@ -1,7 +1,6 @@
 ﻿namespace Catel.Examples.Validation.ViewModels
 {
     using System.ComponentModel.DataAnnotations;
-    using Data;
     using Models;
     using MVVM;
 

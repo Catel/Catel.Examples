@@ -17,7 +17,7 @@
             _messageService = messageService;
         }
 
-        protected override async Task ExecuteAsync(object parameter)
+        public override async Task ExecuteAsync(object parameter)
         {
             await _messageService.ShowAsync("Global action from command in command container");
         }
@@ -35,7 +35,7 @@
             _messageService = messageService;
         }
 
-        protected override async Task ExecuteAsync(object parameter)
+        public override async Task ExecuteAsync(object parameter)
         {
             await _messageService.ShowAsync("Test1 from command in command container");
         }
@@ -53,7 +53,7 @@
             _messageService = messageService;
         }
 
-        protected override async Task ExecuteAsync(object parameter)
+        public override async Task ExecuteAsync(object parameter)
         {
             await _messageService.ShowAsync("Test2 from command in command container");
         }

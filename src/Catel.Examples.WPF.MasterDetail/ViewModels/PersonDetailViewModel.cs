@@ -1,7 +1,6 @@
 ﻿namespace Catel.Examples.MasterDetail.ViewModels
 {
     using System;
-    using Data;
     using Models;
     using MVVM;
 

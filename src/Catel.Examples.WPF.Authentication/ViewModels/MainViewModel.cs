@@ -4,7 +4,6 @@
     using System.Collections.ObjectModel;
     using System.ComponentModel.DataAnnotations;
     using System.Threading.Tasks;
-    using Data;
     using MVVM;
     using Services;
 

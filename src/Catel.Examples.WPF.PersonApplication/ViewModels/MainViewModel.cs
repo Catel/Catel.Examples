@@ -3,7 +3,6 @@
     using System;
     using System.Collections.ObjectModel;
     using System.Threading.Tasks;
-    using Data;
     using Models;
     using MVVM;
     using Properties;
@@ -44,7 +43,8 @@
         {
             var person = new Person();
 
-            if (await _uiVisualizerService.ShowDialogAsync<PersonViewModel>(person) ?? false)
+            var result = await _uiVisualizerService.ShowDialogAsync<PersonViewModel>(person);
+            if (result.DialogResult  ?? false)
             {
                 PersonCollection.Add(person);
             }

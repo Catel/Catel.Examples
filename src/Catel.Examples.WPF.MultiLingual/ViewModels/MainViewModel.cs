@@ -12,22 +12,19 @@
 
     public class MainViewModel : ViewModelBase
     {
-        #region Fields
         private readonly ILanguageService _languageService;
-        private readonly IPleaseWaitService _pleaseWaitService;
+        private readonly IBusyIndicatorService _busyIndicatorService;
         private readonly IUIVisualizerService _uiVisualizerService;
-        #endregion
 
-        #region Constructors
-        public MainViewModel(IUIVisualizerService uiVisualizerService, IPleaseWaitService pleaseWaitService,
+        public MainViewModel(IUIVisualizerService uiVisualizerService, IBusyIndicatorService busyIndicatorService,
             ILanguageService languageService)
         {
             ArgumentNullException.ThrowIfNull(uiVisualizerService);
-            ArgumentNullException.ThrowIfNull(pleaseWaitService);
+            ArgumentNullException.ThrowIfNull(busyIndicatorService);
             ArgumentNullException.ThrowIfNull(languageService);
 
             _uiVisualizerService = uiVisualizerService;
-            _pleaseWaitService = pleaseWaitService;
+            _busyIndicatorService = busyIndicatorService;
             _languageService = languageService;
 
             AvailableLanguages = new ObservableCollection<Language>();
@@ -49,7 +46,6 @@
 
             Title = "MultiLingual example";
         }
-        #endregion
 
         #region Properties
         public ObservableCollection<Language> AvailableLanguages { get; set; }

@@ -2,8 +2,6 @@
 {
     using System;
     using System.Threading.Tasks;
-    using Data;
-    using IoC;
     using MVVM;
     using Services;
 
