@@ -1,12 +1,6 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="DemoWindowViewModel.cs" company="Catel development team">
-//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
-
-
-namespace Catel.Examples.NestedUserControls.ViewModels
+﻿namespace Catel.Examples.NestedUserControls.ViewModels
 {
+    using System;
     using System.Threading.Tasks;
     using Data;
     using Models;
@@ -22,7 +16,7 @@ namespace Catel.Examples.NestedUserControls.ViewModels
         #region Constructors
         public DemoWindowViewModel(IMessageService messageService)
         {
-            Argument.IsNotNull(() => messageService);
+            ArgumentNullException.ThrowIfNull(messageService);
 
             _messageService = messageService;
 

@@ -1,12 +1,6 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="BehaviorsWindowViewModel.cs" company="Catel development team">
-//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
-
-
-namespace Catel.Examples.Behaviors.ViewModels
+﻿namespace Catel.Examples.Behaviors.ViewModels
 {
+    using System;
     using System.Threading.Tasks;
     using Data;
     using MVVM;
@@ -21,7 +15,7 @@ namespace Catel.Examples.Behaviors.ViewModels
         #region Constructors
         public MainViewModel(IMessageService messageService)
         {
-            Argument.IsNotNull(() => messageService);
+            ArgumentNullException.ThrowIfNull(messageService);
 
             _messageService = messageService;
 

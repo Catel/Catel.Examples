@@ -1,12 +1,4 @@
-﻿
-// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="MainWindowViewModel.cs" company="Catel development team">
-//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
-
-
-namespace Catel.Examples.Authentication.ViewModels
+﻿namespace Catel.Examples.Authentication.ViewModels
 {
     using System.Collections.ObjectModel;
     using System.ComponentModel.DataAnnotations;
@@ -25,8 +17,8 @@ namespace Catel.Examples.Authentication.ViewModels
         #region Constructors
         public MainViewModel(IUIVisualizerService uiVisualizerService, IAuthenticationProvider authenticationProvider)
         {
-            Argument.IsNotNull(() => uiVisualizerService);
-            Argument.IsNotNull(() => authenticationProvider);
+            ArgumentNullException.ThrowIfNull(uiVisualizerService);
+            ArgumentNullException.ThrowIfNull(authenticationProvider);
 
             _uiVisualizerService = uiVisualizerService;
             _authenticationProvider = authenticationProvider;

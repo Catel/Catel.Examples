@@ -1,11 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="MainViewModel.cs" company="Catel development team">
-//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
-
-
-namespace Catel.Examples.MultiLingual.ViewModels
+﻿namespace Catel.Examples.MultiLingual.ViewModels
 {
     using System.Collections.ObjectModel;
     using System.Globalization;
@@ -15,6 +8,7 @@ namespace Catel.Examples.MultiLingual.ViewModels
     using Models;
     using MVVM;
     using System.Threading.Tasks;
+    using System;
 
     public class MainViewModel : ViewModelBase
     {
@@ -28,9 +22,9 @@ namespace Catel.Examples.MultiLingual.ViewModels
         public MainViewModel(IUIVisualizerService uiVisualizerService, IPleaseWaitService pleaseWaitService,
             ILanguageService languageService)
         {
-            Argument.IsNotNull(() => uiVisualizerService);
-            Argument.IsNotNull(() => pleaseWaitService);
-            Argument.IsNotNull(() => languageService);
+            ArgumentNullException.ThrowIfNull(uiVisualizerService);
+            ArgumentNullException.ThrowIfNull(pleaseWaitService);
+            ArgumentNullException.ThrowIfNull(languageService);
 
             _uiVisualizerService = uiVisualizerService;
             _pleaseWaitService = pleaseWaitService;
@@ -75,7 +69,7 @@ namespace Catel.Examples.MultiLingual.ViewModels
         #region Methods
         private void OnSelectedLanguageChanged()
         {
-            if (SelectedLanguage != null)
+            if (SelectedLanguage is not null)
             {
                 var newCulture = new CultureInfo(SelectedLanguage.Code);
 

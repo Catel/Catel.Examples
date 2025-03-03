@@ -1,11 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="GenderToIsSelectedConverter.cs" company="Catel development team">
-//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
-
-
-namespace Catel.Examples.MasterDetail.Converters
+﻿namespace Catel.Examples.MasterDetail.Converters
 {
     using System;
     using System.Windows.Data;

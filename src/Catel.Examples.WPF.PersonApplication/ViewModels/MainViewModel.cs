@@ -1,12 +1,6 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="MainViewModel.cs" company="Catel development team">
-//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
-
-
-namespace Catel.Examples.PersonApplication.ViewModels
+﻿namespace Catel.Examples.PersonApplication.ViewModels
 {
+    using System;
     using System.Collections.ObjectModel;
     using System.Threading.Tasks;
     using Data;
@@ -18,16 +12,13 @@ namespace Catel.Examples.PersonApplication.ViewModels
 
     public class MainWindowViewModel : ViewModelBase
     {
-        #region Fields
         private readonly IMessageService _messageService;
         private readonly IUIVisualizerService _uiVisualizerService;
-        #endregion
 
-        #region Constructors
         public MainWindowViewModel(IUIVisualizerService uiVisualizerService, IMessageService messageService)
         {
-            Argument.IsNotNull(() => uiVisualizerService);
-            Argument.IsNotNull(() => messageService);
+            ArgumentNullException.ThrowIfNull(uiVisualizerService);
+            ArgumentNullException.ThrowIfNull(messageService);
 
             _uiVisualizerService = uiVisualizerService;
             _messageService = messageService;
@@ -38,19 +29,15 @@ namespace Catel.Examples.PersonApplication.ViewModels
 
             PersonCollection = new ObservableCollection<Person>();
             PersonCollection.Add(new Person {Gender = Gender.Male, FirstName = "Geert", MiddleName = "van", LastName = "Horrik"});
-            PersonCollection.Add(new Person {Gender = Gender.Male, FirstName = "Fred", MiddleName = "", LastName = "Retteket"});
+            PersonCollection.Add(new Person {Gender = Gender.Male, FirstName = "Fred", MiddleName = string.Empty, LastName = "Retteket"});
 
             Title = Resources.MainWindowTitle;
         }
-        #endregion
 
-        #region Properties
         public ObservableCollection<Person> PersonCollection { get; private set; }
 
         public Person SelectedPerson { get; set; }
-        #endregion
 
-        #region Commands
         public TaskCommand Add { get; private set; }
 
         private async Task OnAddExecuteAsync()
@@ -67,7 +54,7 @@ namespace Catel.Examples.PersonApplication.ViewModels
 
         private bool OnEditCanExecute()
         {
-            return (SelectedPerson != null);
+            return (SelectedPerson is not null);
         }
 
         private async Task OnEditExecuteAsync()
@@ -79,7 +66,7 @@ namespace Catel.Examples.PersonApplication.ViewModels
 
         private bool OnRemoveCanExecute()
         {
-            return (SelectedPerson != null);
+            return (SelectedPerson is not null);
         }
 
         private async Task OnRemoveExecuteAsync()
@@ -89,6 +76,5 @@ namespace Catel.Examples.PersonApplication.ViewModels
                 PersonCollection.Remove(SelectedPerson);
             }
         }
-        #endregion
     }
 }

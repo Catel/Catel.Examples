@@ -1,11 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="AuthenticationProvider.cs" company="Catel development team">
-//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
-
-
-namespace Catel.Examples.Authentication
+﻿namespace Catel.Examples.Authentication
 {
     using System.Windows;
     using MVVM;
@@ -30,7 +23,7 @@ namespace Catel.Examples.Authentication
         public bool HasAccessToUIElement(FrameworkElement element, object tag, object authenticationTag)
         {
             var authenticationTagAsString = authenticationTag as string;
-            if (authenticationTagAsString != null)
+            if (authenticationTagAsString is not null)
             {
                 if (authenticationTagAsString.EqualsIgnoreCase(Role))
                 {

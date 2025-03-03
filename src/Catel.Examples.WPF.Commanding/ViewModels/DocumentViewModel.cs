@@ -1,11 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="DocumentViewModel.cs" company="Catel development team">
-//   Copyright (c) 2008 - 2013 Catel development team. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
-
-
-namespace Catel.Examples.Commanding.ViewModels
+﻿namespace Catel.Examples.Commanding.ViewModels
 {
     using System;
     using Catel.Data;
@@ -15,7 +8,7 @@ namespace Catel.Examples.Commanding.ViewModels
     {
         public DocumentViewModel(ICommandManager commandManager)
         {
-            Argument.IsNotNull(() => commandManager);
+            ArgumentNullException.ThrowIfNull(commandManager);
 
             ExampleCommand = new Command(OnExampleCommandExecute);
 

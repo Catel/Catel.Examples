@@ -1,11 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ValidationWithDataAnnotationsViewModel.cs" company="Catel development team">
-//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
-
-
-namespace Catel.Examples.Validation.ViewModels
+﻿namespace Catel.Examples.Validation.ViewModels
 {
     using System.ComponentModel.DataAnnotations;
     using Data;
@@ -17,7 +10,7 @@ namespace Catel.Examples.Validation.ViewModels
         #region Constructors
         public ValidationWithDataAnnotationsViewModel(ModelWithoutValidation person = null, bool deferValidationUntilFirstSave = true)
         {
-            if (person == null)
+            if (person is null)
             {
                 person = new ModelWithoutValidation();
             }

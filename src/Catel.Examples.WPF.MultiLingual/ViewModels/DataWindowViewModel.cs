@@ -1,12 +1,6 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="DataWindowViewModel.cs" company="Catel development team">
-//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
-
-
-namespace Catel.Examples.MultiLingual.ViewModels
+﻿namespace Catel.Examples.MultiLingual.ViewModels
 {
+    using System;
     using Models;
     using MVVM;
 
@@ -15,7 +9,7 @@ namespace Catel.Examples.MultiLingual.ViewModels
         #region Constructors
         public DataWindowViewModel(Language language)
         {
-            Argument.IsNotNull("language", language);
+            ArgumentNullException.ThrowIfNull(language);
 
             Language = language;
 

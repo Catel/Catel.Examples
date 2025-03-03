@@ -1,11 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="MainViewModel.cs" company="Catel development team">
-//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
-
-
-namespace Catel.Examples.ViewModelLifetime.ViewModels
+﻿namespace Catel.Examples.ViewModelLifetime.ViewModels
 {
     using System;
     using System.Linq;
@@ -28,8 +21,8 @@ namespace Catel.Examples.ViewModelLifetime.ViewModels
         #region Constructors
         public MainViewModel(IUIVisualizerService uiVisualizerService, ITabService tabService)
         {
-            Argument.IsNotNull(() => uiVisualizerService);
-            Argument.IsNotNull(() => tabService);
+            ArgumentNullException.ThrowIfNull(uiVisualizerService);
+            ArgumentNullException.ThrowIfNull(tabService);
 
             _uiVisualizerService = uiVisualizerService;
             _tabService = tabService;

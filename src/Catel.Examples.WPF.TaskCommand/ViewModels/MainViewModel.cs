@@ -1,11 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="MainViewModel.cs" company="Catel development team">
-//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
-
-
-namespace Catel.Examples.TaskCommand.ViewModels
+﻿namespace Catel.Examples.TaskCommand.ViewModels
 {
     using System;
     using System.Diagnostics;
@@ -19,7 +12,7 @@ namespace Catel.Examples.TaskCommand.ViewModels
         #region Constructors
         public MainViewModel()
         {
-            LoadSomethingCommand = new ProgressiveTaskCommand<PercentProgress>(LoadSomething, reportProgress: ReportLoadSomethingProgress);
+            LoadSomethingCommand = new ProgressiveTaskCommand<PercentProgress>(LoadSomethingAsync, reportProgress: ReportLoadSomethingProgress);
 
             Title = "Task command example";
         }
@@ -34,7 +27,7 @@ namespace Catel.Examples.TaskCommand.ViewModels
         #region Commands
         public ProgressiveTaskCommand<PercentProgress> LoadSomethingCommand { get; private set; }
 
-        private static async Task LoadSomething(CancellationToken cancellationToken, IProgress<PercentProgress> progress)
+        private static async Task LoadSomethingAsync(CancellationToken cancellationToken, IProgress<PercentProgress> progress)
         {
             var sw = Stopwatch.StartNew();
             var isCanceled = false;

@@ -1,11 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="Commands.cs" company="Catel development team">
-//   Copyright (c) 2008 - 2013 Catel development team. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
-
-
-namespace Catel.Examples.Commanding
+﻿namespace Catel.Examples.Commanding
 {
     using System.Windows.Input;
     using InputGesture = Windows.Input.InputGesture;

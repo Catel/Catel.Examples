@@ -1,12 +1,6 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="CommandsGlobalActionCommandContainer.cs" company="Catel development team">
-//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
-
-
-namespace Catel.Examples.Commanding.CommandContainers
+﻿namespace Catel.Examples.Commanding.CommandContainers
 {
+    using System;
     using System.Threading.Tasks;
     using MVVM;
     using Services;
@@ -18,7 +12,7 @@ namespace Catel.Examples.Commanding.CommandContainers
         public GlobalActionCommandContainer(ICommandManager commandManager, IMessageService messageService) 
             : base(Commands.GlobalAction, commandManager)
         {
-            Argument.IsNotNull(() => messageService);
+            ArgumentNullException.ThrowIfNull(messageService);
 
             _messageService = messageService;
         }
@@ -36,7 +30,7 @@ namespace Catel.Examples.Commanding.CommandContainers
         public Test1CommandContainer(ICommandManager commandManager, IMessageService messageService) 
             : base(Commands.Test1, commandManager)
         {
-            Argument.IsNotNull(() => messageService);
+            ArgumentNullException.ThrowIfNull(messageService);
 
             _messageService = messageService;
         }
@@ -54,7 +48,7 @@ namespace Catel.Examples.Commanding.CommandContainers
         public Test2CommandContainer(ICommandManager commandManager, IMessageService messageService) 
             : base(Commands.Test2, commandManager)
         {
-            Argument.IsNotNull(() => messageService);
+            ArgumentNullException.ThrowIfNull(messageService);
 
             _messageService = messageService;
         }

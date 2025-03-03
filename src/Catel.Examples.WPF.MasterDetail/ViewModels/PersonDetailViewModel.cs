@@ -1,12 +1,6 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="PersonDetailViewModel.cs" company="Catel development team">
-//   Copyright (c) 2008 - 2017 Catel development team. All rights reserved.
-// </copyright>
-// --------------------------------------------------------------------------------------------------------------------
-
-
-namespace Catel.Examples.MasterDetail.ViewModels
+﻿namespace Catel.Examples.MasterDetail.ViewModels
 {
+    using System;
     using Data;
     using Models;
     using MVVM;
@@ -16,7 +10,7 @@ namespace Catel.Examples.MasterDetail.ViewModels
         #region Constructors
         public PersonDetailViewModel(Person person)
         {
-            Argument.IsNotNull(() => person);
+            ArgumentNullException.ThrowIfNull(person);
 
             Person = person;
 
