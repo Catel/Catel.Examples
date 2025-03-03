@@ -37,7 +37,7 @@
                     </TextBlock>
                 </Label>
 
-                <ListBox ItemsSource="1234" SelectedItem="{Binding DelayBindingUpdateValue}">
+                <ListBox SelectedItem="{Binding DelayBindingUpdateValue}">
                     <xamlbehaviors:Interaction.Behaviors>
                         <catel:DelayBindingUpdate DependencyPropertyName="SelectedItem" UpdateDelay="1000" />
                     </xamlbehaviors:Interaction.Behaviors>
@@ -116,7 +116,7 @@
                     </TextBlock>
                 </Label>
 
-                <ListBox ItemsSource="1234">
+                <ListBox>
                     <xamlbehaviors:Interaction.Behaviors>
                         <catel:KeyPressToCommand Command="{Binding KeyPressToCommandExample}" Key="Back" Modifiers="Control" />
                     </xamlbehaviors:Interaction.Behaviors>
@@ -136,7 +136,7 @@
                     </TextBlock>
                 </Label>
 
-                <ListBox ItemsSource="1234" Visibility="{Binding ElementName=mouseInfo, Path=IsMouseOver, Converter={StaticResource BooleanToCollapsingVisibilityConverter}}" />
+                <ListBox Visibility="{Binding ElementName=mouseInfo, Path=IsMouseOver, Converter={StaticResource BooleanToCollapsingVisibilityConverter}}" />
             </StackPanel>
         </GroupBox>
 

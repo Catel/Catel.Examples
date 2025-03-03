@@ -1,5 +1,6 @@
 ﻿namespace Catel.Examples.Authentication.ViewModels
 {
+    using System;
     using System.Collections.ObjectModel;
     using System.ComponentModel.DataAnnotations;
     using System.Threading.Tasks;
