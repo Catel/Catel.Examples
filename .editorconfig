@@ -92,6 +92,12 @@ dotnet_style_require_accessibility_modifiers = always:warning
 dotnet_separate_import_directive_groups = false
 
 #---------------------------------------------------------------------------------------
+# Usings inside the namespace
+#---------------------------------------------------------------------------------------
+
+csharp_using_directive_placement = inside_namespace:error
+
+#---------------------------------------------------------------------------------------
 # Avoid "this." and "Me." if not necessary
 #---------------------------------------------------------------------------------------
 
@@ -137,6 +143,10 @@ dotnet_naming_rule.private_static_fields_must_be_camel_cased_and_prefixed_with_s
 dotnet_naming_rule.private_static_fields_must_be_camel_cased_and_prefixed_with_s_underscore.style     = pascal_case_style
 dotnet_naming_rule.private_static_fields_must_be_camel_cased_and_prefixed_with_s_underscore.severity  = error
 
+dotnet_naming_rule.protected_instance_fields_must_be_camel_cased_and_prefixed_with_underscore.symbols   = protected_field_symbols
+dotnet_naming_rule.protected_instance_fields_must_be_camel_cased_and_prefixed_with_underscore.style     = camel_case_and_prefix_with_underscore_style
+dotnet_naming_rule.protected_instance_fields_must_be_camel_cased_and_prefixed_with_underscore.severity  = error
+
 dotnet_naming_rule.private_instance_fields_must_be_camel_cased_and_prefixed_with_underscore.symbols   = private_field_symbols
 dotnet_naming_rule.private_instance_fields_must_be_camel_cased_and_prefixed_with_underscore.style     = camel_case_and_prefix_with_underscore_style
 dotnet_naming_rule.private_instance_fields_must_be_camel_cased_and_prefixed_with_underscore.severity  = error
@@ -165,6 +175,9 @@ dotnet_naming_symbols.private_static_field_symbols.applicable_accessibilities   
 dotnet_naming_symbols.private_field_symbols.applicable_kinds                                          = field
 dotnet_naming_symbols.private_field_symbols.applicable_accessibilities                                = private
 
+dotnet_naming_symbols.protected_field_symbols.applicable_kinds                                        = field
+dotnet_naming_symbols.protected_field_symbols.applicable_accessibilities                              = protected
+
 #---------------------------------------------------------------------------------------
 # Styles
 #---------------------------------------------------------------------------------------
@@ -184,7 +197,7 @@ dotnet_naming_style.pascal_case_and_prefix_with_I_style.capitalization          
 
 
 #=======================================================================================
-# CSharp code style settings:
+# CSharp code style settings
 #=======================================================================================
 
 [*.cs]
@@ -230,6 +243,7 @@ dotnet_style_prefer_is_null_check_over_reference_equality_method = true:suggesti
 dotnet_style_prefer_conditional_expression_over_return = false
 dotnet_style_prefer_conditional_expression_over_assignment = false
 dotnet_style_prefer_auto_properties = false
+dotnet_style_require_accessibility_modifiers = for_non_interface_members
 
 #---------------------------------------------------------------------------------------
 # Newline settings
