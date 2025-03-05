@@ -3,8 +3,11 @@
               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
               xmlns:catel="http://schemas.catelproject.com"
               xmlns:views="clr-namespace:Catel.Examples.Commanding.Views"
-              ShowInTaskbar="True" ResizeMode="CanResize" SizeToContent="Manual" 
-              WindowStartupLocation="Manual" WindowState="Maximized">
+              ShowInTaskbar="True"
+              ResizeMode="CanResize"
+              SizeToContent="Manual"
+              WindowStartupLocation="Manual"
+              WindowState="Maximized">
 
     <Grid x:Name="LayoutRoot">
         <Grid.RowDefinitions>
@@ -20,12 +23,16 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Row="0" Grid.ColumnSpan="4">
-            <Button Command="{catel:CommandManagerBinding Refresh}" Content="Refresh (VM command) (F5)" />
-            <Button Command="{catel:CommandManagerBinding GlobalAction}" Content="Global action (command container) (CTRL + G)" />
+        <StackPanel Grid.Row="0"
+                    Grid.ColumnSpan="4">
+            <Button Command="{catel:CommandManagerBinding Refresh}"
+                    Content="Refresh (VM command) (F5)" />
+            <Button Command="{catel:CommandManagerBinding GlobalAction}"
+                    Content="Global action (command container) (CTRL + G)" />
         </StackPanel>
 
-        <Label Grid.Row="1" Grid.ColumnSpan="4">
+        <Label Grid.Row="1"
+               Grid.ColumnSpan="4">
             <TextBlock TextWrapping="Wrap">
                 This example shows how commands on a ribbon can be registered in the ICommandManager of Catel. All views below of this explanation
                 can dynamically register to application-wide commands and are invoked automatically when the command is being executed.
@@ -38,10 +45,14 @@
             </TextBlock>
         </Label>
 
-        <views:DocumentView Grid.Row="2" Grid.Column="0" />
-        <views:DocumentView Grid.Row="2" Grid.Column="1" />
-        <views:DocumentView Grid.Row="2" Grid.Column="2" />
-        <views:DocumentView Grid.Row="2" Grid.Column="3" />
+        <views:DocumentView Grid.Row="2"
+                            Grid.Column="0" />
+        <views:DocumentView Grid.Row="2"
+                            Grid.Column="1" />
+        <views:DocumentView Grid.Row="2"
+                            Grid.Column="2" />
+        <views:DocumentView Grid.Row="2"
+                            Grid.Column="3" />
     </Grid>
-    
+
 </catel:Window>

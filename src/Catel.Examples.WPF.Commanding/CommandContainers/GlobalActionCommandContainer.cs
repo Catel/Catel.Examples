@@ -5,7 +5,7 @@
     using MVVM;
     using Services;
 
-    internal class GlobalActionCommandContainer : CommandContainerBase
+    public class GlobalActionCommandContainer : CommandContainerBase
     {
         private readonly IMessageService _messageService;
 
@@ -22,8 +22,8 @@
             await _messageService.ShowAsync("Global action from command in command container");
         }
     }
-    
-    internal class Test1CommandContainer : CommandContainerBase
+
+    public class Test1CommandContainer : CommandContainerBase
     {
         private readonly IMessageService _messageService;
 
@@ -40,8 +40,8 @@
             await _messageService.ShowAsync("Test1 from command in command container");
         }
     }
-    
-    internal class Test2CommandContainer : CommandContainerBase
+
+    public class Test2CommandContainer : CommandContainerBase
     {
         private readonly IMessageService _messageService;
 
