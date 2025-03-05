@@ -6,7 +6,6 @@
 
     public partial class App
     {
-        #region Methods
         protected override void OnStartup(StartupEventArgs e)
         {
             //Logging.LogManager.AddDebugListener();
@@ -29,6 +28,5 @@
 
             base.OnStartup(e);
         }
-        #endregion
     }
 }

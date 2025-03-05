@@ -4,12 +4,10 @@
 
     public partial class ExampleView
     {
-        #region Constructors
         public ExampleView()
             : base(DataWindowMode.Close)
         {
             InitializeComponent();
         }
-        #endregion
     }
 }

@@ -9,12 +9,9 @@
 
     public class MainViewModel : ViewModelBase
     {
-        #region Fields
         private readonly IAuthenticationProvider _authenticationProvider;
         private readonly IUIVisualizerService _uiVisualizerService;
-        #endregion
 
-        #region Constructors
         public MainViewModel(IUIVisualizerService uiVisualizerService, IAuthenticationProvider authenticationProvider)
         {
             ArgumentNullException.ThrowIfNull(uiVisualizerService);
@@ -29,16 +26,12 @@
 
             Title = "Authentication example";
         }
-        #endregion
 
-        #region Properties
         public ObservableCollection<string> RoleCollection { get; private set; }
 
         [Required]
         public string SelectedRole { get; set; }
-        #endregion
 
-        #region Commands
         public TaskCommand ShowView { get; private set; }
 
         private bool OnShowViewCanExecute()
@@ -50,14 +43,11 @@
         {
             await _uiVisualizerService.ShowDialogAsync<ExampleViewModel>();
         }
-        #endregion
 
-        #region Methods
         private void OnSelectedRoleChanged()
         {
             // Dirty cast, normally this would be done via clean interfaces
             ((AuthenticationProvider) _authenticationProvider).Role = SelectedRole;
         }
-        #endregion
     }
 }

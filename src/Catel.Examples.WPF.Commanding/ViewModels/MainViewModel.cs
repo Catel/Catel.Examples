@@ -4,11 +4,9 @@
 
     public class MainViewModel : ViewModelBase
     {
-        #region Constructors
         public MainViewModel()
         {
             Title = "Commanding example";
         }
-        #endregion
     }
 }

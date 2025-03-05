@@ -10,11 +10,8 @@
     /// </summary>
     public class AuthenticationProvider : IAuthenticationProvider
     {
-        #region Properties
         public string Role { get; set; }
-        #endregion
 
-        #region IAuthenticationProvider Members
         public bool CanCommandBeExecuted(ICatelCommand command, object commandParameter)
         {
             return true;
@@ -33,6 +30,5 @@
 
             return false;
         }
-        #endregion
     }
 }

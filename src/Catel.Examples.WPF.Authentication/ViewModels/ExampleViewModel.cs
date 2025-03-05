@@ -4,11 +4,9 @@
 
     public class ExampleViewModel : ViewModelBase
     {
-        #region Constructors
         public ExampleViewModel()
         {
             Title = "Authentication example";
         }
-        #endregion
     }
 }
