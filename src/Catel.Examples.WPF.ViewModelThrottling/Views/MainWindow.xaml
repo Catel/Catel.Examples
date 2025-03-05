@@ -1,4 +1,4 @@
-﻿<catel:Window x:Class="Catel.Examples.Views.ViewModelThrottling.MainWindow"
+﻿<catel:Window x:Class="Catel.Examples.ViewModelThrottling.Views.MainWindow"
               xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
               xmlns:catel="http://schemas.catelproject.com"
@@ -18,22 +18,41 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.ColumnSpan="2" TextWrapping="Wrap">
+        <TextBlock Grid.ColumnSpan="2"
+                   TextWrapping="Wrap">
             Throttling allows the customization of the number of change notifications which are being sent to the UI. 
             You can change the throttling rate which is the interval in which the property change notifications are being added.
         </TextBlock>
 
-        <TextBlock Grid.Row="1" Grid.Column="0" Text="Throttling rate: "/>
-        <Slider Grid.Row="1" Grid.Column="1" Value="{Binding Throttling}" Minimum="0" Maximum="2500" />
+        <TextBlock Grid.Row="1"
+                   Grid.Column="0"
+                   Text="Throttling rate: " />
+        <Slider Grid.Row="1"
+                Grid.Column="1"
+                Value="{Binding Throttling}"
+                Minimum="0"
+                Maximum="2500" />
 
-        <TextBlock Grid.Row="2" Grid.Column="0" Text="Throttling rate value: "/>
-        <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Throttling}"/>
+        <TextBlock Grid.Row="2"
+                   Grid.Column="0"
+                   Text="Throttling rate value: " />
+        <TextBlock Grid.Row="2"
+                   Grid.Column="1"
+                   Text="{Binding Throttling}" />
 
-        <TextBlock Grid.Row="3" Grid.Column="0" Text="Counter: "/>
-        <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding Counter}" />
+        <TextBlock Grid.Row="3"
+                   Grid.Column="0"
+                   Text="Counter: " />
+        <TextBlock Grid.Row="3"
+                   Grid.Column="1"
+                   Text="{Binding Counter}" />
 
-        <TextBlock Grid.Row="4" Grid.Column="0" Text="Frame rate: "/>
-        <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding FrameRate}" />
+        <TextBlock Grid.Row="4"
+                   Grid.Column="0"
+                   Text="Frame rate: " />
+        <TextBlock Grid.Row="4"
+                   Grid.Column="1"
+                   Text="{Binding FrameRate}" />
     </Grid>
-    
+
 </catel:Window>

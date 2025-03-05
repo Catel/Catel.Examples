@@ -1,12 +1,10 @@
-﻿namespace Catel.Examples.Views.ViewModelThrottling
+﻿namespace Catel.Examples.ViewModelThrottling.Views
 {
     public partial class MainWindow
     {
-        #region Constructors
         public MainWindow()
         {
             InitializeComponent();
         }
-        #endregion
     }
 }

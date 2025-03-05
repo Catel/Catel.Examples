@@ -8,28 +8,21 @@
 
     public class MainViewModel : ViewModelBase
     {
-        #region Fields
         private readonly DispatcherTimer _counterTimer = new DispatcherTimer();
         private readonly DispatcherTimer _frameRateTimer = new DispatcherTimer();
         private int _frameRateCounter;
-        #endregion
 
-        #region Constructors
         public MainViewModel()
         {
             Title = "View Model Throttling example";
         }
-        #endregion
 
-        #region Properties
         public int FrameRate { get; set; }
 
         public int Counter { get; set; }
 
         public int Throttling { get; set; }
-        #endregion
 
-        #region Methods
         private void OnThrottlingChanged()
         {
             ThrottlingRate = new TimeSpan(0, 0, 0, 0, Throttling);
@@ -70,6 +63,5 @@
         {
             Counter++;
         }
-        #endregion
     }
 }

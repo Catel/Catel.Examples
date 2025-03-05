@@ -1,10 +1,7 @@
-﻿using System.Windows;
-
-namespace Catel.Examples.WPF.ViewModelThrottling
+﻿namespace Catel.Examples.WPF.ViewModelThrottling
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
+    using System.Windows;
+
     public partial class App : Application
     {
     }
