@@ -2,11 +2,9 @@
 {
     public partial class PersonMasterView
     {
-        #region Constructors
         public PersonMasterView()
         {
             InitializeComponent();
         }
-        #endregion
     }
 }

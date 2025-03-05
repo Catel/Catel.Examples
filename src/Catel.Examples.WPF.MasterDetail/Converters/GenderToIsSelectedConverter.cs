@@ -10,7 +10,6 @@
     [ValueConversion(typeof(Gender), typeof(bool), ParameterType = typeof(Gender))]
     public class GenderToIsSelectedConverter : IValueConverter
     {
-        #region IValueConverter Members
         /// <summary>
         /// Converts a value.
         /// </summary>
@@ -69,6 +68,5 @@
             // Return value
             return (isChecked) ? genderRepresented : Binding.DoNothing;
         }
-        #endregion
     }
 }

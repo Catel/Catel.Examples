@@ -9,20 +9,16 @@
 
     public class PersonMasterViewModel : ViewModelBase
     {
-        #region Constructors
         public PersonMasterViewModel()
         {
             Title = "Persons";
         }
-        #endregion
 
-        #region Properties
         public ObservableCollection<Person> Persons { get; private set; }
 
         public Person SelectedPerson { get; set; }
-        #endregion
 
-        #region Methods
+
         protected override async Task InitializeAsync()
         {
             await base.InitializeAsync();
@@ -44,8 +40,19 @@
 
             // Note: normally, you would load from a service, but here we will just fill the collection manually
             var newPersons = new List<Person>();
-            newPersons.Add(new Person() {FirstName = "John", LastName = "Doe", Gender = Gender.Male});
-            newPersons.Add(new Person() {FirstName = "Geert", MiddleName = "van", LastName = "Horrik", Gender = Gender.Male});
+            newPersons.Add(new Person()
+            {
+                FirstName = "John",
+                LastName = "Doe",
+                Gender = Gender.Male
+            });
+            newPersons.Add(new Person()
+            {
+                FirstName = "Geert",
+                MiddleName = "van",
+                LastName = "Horrik",
+                Gender = Gender.Male
+            });
 
             Persons.ReplaceRange(newPersons);
 
@@ -54,6 +61,5 @@
                 SelectedPerson = Persons[0];
             }
         }
-        #endregion
     }
 }
