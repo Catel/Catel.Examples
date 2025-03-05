@@ -9,22 +9,17 @@
 
     public class MainViewModel : ViewModelBase
     {
-        #region Constructors
         public MainViewModel()
         {
             LoadSomethingCommand = new ProgressiveTaskCommand<PercentProgress>(LoadSomethingAsync, reportProgress: ReportLoadSomethingProgress);
 
             Title = "Task command example";
         }
-        #endregion
 
-        #region Properties
         public int LoadPercent { get; set; }
 
         public string StatusText { get; set; }
-        #endregion
 
-        #region Commands
         public ProgressiveTaskCommand<PercentProgress> LoadSomethingCommand { get; private set; }
 
         private static async Task LoadSomethingAsync(CancellationToken cancellationToken, IProgress<PercentProgress> progress)
@@ -71,6 +66,5 @@
             LoadPercent = progress.Percent;
             StatusText = progress.Status;
         }
-        #endregion
     }
 }
