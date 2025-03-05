@@ -8,7 +8,8 @@
         <catel:BooleanToCollapsingVisibilityConverter x:Key="BooleanToCollapsingVisibilityConverter" />
 
         <Style TargetType="GroupBox">
-            <Setter Property="Margin" Value="6" />
+            <Setter Property="Margin"
+                    Value="6" />
         </Style>
     </catel:DataWindow.Resources>
 
@@ -29,7 +30,9 @@
             <ColumnDefinition Width="400" />
         </Grid.ColumnDefinitions>
 
-        <GroupBox Grid.Row="0" Grid.Column="0" Header="DelayBindingUpdate">
+        <GroupBox Grid.Row="0"
+                  Grid.Column="0"
+                  Header="DelayBindingUpdate">
             <StackPanel Orientation="Vertical">
                 <Label>
                     <TextBlock TextWrapping="Wrap">
@@ -37,15 +40,19 @@
                     </TextBlock>
                 </Label>
 
-                <ListBox SelectedItem="{Binding DelayBindingUpdateValue}">
+                <ListBox ItemsSource="{Binding ListItems}"
+                         SelectedItem="{Binding DelayBindingUpdateValue}">
                     <xamlbehaviors:Interaction.Behaviors>
-                        <catel:DelayBindingUpdate DependencyPropertyName="SelectedItem" UpdateDelay="1000" />
+                        <catel:DelayBindingUpdate DependencyPropertyName="SelectedItem"
+                                                  UpdateDelay="1000" />
                     </xamlbehaviors:Interaction.Behaviors>
                 </ListBox>
             </StackPanel>
         </GroupBox>
 
-        <GroupBox Grid.Row="0" Grid.Column="1" Header="DoubleClickToCommand">
+        <GroupBox Grid.Row="0"
+                  Grid.Column="1"
+                  Header="DoubleClickToCommand">
             <StackPanel Orientation="Vertical">
                 <Label>
                     <TextBlock TextWrapping="Wrap">
@@ -53,8 +60,11 @@
                     </TextBlock>
                 </Label>
 
-                <Image Source="/Resources/Images/catel.png" Width="32" Height="32"
-                       HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image Source="/Catel.Examples.WPF.Behaviors/Resources/Images/catel.png"
+                       Width="32"
+                       Height="32"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center">
                     <xamlbehaviors:Interaction.Behaviors>
                         <catel:DoubleClickToCommand Command="{Binding DoubleClickToCommandExample}" />
                     </xamlbehaviors:Interaction.Behaviors>
@@ -62,7 +72,9 @@
             </StackPanel>
         </GroupBox>
 
-        <GroupBox Grid.Row="1" Grid.Column="0" Header="EventToCommand">
+        <GroupBox Grid.Row="1"
+                  Grid.Column="0"
+                  Header="EventToCommand">
             <StackPanel Orientation="Vertical">
                 <Label>
                     <TextBlock TextWrapping="Wrap">
@@ -73,14 +85,17 @@
                 <Calendar>
                     <xamlbehaviors:Interaction.Triggers>
                         <xamlbehaviors:EventTrigger EventName="LostFocus">
-                            <catel:EventToCommand Command="{Binding EventToCommandForLostFocus}" DisableAssociatedObjectOnCannotExecute="False" />
+                            <catel:EventToCommand Command="{Binding EventToCommandForLostFocus}"
+                                                  DisableAssociatedObjectOnCannotExecute="False" />
                         </xamlbehaviors:EventTrigger>
                     </xamlbehaviors:Interaction.Triggers>
                 </Calendar>
             </StackPanel>
         </GroupBox>
 
-        <GroupBox Grid.Row="1" Grid.Column="1" Header="Focus">
+        <GroupBox Grid.Row="1"
+                  Grid.Column="1"
+                  Header="Focus">
             <StackPanel Orientation="Vertical">
                 <Label>
                     <TextBlock TextWrapping="Wrap">
@@ -94,21 +109,28 @@
                     </xamlbehaviors:Interaction.Behaviors>
                 </TextBox>
 
-                <TextBox Text="Focus on event, on MouseEnter of this TextBox" x:Name="mouseEnterTextBox">
+                <TextBox Text="Focus on event, on MouseEnter of this TextBox"
+                         x:Name="mouseEnterTextBox">
                     <xamlbehaviors:Interaction.Behaviors>
-                        <catel:Focus FocusMoment="Event" EventName="MouseEnter" Source="{Binding ElementName=mouseEnterTextBox}" />
+                        <catel:Focus FocusMoment="Event"
+                                     EventName="MouseEnter"
+                                     Source="{Binding ElementName=mouseEnterTextBox}" />
                     </xamlbehaviors:Interaction.Behaviors>
                 </TextBox>
 
                 <TextBox Text="Focus on property changed, when ListBox value has changed">
                     <xamlbehaviors:Interaction.Behaviors>
-                        <catel:Focus FocusMoment="PropertyChanged" PropertyName="DelayBindingUpdateValue" Source="{Binding }" />
+                        <catel:Focus FocusMoment="PropertyChanged"
+                                     PropertyName="DelayBindingUpdateValue"
+                                     Source="{Binding }" />
                     </xamlbehaviors:Interaction.Behaviors>
                 </TextBox>
             </StackPanel>
         </GroupBox>
 
-        <GroupBox Grid.Row="2" Grid.Column="0" Header="KeyPressToCommand">
+        <GroupBox Grid.Row="2"
+                  Grid.Column="0"
+                  Header="KeyPressToCommand">
             <StackPanel Orientation="Vertical">
                 <Label>
                     <TextBlock TextWrapping="Wrap">
@@ -116,15 +138,19 @@
                     </TextBlock>
                 </Label>
 
-                <ListBox>
+                <ListBox ItemsSource="{Binding ListItems}">
                     <xamlbehaviors:Interaction.Behaviors>
-                        <catel:KeyPressToCommand Command="{Binding KeyPressToCommandExample}" Key="Back" Modifiers="Control" />
+                        <catel:KeyPressToCommand Command="{Binding KeyPressToCommandExample}"
+                                                 Key="Back"
+                                                 Modifiers="Control" />
                     </xamlbehaviors:Interaction.Behaviors>
                 </ListBox>
             </StackPanel>
         </GroupBox>
 
-        <GroupBox Grid.Row="2" Grid.Column="1" Header="MouseInfo">
+        <GroupBox Grid.Row="2"
+                  Grid.Column="1"
+                  Header="MouseInfo">
             <StackPanel Orientation="Vertical">
                 <Label>
                     <TextBlock TextWrapping="Wrap">
@@ -136,11 +162,14 @@
                     </TextBlock>
                 </Label>
 
-                <ListBox Visibility="{Binding ElementName=mouseInfo, Path=IsMouseOver, Converter={StaticResource BooleanToCollapsingVisibilityConverter}}" />
+                <ListBox ItemsSource="{Binding ListItems}"
+                         Visibility="{Binding ElementName=mouseInfo, Path=IsMouseOver, Converter={StaticResource BooleanToCollapsingVisibilityConverter}}" />
             </StackPanel>
         </GroupBox>
 
-        <GroupBox Grid.Row="3" Grid.Column="0" Header="NumericTextBox">
+        <GroupBox Grid.Row="3"
+                  Grid.Column="0"
+                  Header="NumericTextBox">
             <StackPanel Orientation="Vertical">
                 <Label>
                     <TextBlock TextWrapping="Wrap">
@@ -160,7 +189,9 @@
             </StackPanel>
         </GroupBox>
 
-        <GroupBox Grid.Row="3" Grid.Column="1" Header="SelectTextOnFocus">
+        <GroupBox Grid.Row="3"
+                  Grid.Column="1"
+                  Header="SelectTextOnFocus">
             <StackPanel Orientation="Vertical">
                 <Label>
                     <TextBlock TextWrapping="Wrap">
@@ -176,7 +207,9 @@
             </StackPanel>
         </GroupBox>
 
-        <GroupBox Grid.Row="4" Grid.Column="1" Header="UpdateBindingOnTextChanged">
+        <GroupBox Grid.Row="4"
+                  Grid.Column="1"
+                  Header="UpdateBindingOnTextChanged">
             <StackPanel Orientation="Vertical">
                 <Label>
                     <TextBlock TextWrapping="Wrap">

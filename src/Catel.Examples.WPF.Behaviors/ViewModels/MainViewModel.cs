@@ -1,17 +1,15 @@
 ﻿namespace Catel.Examples.Behaviors.ViewModels
 {
     using System;
+    using System.Collections.Generic;
     using System.Threading.Tasks;
     using MVVM;
     using Services;
 
     public class MainViewModel : ViewModelBase
     {
-        #region Fields
         private readonly IMessageService _messageService;
-        #endregion
 
-        #region Constructors
         public MainViewModel(IMessageService messageService)
         {
             ArgumentNullException.ThrowIfNull(messageService);
@@ -23,18 +21,24 @@
             KeyPressToCommandExample = new TaskCommand(OnKeyPressToCommandExampleExecuteAsync);
 
             Title = "Behaviors";
-        }
-        #endregion
 
-        #region Properties
+            ListItems = new[]
+            {
+                "1",
+                "2",
+                "3",
+                "4"
+            };
+        }
+
         public string DelayBindingUpdateValue { get; set; }
 
         public string UpdateBindingOnTextChangedValue { get; set; }
 
-        public double NumericValue { get; set; }
-        #endregion
+        public IReadOnlyList<string> ListItems { get; private set; }
 
-        #region Commands
+        public double NumericValue { get; set; }
+
         public TaskCommand DoubleClickToCommandExample { get; private set; }
 
         private async Task OnDoubleClickToCommandExampleExecuteAsync()
@@ -55,13 +59,10 @@
         {
             await _messageService.ShowAsync("You just pressed the [Ctrl] + [Backspace] keys");
         }
-        #endregion
 
-        #region Methods
         private async void OnDelayBindingUpdateValueChanged()
         {
             await _messageService.ShowAsync($"New value is {DelayBindingUpdateValue}");
         }
-        #endregion
     }
 }
