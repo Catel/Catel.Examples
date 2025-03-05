@@ -4,10 +4,8 @@
     using System.Collections.Generic;
     using Data;
 
-    [Serializable]
     public class Language : ValidatableModelBase
     {
-        #region Constructors
         public Language()
         {
         }
@@ -20,9 +18,7 @@
             Name = name;
             Code = code;
         }
-        #endregion
 
-        #region Properties
         public string Name { get; set; }
 
         public string Code { get; set; }
@@ -31,9 +27,8 @@
         {
             get { return $"{Name} ({Code})"; }
         }
-        #endregion
 
-        #region Methods
+
         protected override void ValidateFields(List<IFieldValidationResult> validationResults)
         {
             if (string.IsNullOrEmpty(Name))
@@ -46,6 +41,5 @@
                 validationResults.Add(FieldValidationResult.CreateError(nameof(Code), "Code cannot be empty"));
             }
         }
-        #endregion
     }
 }

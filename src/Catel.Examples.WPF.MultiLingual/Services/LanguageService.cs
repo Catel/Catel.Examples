@@ -5,7 +5,6 @@
 
     public class LanguageService : Catel.Services.LanguageService
     {
-        #region Methods
         public override string GetString(ILanguageSource languageSource, string resourceName, CultureInfo cultureInfo)
         {
             if (string.Equals(resourceName, "DynamicResource"))
@@ -15,6 +14,5 @@
 
             return base.GetString(languageSource, resourceName, cultureInfo);
         }
-        #endregion
     }
 }

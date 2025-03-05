@@ -47,22 +47,17 @@
             Title = "MultiLingual example";
         }
 
-        #region Properties
         public ObservableCollection<Language> AvailableLanguages { get; set; }
 
         public Language SelectedLanguage { get; set; }
-        #endregion
 
-        #region Commands
         public TaskCommand DataWindow { get; private set; }
 
         private async Task OnDataWindowExecuteAsync()
         {
             await _uiVisualizerService.ShowDialogAsync<DataWindowViewModel>(new Language());
         }
-        #endregion
 
-        #region Methods
         private void OnSelectedLanguageChanged()
         {
             if (SelectedLanguage is not null)
@@ -73,6 +68,5 @@
                 _languageService.PreferredCulture = newCulture;
             }
         }
-        #endregion
     }
 }

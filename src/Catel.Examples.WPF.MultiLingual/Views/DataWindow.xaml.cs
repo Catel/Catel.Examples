@@ -4,12 +4,10 @@
 
     public partial class DataWindow
     {
-        #region Constructors
         public DataWindow()
             : base(DataWindowMode.OkCancelApply)
         {
             InitializeComponent();
         }
-        #endregion
     }
 }
