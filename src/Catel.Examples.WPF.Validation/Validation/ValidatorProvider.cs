@@ -6,7 +6,6 @@
 
     public class ValidatorProvider : ValidatorProviderBase
     {
-        #region Methods
         protected override IValidator GetValidator(Type targetType)
         {
             if (targetType == typeof(ValidationInIValidatorViewModel))
@@ -16,6 +15,5 @@
 
             return null;
         }
-        #endregion
     }
 }

@@ -7,7 +7,6 @@
 
     public class ValidationWithValidateMethodsViewModel : ViewModelBase
     {
-        #region Constructors
         public ValidationWithValidateMethodsViewModel(ModelWithoutValidation person = null, bool deferValidationUntilFirstSave = true)
         {
             if (person is null)
@@ -20,9 +19,7 @@
 
             Title = "Validation with validate methods";
         }
-        #endregion
 
-        #region Properties
         [Model]
         public ModelWithoutValidation Person { get; private set; }
 
@@ -34,9 +31,7 @@
 
         [ViewModelToModel("Person")]
         public string LastName { get; set; }
-        #endregion
 
-        #region Methods
         protected override void ValidateFields(List<IFieldValidationResult> validationResults)
         {
             if (string.IsNullOrEmpty(FirstName))
@@ -56,6 +51,5 @@
             validationResults.Add(BusinessRuleValidationResult.CreateError("Error 2"));
             validationResults.Add(BusinessRuleValidationResult.CreateError("Error 3"));
         }
-        #endregion
     }
 }

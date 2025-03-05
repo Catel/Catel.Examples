@@ -2,11 +2,9 @@
 {
     public partial class ValidationInModelWindow
     {
-        #region Constructors
         public ValidationInModelWindow()
         {
             InitializeComponent();
         }
-        #endregion
     }
 }

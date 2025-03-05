@@ -2,11 +2,9 @@
 {
     public partial class ValidationWithDataAnnotationsWindow
     {
-        #region Constructors
         public ValidationWithDataAnnotationsWindow()
         {
             InitializeComponent();
         }
-        #endregion
     }
 }

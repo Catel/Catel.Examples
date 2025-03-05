@@ -6,12 +6,8 @@
     using Logging;
     using Validation;
 
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
     public partial class App : Application
     {
-        #region Methods
         /// <summary>
         /// Raises the <see cref="E:System.Windows.Application.Startup"/> event.
         /// </summary>
@@ -34,6 +30,5 @@
 
             base.OnStartup(e);
         }
-        #endregion
     }
 }

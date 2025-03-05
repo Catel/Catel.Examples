@@ -5,7 +5,6 @@
 
     public class ValidationInModelViewModel : ViewModelBase
     {
-        #region Constructors
         public ValidationInModelViewModel(ModelWithValidation person = null, bool deferValidationUntilFirstSave = true)
         {
             if (person is null)
@@ -18,9 +17,7 @@
 
             Title = "Validation in model";
         }
-        #endregion
 
-        #region Properties
         [Model]
         public ModelWithValidation Person { get; private set; }
 
@@ -32,6 +29,5 @@
 
         [ViewModelToModel("Person")]
         public string LastName { get; set; }
-        #endregion
     }
 }

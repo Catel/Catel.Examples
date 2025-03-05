@@ -6,7 +6,6 @@
 
     public class Validator : ValidatorBase<ValidationInIValidatorViewModel>
     {
-        #region Methods
         protected override void ValidateFields(ValidationInIValidatorViewModel instance, List<IFieldValidationResult> validationResults)
         {
             if (string.IsNullOrEmpty(instance.FirstName))
@@ -24,6 +23,5 @@
         {
             // No business rules (yet)
         }
-        #endregion
     }
 }

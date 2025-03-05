@@ -6,7 +6,6 @@
 
     public class ValidationWithDataAnnotationsViewModel : ViewModelBase
     {
-        #region Constructors
         public ValidationWithDataAnnotationsViewModel(ModelWithoutValidation person = null, bool deferValidationUntilFirstSave = true)
         {
             if (person is null)
@@ -19,9 +18,7 @@
 
             Title = "Validation with data annotations";
         }
-        #endregion
 
-        #region Properties
         [Model]
         public ModelWithoutValidation Person { get; private set; }
 
@@ -35,6 +32,5 @@
         [Required(ErrorMessage = "Last name cannot be empty")]
         [ViewModelToModel("Person")]
         public string LastName { get; set; }
-        #endregion
     }
 }
