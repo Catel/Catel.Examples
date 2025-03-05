@@ -14,12 +14,19 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Image Grid.Row="0" Grid.Column="0" Source="/Resources/Images/room.png"
-               Width="48" Height="48"/>
+        <Image Grid.Row="0"
+               Grid.Column="0"
+               Source="/Catel.Examples.WPF.NestedUserControls/Resources/Images/room.png"
+               Width="48"
+               Height="48" />
 
-        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Name, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+        <TextBox Grid.Row="0"
+                 Grid.Column="1"
+                 Text="{Binding Name, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
 
-        <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding ViewModelConstructionTime, StringFormat='ViewModel created at \{0:HH:mm:ss.fff\}'}" />
+        <TextBlock Grid.Row="1"
+                   Grid.ColumnSpan="2"
+                   Text="{Binding ViewModelConstructionTime, StringFormat='ViewModel created at \{0:HH:mm:ss.fff\}'}" />
     </Grid>
-    
+
 </catel:UserControl>

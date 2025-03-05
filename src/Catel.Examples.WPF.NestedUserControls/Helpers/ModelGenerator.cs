@@ -7,12 +7,10 @@
 
     public static class ModelGenerator
     {
-        #region Constants
         private static readonly Random _random = new Random();
         private static readonly Random _priceGenerator = new Random();
-        #endregion
 
-        #region Methods
+
         public static HouseModel[] GenerateHouses()
         {
             return GenerateHouses(_random.Next(1, 5));
@@ -61,6 +59,5 @@
             var room = new RoomModel(name);
             return room;
         }
-        #endregion
     }
 }

@@ -2,11 +2,9 @@
 {
     public partial class HouseView
     {
-        #region Constructors
         public HouseView()
         {
             InitializeComponent();
         }
-        #endregion
     }
 }

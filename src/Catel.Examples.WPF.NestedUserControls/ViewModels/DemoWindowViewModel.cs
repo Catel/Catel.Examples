@@ -8,11 +8,8 @@
 
     public class DemoWindowViewModel : ViewModelBase
     {
-        #region Fields
         private readonly IMessageService _messageService;
-        #endregion
 
-        #region Constructors
         public DemoWindowViewModel(IMessageService messageService)
         {
             ArgumentNullException.ThrowIfNull(messageService);
@@ -23,9 +20,7 @@
 
             Title = "Person demo";
         }
-        #endregion
 
-        #region Properties
         [Model]
         public PersonModel Person { get; private set; }
 
@@ -37,9 +32,7 @@
 
         [ViewModelToModel("Person")]
         public string LastName { get; set; }
-        #endregion
 
-        #region Methods
         protected override async Task<bool> CancelAsync()
         {
             await _messageService.ShowInformationAsync("View model canceled");
@@ -60,6 +53,5 @@
 
             await base.CloseAsync();
         }
-        #endregion
     }
 }
