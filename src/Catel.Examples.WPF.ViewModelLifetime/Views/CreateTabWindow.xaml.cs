@@ -4,7 +4,6 @@
 
     public partial class CreateTabWindow
     {
-        #region Constructors
         public CreateTabWindow()
             : this(null)
         {
@@ -15,6 +14,5 @@
         {
             InitializeComponent();
         }
-        #endregion
     }
 }

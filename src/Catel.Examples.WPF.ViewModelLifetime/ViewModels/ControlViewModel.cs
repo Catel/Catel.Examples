@@ -4,11 +4,9 @@
 
     public class ControlViewModel : ViewModelBase
     {
-        #region Constructors
         public ControlViewModel()
         {
             Title = "Tab control";
         }
-        #endregion
     }
 }

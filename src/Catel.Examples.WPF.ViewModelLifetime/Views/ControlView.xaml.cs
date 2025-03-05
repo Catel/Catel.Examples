@@ -2,11 +2,9 @@
 {
     public partial class ControlView
     {
-        #region Constructors
         public ControlView()
         {
             InitializeComponent();
         }
-        #endregion
     }
 }

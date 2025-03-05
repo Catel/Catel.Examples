@@ -2,8 +2,6 @@
 {
     public interface ITabService
     {
-        #region Methods
         void AddTab(bool closeViewModelOnUnload);
-        #endregion
     }
 }

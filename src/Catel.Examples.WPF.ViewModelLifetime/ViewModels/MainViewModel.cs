@@ -10,14 +10,11 @@
 
     public class MainViewModel : ViewModelBase
     {
-        #region Fields
         private readonly ITabService _tabService;
         private readonly IUIVisualizerService _uiVisualizerService;
 
         private readonly DispatcherTimer _timer = new DispatcherTimer();
-        #endregion
 
-        #region Constructors
         public MainViewModel(IUIVisualizerService uiVisualizerService, ITabService tabService)
         {
             ArgumentNullException.ThrowIfNull(uiVisualizerService);
@@ -34,20 +31,14 @@
 
             Title = "View model lifetime demo";
         }
-        #endregion
 
-        #region Properties
         public int LiveViewModelCount { get; set; }
-        #endregion
 
-        #region Methods
         private void OnTimerTick(object sender, EventArgs e)
         {
             LiveViewModelCount = ViewModelManager.ActiveViewModels.Count();
         }
-        #endregion
 
-        #region Commands
         /// <summary>
         /// Gets the AddTab command.
         /// </summary>
@@ -66,6 +57,5 @@
                 _tabService.AddTab(vm.CloseWhenUnloaded);
             }
         }
-        #endregion
     }
 }
