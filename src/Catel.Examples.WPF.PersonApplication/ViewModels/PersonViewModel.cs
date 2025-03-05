@@ -7,7 +7,6 @@
 
     public class PersonViewModel : ViewModelBase
     {
-        #region Constructors
         public PersonViewModel(Person person)
         {
             if (Catel.CatelEnvironment.IsInDesignMode)
@@ -21,9 +20,7 @@
 
             Title = "Person";
         }
-        #endregion
 
-        #region Methods
         protected override void ValidateFields(List<IFieldValidationResult> validationResults)
         {
             if (!string.IsNullOrEmpty(CustomError))
@@ -31,12 +28,7 @@
                 validationResults.Add(FieldValidationResult.CreateError(nameof(CustomError), CustomError));
             }
         }
-        #endregion
 
-        #region Variables
-        #endregion
-
-        #region Models
         [Model]
         [Fody.Expose("FirstName")]
         [Fody.Expose("MiddleName")]
@@ -57,9 +49,7 @@
         {
             get { return "My Custom Defined Property"; }
         }
-        #endregion
 
-        #region Commands
         public Command<object, object> GenerateData { get; private set; }
 
         private bool OnGenerateDataCanExecute(object parameter)
@@ -78,7 +68,7 @@
                 return false;
             }
 
-            if (!string.IsNullOrEmpty(this.LastName))
+            if (!string.IsNullOrEmpty(LastName))
             {
                 return false;
             }
@@ -111,12 +101,10 @@
                 CustomError = string.Empty;
             }
         }
-        #endregion
     }
 
     public class DesignPersonViewModel : PersonViewModel
     {
-        #region Constructors
         public DesignPersonViewModel()
             : base(null)
         {
@@ -128,6 +116,5 @@
             LastName = "Horrik";
             Gender = Gender.Male;
         }
-        #endregion
     }
 }

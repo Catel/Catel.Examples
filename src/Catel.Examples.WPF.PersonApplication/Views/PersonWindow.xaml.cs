@@ -5,7 +5,6 @@
 
     public partial class PersonWindow
     {
-        #region Constructors
         public PersonWindow(PersonViewModel viewModel)
             : base(viewModel, DataWindowMode.OkCancel, null, DataWindowDefaultButton.OK, true, InfoBarMessageControlGenerationMode.Inline)
         {
@@ -14,6 +13,5 @@
 
             InitializeComponent();
         }
-        #endregion
     }
 }
