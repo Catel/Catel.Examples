@@ -1,7 +1,6 @@
 ﻿namespace Catel.Examples.Authentication
 {
     using System.Windows;
-    using IoC;
     using MVVM;
 
     public partial class App

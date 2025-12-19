@@ -12,7 +12,9 @@
         private readonly IAuthenticationProvider _authenticationProvider;
         private readonly IUIVisualizerService _uiVisualizerService;
 
-        public MainViewModel(IUIVisualizerService uiVisualizerService, IAuthenticationProvider authenticationProvider)
+        public MainViewModel(IServiceProvider serviceProvider, 
+            IUIVisualizerService uiVisualizerService, IAuthenticationProvider authenticationProvider)
+            : base(serviceProvider)
         {
             ArgumentNullException.ThrowIfNull(uiVisualizerService);
             ArgumentNullException.ThrowIfNull(authenticationProvider);
@@ -22,7 +24,7 @@
 
             RoleCollection = new ObservableCollection<string>(new[] {"Read-only", "Administrator"});
 
-            ShowView = new TaskCommand(OnShowViewExecuteAsync, OnShowViewCanExecute);
+            ShowView = new TaskCommand(serviceProvider, OnShowViewExecuteAsync, OnShowViewCanExecute);
 
             Title = "Authentication example";
         }

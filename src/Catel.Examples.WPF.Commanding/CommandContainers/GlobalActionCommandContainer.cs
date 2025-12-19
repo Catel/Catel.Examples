@@ -9,8 +9,8 @@
     {
         private readonly IMessageService _messageService;
 
-        public GlobalActionCommandContainer(ICommandManager commandManager, IMessageService messageService) 
-            : base(Commands.GlobalAction, commandManager)
+        public GlobalActionCommandContainer(IServiceProvider serviceProvider, ICommandManager commandManager, IMessageService messageService) 
+            : base(Commands.GlobalAction, commandManager, serviceProvider)
         {
             ArgumentNullException.ThrowIfNull(messageService);
 
@@ -27,8 +27,8 @@
     {
         private readonly IMessageService _messageService;
 
-        public Test1CommandContainer(ICommandManager commandManager, IMessageService messageService) 
-            : base(Commands.Test1, commandManager)
+        public Test1CommandContainer(IServiceProvider serviceProvider, ICommandManager commandManager, IMessageService messageService) 
+            : base(Commands.Test1, commandManager, serviceProvider)
         {
             ArgumentNullException.ThrowIfNull(messageService);
 
@@ -45,8 +45,8 @@
     {
         private readonly IMessageService _messageService;
 
-        public Test2CommandContainer(ICommandManager commandManager, IMessageService messageService) 
-            : base(Commands.Test2, commandManager)
+        public Test2CommandContainer(IServiceProvider serviceProvider, ICommandManager commandManager, IMessageService messageService) 
+            : base(Commands.Test2, commandManager, serviceProvider)
         {
             ArgumentNullException.ThrowIfNull(messageService);
 

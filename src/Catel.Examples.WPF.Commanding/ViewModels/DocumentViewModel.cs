@@ -5,11 +5,12 @@
 
     public class DocumentViewModel : ViewModelBase
     {
-        public DocumentViewModel(ICommandManager commandManager)
+        public DocumentViewModel(IServiceProvider serviceProvider, ICommandManager commandManager)
+            : base(serviceProvider)
         {
             ArgumentNullException.ThrowIfNull(commandManager);
 
-            ExampleCommand = new Command(OnExampleCommandExecute);
+            ExampleCommand = new Command(serviceProvider, OnExampleCommandExecute);
 
             // This will register the VM command with the global command. As soon as the view model gets unloaded,
             // it will also unsubscribe itself from the global command

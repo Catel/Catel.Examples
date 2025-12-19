@@ -11,7 +11,7 @@
     {
         public Family()
         {
-            Children = new FastObservableCollection<Person>();
+            Children = new ObservableCollection<Person>();
         }
 
         public Person Father { get; set; }
