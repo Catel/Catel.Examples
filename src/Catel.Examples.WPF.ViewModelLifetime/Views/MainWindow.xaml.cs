@@ -30,7 +30,8 @@
             tabItem.Content = controlView;
 
             tabControl.Items.Add(tabItem);
-            tabControl.SelectedItem = tabItem;
+
+            tabControl.SetCurrentValue(System.Windows.Controls.Primitives.Selector.SelectedItemProperty, tabItem);
         }
 
         private static FrameworkElement CreateTabHeader(TabItem tabItem, bool closeViewModelOnUnload)
