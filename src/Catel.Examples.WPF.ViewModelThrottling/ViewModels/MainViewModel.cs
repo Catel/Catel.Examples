@@ -10,9 +10,11 @@
     {
         private readonly DispatcherTimer _counterTimer = new DispatcherTimer();
         private readonly DispatcherTimer _frameRateTimer = new DispatcherTimer();
+
         private int _frameRateCounter;
 
-        public MainViewModel()
+        public MainViewModel(IServiceProvider serviceProvider)
+            : base(serviceProvider)
         {
             Title = "View Model Throttling example";
         }

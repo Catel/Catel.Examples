@@ -6,7 +6,7 @@
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
 
-    public partial class App : Application
+    public partial class App
     {
 #pragma warning disable IDISP006 // Implement IDisposable
         private readonly IHost _host;
