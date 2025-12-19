@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.Net.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net8.0-windows</TargetFrameworks>
+    <TargetFrameworks>net10.0-windows</TargetFrameworks>
     <AssemblyName>Catel.Examples.WPF.Commanding</AssemblyName>
     <RootNamespace>Catel.Examples.Commanding</RootNamespace>
     <DefaultLanguage>en-US</DefaultLanguage>

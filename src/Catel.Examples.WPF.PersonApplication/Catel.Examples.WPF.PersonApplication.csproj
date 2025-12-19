@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.Net.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net8.0-windows</TargetFrameworks>
+    <TargetFrameworks>net10.0-windows</TargetFrameworks>
     <AssemblyName>Catel.Examples.WPF.PersonApplication</AssemblyName>
     <RootNamespace>Catel.Examples.PersonApplication</RootNamespace>
     <DefaultLanguage>en-US</DefaultLanguage>

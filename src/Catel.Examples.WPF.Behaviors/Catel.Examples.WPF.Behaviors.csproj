@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.Net.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net8.0-windows</TargetFrameworks>
+    <TargetFrameworks>net10.0-windows</TargetFrameworks>
     <AssemblyName>Catel.Examples.WPF.Behaviors</AssemblyName>
     <RootNamespace>Catel.Examples.Behaviors</RootNamespace>
     <DefaultLanguage>en-US</DefaultLanguage>
