@@ -40,5 +40,15 @@
             var mainWindow = ActivatorUtilities.CreateInstance<MainWindow>(_host.Services);
             mainWindow.Show();
         }
+
+        protected override async void OnExit(ExitEventArgs e)
+        {
+            using (_host)
+            {
+                await _host.StopAsync();
+            }
+
+            base.OnExit(e);
+        }
     }
 }
