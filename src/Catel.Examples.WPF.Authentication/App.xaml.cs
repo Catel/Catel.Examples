@@ -1,16 +1,44 @@
 ﻿namespace Catel.Examples.Authentication
 {
     using System.Windows;
+    using Catel.Examples.Authentication.Views;
+    using Catel.IoC;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Hosting;
     using MVVM;
 
     public partial class App
     {
+#pragma warning disable IDISP006 // Implement IDisposable
+        private readonly IHost _host;
+#pragma warning restore IDISP006 // Implement IDisposable
+
+        public App()
+        {
+            var hostBuilder = new HostBuilder()
+                .ConfigureServices((hostContext, services) =>
+                {
+                    services.AddCatelCoreServices();
+                    services.AddCatelMvvmServices();
+
+                    services.AddSingleton<IAuthenticationProvider, AuthenticationProvider>();
+                });
+
+            _host = hostBuilder.Build();
+
+            IoCContainer.ServiceProvider = _host.Services;
+        }
+
         protected override void OnStartup(StartupEventArgs e)
         {
+#if DEBUG
+            Catel.Logging.LogManager.AddDebugListener();
+#endif
+
             base.OnStartup(e);
 
-            var serviceLocator = ServiceLocator.Default;
-            serviceLocator.RegisterType<IAuthenticationProvider, AuthenticationProvider>();
+            var mainWindow = ActivatorUtilities.CreateInstance<MainWindow>(_host.Services);
+            mainWindow.Show();
         }
     }
 }

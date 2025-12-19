@@ -49,7 +49,7 @@
         private void OnSelectedRoleChanged()
         {
             // Dirty cast, normally this would be done via clean interfaces
-            ((AuthenticationProvider) _authenticationProvider).Role = SelectedRole;
+            ((Catel.Examples.Authentication.AuthenticationProvider) _authenticationProvider).Role = SelectedRole;
         }
     }
 }

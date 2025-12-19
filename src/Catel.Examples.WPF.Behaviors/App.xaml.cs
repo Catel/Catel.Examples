@@ -1,6 +1,7 @@
 ﻿namespace Catel.Examples.Behaviors
 {
     using System.Windows;
+    using Catel.Examples.Behaviors.Views;
     using IoC;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
@@ -32,8 +33,6 @@
             Catel.Logging.LogManager.AddDebugListener();
 #endif
 
-            base.OnStartup(e);
-
             var viewLocator = _host.Services.GetRequiredService<IViewLocator>();
 
             viewLocator.NamingConventions.Add("[UP].Views.[VM]");
@@ -47,6 +46,11 @@
             var viewModelLocator = _host.Services.GetRequiredService<IViewLocator>();
 
             viewModelLocator.NamingConventions.Add("Catel.Examples.AdvancedDemo.ViewModels.[VW]ViewModel");
+
+            base.OnStartup(e);
+
+            var mainWindow = ActivatorUtilities.CreateInstance<MainWindow>(_host.Services);
+            mainWindow.Show();
         }
     }
 }
