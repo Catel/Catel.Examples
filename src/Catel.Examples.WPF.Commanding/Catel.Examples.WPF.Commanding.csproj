@@ -30,6 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Catel\src\Catel.Core\Catel.Core.csproj" />
     <ProjectReference Include="..\..\..\Catel\src\Catel.MVVM\Catel.MVVM.csproj" />
   </ItemGroup>
 
