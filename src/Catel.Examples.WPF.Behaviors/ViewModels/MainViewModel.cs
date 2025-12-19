@@ -10,15 +10,16 @@
     {
         private readonly IMessageService _messageService;
 
-        public MainViewModel(IMessageService messageService)
+        public MainViewModel(IServiceProvider serviceProvider, IMessageService messageService)
+            : base(serviceProvider)
         {
             ArgumentNullException.ThrowIfNull(messageService);
 
             _messageService = messageService;
 
-            DoubleClickToCommandExample = new TaskCommand(OnDoubleClickToCommandExampleExecuteAsync);
-            EventToCommandForLostFocus = new TaskCommand(OnEventToCommandForLostFocusExecuteAsync);
-            KeyPressToCommandExample = new TaskCommand(OnKeyPressToCommandExampleExecuteAsync);
+            DoubleClickToCommandExample = new TaskCommand(serviceProvider, OnDoubleClickToCommandExampleExecuteAsync);
+            EventToCommandForLostFocus = new TaskCommand(serviceProvider, OnEventToCommandForLostFocusExecuteAsync);
+            KeyPressToCommandExample = new TaskCommand(serviceProvider, OnKeyPressToCommandExampleExecuteAsync);
 
             Title = "Behaviors";
 
