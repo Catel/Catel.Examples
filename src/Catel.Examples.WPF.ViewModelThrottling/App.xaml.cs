@@ -1,4 +1,4 @@
-﻿namespace Catel.Examples.WPF.ViewModelThrottling
+﻿namespace Catel.Examples.ViewModelThrottling
 {
     using System.Windows;
     using Catel.Examples.ViewModelThrottling.Views;
