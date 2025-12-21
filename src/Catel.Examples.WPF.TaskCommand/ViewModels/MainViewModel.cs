@@ -9,9 +9,9 @@
 
     public class MainViewModel : ViewModelBase
     {
-        public MainViewModel()
+        public MainViewModel(IServiceProvider serviceProvider)
         {
-            LoadSomethingCommand = new ProgressiveTaskCommand<PercentProgress>(LoadSomethingAsync, reportProgress: ReportLoadSomethingProgress);
+            LoadSomethingCommand = new ProgressiveTaskCommand<PercentProgress>(serviceProvider, LoadSomethingAsync, reportProgress: ReportLoadSomethingProgress);
 
             Title = "Task command example";
         }
