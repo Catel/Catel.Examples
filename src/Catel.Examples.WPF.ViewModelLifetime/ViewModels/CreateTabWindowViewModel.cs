@@ -1,5 +1,6 @@
 ﻿namespace Catel.Examples.ViewModelLifetime.ViewModels
 {
+    using System;
     using MVVM;
 
     public class CreateTabWindowViewModel : ViewModelBase

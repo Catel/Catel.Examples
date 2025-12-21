@@ -15,7 +15,7 @@
 
         private readonly DispatcherTimer _timer = new DispatcherTimer();
 
-        public MainViewModel(IUIVisualizerService uiVisualizerService, ITabService tabService)
+        public MainViewModel(IServiceProvider serviceProvider, IUIVisualizerService uiVisualizerService, ITabService tabService)
         {
             ArgumentNullException.ThrowIfNull(uiVisualizerService);
             ArgumentNullException.ThrowIfNull(tabService);
@@ -27,7 +27,7 @@
             _timer.Interval = new TimeSpan(0, 0, 0, 0, 500);
             _timer.Start();
 
-            AddTab = new TaskCommand(OnAddTabExecuteAsync);
+            AddTab = new TaskCommand(serviceProvider, OnAddTabExecuteAsync);
 
             Title = "View model lifetime demo";
         }
@@ -36,7 +36,7 @@
 
         private void OnTimerTick(object sender, EventArgs e)
         {
-            LiveViewModelCount = ViewModelManager.ActiveViewModels.Count();
+            LiveViewModelCount = _viewModelManager.ActiveViewModels.Count();
         }
 
         /// <summary>

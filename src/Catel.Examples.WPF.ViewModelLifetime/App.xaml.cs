@@ -1,6 +1,7 @@
 ﻿namespace Catel.Examples.ViewModelLifetime
 {
     using System.Windows;
+    using Catel.Examples.ViewModelLifetime.Services;
     using Catel.Examples.ViewModelLifetime.Views;
     using Catel.IoC;
     using Microsoft.Extensions.DependencyInjection;
@@ -19,6 +20,8 @@
                 {
                     services.AddCatelCoreServices();
                     services.AddCatelMvvmServices();
+
+                    services.AddSingleton<ITabService, MainWindow>();
                 });
 
             _host = hostBuilder.Build();

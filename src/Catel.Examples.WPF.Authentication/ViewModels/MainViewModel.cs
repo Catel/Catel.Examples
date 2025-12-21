@@ -12,9 +12,8 @@
         private readonly IAuthenticationProvider _authenticationProvider;
         private readonly IUIVisualizerService _uiVisualizerService;
 
-        public MainViewModel(IServiceProvider serviceProvider, 
-            IUIVisualizerService uiVisualizerService, IAuthenticationProvider authenticationProvider)
-            : base(serviceProvider)
+        public MainViewModel(IServiceProvider serviceProvider, IUIVisualizerService uiVisualizerService, 
+            IAuthenticationProvider authenticationProvider)
         {
             ArgumentNullException.ThrowIfNull(uiVisualizerService);
             ArgumentNullException.ThrowIfNull(authenticationProvider);

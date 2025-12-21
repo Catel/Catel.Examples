@@ -6,13 +6,13 @@
     using MVVM.Views;
     using Services;
     using System;
+    using Catel.Services;
 
     public partial class MainWindow : ITabService
     {
-        public MainWindow()
+        public MainWindow(IServiceProvider serviceProvider, IWrapControlService wrapControlService, ILanguageService languageService)
+            : base(serviceProvider, wrapControlService, languageService)
         {
-            IoC.ServiceLocator.Default.RegisterInstance(typeof(ITabService), this);
-
             InitializeComponent();
         }
 

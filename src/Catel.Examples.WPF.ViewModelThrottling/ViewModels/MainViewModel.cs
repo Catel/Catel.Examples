@@ -6,7 +6,7 @@
     using System.Windows.Threading;
     using MVVM;
 
-    public class MainViewModel : ViewModelBase
+    public class MainViewModel : FeaturedViewModelBase
     {
         private readonly DispatcherTimer _counterTimer = new DispatcherTimer();
         private readonly DispatcherTimer _frameRateTimer = new DispatcherTimer();
