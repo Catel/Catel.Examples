@@ -31,6 +31,7 @@
     <Project Path="Catel.Examples.WPF.Behaviors/Catel.Examples.WPF.Behaviors.csproj" />
     <Project Path="Catel.Examples.WPF.Commanding/Catel.Examples.WPF.Commanding.csproj" />
     <Project Path="Catel.Examples.WPF.TaskCommand/Catel.Examples.WPF.TaskCommand.csproj" />
+    <Project Path="Catel.Examples.WPF.ViewModelLifetime/Catel.Examples.WPF.ViewModelLifetime.csproj" />
     <Project Path="Catel.Examples.WPF.ViewModelThrottling/Catel.Examples.WPF.ViewModelThrottling.csproj" />
   </Folder>
   <Folder Name="/src/WPF/To fix/">
@@ -40,6 +41,5 @@
     <Project Path="Catel.Examples.WPF.NestedUserControls/Catel.Examples.WPF.NestedUserControls.csproj" />
     <Project Path="Catel.Examples.WPF.PersonApplication/Catel.Examples.WPF.PersonApplication.csproj" />
     <Project Path="Catel.Examples.WPF.Validation/Catel.Examples.WPF.Validation.csproj" />
-    <Project Path="Catel.Examples.WPF.ViewModelLifetime/Catel.Examples.WPF.ViewModelLifetime.csproj" />
   </Folder>
 </Solution>

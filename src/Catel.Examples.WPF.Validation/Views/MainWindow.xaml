@@ -35,8 +35,9 @@
         
         <Button Grid.Row="2" Command="{Binding OpenValidationViaValidateMethods}" Content="Validation in view model via Validate methods" />
         <Button Grid.Row="3" Command="{Binding OpenValidationViaDataAnnotations}" Content="Validation in view model via data annotations (attributes)" />
-        <Button Grid.Row="4" Command="{Binding OpenValidationInModel}" Content="Validation in model" />
-        <Button Grid.Row="5" Command="{Binding OpenValidationInIValidator}" Content="Validation in IValidator" />
+        <Button Grid.Row="4"
+                Command="{Binding OpenValidationInModel}"
+                Content="Validation in model" />
     </Grid>
     
 </catel:Window>

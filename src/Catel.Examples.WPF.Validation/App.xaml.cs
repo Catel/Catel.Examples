@@ -21,13 +21,6 @@
                 {
                     services.AddCatelCoreServices();
                     services.AddCatelMvvmServices();
-
-                    // Initialize composite validator provider to enable multiple validator sources
-                    var provider = new CompositeValidatorProvider();
-                    provider.Add(new ValidatorProvider());
-
-                    // serviceLocator.RegisterType<IValidatorProvider, ValidatorProvider>();
-                    services.AddSingleton<IValidatorProvider>(provider);
                 });
 
             _host = hostBuilder.Build();

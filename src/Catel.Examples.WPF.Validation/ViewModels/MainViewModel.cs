@@ -7,18 +7,18 @@
 
     public class MainWindowViewModel : ViewModelBase
     {
+        private readonly IServiceProvider _serviceProvider;
         private readonly IUIVisualizerService _uiVisualizerService;
 
-        public MainWindowViewModel(IUIVisualizerService uiVisualizerService)
+        public MainWindowViewModel(IServiceProvider serviceProvider, IUIVisualizerService uiVisualizerService)
         {
             ArgumentNullException.ThrowIfNull(uiVisualizerService);
-
+            _serviceProvider = serviceProvider;
             _uiVisualizerService = uiVisualizerService;
 
-            OpenValidationViaValidateMethods = new TaskCommand(OnOpenValidationViaValidateMethodsExecuteAsync);
-            OpenValidationViaDataAnnotations = new TaskCommand(OnOpenValidationViaDataAnnotationsExecuteAsync);
-            OpenValidationInModel = new TaskCommand(OnOpenValidationInModelExecuteAsync);
-            OpenValidationInIValidator = new TaskCommand(OnOpenValidationInIValidatorExecuteAsync);
+            OpenValidationViaValidateMethods = new TaskCommand(serviceProvider, OnOpenValidationViaValidateMethodsExecuteAsync);
+            OpenValidationViaDataAnnotations = new TaskCommand(serviceProvider, OnOpenValidationViaDataAnnotationsExecuteAsync);
+            OpenValidationInModel = new TaskCommand(serviceProvider, OnOpenValidationInModelExecuteAsync);
 
             Title = "Validation example";
         }
@@ -29,28 +29,30 @@
 
         private async Task OnOpenValidationViaValidateMethodsExecuteAsync()
         {
-            await _uiVisualizerService.ShowDialogAsync(new ValidationWithValidateMethodsViewModel(null, EnableDeferValidationUntilFirstSave));
+            await _uiVisualizerService.ShowDialogAsync(new ValidationWithValidateMethodsViewModel(null, _serviceProvider)
+            {
+                DeferValidationUntilFirstSaveCallWrapper = EnableDeferValidationUntilFirstSave
+            });
         }
 
         public TaskCommand OpenValidationViaDataAnnotations { get; private set; }
 
         private async Task OnOpenValidationViaDataAnnotationsExecuteAsync()
         {
-            await _uiVisualizerService.ShowDialogAsync(new ValidationWithDataAnnotationsViewModel(null, EnableDeferValidationUntilFirstSave));
+            await _uiVisualizerService.ShowDialogAsync(new ValidationWithDataAnnotationsViewModel(null, _serviceProvider)
+            {
+                DeferValidationUntilFirstSaveCallWrapper = EnableDeferValidationUntilFirstSave
+            });
         }
 
         public TaskCommand OpenValidationInModel { get; private set; }
 
         private async Task OnOpenValidationInModelExecuteAsync()
         {
-            await _uiVisualizerService.ShowDialogAsync(new ValidationInModelViewModel(null, EnableDeferValidationUntilFirstSave));
-        }
-
-        public TaskCommand OpenValidationInIValidator { get; private set; }
-
-        private async Task OnOpenValidationInIValidatorExecuteAsync()
-        {
-            await _uiVisualizerService.ShowDialogAsync(new ValidationInIValidatorViewModel(null, EnableDeferValidationUntilFirstSave));
+            await _uiVisualizerService.ShowDialogAsync(new ValidationInModelViewModel(null, _serviceProvider)
+            {
+                DeferValidationUntilFirstSaveCallWrapper = EnableDeferValidationUntilFirstSave
+            });
         }
     }
 }

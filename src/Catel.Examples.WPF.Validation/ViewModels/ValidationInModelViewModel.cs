@@ -1,11 +1,13 @@
 ﻿namespace Catel.Examples.Validation.ViewModels
 {
+    using System;
     using Models;
     using MVVM;
 
-    public class ValidationInModelViewModel : ViewModelBase
+    public class ValidationInModelViewModel : FeaturedViewModelBase
     {
-        public ValidationInModelViewModel(ModelWithValidation person = null, bool deferValidationUntilFirstSave = true)
+        public ValidationInModelViewModel(ModelWithValidation? person, IServiceProvider serviceProvider)
+            : base(serviceProvider)
         {
             if (person is null)
             {
@@ -13,9 +15,14 @@
             }
 
             Person = person;
-            DeferValidationUntilFirstSaveCall = deferValidationUntilFirstSave;
 
             Title = "Validation in model";
+        }
+
+        public bool DeferValidationUntilFirstSaveCallWrapper
+        {
+            get => DeferValidationUntilFirstSaveCall;
+            set => DeferValidationUntilFirstSaveCall = value;
         }
 
         [Model]

@@ -1,12 +1,14 @@
 ﻿namespace Catel.Examples.Validation.ViewModels
 {
+    using System;
     using System.ComponentModel.DataAnnotations;
     using Models;
     using MVVM;
 
-    public class ValidationWithDataAnnotationsViewModel : ViewModelBase
+    public class ValidationWithDataAnnotationsViewModel : FeaturedViewModelBase
     {
-        public ValidationWithDataAnnotationsViewModel(ModelWithoutValidation person = null, bool deferValidationUntilFirstSave = true)
+        public ValidationWithDataAnnotationsViewModel(ModelWithoutValidation? person, IServiceProvider serviceProvider)
+            : base(serviceProvider)
         {
             if (person is null)
             {
@@ -14,9 +16,14 @@
             }
 
             Person = person;
-            DeferValidationUntilFirstSaveCall = deferValidationUntilFirstSave;
 
             Title = "Validation with data annotations";
+        }
+
+        public bool DeferValidationUntilFirstSaveCallWrapper
+        {
+            get => DeferValidationUntilFirstSaveCall;
+            set => DeferValidationUntilFirstSaveCall = value;
         }
 
         [Model]
