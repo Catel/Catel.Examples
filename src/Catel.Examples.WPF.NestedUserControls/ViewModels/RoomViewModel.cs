@@ -5,9 +5,10 @@
     using Models;
     using MVVM;
 
-    public class RoomViewModel : ViewModelBase
+    public class RoomViewModel : FeaturedViewModelBase
     {
-        public RoomViewModel(RoomModel room)
+        public RoomViewModel(RoomModel room, IServiceProvider serviceProvider)
+            : base(serviceProvider)
         {
             ArgumentNullException.ThrowIfNull(room);
 

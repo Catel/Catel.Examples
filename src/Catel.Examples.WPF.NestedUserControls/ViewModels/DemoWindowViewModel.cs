@@ -6,11 +6,12 @@
     using MVVM;
     using Services;
 
-    public class DemoWindowViewModel : ViewModelBase
+    public class DemoWindowViewModel : FeaturedViewModelBase
     {
         private readonly IMessageService _messageService;
 
-        public DemoWindowViewModel(IMessageService messageService)
+        public DemoWindowViewModel(IServiceProvider serviceProvider, IMessageService messageService)
+            : base(serviceProvider)
         {
             ArgumentNullException.ThrowIfNull(messageService);
 
