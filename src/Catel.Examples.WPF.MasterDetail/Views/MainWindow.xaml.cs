@@ -1,11 +1,13 @@
 ﻿namespace Catel.Examples.MasterDetail.Views
 {
     using System;
+    using Catel.Services;
 
     public partial class MainWindow
     {
-        public MainWindow(IServiceProvider )
-            : base(serviceProvider)
+        public MainWindow(IServiceProvider serviceProvider, IWrapControlService wrapControlService,
+            ILanguageService languageService)
+            : base(serviceProvider, wrapControlService, languageService)
         {
             InitializeComponent();
         }

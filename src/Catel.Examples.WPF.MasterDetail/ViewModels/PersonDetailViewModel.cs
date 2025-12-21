@@ -4,9 +4,10 @@
     using Models;
     using MVVM;
 
-    public class PersonDetailViewModel : ViewModelBase
+    public class PersonDetailViewModel : FeaturedViewModelBase
     {
-        public PersonDetailViewModel(Person person)
+        public PersonDetailViewModel(Person person, IServiceProvider serviceProvider)
+            : base(serviceProvider)
         {
             ArgumentNullException.ThrowIfNull(person);
 
