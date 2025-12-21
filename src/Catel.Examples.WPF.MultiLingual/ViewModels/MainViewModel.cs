@@ -16,7 +16,8 @@
         private readonly IBusyIndicatorService _busyIndicatorService;
         private readonly IUIVisualizerService _uiVisualizerService;
 
-        public MainViewModel(IUIVisualizerService uiVisualizerService, IBusyIndicatorService busyIndicatorService,
+        public MainViewModel(IServiceProvider serviceProvider, IUIVisualizerService uiVisualizerService, 
+            IBusyIndicatorService busyIndicatorService,
             ILanguageService languageService)
         {
             ArgumentNullException.ThrowIfNull(uiVisualizerService);
@@ -42,7 +43,7 @@
 
             SelectedLanguage = currentLanguage ?? AvailableLanguages[0];
 
-            DataWindow = new TaskCommand(OnDataWindowExecuteAsync);
+            DataWindow = new TaskCommand(serviceProvider, OnDataWindowExecuteAsync);
 
             Title = "MultiLingual example";
         }

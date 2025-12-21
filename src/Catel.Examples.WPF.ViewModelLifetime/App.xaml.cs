@@ -21,7 +21,9 @@
                     services.AddCatelCoreServices();
                     services.AddCatelMvvmServices();
 
-                    services.AddSingleton<ITabService, MainWindow>();
+                    // TODO: How to make sure this is the same instance?
+                    services.AddSingleton<MainWindow>();
+                    services.AddSingleton<ITabService>(x => x.GetRequiredService<MainWindow>());
                 });
 
             _host = hostBuilder.Build();
@@ -37,7 +39,7 @@
 
             base.OnStartup(e);
 
-            var mainWindow = ActivatorUtilities.CreateInstance<MainWindow>(_host.Services);
+            var mainWindow = _host.Services.GetRequiredService<MainWindow>();
             mainWindow.Show();
         }
 
