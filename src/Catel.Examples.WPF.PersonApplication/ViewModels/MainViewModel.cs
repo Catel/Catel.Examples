@@ -3,6 +3,7 @@
     using System;
     using System.Collections.ObjectModel;
     using System.Threading.Tasks;
+    using Microsoft.Extensions.DependencyInjection;
     using Models;
     using MVVM;
     using Properties;
@@ -14,7 +15,7 @@
         private readonly IMessageService _messageService;
         private readonly IUIVisualizerService _uiVisualizerService;
 
-        public MainWindowViewModel(IUIVisualizerService uiVisualizerService, IMessageService messageService)
+        public MainWindowViewModel(IServiceProvider serviceProvider, IUIVisualizerService uiVisualizerService, IMessageService messageService)
         {
             ArgumentNullException.ThrowIfNull(uiVisualizerService);
             ArgumentNullException.ThrowIfNull(messageService);
@@ -22,9 +23,9 @@
             _uiVisualizerService = uiVisualizerService;
             _messageService = messageService;
 
-            Add = new TaskCommand(OnAddExecuteAsync);
-            Edit = new TaskCommand(OnEditExecuteAsync, OnEditCanExecute);
-            Remove = new TaskCommand(OnRemoveExecuteAsync, OnRemoveCanExecute);
+            Add = new TaskCommand(serviceProvider, OnAddExecuteAsync);
+            Edit = new TaskCommand(serviceProvider, OnEditExecuteAsync, OnEditCanExecute);
+            Remove = new TaskCommand(serviceProvider, OnRemoveExecuteAsync, OnRemoveCanExecute);
 
             PersonCollection = new ObservableCollection<Person>();
             PersonCollection.Add(new Person {Gender = Gender.Male, FirstName = "Geert", MiddleName = "van", LastName = "Horrik"});

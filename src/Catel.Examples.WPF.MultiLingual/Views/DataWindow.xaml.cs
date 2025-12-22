@@ -6,10 +6,9 @@
 
     public partial class DataWindow
     {
-        public DataWindow(IServiceProvider serviceProvider, IWrapControlService wrapControlService, ILanguageService languageService)
-            : base(serviceProvider, wrapControlService, languageService, DataWindowMode.OkCancelApply)
+        partial void OnInitializingComponent()
         {
-            InitializeComponent();
+            Mode = DataWindowMode.OkCancelApply;
         }
     }
 }

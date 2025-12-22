@@ -7,8 +7,7 @@
                   xmlns:catel="http://schemas.catelproject.com"
                   xmlns:viewModels="clr-namespace:Catel.Examples.PersonApplication.ViewModels"
                   xmlns:Models="clr-namespace:Catel.Examples.Models"
-                  mc:Ignorable="d" 
-                  d:DataContext="{d:DesignInstance viewModels:DesignPersonViewModel, IsDesignTimeCreatable=True}">
+                  mc:Ignorable="d">
     
     <catel:DataWindow.Resources>
         <converters:GenderToIsSelectedConverter x:Key="GenderToIsSelectedConverter" />
@@ -47,15 +46,15 @@
         <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding MiddleName, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
 
         <!-- Last name -->
-        <Label Grid.Row="0" Grid.Column="0" Content="Last name" />
-        <TextBox Grid.Row="0" Grid.Column="0" Text="{Binding LastName, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
+        <Label Grid.Row="3" Grid.Column="0" Content="Last name" />
+        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding LastName, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" />
 
         <!-- Custom error -->
-        <Label Grid.Row="0" Grid.Column="0" Content="Custom error" />
-        <TextBox Grid.Row="0" Grid.Column="0" Text="{Binding CustomError, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" IsReadOnly="True"  />
+        <Label Grid.Row="4" Grid.Column="0" Content="Custom error" />
+        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding CustomError, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" IsReadOnly="True"  />
 
         <!-- Custom error -->
-        <Label Grid.Row="0" Grid.Column="0" Content="Custom defined property" />
-        <TextBox Grid.Row="0" Grid.Column="0" Text="{Binding CustomDefinedProperty, Mode=OneWay}" IsReadOnly="True"  />
+        <Label Grid.Row="5" Grid.Column="0" Content="Custom defined property" />
+        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding CustomDefinedProperty, Mode=OneWay}" IsReadOnly="True"  />
     </Grid>
 </catel:DataWindow>

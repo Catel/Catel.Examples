@@ -1,13 +1,15 @@
 ﻿namespace Catel.Examples.PersonApplication.ViewModels
 {
+    using System;
     using System.Collections.Generic;
     using Data;
     using Models;
     using MVVM;
 
-    public class PersonViewModel : ViewModelBase
+    public class PersonViewModel : FeaturedViewModelBase
     {
-        public PersonViewModel(Person person)
+        public PersonViewModel(Person person, IServiceProvider serviceProvider)
+            : base(serviceProvider)
         {
             if (Catel.CatelEnvironment.IsInDesignMode)
             {
@@ -15,8 +17,8 @@
             }
 
             Person = person;
-            GenerateData = new Command<object, object>(OnGenerateDataExecute, OnGenerateDataCanExecute);
-            ToggleCustomError = new Command<object>(OnToggleCustomErrorExecute);
+            GenerateData = new Command<object, object>(serviceProvider, OnGenerateDataExecute, OnGenerateDataCanExecute);
+            ToggleCustomError = new Command<object>(serviceProvider, OnToggleCustomErrorExecute);
 
             Title = "Person";
         }
@@ -103,18 +105,18 @@
         }
     }
 
-    public class DesignPersonViewModel : PersonViewModel
-    {
-        public DesignPersonViewModel()
-            : base(null)
-        {
-            // Direct manipulation on viewmodel's property bag. This a requirement if you intend to use Fody.Expose decorator
-            SetValue("FirstName", "Geert");
-            SetValue("MiddleName", "van");
+    //public class DesignPersonViewModel : PersonViewModel
+    //{
+    //    public DesignPersonViewModel(IServiceProvider serviceProvider)
+    //        : base(null, serviceProvider)
+    //    {
+    //        // Direct manipulation on viewmodel's property bag. This a requirement if you intend to use Fody.Expose decorator
+    //        SetValue("FirstName", "Geert");
+    //        SetValue("MiddleName", "van");
 
-            // Regular sample usage
-            LastName = "Horrik";
-            Gender = Gender.Male;
-        }
-    }
+    //        // Regular sample usage
+    //        LastName = "Horrik";
+    //        Gender = Gender.Male;
+    //    }
+    //}
 }
