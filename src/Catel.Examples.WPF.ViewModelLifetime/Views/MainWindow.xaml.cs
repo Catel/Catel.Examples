@@ -10,15 +10,20 @@
 
     public partial class MainWindow : ITabService
     {
-        public MainWindow(IServiceProvider serviceProvider, IWrapControlService wrapControlService, ILanguageService languageService)
+        private readonly IViewFactory _viewFactory;
+
+        public MainWindow(IServiceProvider serviceProvider, IWrapControlService wrapControlService,
+            ILanguageService languageService, IViewFactory viewFactory)
             : base(serviceProvider, wrapControlService, languageService)
         {
+            _viewFactory = viewFactory;
+
             InitializeComponent();
         }
 
         public void AddTab(bool closeViewModelOnUnload)
         {
-            var controlView = new ControlView();
+            var controlView = _viewFactory.CreateViewWithViewModel<ControlView>(null);
 
             if (!closeViewModelOnUnload)
             {

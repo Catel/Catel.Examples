@@ -6,11 +6,5 @@
 
     public partial class DocumentView
     {
-        public DocumentView(IServiceProvider serviceProvider, IViewModelWrapperService viewModelWrapperService,
-            IDataContextSubscriptionService dataContextSubscriptionService)
-            : base(serviceProvider, viewModelWrapperService, dataContextSubscriptionService)
-        {
-            InitializeComponent();
-        }
     }
 }

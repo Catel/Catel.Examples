@@ -11,7 +11,6 @@
         private readonly IMessageService _messageService;
 
         public MainViewModel(IServiceProvider serviceProvider, IMessageService messageService)
-            : base(serviceProvider)
         {
             ArgumentNullException.ThrowIfNull(messageService);
 

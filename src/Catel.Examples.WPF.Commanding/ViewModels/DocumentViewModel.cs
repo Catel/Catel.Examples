@@ -6,7 +6,6 @@
     public class DocumentViewModel : ViewModelBase
     {
         public DocumentViewModel(IServiceProvider serviceProvider, ICommandManager commandManager)
-            : base(serviceProvider)
         {
             ArgumentNullException.ThrowIfNull(commandManager);
 
