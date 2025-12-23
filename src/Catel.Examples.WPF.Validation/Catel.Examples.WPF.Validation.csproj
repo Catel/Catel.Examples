@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.Net.Sdk">
+﻿<Project Sdk="Microsoft.Net.Sdk">
   <PropertyGroup>
     <TargetFrameworks>net10.0-windows</TargetFrameworks>
     <AssemblyName>Catel.Examples.WPF.Validation</AssemblyName>
@@ -27,6 +27,8 @@
     <PackageReference Include="Fody" Version="6.9.2" PrivateAssets="all" />
     <PackageReference Include="LoadAssembliesOnStartup.Fody" Version="4.7.0" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.4" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="10.0.1" />
   </ItemGroup>
 
   <ItemGroup>

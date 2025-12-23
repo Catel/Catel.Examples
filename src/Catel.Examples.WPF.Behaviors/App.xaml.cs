@@ -5,6 +5,7 @@
     using IoC;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
+    using Microsoft.Extensions.Logging;
     using MVVM;
 
     public partial class App
@@ -20,6 +21,12 @@
                 {
                     services.AddCatelCoreServices();
                     services.AddCatelMvvmServices();
+
+                    services.AddLogging(x =>
+                    {
+                        x.AddConsole();
+                        x.AddDebug();
+                    });
                 });
 
             _host = hostBuilder.Build();
@@ -29,10 +36,6 @@
 
         protected override void OnStartup(StartupEventArgs e)
         {
-#if DEBUG
-            Catel.Logging.LogManager.AddDebugListener();
-#endif
-
             var viewLocator = _host.Services.GetRequiredService<IViewLocator>();
 
             viewLocator.NamingConventions.Add("[UP].Views.[VM]");

@@ -6,6 +6,7 @@
     using IoC;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
+    using Microsoft.Extensions.Logging;
     using Validation;
 
     public partial class App : Application
@@ -21,6 +22,12 @@
                 {
                     services.AddCatelCoreServices();
                     services.AddCatelMvvmServices();
+
+                    services.AddLogging(x =>
+                    {
+                        x.AddConsole();
+                        x.AddDebug();
+                    });
                 });
 
             _host = hostBuilder.Build();
@@ -30,10 +37,6 @@
 
         protected override void OnStartup(StartupEventArgs e)
         {
-#if DEBUG
-            Catel.Logging.LogManager.AddDebugListener();
-#endif
-
             base.OnStartup(e);
 
             var mainWindow = ActivatorUtilities.CreateInstance<MainWindow>(_host.Services);

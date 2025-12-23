@@ -6,6 +6,7 @@
     using Catel.IoC;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
+    using Microsoft.Extensions.Logging;
 
     public partial class App
     {
@@ -24,6 +25,12 @@
                     // TODO: How to make sure this is the same instance?
                     services.AddSingleton<MainWindow>();
                     services.AddSingleton<ITabService>(x => x.GetRequiredService<MainWindow>());
+
+                    services.AddLogging(x =>
+                    {
+                        x.AddConsole();
+                        x.AddDebug();
+                    });
                 });
 
             _host = hostBuilder.Build();
@@ -33,10 +40,6 @@
 
         protected override void OnStartup(StartupEventArgs e)
         {
-#if DEBUG
-            Catel.Logging.LogManager.AddDebugListener();
-#endif
-
             base.OnStartup(e);
 
             var mainWindow = _host.Services.GetRequiredService<MainWindow>();

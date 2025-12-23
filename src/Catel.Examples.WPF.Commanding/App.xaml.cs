@@ -7,6 +7,7 @@
     using Catel.Reflection;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
+    using Microsoft.Extensions.Logging;
     using MVVM;
     using InputGesture = Windows.Input.InputGesture;
 
@@ -23,6 +24,18 @@
                 {
                     services.AddCatelCoreServices();
                     services.AddCatelMvvmServices();
+
+                    services.AddLogging(x =>
+                    {
+                        x.AddConsole();
+                        x.AddDebug();
+
+                        services.AddLogging(x =>
+                        {
+                            x.AddConsole();
+                            x.AddDebug();
+                        });
+                    });
                 });
 
             _host = hostBuilder.Build();
@@ -32,10 +45,6 @@
 
         protected override void OnStartup(StartupEventArgs e)
         {
-#if DEBUG
-            Catel.Logging.LogManager.AddDebugListener();
-#endif
-
             base.OnStartup(e);
 
             TypeCache.InitializeTypes(typeof(App).Assembly);
